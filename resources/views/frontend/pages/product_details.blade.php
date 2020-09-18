@@ -229,50 +229,10 @@
         <!--Left Part End -->
         <!--Middle Part Start-->
         <div id="content" class="col-md-12 col-sm-12">
-            <a href="javascript:void(0)" class=" open-sidebar "><i class="fa fa-bars"></i>Sidebar</a>
-            <div class="sidebar-overlay"></div>
             <div class="product-view">
                 <div class="left-content-product">
                     <div class="row">
                         <div class="content-product-left col-md-6 col-sm-12 col-xs-12">
-                            <div id="thumb-slider-vertical" class="thumb-vertical-outer">
-                                <!-- <span class="btn-more prev-thumb nt"><i class="fa fa-angle-up"></i></span>
-                                    <span class="btn-more next-thumb nt"><i class="fa fa-angle-down"></i></span> -->
-                                <ul class="thumb-vertical">
-                                    <li class="owl2-item">
-                                        <a data-index="0" class="img thumbnail"
-                                            data-image="image/catalog/demo/product/electronic/600x600/3.jpg"
-                                            title="Canon EOS 5D">
-                                            <img src="image/catalog/demo/product/electronic/600x600/3.jpg"
-                                                title="Canon EOS 5D" alt="Canon EOS 5D">
-                                        </a>
-                                    </li>
-                                    <li class="owl2-item">
-                                        <a data-index="1" class="img thumbnail "
-                                            data-image="image/catalog/demo/product/electronic/600x600/3-1.jpg"
-                                            title="Chicken swinesha">
-                                            <img src="image/catalog/demo/product/electronic/600x600/3-1.jpg"
-                                                title="Chicken swinesha" alt="Chicken swinesha">
-                                        </a>
-                                    </li>
-                                    <li class="owl2-item">
-                                        <a data-index="2" class="img thumbnail"
-                                            data-image="image/catalog/demo/product/electronic/600x600/3-2.jpg"
-                                            title="Chicken swinesha">
-                                            <img src="image/catalog/demo/product/electronic/600x600/3-2.jpg"
-                                                title="Chicken swinesha" alt="Chicken swinesha">
-                                        </a>
-                                    </li>
-                                    <li class="owl2-item">
-                                        <a data-index="3" class="img thumbnail"
-                                            data-image="image/catalog/demo/product/electronic/600x600/2.jpg"
-                                            title="Chicken swinesha">
-                                            <img src="image/catalog/demo/product/electronic/600x600/2.jpg"
-                                                title="Chicken swinesha" alt="Chicken swinesha">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="large-image large-image2 vertical">
                                 <img itemprop="image" class="product-image-zoom"
                                     src="{{asset('uploads/frontend/image/product/'.$productdetail->main_image) }}"
@@ -475,53 +435,14 @@
                 <div class="tabsslider horizontal-tabs col-xs-12">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#tab-1">Description</a></li>
+                        <li class="item_nonactive"><a data-toggle="tab" href="#tab-2">Specifications</a></li>
+                        <li class="item_nonactive"><a data-toggle="tab" href="#tab-3">Docs</a></li>
                         <li class="item_nonactive"><a data-toggle="tab" href="#tab-review">Reviews (1)</a></li>
-                        <li class="item_nonactive"><a data-toggle="tab" href="#tab-4">Tags</a></li>
-                        <!--                             <li class="item_nonactive"><a data-toggle="tab" href="#tab-5">Shipping Methods</a></li>
- -->
+                        
                     </ul>
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade active in">
                         {!! $productdetail->full_description !!}
-                            {{-- <p>
-                                The 43-inch Sam Sung Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution.
-                                Designed specifically for the creative professional, this display provides more space
-                                for easier access to all the tools and palettes needed to edit, format and composite
-                                your work.<br>
-                                <br>
-                                The Cinema HD features an active-matrix liquid crystal display that produces
-                                flicker-free images that deliver twice the brightness, twice the sharpness and twice the
-                                contrast ratio of a typical CRT display. Unlike other flat panels, it's designed with a
-                                pure digital
-                            <h3>
-                                <b>Features:</b></h3>
-                            <p>
-                                Unrivaled display performance</p>
-                            <ul>
-                                <li>
-                                    30-inch (viewable) active-matrix liquid crystal display provides breathtaking image
-                                    quality and vivid, richly saturated color.</li>
-                            </ul>
-                            <p>
-                                Simple setup and operation</p>
-                            <h3>
-                                Technical specifications</h3>
-                            <p>
-                                <b>Resolutions</b></p>
-                            <ul>
-                                <li>
-                                    2560 x 1600 pixels (optimum resolution)</li>
-                                <li>
-                                    2048 x 1280</li>
-                                <li>
-                                    1920 x 1200</li>
-                            </ul>
-                            <p>
-                                <b>Display colors (maximum)</b></p>
-                            <ul>
-                                <li>
-                                    16.7 million</li>
-                            </ul> --}}
                         </div>
                         <div id="tab-review" class="tab-pane fade">
                             <form>
@@ -586,47 +507,12 @@
                                 </div>
                             </form>
                         </div>
-                        <div id="tab-4" class="tab-pane fade">
+                        <div id="tab-2" class="tab-pane fade">
                             <a href="#">{{  $productdetail->product_tags  }}</a>
-                            {{-- <a href="#">Apple</a> --}}
-
-                            {{-- <a href="#">Monitor</a>,
-                            <a href="#">Apple</a> --}}
                         </div>
-                        <!--                             <div id="tab-5" class="tab-pane fade">
-                                <h3 class="custom-color">Take a trivial example which of us ever undertakes</h3>
-                                <p>Lorem ipsum dolor sit amet, consetetur
-                                    sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore
-                                    magna aliquyam erat, sed diam voluptua.
-                                    At vero eos et accusam et justo duo
-                                    dolores et ea rebum. Stet clita kasd
-                                    gubergren, no sea takimata sanctus est
-                                    Lorem ipsum dolor sit amet. Lorem ipsum
-                                    dolor sit amet, consetetur sadipscing
-                                    elitr, sed diam nonumy eirmod tempor
-                                    invidunt ut labore et dolore magna aliquyam
-                                    erat, sed diam voluptua. </p>
-                                <p>At vero eos et accusam et justo duo dolores
-                                    et ea rebum. Stet clita kasd gubergren,
-                                    no sea takimata sanctus est Lorem ipsum
-                                    dolor sit amet. Lorem ipsum dolor sit
-                                    amet, consetetur sadipscing elitr.</p>
-                                    <ul class="marker-simple-list two-columns">
-                        <li>Nam liberempore</li>
-                        <li>Cumsoluta nobisest</li>
-                        <li>Eligendptio cumque</li>
-                        <li>Nam liberempore</li>
-                        <li>Cumsoluta nobisest</li>
-                        <li>Eligendptio cumque</li>
-                        </ul>
-                                <p>Sed diam nonumy eirmod tempor invidunt
-                                    ut labore et dolore magna aliquyam erat,
-                                    sed diam voluptua. At vero eos et accusam
-                                    et justo duo dolores et ea rebum. Stet
-                                    clita kasd gubergren, no sea takimata
-                                    sanctus est Lorem ipsum dolor sit amet.</p>
-                            </div> -->
+                        <div id="tab-3" class="tab-pane fade">
+                            {{--  <a href="#">{{  $productdetail->product_tags  }}</a>  --}}
+                        </div>
                     </div>
                 </div>
             </div>
