@@ -1,0 +1,90 @@
+/*---------------------------Designed and Developed by Pencil Design Studio---------------------------------------*/
+
+.typeheader-2 .block-cart {
+    cursor: pointer;
+    position: relative;
+    padding: 9px 10px 10px 5px;
+    display: inline-block;
+    float: right;
+}
+
+.typeheader-2 .user-profile {
+    text-align: center;
+    /*border-radius: 50%;*/
+    width: 36px;
+    height: 36px;
+    border: 1px solid #1cb4c3;
+    background: url("../image/icon/user.png") no-repeat 5px 5px #fff;
+    position: relative;
+}
+
+.typeheader-2 .user-profile li:hover {
+    background-color: #1cb4c3;
+}
+
+.typeheader-2 .user-profile a:hover {
+	color: #fff;
+}
+
+.typeheader-2 .user-profile .btn {
+    color: #fff;
+    background: #444;
+    border-color: #444;
+    margin-top: 20px;
+}
+
+.typeheader-2 .user-profile a.btn:hover {
+	border: 1px solid #1cb4c3;
+	background-color: #1cb4c3;
+}
+
+.btn-user-profile .dropdown-menu {
+    min-width: 110px;
+    border: none;
+    display: block;
+    font-size: 13px;
+    cursor: pointer;
+    width: auto;
+    padding: 0;
+}
+
+.btn-user-profile li {
+	width:100px;
+
+}
+.btn-user-profile li a {
+	padding: 7px;
+}
+
+.typeheader-2 .whishlist {
+    text-align: center;
+    /*border-radius: 50%;*/
+    width: 36px;
+    height: 36px;
+    border: 1px solid #1cb4c3;
+    background: url("../image/icon/heart.png") no-repeat 5px 5px #fff;
+    /*background: url("../image/icon/icon_general.png") no-repeat -12px -1403px #fff;*/
+
+
+    position: relative;
+}
+
+
+.add-to-links .wishlist button {
+    display: inline-block;
+    padding: 0;
+    font-size: 14px;
+    color: #666;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    height: 36px;
+    line-height: 34px;
+    width: 36px;
+    text-align: center;
+}
+
+.add-to-links .wishlist button:hover {
+    border-color: #1cb4c3;
+    color: #1cb4c3;
+}
+

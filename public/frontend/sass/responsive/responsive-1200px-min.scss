@@ -1,0 +1,15 @@
+@include breakpoint(lg){
+	.container{
+		width:1200px;
+		overflow: visible;
+		padding-#{$left}: 15px;
+		padding-#{$right}: 15px;
+	}
+}
+@media (min-width: 1200px) and (max-width: 1649px){
+
+}
+
+
+
+
