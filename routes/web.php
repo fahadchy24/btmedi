@@ -27,6 +27,7 @@ Route::match(['get', 'post'], '/page/{url}', 'PagesController@OtherPage');
 
 // Show Single Product Detail Pages in Frontend=======================================================
 Route::get('product/view/{id}', 'FrontendController@productDetailsByID');
+Route::get('product/quickview/{id}', 'FrontendController@productQuickview');
 
 // Order
 Route::get('todaysorder', 'ReportController@todaysOrder')->name('todaysorder');
@@ -130,6 +131,7 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	Route::resource('vendor', 'VendorController');
 	/* Product Receieving Input */
 	Route::resource('product/receive', 'ProductReceiveController');
+	Route::get('product/receive/autocomplete','ProductReceiveController@getAutocompleteData'); 
 
 
 	// =============== RMA Routes for Admin =============== \\

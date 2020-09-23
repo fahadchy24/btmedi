@@ -66,8 +66,10 @@
                                 <td>{{$row->receive_date}}</td>
                                 <td>{{$row->vendor->name}}</td>
                                 <td>{{$row->tracking_number}}</td>
-                                <td>{{$row->product->sku}}</td>
-                                <td>{{$row->product->product_name}}</td>
+                                <td>{{$row->sku}}</td>
+                                <td>{{$row->product_name}}</td>
+                                {{-- <td>{{$row->product->sku}}</td>
+                                <td>{{$row->product->product_name}}</td> --}}
                                 <td>{{$row->quantity}}</td>
                                 <td>{{$row->cost}}</td>
                                 <td>
@@ -119,4 +121,5 @@
 
     });
 </script>
+
 @endpush

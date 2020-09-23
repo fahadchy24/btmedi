@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductReceive extends Model
 {
     protected $fillable = [
-        'receive_date', 'vendor_id', 'tracking_number', 'sku', 'product_id', 'quantity', 'cost'
+        'receive_date', 'vendor_id', 'tracking_number', 'sku', 'product_name', 'quantity', 'cost'
     ];
 
     public function product(){

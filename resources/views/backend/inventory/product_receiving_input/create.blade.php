@@ -67,9 +67,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="product_id">Product Name</label>
-                                    <input type="text" class="form-control @error('product_id') is-invalid @enderror" name="product_id" id="product_id">
-                                    @error('product_id')
+                                    <label class="form-control-label" for="product_name">Product Name</label>
+                                    <input type="text" class="form-control @error('product_name') is-invalid @enderror" name="product_name" id="product_name">
+                                    @error('product_name')
                                         <span class="">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -102,6 +102,30 @@
 
 @push('scripts')
 
+<script>
+    $(function () {
+        $('#sku').autocomplete({
+            source:function(request,response){
+             
+                $.getJSON('?term='+request.term,function(data){
+                     var array = $.map(data,function(row){
+                         return {
+                             value:row.sku,
+                             label:row.product_name,
+                             product_name:row.product_name
+                         }
+                     })
 
+                     response($.ui.autocomplete.filter(array,request.term));
+                })
+            },
+            minLength:1,
+            delay:500,
+            select:function(event,ui){
+                $('#product_name').val(ui.item.product_name)
+            }
+        })
+})
+</script>
 
 @endpush

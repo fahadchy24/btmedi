@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->text('short_description');
             $table->text('full_description');
+            $table->text('specification')->nullable();
+            $table->string('docs')->nullable();
             $table->float('regular_price');
             $table->float('sale_price')->nullable();
             $table->date('sale_price_start_date')->nullable();

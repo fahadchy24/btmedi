@@ -18,6 +18,8 @@ class CreateProductImagesTable extends Migration
             $table->integer('product_id');
             $table->string('product_image');
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 
@@ -29,5 +31,6 @@ class CreateProductImagesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('product_images');
+        Schema::dropIfExists('product_id');
     }
 }

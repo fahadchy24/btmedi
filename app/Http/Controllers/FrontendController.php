@@ -39,6 +39,13 @@ class FrontendController extends Controller
         return view('frontend.pages.product_details', compact('productdetail'));
     }
 
+    // Quickview of Products
+    public function productQuickview($id)
+    {
+        $productdetail = Product::where('id',$id)->first();
+        return view('frontend.pages.quickview', compact('productdetail'));
+    }
+
 
     public function category($id)
     {

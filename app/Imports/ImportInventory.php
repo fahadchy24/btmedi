@@ -20,7 +20,7 @@ class ImportInventory implements ToCollection
                 $productReceive->vendor_id          = $row[1];
                 $productReceive->tracking_number	= $row[2];
                 $productReceive->sku                = $row[3];
-                $productReceive->product_id         = $row[4];
+                $productReceive->product_name       = $row[4];
                 $productReceive->quantity           = $row[5];
                 $productReceive->cost               = $row[6];
                 $productReceive->save();

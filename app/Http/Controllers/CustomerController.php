@@ -27,10 +27,13 @@ class CustomerController extends Controller
 
         $success = User::create($data);
 
-        return redirect()->back();
-
-
-        // return view('backend.customer.create');
+        if ($success) {
+            $notification=array(
+            'message' => 'Customer Added Successfully ',
+            'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+        }
     }
     
 }

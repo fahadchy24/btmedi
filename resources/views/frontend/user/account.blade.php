@@ -97,28 +97,14 @@
                             </div>
                             <div class="form-group required">
                                 <label for="input-country" class="control-label">Country</label>
-                                <select class="form-control" name="country_id">
-                                    <option value=""> --- Please Select --- </option>
-                                    <option value="244">Aaland Islands</option>
-                                    <option value="1">Afghanistan</option>
-                                    <option value="2">Albania</option>
-                                    <option value="3">Algeria</option>
-                                    <option value="4">American Samoa</option>
-                                    <option value="5">Andorra</option>
-                                    <option value="6">Angola</option>
-                                    <option value="7">Anguilla</option>
-                                    <option value="8">Antarctica</option>
-                                    <option value="9">Antigua and Barbuda</option>
-                                    <option value="10">Argentina</option>
-                                    <option value="11">Armenia</option>
-                                    <option value="12">Aruba</option>
-
+                                <select class="form-control" name="country">
+                                    <option value="{{ Auth::user()->country }}" selected="">{{ Auth::user()->country }}</option>
                                 </select>
                             </div>
                             <div class="form-group required">
                                 <label for="input-zone" class="control-label">State</label>
-                                <select class="form-control" name="zone_id">
-                                    <option value=""> --- Please Select --- </option>
+                                <select class="form-control" name="state">
+                                    <option value="{{ Auth::user()->state }}" selected="">{{ Auth::user()->state }}</option>
                                     <option value="3513">Aberdeen</option>
                                     <option value="3514">Aberdeenshire</option>
                                     <option value="3515">Anglesey</option>
@@ -131,16 +117,11 @@
                             </div>
                             <div class="form-group required">
                                 <label for="input-zone" class="control-label">City</label>
-                                <select class="form-control" name="zone_id">
-                                    <option value=""> --- Please Select --- </option>
-                                    <option value="3513">Aberdeen</option>
-                                    <option value="3514">Aberdeenshire</option>
-                                    <option value="3515">Anglesey</option>
-                                    <option value="3516">Angus</option>
-                                    <option value="3517">Argyll and Bute</option>
-                                    <option value="3518">Bedfordshire</option>
-                                    <option value="3519">Berkshire</option>
-
+                                <select class="form-control" name="city">
+                                    <option value="{{ Auth::user()->state }}" selected>{{ Auth::user()->state }}</option>
+                                    <option value="Aberdeenshire">Aberdeenshire</option>
+                                    <option value="Anglesey">Anglesey</option>
+                                    <option value="Anglesey">Anglesey</option>
                                 </select>
                             </div>
                         </fieldset>
@@ -150,60 +131,38 @@
                             <legend>Shipping Address</legend>
                             <div class="form-group">
                                 <label for="input-company" class="control-label">Company</label>
-                                <input type="text" class="form-control" id="input-company" placeholder="Company" value="" name="company">
+                                <input type="text" class="form-control" id="input-company" placeholder="Company" value="{{ Auth::user()->company }}" name="company">
                             </div>
                             <div class="form-group required">
                                 <label for="input-address-1" class="control-label">Address 1</label>
-                                <input type="text" class="form-control" id="input-address-1" placeholder="Address 1" value="" name="address_1">
+                                <input type="text" class="form-control" id="input-address-1" placeholder="Address 1" value="{{ Auth::user()->address_1 }}" name="address_1">
                             </div>
                             <div class="form-group required">
                                 <label for="input-city" class="control-label">City</label>
-                                <input type="text" class="form-control" id="input-city" placeholder="City" value="" name="city">
+                                <input type="text" class="form-control" id="input-city" placeholder="City" value="{{ Auth::user()->city }}" name="city">
                             </div>
                             <div class="form-group required">
                                 <label for="input-postcode" class="control-label">Post Code</label>
-                                <input type="text" class="form-control" id="input-postcode" placeholder="Post Code" value="" name="postcode">
+                                <input type="text" class="form-control" id="input-postcode" placeholder="Post Code" value="{{ Auth::user()->postcode }}" name="postcode">
                             </div>
                             <div class="form-group required">
                                 <label for="input-country" class="control-label">Country</label>
-                                <select class="form-control" id="input-country" name="country_id">
-                                    <option value=""> --- Please Select --- </option>
-                                    <option value="244">Aaland Islands</option>
-                                    <option value="1">Afghanistan</option>
-                                    <option value="2">Albania</option>
-                                    <option value="3">Algeria</option>
-                                    <option value="4">American Samoa</option>
-                                    <option value="5">Andorra</option>
-                                    <option value="6">Angola</option>
-                                    <option value="7">Anguilla</option>
-                                    <option value="8">Antarctica</option>
-                                    <option value="9">Antigua and Barbuda</option>
-                                    <option value="10">Argentina</option>
-                                    <option value="11">Armenia</option>
-                                    <option value="12">Aruba</option>
-
+                                <select class="form-control" id="input-country" name="country">
+                                    <option value="{{ Auth::user()->country }}" selected="">{{ Auth::user()->country }}</option>
                                 </select>
                             </div>
                             <div class="form-group required">
                                 <label for="input-zone" class="control-label">Region / State</label>
-                                <select class="form-control" id="input-zone" name="zone_id">
-                                    <option value=""> --- Please Select --- </option>
-                                    <option value="3513">Aberdeen</option>
-                                    <option value="3514">Aberdeenshire</option>
-                                    <option value="3515">Anglesey</option>
-                                    <option value="3516">Angus</option>
-                                    <option value="3517">Argyll and Bute</option>
-                                    <option value="3518">Bedfordshire</option>
-                                    <option value="3519">Berkshire</option>
-
+                                <select class="form-control" id="input-zone" name="state">
+                                    <option value="{{ Auth::user()->state }}" selected>{{ Auth::user()->state }}</option>
+                                    <option value="Aberdeenshire">Aberdeenshire</option>
+                                    <option value="Anglesey">Anglesey</option>
+                                    <option value="Anglesey">Anglesey</option>
                                 </select>
                             </div>
                         </fieldset>
                     </div>
                 </div>
-
-
-
                 <div class="buttons clearfix">
                     <div class="pull-right">
                         <input type="submit" class="btn btn-md btn-primary" value="Save Changes">

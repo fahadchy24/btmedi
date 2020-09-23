@@ -46,6 +46,19 @@
     <!-- Toastr Css -->
     <link href="{{asset('frontend/css/toastr.css')}}" rel="stylesheet">
 
+    <script type="text/javascript">
+        if (screen.width <= 699) {
+            document.location = "http://m.btcaresupply.com/";
+        }
+    </script>
+        
+    <script type="text/javascript">
+        if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+            location.replace("http://m.btcaresupply.com/");
+        }
+    </script>
+    
+
     <!-- Google web fonts
     ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel='stylesheet' type='text/css'>
@@ -132,7 +145,8 @@
 
     </style>
 </head>
-<body class="common-home res layout-1" oncontextmenu="return false;">
+
+<body class="common-home res layout-1" {{-- oncontextmenu="return false; --}}">
     <div id="wrapper" class="wrapper-fluid banners-effect-7">
         <!-- Header Container  -->
         <header id="header" class=" typeheader-2">
@@ -366,24 +380,71 @@
                                                         </div>
                                                     </div>
                                                     <div class="navbar-header">
-                                                        <button type="button" id="show-verticalmenu" data-toggle="collapse" class="navbar-toggle"> <span class="icon-bar"></span>
+                                                        <button type="button" id="show-verticalmenu" data-toggle="collapse" class="navbar-toggle">
+                                                            <span class="icon-bar"></span>
                                                             <span class="icon-bar"></span>
                                                             <span class="icon-bar"></span>
                                                         </button>
                                                     </div>
-                                                    <div class="vertical-wrapper"> <span id="remove-verticalmenu" class="fa fa-times"></span>
+                                                    <div class="vertical-wrapper">
+                                                        <span id="remove-verticalmenu" class="fa fa-times"></span>
                                                         <div class="megamenu-pattern">
                                                             <div class="container-mega">
                                                                 <ul class="megamenu">
                                                                     @foreach($menus as $menu)
-                                                                    <li class="item-vertical {{ request()->is('category/'.$menu->id) ? 'active' : ''}}">
+                                                                    <li class="item-vertical {{ request()->is('category/'.$menu->id) ? 'active' : ''}} with-sub-menu hover">
                                                                         <p class="close-menu"></p>
                                                                         <a href="/category/{{$menu->id}}" class="clearfix">
                                                                              <span>
                                                                                 <img src="{{ asset('frontend/') }}/image/catalog/menu/icons/icon-1.png" alt="icon">
                                                                                 <strong>{{ $menu->name }}</strong>
                                                                             </span>
+                                                                            <b class="fa fa-angle-right"></b>
                                                                         </a>
+                                                                        <div class="sub-menu" data-subwidth="80">
+                                                                            <div class="content">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-12">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-4 static-menu">
+                                                                                                <div class="menu">
+                                                                                                    <ul>
+                                                                                                        {{-- @if(!empty($categories['subcategories'])) --}}
+                                                                                                        @foreach($subcategories as $subcategory)
+                                                                                                            <li>
+                                                                                                                    <a href="#" class="main-menu">{{ $subcategory->subcategory_name}}</a>
+                                                                                                                    {{-- <ul>
+                                                                                                                        <li><a href="#">Blouses & Shirts</a></li>
+                                                                                                                        <li><a href="#">Suits & Sets</a></li>
+                                                                                                                        <li><a href="#">Jumpsuits</a></li>
+                                                                                                                        <li><a href="#">Sleep & Lounge</a></li>
+                                                                                                                        <li><a href="#">Wool & Blends</a></li>
+                                                                                                                    </ul> --}}
+                                                                                                                </li>
+                                                                                                            @endforeach
+                                                                                                        {{-- @endif --}}
+                                                                                                        {{-- @if(!empty($categories['subcategories']))
+                                                                                                            @foreach($categories['subcategories'] as $subcategory)
+                                                                                                        <li>
+                                                                                                                <a href="#" class="main-menu">{{ $subcategory->subcategory_name}}</a>
+                                                                                                                {{-- <ul>
+                                                                                                                    <li><a href="#">Blouses & Shirts</a></li>
+                                                                                                                    <li><a href="#">Suits & Sets</a></li>
+                                                                                                                    <li><a href="#">Jumpsuits</a></li>
+                                                                                                                    <li><a href="#">Sleep & Lounge</a></li>
+                                                                                                                    <li><a href="#">Wool & Blends</a></li>
+                                                                                                                </ul> --}}
+                                                                                                            </li>
+                                                                                                            {{-- @endforeach
+                                                                                                        @endif --}}
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </li>
                                                                     @endforeach
                                                                 </ul>
@@ -402,21 +463,46 @@
                                                 <nav class="navbar-default">
                                                     <div class=" container-megamenu  horizontal open ">
                                                         <div class="navbar-header">
-                                                            <button type="button" id="show-megamenu" data-toggle="collapse" class="navbar-toggle"> <span class="icon-bar"></span>
+                                                            <button type="button" id="show-megamenu" data-toggle="collapse" class="navbar-toggle">
+                                                                <span class="icon-bar"></span>
                                                                 <span class="icon-bar"></span>
                                                                 <span class="icon-bar"></span>
                                                             </button>
                                                         </div>
-                                                        <div class="megamenu-wrapper"> <span id="remove-megamenu" class="fa fa-times"></span>
+                                                        <div class="megamenu-wrapper">
+                                                            <span id="remove-megamenu" class="fa fa-times"></span>
                                                             <div class="megamenu-pattern">
                                                                 <div class="container-mega">
                                                                     <ul class="megamenu" data-transition="slide" data-animationtime="250">
                                                                         @foreach($menus as $menu)
-                                                                        <li class="{{ request()->is('category/'.$menu->id) ? 'active' : ''}}">
+                                                                        <li class="{{ request()->is('category/'.$menu->id) ? 'active' : ''}} with-sub-menu hover">
                                                                             <p class="close-menu"></p>
-                                                                            <a href="/category/{{$menu->id}}" class="clearfix"> <strong>{{ $menu->name }}</strong>
-                                                                                <span class="label"></span>
+                                                                            <a href="/category/{{$menu->id}}" class="clearfix">
+                                                                                <strong>{{ $menu->name }}</strong>
+                                                                                {{-- <span class="label"></span> --}}
+                                                                                <b class="caret"></b>
                                                                             </a>
+                                                                            <div class="sub-menu" style="width: 30%; right: auto;">
+                                                                                <div class="content">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12">
+                                                                                            <div class="column">
+                                                                                                <div>
+                                                                                                    <ul class="row-list">
+                                                                                                        @foreach($subcategories as $subcategory)
+                                                                                                        <li>
+                                                                                                            <a href="#" class="main-menu">
+                                                                                                                {{ $subcategory->subcategory_name}}
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        @endforeach
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
                                                                         </li>
                                                                         @endforeach
                                                                     </ul>

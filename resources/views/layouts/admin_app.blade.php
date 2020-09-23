@@ -653,7 +653,7 @@
     <script src="{{asset('backend/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
     <!-- Optional JS -->
     <script src="{{asset('backend/assets/vendor/select2/dist/js/select2.min.js')}}"></script>
-    {{--  <script src="{{asset('backend/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>  --}}
+     <script src="{{asset('backend/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{asset('backend/assets/vendor/chart.js/dist/Chart.min.js')}}"></script>
     <script src="{{asset('backend/assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
     <script src="{{asset('backend/assets/vendor/dropzone/dist/min/dropzone.min.js')}}"></script>

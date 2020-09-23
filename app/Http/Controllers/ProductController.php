@@ -45,17 +45,30 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        // dd($data);
+        
         $data['status'] = 0;
 
         if ($request->hasFile('main_image')) {
             $main_image = $request->file('main_image');
             if ($main_image->isValid()){
                 $imageName = time().$main_image->getClientOriginalName();
-                $imagePath = 'uploads/frontend/image/product/'. $imageName;
+                $imagePath = base_path('uploads/frontend/image/product/'). $imageName;
                 Image::make($main_image)->resize(451, 451)->save($imagePath);
             }
         }
-        $data['main_image'] = $imageName;
+        $data['main_image'] = $imagePath;
+
+        if ($request->hasFile('docs')) {
+            $docs = $request->file('docs');
+            $docsName = time().'.'.$docs->getClientOriginalExtension();
+            // $docsPath = base_path('uploads/frontend/image/product/docs/'). $docsName;
+            $docsPath = $docs->move(base_path('uploads/frontend/image/product/docs/'),$docsName);
+
+            // $image->move(public_path('frontend/images/product/'),$img);
+            $data['docs'] = $docsPath;
+        }
 
         // Custom SKU
         $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -67,7 +80,6 @@ class ProductController extends Controller
         // dd($request->all());
 
         $product =  Product::create($data);
-        //$product->categories()->attach($request->category_id);
 
         //Adding Multiple Categories
         $product->categories()->attach($request->category_id);
@@ -75,11 +87,11 @@ class ProductController extends Controller
         // Alternative Images
         if ($request->hasFile('product_images')) {
             $product_image = $request->file('product_images');
-            foreach ($product_image as $key => $images) {
+            foreach ($product_image as $images) {
                 $altImage = new ProductImages;
                 Image::make($images);
                 $name = time().$images->getClientOriginalName();
-                $path = 'uploads/frontend/image/product/alternative/'. $name;
+                $path = base_path('uploads/frontend/image/product/alternative/'). $name;
 
                 Image::make($images)->resize(451, 451)->save($path);
 
@@ -108,7 +120,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::with('categories','brand')->where('id',$id)->first();
+        $product = Product::with('categories','brand', 'allImages')->where('id',$id)->first();
 
         $menus = Menu::all();
 

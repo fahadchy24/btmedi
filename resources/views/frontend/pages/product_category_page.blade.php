@@ -9,7 +9,6 @@
         <li><a href="#"><i class="fa fa-home"></i></a></li>
         <li><a href="#">{{ $category->category_name }}</a></li>
     </ul>
-
     <div class="row">
         <!--Right Part Start -->
         <aside class="col-sm-4 col-md-3 content-aside left_column sidebar-offcanvas" id="column-left">
@@ -427,16 +426,16 @@
                 </div>
                 <!-- //end Filters -->
                 <!--changed listings-->
-                @foreach ($products as $item)
                 <div class="products-list row nopadding-xs so-filter-gird grid">
+                    @foreach ($products as $item)
                     <div class="product-layout col-lg-3 col-md-4 col-sm-4 col-xxs-6 col-xs-12"> 
                         <div class="product-item-container">
                             <div class="left-block left-b">
-                                <div class="product-card__gallery product-card__left">
+                                {{-- <div class="product-card__gallery product-card__left">
                                     <div class="item-img thumb-active" data-src="image/catalog/demo/product/electronic/600x600/3-1.jpg"><img src="image/catalog/demo/product/electronic/90x90/3-1.jpg" alt="image"></div>
                                     <div class="item-img" data-src="image/catalog/demo/product/electronic/600x600/3-2.jpg"><img src="image/catalog/demo/product/electronic/90x90/3-2.jpg" alt="image"></div>
                                     <div class="item-img" data-src="image/catalog/demo/product/electronic/600x600/3.jpg"><img src="image/catalog/demo/product/electronic/90x90/3.jpg" alt="image"></div>
-                                </div>
+                                </div> --}}
                                 <div class="product-image-container">
                                     <a href="product.html" target="_self" title="Drutick lanaeger">
                                         <img src="{{ asset('uploads/frontend/image/product/' . $item->products->main_image) }}" class="img-1 img-responsive" alt="imageee"> 
@@ -493,8 +492,8 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
                 <!--// End Changed listings-->
                 <!-- Filters -->
                 <div class="product-filter product-filter-bottom filters-panel">

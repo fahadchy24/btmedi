@@ -58,6 +58,21 @@
                                         <textarea title="Enter Product Full Description" class="form-control" id="summary-ckeditor2" name="full_description" required></textarea>
                                     </div>
                                 </div>
+                                <div class="col-md-12 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="specification">Specifications</label>
+                                        <textarea title="Enter Product Specification" class="form-control" id="summary-ckeditor3" name="specification"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="docs">Docs</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFileLang" name="docs" accept="application/pdf">
+                                            <label class="custom-file-label" for="customFileLang">Select a docs</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -635,6 +650,10 @@ $(document).ready(function(){
 </script>
 <script>
     CKEDITOR.replace('summary-ckeditor2');
+
+</script>
+<script>
+    CKEDITOR.replace('summary-ckeditor3');
 
 </script>
 

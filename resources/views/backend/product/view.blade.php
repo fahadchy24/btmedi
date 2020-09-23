@@ -593,10 +593,10 @@
                     <!-- Card body -->
                     <div class="card-body">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFileLang" name="main_image" onchange="readURL(this);" required>
-                            <label class="custom-file-label" for="customFileLang">Select a image</label>
+                            {{-- <input type="file" class="custom-file-input" id="customFileLang" name="main_image" onchange="readURL(this);" required>
+                            <label class="custom-file-label" for="customFileLang">Select a image</label> --}}
                             <div class="mt-2" style=" display: flex;">
-                                <img src="#" id="main_image" alt="" style="margin-left:50px;">
+                                <img src="{{ url($product->main_image) }}" id="main_image" alt="" height="200" width="200">
                             </div>
                         </div>
                     </div>
@@ -609,9 +609,10 @@
                     <!-- Card body -->
                     <div class="card-body">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFileLang" name="product_images[]" multiple>
-                            <label class="custom-file-label" for="customFileLang">Select a image</label>
-
+                            @foreach($product->allImages as $row)
+                            <img src="{{ asset($row->product_image) }}" id="main_image" alt="" height="20" width="20">
+                            @endforeach
+                            {{-- <img src="{{ $product->allImages->product_image }}" id="main_image" alt="" height="20" width="20"> --}}
                         </div>
                     </div>
                 </div>

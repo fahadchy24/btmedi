@@ -34,7 +34,7 @@ class Product extends Model
     }
 
     protected $fillable = [
-        'mpn','brand_id', 'product_tags' , 'product_name', 'short_description',  'full_description', 'manufactory', 'unit_per_cost', 'cost', 'regular_price', 'sale_price', 'sale_price_start_date', 'sale_price_end_date', 'sku',  'stock_quantity', 'backorders', 'low_stock_thershold', 'weight', 'length', 'width',  'height', 'shipping_class', 'quantity_limit', 'min_quantity', 'max_quantity' , 'main_image', 'is_featured', 'status', 'internal_remark', 'wholesale_price', 'wholesale_percent', 'retail_price', 'retail_percent', 'medical_price', 'medical_percent', 'school_price', 'school_percent', 'government_price', 'government_percent', 'nonprofit_price', 'nonprofit_percent'
+        'mpn', 'brand_id', 'product_tags' , 'product_name', 'short_description',  'full_description', 'specification', 'docs', 'manufactory', 'unit_per_cost', 'cost', 'regular_price', 'sale_price', 'sale_price_start_date', 'sale_price_end_date', 'sku',  'stock_quantity', 'backorders', 'low_stock_thershold', 'weight', 'length', 'width',  'height', 'shipping_class', 'quantity_limit', 'min_quantity', 'max_quantity' , 'main_image', 'is_featured', 'status', 'internal_remark', 'wholesale_price', 'wholesale_percent', 'retail_price', 'retail_percent', 'medical_price', 'medical_percent', 'school_price', 'school_percent', 'government_price', 'government_percent', 'nonprofit_price', 'nonprofit_percent'
     ];
 
     // protected $casts = [

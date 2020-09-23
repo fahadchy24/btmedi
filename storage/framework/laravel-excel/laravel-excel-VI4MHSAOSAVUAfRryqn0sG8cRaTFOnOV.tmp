@@ -1,0 +1,1186 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Sep 22, 2020 at 08:05 AM
+-- Server version: 5.6.49-cll-lve
+-- PHP Version: 7.3.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `pc_medi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstName` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastName` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `categories_access` tinyint(4) NOT NULL,
+  `products_access` tinyint(4) NOT NULL,
+  `orders_access` tinyint(4) NOT NULL,
+  `users_access` tinyint(4) NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `type`, `firstName`, `lastName`, `username`, `email`, `mobile`, `image`, `categories_access`, `products_access`, `orders_access`, `users_access`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Super Admin', 'Mr.', 'Admin', 'admin', 'admin@gmail.com', NULL, NULL, 1, 1, 1, 1, '$2y$10$uhbbhSEEVdo5shJ/wvByiuTeDh78a6mayZ4UlahLD/AUeFhZ2yfoW', 'NNXW8ztMwPgla8n66MPJwgdzs66JGKe2V6R800aTINI0ezmqfkDGHn9vxDR2', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ad_banners`
+--
+
+CREATE TABLE `ad_banners` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `first_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `second_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ad_banners`
+--
+
+INSERT INTO `ad_banners` (`id`, `first_image`, `second_image`, `status`, `created_at`, `updated_at`) VALUES
+(1, '1.jpg', '2.jpg', 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attributes`
+--
+
+CREATE TABLE `attributes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `color` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `size` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `other` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brands`
+--
+
+CREATE TABLE `brands` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`id`, `title`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'LG', '', 1, NULL, '2020-08-10 03:54:22'),
+(3, 'Php projects2', '1595974946catagory2.jpg', 1, '2020-07-28 06:08:51', '2020-07-28 12:25:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `call_logs`
+--
+
+CREATE TABLE `call_logs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `first_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `company` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address_1` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `postcode` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fax` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `issue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `solution` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `userType` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_by` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_description` text COLLATE utf8mb4_unicode_ci,
+  `thumbnail_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cover_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `priority` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `category_name`, `category_url`, `category_description`, `thumbnail_image`, `cover_image`, `priority`, `status`, `created_at`, `updated_at`) VALUES
+(9, 'PERSONAL CARE', 'personal-care', NULL, '1600265124160000562310.jpg', '1600434840Banner-2.jpg', 1, 1, '2020-09-16 21:05:24', '2020-09-18 20:14:00'),
+(11, 'SMARTPHONE CARE', 'smartphone-care', NULL, '1600265241160000562310.jpg', '1600265241160000562310.jpg', 3, 1, '2020-09-16 21:07:21', '2020-09-16 21:07:21'),
+(12, 'TV CARE', 'tv-caretv-care', NULL, '16002652692.jpg', '16002652692.jpg', 4, 1, '2020-09-16 21:07:49', '2020-09-16 21:07:49'),
+(13, 'OTHERS', 'others', NULL, '1600265328160000562310.jpg', '1600265328160000562310.jpg', 5, 1, '2020-09-16 21:08:48', '2020-09-16 21:08:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_categories`
+--
+
+CREATE TABLE `child_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `childcategory_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `childcategory_url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `childcategory_description` text COLLATE utf8mb4_unicode_ci,
+  `cover_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coupons`
+--
+
+CREATE TABLE `coupons` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `coupon_code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coupon_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coupon_amount` int(11) NOT NULL,
+  `expiry_date` date NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `general_settings`
+--
+
+CREATE TABLE `general_settings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `logo` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `top_header` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `popup_banner` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner_status` tinyint(2) DEFAULT NULL,
+  `street` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_one` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_two` text COLLATE utf8mb4_unicode_ci,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website_footer` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `general_settings`
+--
+
+INSERT INTO `general_settings` (`id`, `logo`, `top_header`, `popup_banner`, `banner_status`, `street`, `phone_one`, `phone_two`, `email`, `website_footer`) VALUES
+(1, 'logo.png', 'Same Day Shipping! Same Day Shipping! Same Day Shipping! Same Day Shipping!', '', NULL, 'No 40 Baria Sreet 133/2 California, United States', '(+0123456789)', '(+0123456789)', 'support@btmedisupply.com', 'Copyright © 2020 BTMediSupply.com. All Rights Reserved. All brand names and trademarks are for descriptive purposes only and are properties of their respective owners');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guestusers`
+--
+
+CREATE TABLE `guestusers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `last_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fax` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address_1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address_2` text COLLATE utf8mb4_unicode_ci,
+  `company` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'United States of America',
+  `state` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `postcode` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `taxable` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tax_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `guestusers`
+--
+
+INSERT INTO `guestusers` (`id`, `last_name`, `first_name`, `email`, `phone`, `fax`, `address_1`, `address_2`, `company`, `country`, `state`, `city`, `postcode`, `taxable`, `tax_id`, `note`, `created_at`, `updated_at`) VALUES
+(1, 'Mcdowell', 'Alea', 'tasodysu@mailinator.com', '+1 (468) 943-1105', '+1 (168) 647-8716', '256 Rocky First Road', 'Deleniti nemo volupt', 'Mclean and Shepard Plc', 'United States of America', 'New York', 'Quaerat voluptas vol', 'Sit dolor amet con', NULL, NULL, NULL, '2020-09-14 11:50:42', '2020-09-14 11:50:42'),
+(2, 'Tse', 'Benny', 'mdrana.rasel@gmail.com', '11111111111111', NULL, 'Manda\r\nShatihat', NULL, NULL, 'United States of America', 'New York', 'New York', '7200', '1', NULL, NULL, '2020-09-16 21:00:51', '2020-09-16 21:00:51'),
+(4, 'Uddin', 'Salah', 'rahulrahi166@gmail.com', '01747825335', NULL, 'Dorjipara, Raynagar', NULL, 'Graduate place', 'United States of America', 'Bridgend', 'Sylhet', '3100', NULL, NULL, NULL, '2020-09-16 23:09:40', '2020-09-16 23:09:40'),
+(8, 'Chowdhury', 'Rokib Ahmed', 'rokibchowdhury48@gmail.com', '01742280358', NULL, 'Road no. 3 East Chowkidekhisdas', NULL, NULL, 'United States of America', 'Aberdeenshire', 'Sylhet', '3100', NULL, NULL, NULL, '2020-09-16 23:14:41', '2020-09-16 23:14:41'),
+(11, 'Bradford', 'Chester', 'qimahula@mailinator.com', '+1 (657) 489-6667', NULL, '964 West Fabien Drive', NULL, 'Callahan Ingram Plc', 'United State America', 'Aut et fugit hic ni', 'Maiores laboriosam', 'Irure et labore simi', NULL, NULL, NULL, '2020-09-21 15:57:05', '2020-09-21 15:57:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menus`
+--
+
+CREATE TABLE `menus` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `menus`
+--
+
+INSERT INTO `menus` (`id`, `name`, `url`) VALUES
+(9, 'PERSONAL CARE', 'personal_care'),
+(11, 'SMARTPHONE CARE', 'smartphone-care'),
+(12, 'TV CARE', 'tv-care'),
+(13, 'OTHERS', 'others');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(39, '2020_08_12_202820_create_vendors_table.php\r\n', 0),
+(40, '2020_07_15_222542_create_orders_table', 17),
+(80, '2014_10_12_100000_create_password_resets_table', 18),
+(81, '2019_08_19_000000_create_failed_jobs_table', 18),
+(82, '2020_06_16_154850_create_admins_table', 18),
+(83, '2020_06_16_162358_create_categories_table', 18),
+(84, '2020_06_21_134854_create_general_settings_table', 18),
+(85, '2020_06_27_141803_create_menus_table', 18),
+(86, '2020_06_28_223844_create_sub_categories_table', 18),
+(87, '2020_06_28_225341_create_child_categories_table', 18),
+(88, '2020_06_28_230241_create_products_table', 18),
+(89, '2020_07_02_110859_create_attributes_table', 18),
+(90, '2020_07_03_230735_create_product_images_table', 18),
+(91, '2020_07_03_230909_create_product_attributes_table', 18),
+(92, '2020_07_03_230931_create_sliders_table', 18),
+(93, '2020_07_03_234432_create_brands_table', 18),
+(94, '2020_07_04_221212_create_category_product_table', 18),
+(95, '2020_07_05_220640_create_product_categories_table', 18),
+(96, '2020_07_08_115700_create_other_pages_table', 18),
+(97, '2020_07_10_193644_create_sociallinks_table', 18),
+(98, '2020_07_12_151132_create_subscribers_table', 18),
+(99, '2020_07_12_203356_create_ad_banners_table', 18),
+(100, '2020_07_15_101158_create_wishlists_table', 18),
+(101, '2020_08_12_202820_create_vendors_table', 18),
+(102, '2020_08_14_235014_create_product_receives_table', 18),
+(103, '2020_08_26_203822_create_orders_table', 18),
+(104, '2020_08_27_213702_create_guestusers_table', 18),
+(105, '2020_08_29_222825_create_r_m_a_s_table', 18),
+(106, '2020_08_31_103622_create_call_logs_table', 18),
+(108, '2020_09_10_225547_create_coupons_table', 19),
+(109, '2014_10_12_000000_create_users_table', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `guest_id` int(11) DEFAULT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `order_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `invoice_number` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Pending',
+  `payment_method` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Cash',
+  `transaction_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Pending',
+  `userType` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'General',
+  `sub_total` decimal(10,2) DEFAULT NULL,
+  `discount` decimal(10,2) DEFAULT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `tax` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `shipping_fee` decimal(10,2) DEFAULT NULL,
+  `billing_id` int(11) DEFAULT NULL,
+  `shipping_id` int(11) DEFAULT NULL,
+  `isDifferentShipping` tinyint(4) NOT NULL DEFAULT '0',
+  `remark` text COLLATE utf8mb4_unicode_ci,
+  `internal_remark` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `guest_id`, `product_id`, `quantity`, `order_date`, `invoice_number`, `payment`, `payment_method`, `transaction_id`, `status`, `userType`, `sub_total`, `discount`, `total`, `tax`, `shipping_fee`, `billing_id`, `shipping_id`, `isDifferentShipping`, `remark`, `internal_remark`, `created_at`, `updated_at`) VALUES
+(1, NULL, 1, 4, 1, NULL, '#2P778337533', 'Pending', 'Cash', NULL, 'Pending', 'Guest', 973.00, NULL, 973.00, 0.00, NULL, NULL, NULL, 0, NULL, NULL, '2020-09-14 11:50:42', '2020-09-14 11:50:42'),
+(2, NULL, 8, 4, 1, NULL, '#81S78765479', 'Pending', 'Cash', NULL, 'Pending', 'Guest', 973.00, NULL, 973.00, 0.00, NULL, NULL, NULL, 0, NULL, NULL, '2020-09-16 23:14:41', '2020-09-16 23:14:41'),
+(3, NULL, 11, 4, 1, NULL, '#537N0647958', 'Pending', 'Cash', NULL, 'Pending', 'Guest', 973.00, NULL, 973.00, 0.00, NULL, NULL, NULL, 0, NULL, NULL, '2020-09-21 15:57:05', '2020-09-21 15:57:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `other_pages`
+--
+
+CREATE TABLE `other_pages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `meta_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `page_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_content` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `other_pages`
+--
+
+INSERT INTO `other_pages` (`id`, `meta_title`, `meta_description`, `page_type`, `page_url`, `page_content`, `status`) VALUES
+(1, 'About BT Medi', NULL, 'About Page', 'about-us', '<p><a href=\"https://google.com/\" target=\"_blank\"><img alt=\"\" src=\"https://btmedisupply.com/wp-content/uploads/2020/04/2-1.jpg\" style=\"float:right; height:50px; width:75px\" /></a></p>\r\n\r\n<p>Qu', 1),
+(2, 'Terms Of Service', NULL, 'Basic Page', 'term-of-service', '<p>Et id non laboris te.</p>', 1),
+(3, 'Shipping & Returnss', NULL, 'Basic Page', 'shipping-and-return', '<p>Deleniti asperiores .</p>', 1),
+(4, 'Privacy Policy', NULL, 'Basic Page', 'privacy-policy', '<p>Quia neque maxime de.</p>', 1),
+(5, 'Do Not Sell My Personal Information', NULL, 'Basic Page', 'copyright', '<p>Cillum eos, proident.</p>', 1),
+(6, 'Warning California Prop 65', NULL, 'Basic Page', 'warning-california', '<p>Aute laborum. Perfer.</p>', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `mpn` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `brand_id` int(11) DEFAULT NULL,
+  `product_tags` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `full_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `manufactory` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit_per_cost` int(11) NOT NULL,
+  `cost` int(11) NOT NULL,
+  `regular_price` decimal(8,2) NOT NULL,
+  `sale_price` decimal(8,2) DEFAULT NULL,
+  `sale_price_start_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sale_price_end_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sku` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stock_quantity` int(11) NOT NULL,
+  `backorders` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `low_stock_thershold` int(11) DEFAULT NULL,
+  `weight` int(11) DEFAULT NULL,
+  `length` int(11) DEFAULT NULL,
+  `width` int(11) DEFAULT NULL,
+  `height` int(11) DEFAULT NULL,
+  `shipping_class` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `quantity_limit` tinyint(2) DEFAULT NULL,
+  `min_quantity` int(11) DEFAULT NULL,
+  `max_quantity` int(11) DEFAULT NULL,
+  `main_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_featured` tinyint(2) DEFAULT NULL,
+  `internal_remark` text COLLATE utf8mb4_unicode_ci,
+  `wholesale_price` int(11) DEFAULT NULL,
+  `wholesale_percent` int(11) DEFAULT NULL,
+  `retail_price` int(11) DEFAULT NULL,
+  `retail_percent` int(11) DEFAULT NULL,
+  `medical_price` int(11) DEFAULT NULL,
+  `medical_percent` int(11) DEFAULT NULL,
+  `school_price` int(11) DEFAULT NULL,
+  `school_percent` int(11) DEFAULT NULL,
+  `government_price` int(11) DEFAULT NULL,
+  `government_percent` int(11) DEFAULT NULL,
+  `nonprofit_price` int(11) DEFAULT NULL,
+  `nonprofit_percent` int(11) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `mpn`, `brand_id`, `product_tags`, `product_name`, `short_description`, `full_description`, `manufactory`, `unit_per_cost`, `cost`, `regular_price`, `sale_price`, `sale_price_start_date`, `sale_price_end_date`, `sku`, `stock_quantity`, `backorders`, `low_stock_thershold`, `weight`, `length`, `width`, `height`, `shipping_class`, `quantity_limit`, `min_quantity`, `max_quantity`, `main_image`, `is_featured`, `internal_remark`, `wholesale_price`, `wholesale_percent`, `retail_price`, `retail_percent`, `medical_price`, `medical_percent`, `school_price`, `school_percent`, `government_price`, `government_percent`, `nonprofit_price`, `nonprofit_percent`, `status`, `created_at`, `updated_at`) VALUES
+(4, '61', NULL, 'Quo eiusmod ex quam', 'Nora Hansen', '<p>Ex minima voluptates.</p>', '<p>Consequat. Exercitat.</p>', '14', 89, 8, 221.00, 973.00, '1984-01-01', '2015-10-19', '#6689J889265', 8, 'Disallow', 38, 369, 20, 49, 92, 'class3', 1, 159, 291, '160000562310.jpg', 1, 'Provident tempor qu', 378, 78, 611, 60, 274, 91, 342, 44, 238, 64, 747, 22, 1, '2020-09-13 08:00:23', '2020-09-13 08:01:35'),
+(5, '32', NULL, 'Praesentium nisi rei', 'Keelie Moore', '<p>Laboriosam, est odio.</p>', '<p>Impedit, dolores dol.</p>', '78', 89, 64, 874.00, 795.00, '2000-11-24', '2017-02-28', '#23L52332959', 441, 'Allow', 90, 890, 83, 17, 34, 'class3', NULL, 642, 740, '16000056499.jpg', 1, 'Elit excepteur in u', 229, 58, 337, 5, 755, 2, 434, 66, 883, 44, 955, 4, 1, '2020-09-13 08:00:49', '2020-09-13 08:01:36'),
+(6, '1', 1, NULL, 'Adult Face Mask 3D Design Material: Air layer Stretch fabric', '<ul>\r\n	<li>\r\n	<p><strong>Packing : Individually Packed</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Selling Unit: Quantity in 20/50/100/200/300/500/1000 PCs</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Material: Air layer stretch thinner fabric for easy breathing</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Color: Black</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Adult Size Approx : 30cm x 13cm</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Made in China</strong></p>\r\n	</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>', '<p><strong>Adult Size Fashion Face Mask</strong></p>\r\n\r\n<p><strong>Material: Air layer Stretch fabric</strong></p>\r\n\r\n<p><strong>Color: Black</strong></p>\r\n\r\n<p><strong>Feature:&nbsp;Comfortable Fit, Skin-friendly, Breathable</strong></p>\r\n\r\n<p><strong>** Thinner material for easy breathing**</strong></p>\r\n\r\n<p><strong>Gender: Unisex</strong></p>\r\n\r\n<p><strong>Adult Size Approx: 30 x 13cm </strong></p>\r\n\r\n<p><strong>Color: Black </strong></p>\r\n\r\n<p><strong>**Please wash it before use. Please note that this mask is for household use only, it&#39;s not for medical use.**</strong></p>\r\n\r\n<p><strong>For hygiene purpose, there will be no return for this item. Kindly check the description details before you place order.</strong></p>', '0', 46, 45, 49.00, 48.00, '2020-09-16', '2020-10-30', '#5J345778675', 15, 'Allow', NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, 10, '1600265915abcadult.jpg', 1, 'no need', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2020-09-16 21:18:35', '2020-09-18 20:22:20'),
+(7, '4424', 3, 'Mask, Facemask', 'Individually Wrapped Face Mask Disposable 3 PLY (10/20/50/100PCs Per Pack)', '<ul>\r\n	<li>\r\n	<p><strong>*Packing: 10/20/50/100 PCs Per Pack</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>*Selling Unit: Per Package</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>*Individually Wrapped</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>*Material: Non Woven</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>*Grade: Non-Medical</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>*Size for Mask Approx : 17.3 cm x 9.3 cm</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>*Color: Blue</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>*Made in China</strong></p>\r\n	</li>\r\n</ul>', '<ul>\r\n	<li>\r\n	<p><strong>READY TO GO: Each mask in is individually wrapped so they are perfect to throw in your purse, backpack, gym bag, or even stash in your pocket.</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>LIGHT &amp; BREATHABLE: Designed for the utmost in comfort, these masks are painless and adjustable. They offer full coverage of the nose and mouth.</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>3 PROTECTIVE LAYERS: The innermost layer is super soft and gentle on the skin, and the out leak-proof layer covers the high-density filter. Made with non-woven materials, latex-free.</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>MULTI-USE MASK: Designed for non-medical use, they are the equivalent of surgical and procedural masks. They can be used by painters and construction workers to filter dust, pollen, and other irritants.</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>EFFECTIVE FILTRATION: Effective at filtering many types of particles. Perfect for everyday wear.</strong></p>\r\n	</li>\r\n	<li>\r\n	<p><strong>Non-Medical Use Only.</strong></p>\r\n	</li>\r\n</ul>', '120', 20, 10, 10.00, 5.00, NULL, NULL, '#0491326Y560', 20, 'Allow', 2, NULL, NULL, NULL, NULL, NULL, NULL, 2, 1, '160043365830.jpg', 1, '25641', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2020-09-18 19:54:18', '2020-09-18 20:22:25'),
+(8, '123', 3, 'PPE', '5 Pack Disposable Isolation Gown, FDA Registered, CE Certified Level 2 PP 25g, (L Size)', '<p>Breathable Design: The CE certified Level 2 PP 25g protection gown is strong enough for tough duties while still being comfortably breathable and flexible.</p>\r\n\r\n<p>Practical Design: The gown features fully closed, double tie backs, with knitted cuffs easily can be worn with gloves to provide protection.</p>\r\n\r\n<p>Fine Design: The gown is made from lightweight, non-woven materials that ensures fluid resistance.</p>\r\n\r\n<p>Proper Size Design: The gown is designed to fit men and women of all sizes while providing comfort and flexibility.</p>\r\n\r\n<p>Double Tie Design: The gown features the dual ties at the back of the waist and neck which creates a comfortable and secure fit.</p>', '<p>Fully Closed Double Tie Back, Knitted Cuffs</p>\r\n\r\n<p>Full-length Blue Disposable Isolation Gown for maximum coverage.</p>\r\n\r\n<p>FDA registered and CE certified level 2 isolation gowns.</p>\r\n\r\n<p>This Disposable isolation gown offers economical, comfortable, and reliable protection.</p>\r\n\r\n<p>Sewn seams provide superior strength. Extra length on waist ties allows the gown to be easily secured in front. Elastic cuffs.</p>\r\n\r\n<p>They are non-woven fabrics and Latex-free.&nbsp;</p>', '1', 45, 25, 82.00, NULL, NULL, NULL, '#7372188993A', 20, 'Allow', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '16004350953L.jpg', 1, '32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2020-09-18 20:18:16', '2020-09-18 20:22:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_attributes`
+--
+
+CREATE TABLE `product_attributes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `label` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stock` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_categories`
+--
+
+CREATE TABLE `product_categories` (
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_categories`
+--
+
+INSERT INTO `product_categories` (`product_id`, `category_id`) VALUES
+(6, 9),
+(7, 9),
+(8, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_images`
+--
+
+CREATE TABLE `product_images` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_images`
+--
+
+INSERT INTO `product_images` (`id`, `product_id`, `product_image`, `created_at`, `updated_at`) VALUES
+(1, 6, '1600265915s-l500.jpg', '2020-09-16 21:18:35', '2020-09-16 21:18:35'),
+(2, 6, '1600265915s-l1600.jpg', '2020-09-16 21:18:35', '2020-09-16 21:18:35'),
+(3, 6, '1600265915s-l1600-3.jpg', '2020-09-16 21:18:35', '2020-09-16 21:18:35'),
+(4, 6, '1600265915black (1).png', '2020-09-16 21:18:35', '2020-09-16 21:18:35'),
+(5, 6, '1600265915black.png', '2020-09-16 21:18:36', '2020-09-16 21:18:36'),
+(6, 6, '1600265916adult.png', '2020-09-16 21:18:36', '2020-09-16 21:18:36'),
+(7, 6, '1600265916s-l1600-4-1.jpg', '2020-09-16 21:18:36', '2020-09-16 21:18:36'),
+(8, 7, '160043365830.jpg', '2020-09-18 19:54:18', '2020-09-18 19:54:18'),
+(9, 8, '16004350963L.jpg', '2020-09-18 20:18:16', '2020-09-18 20:18:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_receives`
+--
+
+CREATE TABLE `product_receives` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `receive_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vendor_id` int(11) NOT NULL,
+  `tracking_number` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sku` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `cost` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `r_m_a_s`
+--
+
+CREATE TABLE `r_m_a_s` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `rma_number` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `order_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order_id` int(11) NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `issued_by` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `completed_by` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remark` text COLLATE utf8mb4_unicode_ci,
+  `restocking_fee` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tax` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `total_refund` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `r_m_a_s`
+--
+
+INSERT INTO `r_m_a_s` (`id`, `rma_number`, `order_date`, `order_id`, `email`, `issued_by`, `completed_by`, `remark`, `restocking_fee`, `note`, `tax`, `total_refund`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'RMA-000001', NULL, 796, 'admin@gmail.com', '7', NULL, 'Replacementt', NULL, 'Explicabo Nihil quo', NULL, NULL, 'Completed', '2020-08-30 10:55:58', '2020-08-30 22:00:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `priority` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `title`, `image`, `priority`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'First Slider', 'uploads/frontend/image/slider/1599998295slider1.jpg', 1, 1, NULL, NULL),
+(2, 'Second Slider', 'uploads/frontend/image/slider/1599998309slider2.jpg', 2, 1, NULL, NULL),
+(3, 'Third Slider', 'uploads/frontend/image/slider/1599998321slider3.jpg', 3, 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sociallinks`
+--
+
+CREATE TABLE `sociallinks` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `facebook` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instagram` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `twitter` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pinterest` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `f_status` tinyint(4) NOT NULL DEFAULT '1',
+  `i_status` tinyint(4) NOT NULL DEFAULT '1',
+  `t_status` tinyint(4) NOT NULL DEFAULT '1',
+  `p_status` tinyint(4) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sociallinks`
+--
+
+INSERT INTO `sociallinks` (`id`, `facebook`, `instagram`, `twitter`, `pinterest`, `f_status`, `i_status`, `t_status`, `p_status`) VALUES
+(1, 'https://www.facebook.com/', 'https://www.instagram.com/', 'https://www.twitter.com/', 'https://www.pinterest.com/', 1, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribers`
+--
+
+CREATE TABLE `subscribers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sub_categories`
+--
+
+CREATE TABLE `sub_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` int(191) NOT NULL,
+  `subcategory_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subcategory_url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subcategory_description` text COLLATE utf8mb4_unicode_ci,
+  `cover_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sub_categories`
+--
+
+INSERT INTO `sub_categories` (`id`, `category_id`, `subcategory_name`, `subcategory_url`, `subcategory_description`, `cover_image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 9, 'FACE MASK & FILTER', 'facemaskfilter', NULL, '1600433414Banner-2.jpg', 1, '2020-09-18 19:50:14', '2020-09-18 19:50:14'),
+(2, 9, 'ISOLATION GOWNS', 'isolationgowns', NULL, '1600434730Banner-2.jpg', 1, '2020-09-18 20:12:10', '2020-09-18 20:12:10'),
+(3, 9, 'SANITIZERS', 'sanitizers', NULL, '1600434761Banner-2.jpg', 1, '2020-09-18 20:12:41', '2020-09-18 20:12:41'),
+(4, 9, 'PPE PRODUCTS', 'ppeproducts', NULL, '1600434787Banner-2.jpg', 1, '2020-09-18 20:13:07', '2020-09-18 20:13:07'),
+(5, 9, 'EQUIPMENT', 'equipment', NULL, '1600434809Banner-2.jpg', 1, '2020-09-18 20:13:30', '2020-09-18 20:13:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `userType` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT 'General',
+  `first_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fax` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `company` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address_1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address_2` text COLLATE utf8mb4_unicode_ci,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `postcode` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `newsletter` tinyint(4) DEFAULT NULL,
+  `agree` tinyint(4) NOT NULL,
+  `isActive` tinyint(4) NOT NULL DEFAULT '1',
+  `storeType` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dept` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `isLive` tinyint(4) DEFAULT NULL,
+  `tax_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `founded` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `store_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sp` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `terms` text COLLATE utf8mb4_unicode_ci,
+  `note` text COLLATE utf8mb4_unicode_ci,
+  `reseller_permit_number` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `expiration_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `taxable` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `userType`, `first_name`, `last_name`, `email`, `password`, `phone`, `fax`, `company`, `address_1`, `address_2`, `country`, `state`, `city`, `postcode`, `newsletter`, `agree`, `isActive`, `storeType`, `dept`, `website`, `isLive`, `tax_id`, `founded`, `store_image`, `sp`, `price`, `active`, `active_date`, `terms`, `note`, `reseller_permit_number`, `expiration_date`, `taxable`, `email_verified_at`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'General', 'Fahad', 'Chowdhury', 'fd_chy@hotmail.com', '$2y$10$vlsKH2lj4v9jnB1Q0mjzx.dOWu72J/qzth5MPtKZBmnR6K8JbS9cy', '01718630287', NULL, NULL, '162/3 B Rongdhonu, East Chowkidekhi', NULL, 'United States of America', 'New York', 'New York', '3100', 0, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-09-13 06:59:22', '2020-09-13 06:59:22'),
+(2, 'General', 'Benny', 'Tse', 'mdrana.rasel@gmail.com', '$2y$10$vKJtERGSboJyBlwc9gMgPO31ZHntRea3.eutgO.cEFB2Cx9mrg2By', '11111111111', NULL, NULL, 'Manda', 'Shatihat', 'United States of America', 'California', 'Los Angeles', '7200', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-09-16 21:29:58', '2020-09-16 21:29:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vendors`
+--
+
+CREATE TABLE `vendors` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `vendor_id` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remark` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `vendors`
+--
+
+INSERT INTO `vendors` (`id`, `vendor_id`, `name`, `email`, `address`, `phone`, `remark`, `created_at`, `updated_at`) VALUES
+(9, 'VN-0001', 'Zena Matthewsses', 'rovebyryja@mailinator.com', 'Amet qui nemo iure', '+1 (396) 624-2572', 'Quo culpa enim mini', '2020-08-12 12:01:55', '2020-08-12 12:43:41'),
+(10, 'VN-0002', 'Fahad Ahmed Chowdhury', 'fd_chy@hotmail.com', '162/3 B Rongdhonu, East Chowkidekhi', '01718630287', 'dasdasdasd', '2020-08-12 12:16:39', '2020-08-12 12:16:39'),
+(11, 'VN-0003', 'Karina Norris', 'maqenadufa@mailinator.com', 'Expedita voluptatibu', '+1 (378) 123-5366', 'Fugit enim perferen', '2020-08-12 12:25:44', '2020-08-12 12:25:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlists`
+--
+
+CREATE TABLE `wishlists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `prodcut_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `admins_username_unique` (`username`),
+  ADD UNIQUE KEY `admins_email_unique` (`email`);
+
+--
+-- Indexes for table `ad_banners`
+--
+ALTER TABLE `ad_banners`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `attributes`
+--
+ALTER TABLE `attributes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `brands`
+--
+ALTER TABLE `brands`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `call_logs`
+--
+ALTER TABLE `call_logs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `call_logs_user_id_foreign` (`user_id`),
+  ADD KEY `call_logs_created_by_foreign` (`created_by`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `child_categories`
+--
+ALTER TABLE `child_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `coupons`
+--
+ALTER TABLE `coupons`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `general_settings`
+--
+ALTER TABLE `general_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `guestusers`
+--
+ALTER TABLE `guestusers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `guestusers_email_unique` (`email`),
+  ADD UNIQUE KEY `guestusers_phone_unique` (`phone`);
+
+--
+-- Indexes for table `menus`
+--
+ALTER TABLE `menus`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `other_pages`
+--
+ALTER TABLE `other_pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_attributes`
+--
+ALTER TABLE `product_attributes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_categories`
+--
+ALTER TABLE `product_categories`
+  ADD PRIMARY KEY (`product_id`,`category_id`),
+  ADD KEY `product_categories_category_id_foreign` (`category_id`);
+
+--
+-- Indexes for table `product_images`
+--
+ALTER TABLE `product_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_receives`
+--
+ALTER TABLE `product_receives`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `r_m_a_s`
+--
+ALTER TABLE `r_m_a_s`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sociallinks`
+--
+ALTER TABLE `sociallinks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `subscribers_email_unique` (`email`);
+
+--
+-- Indexes for table `sub_categories`
+--
+ALTER TABLE `sub_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indexes for table `vendors`
+--
+ALTER TABLE `vendors`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `vendor_id` (`vendor_id`);
+
+--
+-- Indexes for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `ad_banners`
+--
+ALTER TABLE `ad_banners`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `attributes`
+--
+ALTER TABLE `attributes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `brands`
+--
+ALTER TABLE `brands`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `call_logs`
+--
+ALTER TABLE `call_logs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `child_categories`
+--
+ALTER TABLE `child_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `coupons`
+--
+ALTER TABLE `coupons`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `general_settings`
+--
+ALTER TABLE `general_settings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `guestusers`
+--
+ALTER TABLE `guestusers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `menus`
+--
+ALTER TABLE `menus`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `other_pages`
+--
+ALTER TABLE `other_pages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `product_attributes`
+--
+ALTER TABLE `product_attributes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_images`
+--
+ALTER TABLE `product_images`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `product_receives`
+--
+ALTER TABLE `product_receives`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `r_m_a_s`
+--
+ALTER TABLE `r_m_a_s`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `sociallinks`
+--
+ALTER TABLE `sociallinks`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `subscribers`
+--
+ALTER TABLE `subscribers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sub_categories`
+--
+ALTER TABLE `sub_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vendors`
+--
+ALTER TABLE `vendors`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `call_logs`
+--
+ALTER TABLE `call_logs`
+  ADD CONSTRAINT `call_logs_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `call_logs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `product_categories`
+--
+ALTER TABLE `product_categories`
+  ADD CONSTRAINT `product_categories_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `product_categories_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

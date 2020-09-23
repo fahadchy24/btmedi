@@ -19,6 +19,6 @@ class Order extends Model
     }
 
     public function guest(){
-        return $this->belongsTo(GuestUser::class, 'guest_id');
+        return $this->belongsTo(Guestuser::class, 'guest_id');
     }
 }

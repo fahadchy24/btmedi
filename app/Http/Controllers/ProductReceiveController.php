@@ -8,6 +8,8 @@ use App\Vendor;
 use Illuminate\Http\Request;
 use Excel;
 use App\Imports\ImportInventory;
+use Maatwebsite\Excel\Excel as ExcelExcel;
+use Maatwebsite\Excel\Facades\Excel as FacadesExcel;
 
 class ProductReceiveController extends Controller
 {
@@ -42,7 +44,11 @@ class ProductReceiveController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $data = $request->all();
+
+        $success = ProductReceive::create($data);
+
+        return redirect()->back();
     }
 
     /**
@@ -101,5 +107,12 @@ class ProductReceiveController extends Controller
             );
             return redirect()->back()->with($notification);
     }
-    
+
+    // Auto Complete Product Name
+    public function getAutocompleteData(Request $request){
+        if($request->has('term')){
+            return Product::where('product_name','like','%'.$request->input('term').'%')->get();
+        }
+    }
+
 }
