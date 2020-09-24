@@ -176,21 +176,13 @@
             <h2 class="subtitle">Account</h2>
             <div class="list-group">
                 <ul class="list-item">
-                    <li><a href="login.html">Login</a>
-                    </li>
-                    <li><a href="register.html">Register</a>
-                    </li>
-                    <li><a href="register.html">Wholesale Register</a>
-                    </li>
                     <li><a href="#">Forgotten Password</a>
                     </li>
-                    <li><a href="my-account.html">My Account</a>
+                    <li><a href="#">Address Books</a>
                     </li>
-                    <li><a href="my-account.html">Address Books</a>
+                    <li><a href="{{ route('wish.list', Auth::user()->id) }}">Wish List</a>
                     </li>
-                    <li><a href="wishlist.html">Wish List</a>
-                    </li>
-                    <li><a href="order-history.html">Order History</a>
+                    <li><a href="{{ route('order.history', Auth::user()->id) }}">Order History</a>
                     </li>
                     <li><a href="return.html">Returns</a>
                     </li>

@@ -276,17 +276,15 @@
                             </div>
                             <div class="product-box-desc">
                                 <div class="inner-box-desc">
-                                    <div class="brand"><span>Brand:</span><a href="#"> SamSung</a> </div>
-                                    <div class="model"><span>Product Code:</span> 23UC97</div>
+                                    <div class="brand"><span>Brand:</span><a href="#">{{ $productdetail->brand->title }}</a> </div>
+                                    <div class="model"><span>Product Code:</span>{{ $productdetail->sku }}</div>
                                     <div class="stock"><span>Availability:</span> <i class="fa fa-check-square-o"></i>
                                         In Stock</div>
                                 </div>
                             </div>
                             <div class="short_description form-group">
                                 <h3>OverView</h3>
-                                Packing: 5 PCs Per Pack
-                                Selling Unit: Package
-                                Made in China
+                                {!! $productdetail->short_description !!}
                             </div>
                             <div id="product">
                                 <h4>Available Options</h4>
@@ -444,6 +442,12 @@
                         <div id="tab-1" class="tab-pane fade active in">
                         {!! $productdetail->full_description !!}
                         </div>
+                        <div id="tab-2" class="tab-pane fade">
+                            <a href="#">{!! $productdetail->specification !!}</a>
+                        </div>
+                        <div id="tab-3" class="tab-pane fade">
+                            {{--  <a href="#">{{  $productdetail->product_tags  }}</a>  --}}
+                        </div>
                         <div id="tab-review" class="tab-pane fade">
                             <form>
                                 <div id="review">
@@ -506,12 +510,6 @@
                                             class="btn buttonGray">Continue</a></div>
                                 </div>
                             </form>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade">
-                            <a href="#">{{  $productdetail->product_tags  }}</a>
-                        </div>
-                        <div id="tab-3" class="tab-pane fade">
-                            {{--  <a href="#">{{  $productdetail->product_tags  }}</a>  --}}
                         </div>
                     </div>
                 </div>

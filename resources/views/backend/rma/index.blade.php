@@ -2,6 +2,24 @@
 
 @section('title', 'RMA')
 
+@push('css')
+    <style>
+        .order-form{
+            position: relative;
+        }
+        .static-value{
+            position:absolute;
+            left:10px;
+            font-size:0.8em;
+            top:45px;
+
+        }
+        .order-input{
+            padding: 4px 0px 5px 40px;
+        }
+    </style>
+@endpush
+
 @section('content')
 
 <div class="header bg-primary pb-6">
@@ -36,9 +54,12 @@
                             <h3 class="mb-4">Create an RMA</h3>
                             <form action="{{ route('rma.save') }}" method="POST">
                             @csrf
-                                <div class="form-group">
+                                <div class="form-group order-form">
                                     <label class="form-control-label" for="order_id">Input a order number</label>
-                                    <input type="text" class="form-control" id="order_id" name="order_id" autocomplete="off" required>
+                                    <input type="text" class="form-control order-input" id="order_id" name="order_id" autocomplete="off" required>
+                                    <label for="order_id" class="static-value">
+                                        BT-# 
+                                    </label>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label" for="note">Reason of RMA</label>

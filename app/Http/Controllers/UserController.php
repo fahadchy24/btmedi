@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\Wishlist;
 use App\User;
 use App\Product;
@@ -29,6 +30,14 @@ class UserController extends Controller
         // $wishlists = Wishlist::with('user' , 'product')->where('user_id',$id)->get();
     	// return view('user.account', compact('user', 'order', 'wishlists' ));
     	return view('frontend.user.account', compact('user'));
+    }
+
+    // Order History
+    public function viewOrder($id)
+    {
+        $order = Order::with('product', 'user')->where('id', $id)->get();
+
+        return view('frontend.user.view_order_history', compact('order'));
     }
 
     // Show wishlisted products

@@ -29,14 +29,19 @@
             @endif
                 <fieldset id="account">
                     <legend>Your Personal Details</legend>
-                    <div class="form-group required" style="display: none;">
-                        <label class="col-sm-2 control-label">Customer Group</label>
-                        <div class="col-sm-10">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="customer_group_id" value="1" checked="checked"> Default
-                                </label>
-                            </div>
+                    <div class="form-group required">
+                        <label class="col-sm-2 control-label" for="input-country">User Type</label>
+                        <div class="col-sm-8">
+                            <select name="userType" id="input-country" class="form-control">
+                                <option value=""> --- Please Select --- </option>
+                                <option value="Wholesale">Wholesale</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Medical Industry">Medical Industry</option>
+                                <option value="School">School</option>
+                                <option value="Government">Government</option>
+                                <option value="Non-Profit">Non-Profit</option>
+                                <option value="General User">General User</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group required">

@@ -56,7 +56,7 @@
                             <tr>
                                 <td>{{$loop->index+1}}</td>
                                 <td>{{ $row->created_at->format('d M') }}</td>
-                                <td>{{ "BT-#00".$row->id }} </td>
+                                <td>{{ "BT-#".$row->id }} </td>
                                 <td>{{ $row->invoice_number }}</td>
                                 <td>{{ $row->sub_total }}</td>
                                 <td>{{ $row->tax }}</td>

@@ -35,5 +35,27 @@ class CustomerController extends Controller
             return redirect()->back()->with($notification);
         }
     }
+
+    public function destroy($id)
+    {
+        $customers = User::find($id);
+
+        $dlt = $customers->delete();
+            if ($dlt) {
+                    $notification=array(
+                     'message' => 'Customer Deleted Successfully',
+                     'alert-type' => 'success'
+                    );
+                    return redirect()->route('customer.index')->with($notification);
+                }
+            else
+                {
+                    $notification=array(
+                    'message' => 'Something Went wrong!',
+                    'alert-type' => 'danger'
+                    );
+                    return redirect()->back()->with($notification);
+                }
+    }
     
 }
