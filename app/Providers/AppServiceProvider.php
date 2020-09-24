@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*',function($settings){
             $settings->with('gs', Generalsetting::find(1));
-            $settings->with('menus', Menu::all());
+            $settings->with('menus', Menu::with('subcategory')->get());
             // $settings->with('categories', Category::with('subcategories')->get());
             $settings->with('subcategories', SubCategory::with('category')->get());
             $settings->with('footer_menus', Menu::paginate(6));

@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 /* Frontend Controller */
 Route::get('/', 'FrontendController@index')->name('home');
 
+Route::get('/test', 'FrontendController@test');
+
 /* Get Subsciber fron Frontend */
 Route::post('/subscribe','FrontendController@subscribe')->name('subscribe.submit');
 

@@ -6,6 +6,7 @@ use App\AdBanner;
 use App\GeneralSetting;
 use App\Slider;
 use App\Category;
+use App\Menu;
 use App\ProductCategory;
 use App\Product;
 use App\Subscriber;
@@ -30,6 +31,10 @@ class FrontendController extends Controller
         
         return view('frontend.index', compact('productCategory', 'sliders', 'dealProduct', 'ad_banner', 'popup_banner',
         'latestproducts', 'featuredproducts', 'bestsalers'));
+    }
+    public function test() {
+
+        return Menu::with('subcategory')->get();
     }
 
 

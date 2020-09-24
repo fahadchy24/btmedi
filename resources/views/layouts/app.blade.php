@@ -410,7 +410,7 @@
                                                                                                 <div class="menu">
                                                                                                     <ul>
                                                                                                         {{-- @if(!empty($categories['subcategories'])) --}}
-                                                                                                        @foreach($subcategories as $subcategory)
+                                                                                                        @foreach($menu->subcategory as $subcategory)
                                                                                                             <li>
                                                                                                                     <a href="#" class="main-menu">{{ $subcategory->subcategory_name}}</a>
                                                                                                                     {{-- <ul>
@@ -489,7 +489,7 @@
                                                                                             <div class="column">
                                                                                                 <div>
                                                                                                     <ul class="row-list">
-                                                                                                        @foreach($subcategories as $subcategory)
+                                                                                                        @foreach($menu->subcategory as $subcategory)
                                                                                                         <li>
                                                                                                             <a href="#" class="main-menu">
                                                                                                                 {{ $subcategory->subcategory_name}}

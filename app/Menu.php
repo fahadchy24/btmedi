@@ -10,5 +10,9 @@ class Menu extends Model
         'name', 'url'
     ];
 
+    public function subcategory(){
+        return $this->hasMany(SubCategory::class, 'category_id');
+    }
+
     public $timestamps = false;
 }
