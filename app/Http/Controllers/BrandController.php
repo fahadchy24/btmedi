@@ -68,9 +68,10 @@ class BrandController extends Controller
                 $imageName = time().$image->getClientOriginalName();
                 $imagePath = 'uploads/frontend/image/brand/'. $imageName;
                 Image::make($image)->resize(210, 270)->save($imagePath);
+                
+                $brand->image = $imageName;
             }
         }
-        $brand->image = $imageName;
 
         $success = $brand->save();
         if ($success) {

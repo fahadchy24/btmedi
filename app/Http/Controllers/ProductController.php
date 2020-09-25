@@ -54,20 +54,19 @@ class ProductController extends Controller
             $main_image = $request->file('main_image');
             if ($main_image->isValid()){
                 $imageName = time().$main_image->getClientOriginalName();
-                $imagePath = base_path('uploads/frontend/image/product/'). $imageName;
+                $imagePath = 'uploads/frontend/image/product/'. $imageName;
                 Image::make($main_image)->resize(451, 451)->save($imagePath);
             }
         }
-        $data['main_image'] = $imagePath;
+        $data['main_image'] = $imageName;
 
         if ($request->hasFile('docs')) {
             $docs = $request->file('docs');
             $docsName = time().'.'.$docs->getClientOriginalExtension();
-            // $docsPath = base_path('uploads/frontend/image/product/docs/'). $docsName;
-            $docsPath = $docs->move(base_path('uploads/frontend/image/product/docs/'),$docsName);
+            // $docsPath = 'uploads/frontend/image/product/docs/'.$docsName;
+            $docs->move('uploads/frontend/image/product/docs/').$docsName;
 
-            // $image->move(public_path('frontend/images/product/'),$img);
-            $data['docs'] = $docsPath;
+            $data['docs'] = $docsName;
         }
 
         // Custom SKU
@@ -91,8 +90,7 @@ class ProductController extends Controller
                 $altImage = new ProductImages;
                 Image::make($images);
                 $name = time().$images->getClientOriginalName();
-                $path = base_path('uploads/frontend/image/product/alternative/'). $name;
-
+                $path = 'uploads/frontend/image/product/alternative/'.$name;
                 Image::make($images)->resize(451, 451)->save($path);
 
                 $altImage->product_id = $product->id;

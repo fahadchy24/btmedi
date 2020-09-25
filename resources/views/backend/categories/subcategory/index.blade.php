@@ -1,6 +1,6 @@
 @extends('layouts.admin_app')
 
-@section('title', 'Catagories | SubCategory')
+@section('title', 'SubCategory')
 
 @section('content')
 <div class="header bg-primary pb-6">
@@ -51,6 +51,10 @@
                                 <option value="{{$row->id}}">{{$row->category_name}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="thumbnail_image">SubCategory Cover Image &nbsp;<small>(Default size:1350x500px)</small></label>
+                            <input type="file" class="form-control" name="thumbnail_image" accept="image/*" required>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label" for="Category_Image2">SubCategory Cover Image &nbsp;<small>(Default size:1350x500px)</small></label>

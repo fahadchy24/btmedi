@@ -1,6 +1,6 @@
 @extends('layouts.admin_app')
 
-@section('title', 'Product | Category')
+@section('title', 'Edit SubCategory')
 
 @section('content')
 <div class="header bg-primary pb-6">
@@ -11,8 +11,7 @@
                     <h6 class="h2 text-white d-inline-block mb-0">Product</h6>
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Category</li>
+                            <li class="breadcrumb-item"><a href="{{ route('sub.category') }}">SubCategory</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -29,49 +28,45 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header">
-                    <h3 class="mb-0">Edit Catagory</h3>
+                    <h3 class="mb-0">Edit SubCatagory</h3>
                 </div>
                 <!-- Card body -->
                 <div class="card-body">
-                    <form action="{{ route('update-category-product', $editCategory->id) }}" role="form" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('update-subcategory', $editSubCategory->id) }}" role="form" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Category Name*</label>
-                            <input type="text" class="form-control" name="category_name" value="{{ $editCategory->category_name }}">
+                            <label for="exampleInputEmail1">SubCategory Name*</label>
+                            <input type="text" class="form-control" name="subcategory_name" value="{{ $editSubCategory->subcategory_name }}">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">URL</label>
-                            <input type="text" class="form-control" name="category_url" value="{{ $editCategory->category_url }}">
+                            <input type="text" class="form-control" name="subcategory_url" value="{{ $editSubCategory->subcategory_url }}">
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label class="form-control-label" for="Category_Thumbnail_Image">Category Thumbnail Image &nbsp;<small>(Default size:210x270px)</small></label>
+                                <label class="form-control-label" for="SubCategory_Thumbnail_Image">SubCategory Thumbnail Image &nbsp;<small>(Default size:210x270px)</small></label>
                                 <input type="file" name="thumbnail_image" accept="image/*">
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/frontend/image/product-category/thumbnail/'.$editCategory->thumbnail_image) }}" style="width:200;height:150px;">
-                                <input type="hidden" name="old_thumbnail" value="{{$editCategory->thumbnail_image}}">
+                                <img src="{{asset('uploads/frontend/image/subcategory/thumbnail/'.$editSubCategory->thumbnail_image) }}" style="width:200;height:150px;">
+                                <input type="hidden" name="old_thumbnail" value="{{$editSubCategory->thumbnail_image}}">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label class="form-control-label" for="Category_Cover_Image">Category Cover Image &nbsp;<small>(Default size:210x270px)</small></label>
+                                <label class="form-control-label" for="Category_Cover_Image">SubCategory Cover Image &nbsp;<small>(Default size:210x270px)</small></label>
                                 <input type="file" name="cover_image" accept="image/*">
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/frontend/image/product-category/cover/'.$editCategory->cover_image) }}" style="width:200px;height:150px;">
-                                <input type="hidden" name="old_cover" value="{{$editCategory->cover_image}}">
+                                <img src="{{asset('uploads/frontend/image/subcategory/cover/'.$editSubCategory->cover_image) }}" style="width:200px;height:150px;">
+                                <input type="hidden" name="old_cover" value="{{$editSubCategory->cover_image}}">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Priority*</label>
-                            <input type="text" class="form-control" name="priority" value="{{$editCategory->priority}}">
-                        </div>
                         <div class="custom-control custom-checkbox mb-3">
-                            <input class="custom-control-input checked" id="customCheck1" type="checkbox" name="status" value="1" @if($editCategory->status ==1) checked @endif>
+                            <input class="custom-control-input checked" id="customCheck1" type="checkbox" name="status" value="1" @if($editSubCategory->status ==1) checked @endif>
                             <label class="custom-control-label" for="customCheck1">Active</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>

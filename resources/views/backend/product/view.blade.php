@@ -596,7 +596,7 @@
                             {{-- <input type="file" class="custom-file-input" id="customFileLang" name="main_image" onchange="readURL(this);" required>
                             <label class="custom-file-label" for="customFileLang">Select a image</label> --}}
                             <div class="mt-2" style=" display: flex;">
-                                <img src="{{ url($product->main_image) }}" id="main_image" alt="" height="200" width="200">
+                                <img src="{{asset('uploads/frontend/image/product/'.$product->main_image) }}" id="main_image" alt="" height="200" width="200">
                             </div>
                         </div>
                     </div>
@@ -610,7 +610,7 @@
                     <div class="card-body">
                         <div class="custom-file">
                             @foreach($product->allImages as $row)
-                            <img src="{{ asset($row->product_image) }}" id="main_image" alt="" height="20" width="20">
+                            <img src="{{asset('uploads/frontend/image/product/alternative/'.$row->product_image) }}" id="main_image" alt="" height="20" width="20">
                             @endforeach
                             {{-- <img src="{{ $product->allImages->product_image }}" id="main_image" alt="" height="20" width="20"> --}}
                         </div>
