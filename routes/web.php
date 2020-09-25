@@ -232,7 +232,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('user/logout', 'Auth\LoginController@logout')->name('user.logout');
 Route::match(['get', 'post'], 'my-account/{id}', 'UserController@account')->name('my.account');
 // Route::post('/update-userinfo', 'UserController@updateUserInfo');
-// Route::get('order/view/{id}', 'UserController@viewOrder');
+Route::get('order/view/{id}', 'UserController@viewOrder')->name('order.history');
 // Route::post('order-again', 'UserController@orderAgain');
 
 // // Wishlist
