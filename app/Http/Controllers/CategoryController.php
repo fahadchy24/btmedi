@@ -167,7 +167,7 @@ class CategoryController extends Controller
     {
         $categoryDelete = Category::find($id);
         if (!is_null($categoryDelete)) {
-            if (File::exists('uploads/frontend/image/ategory/thumbnail/'.$categoryDelete->thumbnail_image)) {
+            if (File::exists('uploads/frontend/image/category/thumbnail/'.$categoryDelete->thumbnail_image)) {
                 File::delete('uploads/frontend/image/category/thumbnail/'.$categoryDelete->thumbnail_image);
             }
             if (File::exists('uploads/frontend/image/category/cover/'.$categoryDelete->cover_image)) {

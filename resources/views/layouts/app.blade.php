@@ -412,7 +412,7 @@
                                                                                                         {{-- @if(!empty($categories['subcategories'])) --}}
                                                                                                         @foreach($menu->subcategory as $subcategory)
                                                                                                             <li>
-                                                                                                                    <a href="#" class="main-menu">{{ $subcategory->subcategory_name}}</a>
+                                                                                                                    <a href="{{ $subcategory->subcategory_url}}" class="main-menu">{{ $subcategory->subcategory_name}}</a>
                                                                                                                     {{-- <ul>
                                                                                                                         <li><a href="#">Blouses & Shirts</a></li>
                                                                                                                         <li><a href="#">Suits & Sets</a></li>

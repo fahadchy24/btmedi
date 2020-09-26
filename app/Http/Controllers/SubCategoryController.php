@@ -26,6 +26,7 @@ class SubCategoryController extends Controller
             $rules = [
                 'subcategory_name' => 'unique:sub_categories|string',
                 'subcategory_url' => 'unique:sub_categories|string',
+                'thumbnail_image' => 'image|mimes:jpeg,jpg,png,gif',
                 'cover_image' => 'image|mimes:jpeg,jpg,png,gif',
                 'status' => 'required',
             ];
@@ -34,6 +35,8 @@ class SubCategoryController extends Controller
                 'subcategory_name.string' => 'This Category Name must have a word.',
                 'subcategory_url.unique' => 'This Category URL has been used already.',
                 'subcategory_url.string' => 'This Category URL must have a word.',
+                'thumbnail_image.image' => 'Upload a valid Image',
+                'thumbnail_image.mimes' => 'Upload a valid Image',
                 'cover_image.image' => 'Upload a valid Image',
                 'cover_image.mimes' => 'Upload a valid Image',
                 'status.required' => 'Status is required',
@@ -52,6 +55,16 @@ class SubCategoryController extends Controller
                 $status = 1;
            }
            $subcategory->status = $request->status;
+
+            if ($request->hasFile('thumbnail_image')) {
+                $thumbnail_image = $request->file('thumbnail_image');
+                if ($thumbnail_image->isValid()){
+                    $thumb_image = time().$thumbnail_image->getClientOriginalName();
+                    $thumb_path = 'uploads/frontend/image/subcategory/thumbnail/'. $thumb_image;
+                    Image::make($thumbnail_image)->resize(210, 270)->save($thumb_path);
+                }
+            }
+            $subcategory->thumbnail_image = $thumb_image;
 
             if ($request->hasFile('cover_image')) {
                 $cover_image = $request->file('cover_image');
@@ -114,9 +127,11 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(SubCategory $subCategory)
+    public function edit($id)
     {
-        //
+        $editSubCategory = SubCategory::find($id);
+
+        return view('backend.categories.subcategory.edit', compact('editSubCategory'));
     }
 
     /**
@@ -126,9 +141,56 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubCategory $subCategory)
+    public function update(Request $request, $id)
     {
-        //
+        $subcategoryUpdate = SubCategory::find($id);
+        $subcategoryUpdate->subcategory_name = $request->subcategory_name;
+        $subcategoryUpdate->subcategory_url = $request->subcategory_url;
+
+        if (is_null($subcategoryUpdate->status)) {
+            $status = 0;
+        }
+        else {
+            $status = 1;
+        }
+        $subcategoryUpdate->status = $request->status;
+
+        if ($request->hasFile('thumbnail_image')) {
+
+            if (File::exists('uploads/frontend/image/subcategory/thumbnail/'.$subcategoryUpdate->thumbnail_image)) {
+                File::delete('uploads/frontend/image/subcategory/thumbnail/'.$subcategoryUpdate->thumbnail_image);
+            }
+            
+            $thumbnail_image = $request->file('thumbnail_image');
+            $imageName = time().$thumbnail_image->getClientOriginalName();
+            $imagePath = 'uploads/frontend/image/subcategory/thumbnail/'. $imageName;
+            Image::make($thumbnail_image)->resize(210, 270)->save($imagePath);
+            $subcategoryUpdate->thumbnail_image = $imageName;
+        }
+
+        if ($request->hasFile('cover_image')) {
+
+            if (File::exists('uploads/frontend/image/subcategory/cover/'.$subcategoryUpdate->cover_image)) {
+                File::delete('uploads/frontend/image/subcategory/cover/'.$subcategoryUpdate->cover_image);
+            }
+
+            $cover_image = $request->file('cover_image');
+            $image = time().$cover_image->getClientOriginalName();
+            $path = 'uploads/frontend/image/subcategory/cover/'. $image;
+            Image::make($cover_image)->resize(870, 220)->save($path);
+            $subcategoryUpdate->cover_image = $image;
+        }
+
+        $success = $subcategoryUpdate->save();
+        if ($success) {
+            $notification=array(
+            'message' => 'Product SubCategory Updated Successfully ',
+            'alert-type' => 'success'
+            );
+        return redirect()->route('sub.category')->with($notification);
+        }
+
+
     }
 
     /**
@@ -137,8 +199,33 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubCategory $subCategory)
+    public function destroy($id)
     {
-        //
+        $subcategoryDelete = SubCategory::find($id);
+        if (!is_null($subcategoryDelete)) {
+            if (File::exists('uploads/frontend/image/subcategory/thumbnail/'.$subcategoryDelete->thumbnail_image)) {
+                File::delete('uploads/frontend/image/subcategory/thumbnail/'.$subcategoryDelete->thumbnail_image);
+            }
+            if (File::exists('uploads/frontend/image/subcategory/cover/'.$subcategoryDelete->cover_image)) {
+                File::delete('uploads/frontend/image/subcategory/cover/'.$subcategoryDelete->cover_image);
+            }
+
+        $dlt = $subcategoryDelete->delete();
+            if ($dlt) {
+                    $notification=array(
+                     'message' => 'Product Category Deleted Successfully',
+                     'alert-type' => 'success'
+                    );
+                    return redirect()->route('sub.category')->with($notification);
+                }
+            else
+                {
+                    $notification=array(
+                    'message' => 'Something Went wrong!',
+                    'alert-type' => 'danger'
+                    );
+                    return redirect()->back()->with($notification);
+                }
+        }
     }
 }

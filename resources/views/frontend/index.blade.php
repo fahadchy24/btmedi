@@ -22,11 +22,16 @@
                     <div class="block-categories module">
                         <h3 class="modtitle"><span>Shop by Category</span></h3>
                         <div class="yt-content-slider cate-content" data-rtl="yes" data-autoplay="no" data-autoheight="no" data-delay="4" data-speed="0.6" data-margin="30" data-items_column0="5" data-items_column1="4" data-items_column2="4" data-items_column3="3" data-items_column4="2" data-arrows="no" data-pagination="yes" data-lazyload="yes" data-loop="no" data-hoverpause="yes">
-                        @foreach($productCategory as $category )
+                            @foreach($productCategory as $category )
                             <div class="cate cate1">
                                 <div class="inner"><a href="#"><img src="{{asset('uploads/frontend/image/category/thumbnail/'.$category->thumbnail_image) }}" alt="Static Image"></a><a class="title-cate" href="{{$category->category_url}}">{{ $category->category_name }}</a></div>
                             </div>
-                        @endforeach
+                            @endforeach
+                            @foreach ($productSubCategory as $row)
+                            <div class="cate cate1">
+                                <div class="inner"><a href="#"><img src="{{asset('uploads/frontend/image/subcategory/thumbnail/'.$row->thumbnail_image) }}" alt="Static Image"></a><a class="title-cate" href="{{$row->subcategory_url}}">{{ $row->subcategory_name }}</a></div>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

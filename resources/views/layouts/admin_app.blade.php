@@ -236,7 +236,7 @@
                             <div class="collapse" id="call-log">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="{{route('call-log')}}" class="nav-link">Call Log List</a>
+                                    <a href="{{route('call-log')}}" class="nav-link">Call Log List</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('call-log-add') }}" class="nav-link">Create Call Log</a>
