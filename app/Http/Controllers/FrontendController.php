@@ -33,7 +33,7 @@ class FrontendController extends Controller
         'latestproducts', 'featuredproducts', 'bestsalers'));
     }
     public function test() {
-
+        return url('uploads/frontend/image/category/thumbnail/15999994304.jpg');
         return Menu::with('subcategory')->get();
     }
 

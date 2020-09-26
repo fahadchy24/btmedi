@@ -112,7 +112,7 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
 	// =============== Categories Routes for Admin =============== \\
 	/* Category Routes */
-	Route::match(['get', 'post'], 'category', 'CategoryController@index')->name('all-category');
+	Route::match(['get', 'post'], 'category', 'CategoryController@index')->name('all-category'); 
 	Route::get('category/edit/{id}', 'CategoryController@edit')->name('edit-category');
 	Route::post('category/update/{id}', 'CategoryController@update')->name('update-category');
 	Route::get('category/delete/{id}', 'CategoryController@destroy')->name('delete-category');

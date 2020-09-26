@@ -11,9 +11,10 @@ use File;
 
 class CategoryController extends Controller
 {
+    
     public function index(Request $request) {
 
-        $category = Category::with('subcategories')->get();
+        $category = Category::with('subcategories')->get();  
         
         // $category = $request->all();
 
@@ -23,7 +24,7 @@ class CategoryController extends Controller
         // die;
 
         if ($request->isMethod('post')){
-            
+            \Log::info('$success 1');
             $rules = [
                 'category_name' => 'unique:categories|string',
                 'category_url' => 'unique:categories|string',
@@ -32,6 +33,7 @@ class CategoryController extends Controller
                 'priority' => 'unique:categories|integer',
                 'status' => 'required',
             ];
+            \Log::info('$success 2');
             $customMessages = [
                 'category_name.unique' => 'This Category Name has been used already.',
                 'category_name.string' => 'This Category Name must have a word.',
@@ -45,13 +47,14 @@ class CategoryController extends Controller
                 'priority.integer' => 'Pririty must be a number',
                 'status.required' => 'Status is required',
             ];
+            \Log::info('$success 3');
             $this->validate($request, $rules, $customMessages);
-
+            \Log::info('$success 4');
             $category = new Category;
             $category->category_name = strtoupper($request->category_name);
             $category->category_url = Str::slug($request->category_url);
             $category->priority = $request->priority;
-
+            \Log::info('$success 5');
             if (is_null($category->status)) {
                 $status = 0;
            }
@@ -59,7 +62,7 @@ class CategoryController extends Controller
                 $status = 1;
            }
            $category->status = $request->status;
-
+           \Log::info('$success 6');
             if ($request->hasFile('thumbnail_image')) {
                 $thumbnail_image = $request->file('thumbnail_image');
                 if ($thumbnail_image->isValid()){
@@ -67,8 +70,10 @@ class CategoryController extends Controller
                     $imageName = time().$thumbnail_image->getClientOriginalName();
                     $imagePath = 'uploads/frontend/image/category/thumbnail/'. $imageName;
                     Image::make($thumbnail_image)->resize(210, 270)->save($imagePath);
+                    $category->thumbnail_image = url($imagePath);
                 }
             }
+            \Log::info('$success 7');
             if ($request->hasFile('cover_image')) {
                 $cover_image = $request->file('cover_image');
                 if ($cover_image->isValid()){
@@ -76,12 +81,16 @@ class CategoryController extends Controller
                     $image = time().$cover_image->getClientOriginalName();
                     $path = 'uploads/frontend/image/category/cover/'. $image;
                     Image::make($cover_image)->resize(1350, 500)->save($path);
+                    $category->cover_image = url($path);
                 }
             }
-            $category->thumbnail_image = $imageName;
-            $category->cover_image = $image;
-
+            \Log::info('$success 8');
+            
+            \Log::info('$success 9');
             $success = $category->save();
+            \Log::info('$success 10');
+            \Log::info('$success');
+            \Log::info($success);
             if ($success) {
                 $notification=array(
                 'message' => 'Product Category Added Successfully ',
