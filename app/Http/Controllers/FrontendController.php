@@ -18,6 +18,7 @@ class FrontendController extends Controller
     // Homepage Functions
     public function index() {
 
+        $products = Product::where('status', 1)->get();
         $productCategory = Category::orderBy('priority', 'asc')->where('status', 1)->paginate(5);
         $productSubCategory = SubCategory::orderBy('id', 'asc')->where('status', 1)->paginate(1);
         $sliders = Slider::orderBy('priority','asc')->where('status',1)->get();
@@ -31,7 +32,7 @@ class FrontendController extends Controller
 
         $featuredproducts = Product::orderBy('created_at', 'DESC')->where('is_featured',1)->get();
         
-        return view('frontend.index', compact('productCategory', 'sliders', 'dealProduct', 'ad_banner', 'popup_banner',
+        return view('frontend.index', compact('products','productCategory', 'sliders', 'dealProduct', 'ad_banner', 'popup_banner',
         'latestproducts', 'featuredproducts', 'bestsalers', 'productSubCategory'));
     }
     public function test() {
