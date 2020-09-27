@@ -6,8 +6,9 @@
 <!-- Main Container  -->
 <div class="main-container product-listing container">
     <ul class="breadcrumb">
-        <li><a href="#"><i class="fa fa-home"></i></a></li>
-        <li><a href="#">{{ $category->category_name }}</a></li>
+        <li><a href="{{ route('home') }}"><i class="fa fa-home"></i></a></li>
+        <li><a href="/category/{{$subcategory->category->id}}">{{ $subcategory->category->category_name }}</a></li> 
+        <li><a href="#">{{ $subcategory->subcategory_name }}</a></li>
     </ul>
     <div class="row">
         <!--Right Part Start -->
@@ -372,13 +373,13 @@
             <a href="javascript:void(0)" class="open-sidebar hidden-lg hidden-md" style="margin-bottom: 15px;"><i class="fa fa-bars"></i>Sidebar</a>
             <div class="sidebar-overlay "></div>
             <div class="products-category">
-                <h3 class="title-category ">{{ $category->category_name }}</h3>
+                <h3 class="title-category ">{{ $subcategory->subcategory_name }}</h3>
                 <div class="category-derc">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="banners">
                                 <div>
-                                    <a href="#"><img src="{{ $category->cover_image }}" alt="img cate"><br></a>
+                                    <a href="#"><img src="{{ $subcategory->cover_image }}" alt="img cate"><br></a>
                                 </div>
                             </div>
 
@@ -437,8 +438,8 @@
                                     <div class="item-img" data-src="image/catalog/demo/product/electronic/600x600/3.jpg"><img src="image/catalog/demo/product/electronic/90x90/3.jpg" alt="image"></div>
                                 </div> --}}
                                 <div class="product-image-container">
-                                    <a href="{{ url('/product/view/'.$item->products->id)}}" target="_self" title="Drutick lanaeger">
-                                        <img src="{{ $item->products->main_image }}" class="img-1 img-responsive" alt="imageee"> 
+                                    <a href="product.html" target="_self" title="Drutick lanaeger">
+                                        <img src="{{ asset('uploads/frontend/image/product/' . $item->products->main_image) }}" class="img-1 img-responsive" alt="imageee"> 
                                     </a>
                                 </div>
 
@@ -449,8 +450,8 @@
                             <div class="right-block right-b">
 
                                 <div class="caption">
-                                    <h4><a href="{{ url('/product/view/'.$item->products->id)}}" title="{{$item->products->product_name}}" target="_self">{{$item->products->product_name}}</a></h4>
-                                    {{--  <div class="rate-history">
+                                    <h4><a href="product.html" title="Drutick lanaeger" target="_self">{{$item->products->product_name}}</a></h4>
+                                    <div class="rate-history">
                                         <div class="ratings">
                                             <div class="rating-box">
                                                 <span class="fa fa-stack"><i class="fa fa-star-o  fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
@@ -462,7 +463,7 @@
                                             <a class="rating-num" href="#" target="_blank">(0)</a>
                                         </div>
                                         <div class="order-num">Orders (2)</div>
-                                    </div>  --}}
+                                    </div>
                                     <div class="price"> <span class="price-new">{{ "$".$item->products->regular_price }}</span>
                                     </div>
                                     <div class="button-group so-quickview cartinfo--static">

@@ -235,7 +235,7 @@
                         <div class="content-product-left col-md-6 col-sm-12 col-xs-12">
                             <div class="large-image large-image2 vertical">
                                 <img itemprop="image" class="product-image-zoom"
-                                    src="{{asset('uploads/frontend/image/product/'.$productdetail->main_image) }}"
+                                    src="{{ $productdetail->main_image }}"
                                     data-zoom-image="{{asset('uploads/frontend/image/product/'.$productdetail->main_image)}}"
                                     title="{{ $productdetail->product_name }}" alt="{{ $productdetail->product_name }}">
                             </div>
@@ -267,12 +267,15 @@
                             </div>
                             <div class="product_page_price price" itemprop="offerDetails" itemscope=""
                                 itemtype="http://data-vocabulary.org/Offer">
+                                @if ($productdetail->sale_price>NULL)
                                 <span class="price-new"><span itemprop="price" id="price-special">{{ "$".$productdetail->sale_price }}</span></span>
                                 <span class="price-old" id="price-old">{{ "$".$productdetail->regular_price }}</span>
                                 <span class="label-product label-sale">
                                     {{ number_format((($productdetail->sale_price/$productdetail->regular_price) * 100)-100, 0) . "%" }}
                                 </span>
-                                <div class="price-tax"><span>Tax</span> <span id="price-tax"> $90.00 </span></div>
+                                @else
+                                <span class="price-new"><span itemprop="price" id="price-special">{{ "$".$productdetail->regular_price }}</span></span>
+                                @endif
                             </div>
                             <div class="product-box-desc">
                                 <div class="inner-box-desc">

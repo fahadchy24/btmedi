@@ -89,7 +89,7 @@
                         <tbody>
                         @foreach($category as $row)
                             <tr>
-                                <td><img src="{{asset('uploads/frontend/image/category/thumbnail/'.$row->thumbnail_image) }}" width="50" height="50" alt=""></td>
+                                <td><img src="{{ $row->thumbnail_image }}" width="50" height="50" alt=""></td>
                                 <td>{{$row->category_name}}</td>
                                 @if($row->subcategory_id > 0)
                                 {{-- <td>{{$row->subcategories->id}}</td> --}}

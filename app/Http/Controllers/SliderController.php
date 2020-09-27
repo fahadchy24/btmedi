@@ -52,13 +52,13 @@ class SliderController extends Controller
                     $imagePath = 'uploads/frontend/image/slider/'. $imageName;
                     Image::make($image)->resize(1920, 510)->save($imagePath);
                 }
+                $slider->image = url($imagePath);
             }
-            $slider->image = $imagePath;
 
             $success = $slider->save();
             if ($success) {
                 $notification=array(
-                'message' => 'Slider Added Successfully ',
+                'message' => 'Slider Added Successfully',
                 'alert-type' => 'success'
                 );
                 return redirect()->back()->with($notification);

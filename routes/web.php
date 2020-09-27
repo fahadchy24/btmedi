@@ -23,6 +23,7 @@ Route::get('/test', 'FrontendController@test');
 Route::post('/subscribe','FrontendController@subscribe')->name('subscribe.submit');
 
 Route::get('/category/{id}', 'FrontendController@category')->name('category');
+Route::get('/subcategory/{id}', 'FrontendController@subcategory')->name('subcategory');
 
 /* Display Other page & CMS Page in Frontend */
 Route::match(['get', 'post'], '/page/{url}', 'PagesController@OtherPage');

@@ -409,34 +409,12 @@
                                                                                             <div class="col-md-4 static-menu">
                                                                                                 <div class="menu">
                                                                                                     <ul>
-                                                                                                        {{-- @if(!empty($categories['subcategories'])) --}}
                                                                                                         @foreach($menu->subcategory as $subcategory)
                                                                                                             <li>
-                                                                                                                    <a href="{{ $subcategory->subcategory_url}}" class="main-menu">{{ $subcategory->subcategory_name}}</a>
-                                                                                                                    {{-- <ul>
-                                                                                                                        <li><a href="#">Blouses & Shirts</a></li>
-                                                                                                                        <li><a href="#">Suits & Sets</a></li>
-                                                                                                                        <li><a href="#">Jumpsuits</a></li>
-                                                                                                                        <li><a href="#">Sleep & Lounge</a></li>
-                                                                                                                        <li><a href="#">Wool & Blends</a></li>
-                                                                                                                    </ul> --}}
-                                                                                                                </li>
-                                                                                                            @endforeach
-                                                                                                        {{-- @endif --}}
-                                                                                                        {{-- @if(!empty($categories['subcategories']))
-                                                                                                            @foreach($categories['subcategories'] as $subcategory)
-                                                                                                        <li>
-                                                                                                                <a href="#" class="main-menu">{{ $subcategory->subcategory_name}}</a>
-                                                                                                                {{-- <ul>
-                                                                                                                    <li><a href="#">Blouses & Shirts</a></li>
-                                                                                                                    <li><a href="#">Suits & Sets</a></li>
-                                                                                                                    <li><a href="#">Jumpsuits</a></li>
-                                                                                                                    <li><a href="#">Sleep & Lounge</a></li>
-                                                                                                                    <li><a href="#">Wool & Blends</a></li>
-                                                                                                                </ul> --}}
+                                                                                                                <a href="{{ $subcategory->subcategory_url}}" class="main-menu">{{ $subcategory->subcategory_name}}</a>
                                                                                                             </li>
-                                                                                                            {{-- @endforeach
-                                                                                                        @endif --}}
+                                                                                                        @endforeach
+                                                                                                        </li>
                                                                                                     </ul>
                                                                                                 </div>
                                                                                             </div>
@@ -491,7 +469,7 @@
                                                                                                     <ul class="row-list">
                                                                                                         @foreach($menu->subcategory as $subcategory)
                                                                                                         <li>
-                                                                                                            <a href="#" class="main-menu">
+                                                                                                            <a href="/subcategory/{{$subcategory->id}}" class="main-menu">
                                                                                                                 {{ $subcategory->subcategory_name}}
                                                                                                             </a>
                                                                                                         </li>

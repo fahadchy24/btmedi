@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'BT Medi | Home')
+@section('title', 'BTCare | Home')
 @section('content')
 <!-- Main Container  -->
 <div class="main-container">
@@ -9,7 +9,7 @@
                 <div class="yt-content-slider" data-rtl="yes" data-autoplay="no" data-autoheight="no" data-delay="4" data-speed="0.6" data-margin="0" data-items_column0="1" data-items_column1="1" data-items_column2="1" data-items_column3="1" data-items_column4="1" data-arrows="no" data-pagination="yes" data-lazyload="yes" data-loop="no" data-hoverpause="yes">
                     @foreach($sliders as $slider)
                     <div class="yt-content-slide">
-                        <a title="{{ $slider->title }}" href="#"><img src="{{ asset($slider->image) }}" alt="slide img" class="img-responsive"></a>
+                        <a title="{{ $slider->title }}" href="#"><img src="{{ $slider->image }}" alt="slide img" class="img-responsive"></a>
                     </div>
                     @endforeach
                 </div>
@@ -24,12 +24,12 @@
                         <div class="yt-content-slider cate-content" data-rtl="yes" data-autoplay="no" data-autoheight="no" data-delay="4" data-speed="0.6" data-margin="30" data-items_column0="5" data-items_column1="4" data-items_column2="4" data-items_column3="3" data-items_column4="2" data-arrows="no" data-pagination="yes" data-lazyload="yes" data-loop="no" data-hoverpause="yes">
                             @foreach($productCategory as $category )
                             <div class="cate cate1">
-                                <div class="inner"><a href="#"><img src="{{asset('uploads/frontend/image/category/thumbnail/'.$category->thumbnail_image) }}" alt="Static Image"></a><a class="title-cate" href="{{$category->category_url}}">{{ $category->category_name }}</a></div>
+                                <div class="inner"><a href="/category/{{$category->id}}"><img src="{{ $category->thumbnail_image }}" alt="Static Image"></a><a class="title-cate" href="/category/{{$category->id}}">{{ $category->category_name }}</a></div>
                             </div>
                             @endforeach
                             @foreach ($productSubCategory as $row)
                             <div class="cate cate1">
-                                <div class="inner"><a href="#"><img src="{{asset('uploads/frontend/image/subcategory/thumbnail/'.$row->thumbnail_image) }}" alt="Static Image"></a><a class="title-cate" href="{{$row->subcategory_url}}">{{ $row->subcategory_name }}</a></div>
+                                <div class="inner"><a href="/subcategory/{{$row->id}}"><img src="{{ $row->thumbnail_image }}" alt="Static Image"></a><a class="title-cate" href="/subcategory/{{$row->id}}">{{ $row->subcategory_name }}</a></div>
                             </div>
                             @endforeach
                         </div>
@@ -49,7 +49,7 @@
                                                     <div class="left-block">
                                                         <div class="product-image-container second_img">
                                                             <a href="{{ url('/product/view/'.$dealProduct->id)}}" target="_self" title="Pastrami bacon">
-                                                                <img src="{{ asset('uploads/frontend/image/product/' . $dealProduct->main_image) }}" class="img-1 img-responsive" alt="Pastrami bacon">
+                                                                <img src="{{ $dealProduct->main_image }}" class="img-1 img-responsive" alt="Pastrami bacon">
                                                             </a>
                                                         </div>
                                                         <div class="box-label">
@@ -60,7 +60,7 @@
                                                     </div>
                                                     <div class="right-block">
                                                         <div class="caption">
-                                                            <h4><a href="#" target="_self" title="{{ $dealProduct->product_name}}" tabindex="0">{{ $dealProduct->product_name}}</a></h4>
+                                                            <h4><a href="{{ url('/product/view/'.$dealProduct->id)}}" target="_self" title="{{ $dealProduct->product_name}}" tabindex="0">{{ $dealProduct->product_name}}</a></h4>
                                                             <div class="rating">
                                                                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
                                                                 <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
@@ -486,7 +486,7 @@
                                                             <div class="item-image">
                                                                 <div class="item-img-info">
                                                                     <a href="{{ url('product/view', $product->id) }}" target="_self" title="Mandouille short ">
-                                                                        <img src="{{ asset('uploads/frontend/image/product/'.$product->main_image) }}" alt="Mandouille short">
+                                                                        <img src="{{ $product->main_image }}" alt="Mandouille short">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -560,11 +560,9 @@
                                                                 <div class="left-block left-b">
                                                                     <div class="product-image-container">
                                                                         <a href="{{ url('product/view', $product->id) }}" target="_self" title="Ullamco occaeca">
-                                                                            <img src="{{asset('uploads/frontend/image/product/'.$product->main_image) }}" class="img-1 img-responsive" alt="image">
+                                                                            <img src="{{ $product->main_image }}" class="img-1 img-responsive" alt="image">
                                                                         </a>
                                                                     </div>
-                                                                    {{-- <div class="label-stock label label-success ">Free Order</div> --}}
-                                                                    {{-- <div class="box-label"> <span class="label-product label-sale"> -13% </span></div> --}}
                                                                     <!--quickview-->
                                                                     <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span></span></a>
                                                                     <!--end quickview-->
@@ -623,22 +621,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="block block_2">
-                    <div class="h1-banner2">
-                        <div class="row banners">
-                            <div class="banner21 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <a href="#">
-                                    <img src="{{ asset('frontend/') }}/image/catalog/demo/banners/home1/4.jpg" alt="Image Client">
-                                </a>
-                            </div>
-                            <div class="banner21 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <a href="#">
-                                    <img src="{{ asset('frontend/') }}/image/catalog/demo/banners/home1/5.jpg" alt="Image Client">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="block block_4">
                     <!-- Listing tabs -->
                     <div class="block block_5">
@@ -685,7 +667,7 @@
                                                                     <div class="left-block left-b">
                                                                         <div class="product-image-container">
                                                                             <a href="{{ url('product/view', $product->id) }}" target="_self" title="dolore Jalapeno">
-                                                                                <img src="{{asset('uploads/frontend/image/product/'.$product->main_image) }}" class="img-1 img-responsive" alt="image">
+                                                                                <img src="{{ $product->main_image }}" class="img-1 img-responsive" alt="image">
                                                                             </a>
                                                                         </div>
                                                                         <!--quickview-->
@@ -734,23 +716,4 @@
         @include('layouts.front-inc.popup_banner');
     @endif
 
-
-</div>
-<!-- <div class="model-popup">
-              <div id="container-module-newletter" class="hidden-md hidden-sm hidden-xs">
-                  <div class="so_newletter_custom_popup_bg popup_bg"></div>
-                  <div class="module main-newsleter-popup so_newletter_custom_popup so_newletter_oca_popup" id="so_newletter_custom_popup"> <div class="so-custom-popup so-custom-oca-popup" style="width: 850px; background: url('image/catalog/banners/newletter-bg.jpg') no-repeat white;  ">
-                      <div class="modcontent">
-                          <div class="oca_popup" id="test-popup"> <div class="popup-content"> <p class="newsletter_promo">Daily Promotion</p>
-                              <div class="popup-title">SIGN UP FOR NEWSLETTER                 </div>
-                              <form method="post" name="signup" class="form-group signup">
-                                  <div class="input-control"> <div class="email"> <input type="email" placeholder="Your email address..." value="" class="form-control" id="txtemail" name="txtemail"> </div> <button class="btn btn-default" type="submit" onclick="return subscribe_newsletter();" name="submit">Subscribe  </button> </div>
-                              </form>
-                              <label class="hidden-popup"> <input type="checkbox" value="1" name="hidden-popup"> <span class="inline">&nbsp;&nbsp;Don't show this popup again</span> </label> </div>
-                          </div>
-                      </div> /.modcontent
-                      <button title="Close" type="button" class="popup-close">×</button> </div>
-                  </div>
-              </div>
-          </div> -->
 @endsection

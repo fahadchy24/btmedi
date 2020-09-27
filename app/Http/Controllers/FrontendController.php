@@ -19,10 +19,10 @@ class FrontendController extends Controller
     public function index() {
 
         $products = Product::where('status', 1)->get();
-        $productCategory = Category::orderBy('priority', 'asc')->where('status', 1)->paginate(5);
+        $productCategory = Category::orderBy('priority', 'asc')->where('status', 1)->paginate(4);
         $productSubCategory = SubCategory::orderBy('id', 'asc')->where('status', 1)->paginate(1);
         $sliders = Slider::orderBy('priority','asc')->where('status',1)->get();
-        $dealProduct = Product::where('status',1)->paginate(1);
+        $dealProduct = Product::where('status',1)->get();
         $ad_banner = AdBanner::find(1);
         $popup_banner = GeneralSetting::find(1);
 
@@ -62,6 +62,18 @@ class FrontendController extends Controller
         if($category){
             $products = ProductCategory::where('category_id', $id)->with('products')->get(); 
             return view('frontend.pages.product_category_page', compact(['category', 'products']));
+        }else{
+            return redirect()->route('home');
+        }
+    }
+
+    public function subcategory($id)
+    {
+        $subcategory = SubCategory::with('category')->where('id', $id)->first(); 
+        
+        if($subcategory){
+            $products = ProductCategory::where('category_id', $id)->with('products')->get(); 
+            return view('frontend.pages.product_subcategory_page', compact(['subcategory', 'products']));
         }else{
             return redirect()->route('home');
         }

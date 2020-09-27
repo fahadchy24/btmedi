@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Excel;
 use App\Imports\ImportProduct;
+use PharIo\Manifest\Url;
 
 class ProductController extends Controller
 {
@@ -56,9 +57,9 @@ class ProductController extends Controller
                 $imageName = time().$main_image->getClientOriginalName();
                 $imagePath = 'uploads/frontend/image/product/'. $imageName;
                 Image::make($main_image)->resize(451, 451)->save($imagePath);
+                $data['main_image'] = url($imagePath);
             }
         }
-        $data['main_image'] = $imageName;
 
         if ($request->hasFile('docs')) {
             $docs = $request->file('docs');
@@ -66,7 +67,7 @@ class ProductController extends Controller
             // $docsPath = 'uploads/frontend/image/product/docs/'.$docsName;
             $docs->move('uploads/frontend/image/product/docs/').$docsName;
 
-            $data['docs'] = $docsName;
+            $data['docs'] = url($docs);
         }
 
         // Custom SKU
@@ -94,7 +95,7 @@ class ProductController extends Controller
                 Image::make($images)->resize(451, 451)->save($path);
 
                 $altImage->product_id = $product->id;
-                $altImage->product_image = $name;
+                $altImage->product_image = url($path);
                 $altImage->save();
 
             }

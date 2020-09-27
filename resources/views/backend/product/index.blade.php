@@ -76,7 +76,7 @@
                                 <td>{{$row->mpn}}</td>
                                 <td>{{$row->product_name}}</td>
                                 <td>
-                                    <img src="{{asset('uploads/frontend/image/product/'.$row->main_image) }}" width="80" height="60" alt="">
+                                    <img src="{{ $row->main_image }}" width="80" height="60" alt="">
                                 </td>
                                 <td>{{$row->sku}}</td>
                                 <td>{{$row->unit_per_cost}}</td>

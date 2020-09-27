@@ -5919,7 +5919,7 @@ span.fa-stack {
       display: none; }
   .products-list.grid .product-item-container .right-block {
     clear: both;
-    padding: 10px 10px 20px 10px;
+    /* padding: 10px 10px 20px 10px; */
     text-align: center;
     position: relative; }
   .products-list.grid .product-item-container .right-block .colorswatch {

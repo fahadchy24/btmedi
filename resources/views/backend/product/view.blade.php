@@ -198,6 +198,12 @@
                                     <p>{!! $product->full_description !!}</p>
                                 </div>
                             </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="specification">Specification</label>
+                                    <p>{!! $product->specification !!}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -593,10 +599,8 @@
                     <!-- Card body -->
                     <div class="card-body">
                         <div class="custom-file">
-                            {{-- <input type="file" class="custom-file-input" id="customFileLang" name="main_image" onchange="readURL(this);" required>
-                            <label class="custom-file-label" for="customFileLang">Select a image</label> --}}
                             <div class="mt-2" style=" display: flex;">
-                                <img src="{{asset('uploads/frontend/image/product/'.$product->main_image) }}" id="main_image" alt="" height="200" width="200">
+                                <img src="{{ $product->main_image }}" id="main_image" alt="" height="200" width="200">
                             </div>
                         </div>
                     </div>
@@ -609,10 +613,11 @@
                     <!-- Card body -->
                     <div class="card-body">
                         <div class="custom-file">
-                            @foreach($product->allImages as $row)
-                            <img src="{{asset('uploads/frontend/image/product/alternative/'.$row->product_image) }}" id="main_image" alt="" height="20" width="20">
-                            @endforeach
-                            {{-- <img src="{{ $product->allImages->product_image }}" id="main_image" alt="" height="20" width="20"> --}}
+                            <div class="mt-2" style=" display: flex;">
+                                @foreach($product->allImages as $row)
+                                <img src="{{ $row->product_image }}" class="ml-2" id="main_image" alt="" height="100" width="100">
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
