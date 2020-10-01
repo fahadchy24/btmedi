@@ -90,381 +90,6 @@
                                             @endforeach
                                             </div>
                                         </div>
-                                        <div class="slick-slide" data-slick-index="2">
-                                            <div class="product-item">
-                                                <div class="product-item-container">
-                                                    <div class="left-block">
-                                                        <div class="product-image-container second_img">
-                                                            <a href="product.html" target="_self" title="Pastrami bacon">
-                                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/300/2.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                            </a>
-                                                        </div>
-                                                        <div class="box-label">
-                                                            <span class="label-product label-sale">-18%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-block">
-                                                        <div class="caption">
-                                                            <h4><a href="#" target="_self" title="Deserunt mollitia" tabindex="0">Cuid densinteu</a></h4>
-                                                            <div class="rating">
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                            </div>
-                                                            <p class="des_deal">
-                                                                The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this dis..</p>
-                                                            <p class="price font-ct">
-                                                                <span class="price-new">$198.00</span>
-                                                                <span class="price-old">$222.00</span>
-                                                            </p>
-                                                            <!--countdown box-->
-                                                            <div class="item-time-w">
-                                                                <div class="item-time">
-                                                                    <div class="item-timer">
-                                                                        <div class="defaultCountdown-30"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!--end countdown box-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slick-slide" data-slick-index="3">
-                                            <div class="product-item">
-                                                <div class="product-item-container">
-                                                    <div class="left-block">
-                                                        <div class="product-image-container second_img">
-                                                            <a href="product.html" target="_self" title="Pastrami bacon">
-                                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/300/3.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                            </a>
-                                                        </div>
-                                                        <div class="box-label">
-                                                            <span class="label-product label-sale">-10%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-block">
-                                                        <div class="caption">
-                                                            <h4><a href="#" target="_self" title="Deserunt mollitia" tabindex="0">Dail mirentukan</a></h4>
-                                                            <div class="rating">
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                            </div>
-                                                            <p class="des_deal">
-                                                                The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this dis..</p>
-                                                            <p class="price font-ct">
-                                                                <span class="price-new">$100.00</span>
-                                                                <span class="price-old">$110.00</span>
-                                                            </p>
-                                                            <!-- countdown box
-                                                                    <div class="item-time-w">
-                                                                        <div class="item-time">
-                                                                            <div class="item-timer">
-                                                                                <div class="defaultCountdown-30"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    end countdown box -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slick-slide" data-slick-index="4">
-                                            <div class="product-item">
-                                                <div class="product-item-container">
-                                                    <div class="left-block">
-                                                        <div class="product-image-container second_img">
-                                                            <a href="product.html" target="_self" title="Pastrami bacon">
-                                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/300/4.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                            </a>
-                                                        </div>
-                                                        <div class="box-label">
-                                                            <span class="label-product label-sale">-15%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-block">
-                                                        <div class="caption">
-                                                            <h4><a href="#" target="_self" title="Deserunt mollitia" tabindex="0">Salmon Sokara</a></h4>
-                                                            <div class="rating">
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                            </div>
-                                                            <p class="des_deal">
-                                                                The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this dis..</p>
-                                                            <p class="price font-ct">
-                                                                <span class="price-new">$160.00</span>
-                                                                <span class="price-old">$190.00</span>
-                                                            </p>
-                                                            <!--countdown box-->
-                                                            <div class="item-time-w">
-                                                                <div class="item-time">
-                                                                    <div class="item-timer">
-                                                                        <div class="defaultCountdown-30"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!--end countdown box-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slick-slide" data-slick-index="5">
-                                            <div class="product-item">
-                                                <div class="product-item-container">
-                                                    <div class="left-block">
-                                                        <div class="product-image-container second_img">
-                                                            <a href="product.html" target="_self" title="Pastrami bacon">
-                                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/300/5.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                            </a>
-                                                        </div>
-                                                        <div class="box-label">
-                                                            <span class="label-product label-sale">-20%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-block">
-                                                        <div class="caption">
-                                                            <h4><a href="#" target="_self" title="Molliti Deserunt" tabindex="0">Molliti Deserunt</a></h4>
-                                                            <div class="rating">
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                            </div>
-                                                            <p class="des_deal">
-                                                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration the creative professional, this dis..</p>
-                                                            <p class="price font-ct">
-                                                                <span class="price-new">$98.00</span>
-                                                                <span class="price-old">$122.00</span>
-                                                            </p>
-                                                            <!--countdown box-->
-                                                            <div class="item-time-w">
-                                                                <div class="item-time">
-                                                                    <div class="item-timer">
-                                                                        <div class="defaultCountdown-30"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!--end countdown box-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slick-slide" data-slick-index="6">
-                                            <div class="product-item">
-                                                <div class="product-item-container">
-                                                    <div class="left-block">
-                                                        <div class="product-image-container second_img">
-                                                            <a href="product.html" target="_self" title="Pastrami bacon">
-                                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/300/6.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                            </a>
-                                                        </div>
-                                                        <div class="box-label">
-                                                            <span class="label-product label-sale">-5%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-block">
-                                                        <div class="caption">
-                                                            <h4><a href="#" target="_self" title="Delivers Deserunt" tabindex="0">Delivers Deserunt</a></h4>
-                                                            <div class="rating">
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                            </div>
-                                                            <p class="des_deal">
-                                                                The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this dis..</p>
-                                                            <p class="price font-ct">
-                                                                <span class="price-new">$200.00</span>
-                                                                <span class="price-old">$210.00</span>
-                                                            </p>
-                                                            <!--countdown box-->
-                                                            <div class="item-time-w">
-                                                                <div class="item-time">
-                                                                    <div class="item-timer">
-                                                                        <div class="defaultCountdown-30"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!--end countdown box-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slick-slide" data-slick-index="7">
-                                            <div class="product-item">
-                                                <div class="product-item-container">
-                                                    <div class="left-block">
-                                                        <div class="product-image-container second_img">
-                                                            <a href="product.html" target="_self" title="Pastrami bacon">
-                                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/300/7.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                            </a>
-                                                        </div>
-                                                        <div class="box-label">
-                                                            <span class="label-product label-sale">-12%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-block">
-                                                        <div class="caption">
-                                                            <h4><a href="#" target="_self" title="Pastrami mollitia" tabindex="0">Pastrami mollitia</a></h4>
-                                                            <div class="rating">
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                            </div>
-                                                            <p class="des_deal">
-                                                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration the creative professional, this dis..</p>
-                                                            <p class="price font-ct">
-                                                                <span class="price-new">$118.00</span>
-                                                                <span class="price-old">$142.00</span>
-                                                            </p>
-                                                            <!--countdown box-->
-                                                            <div class="item-time-w">
-                                                                <div class="item-time">
-                                                                    <div class="item-timer">
-                                                                        <div class="defaultCountdown-30"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!--end countdown box-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slick-slide" data-slick-index="8">
-                                            <div class="product-item">
-                                                <div class="product-item-container">
-                                                    <div class="left-block">
-                                                        <div class="product-image-container second_img">
-                                                            <a href="product.html" target="_self" title="Fession molliti">
-                                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/300/3.jpg" class="img-1 img-responsive" alt="Fession molliti">
-                                                            </a>
-                                                        </div>
-                                                        <div class="box-label">
-                                                            <span class="label-product label-sale">-16%</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="right-block">
-                                                        <div class="caption">
-                                                            <h4><a href="#" target="_self" title="Fession molliti" tabindex="0">Fession molliti</a></h4>
-                                                            <div class="rating">
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                                            </div>
-                                                            <p class="des_deal">
-                                                                The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this dis..</p>
-                                                            <p class="price font-ct">
-                                                                <span class="price-new">$98.00</span>
-                                                                <span class="price-old">$122.00</span>
-                                                            </p>
-                                                            <!--countdown box-->
-                                                            <div class="item-time-w">
-                                                                <div class="item-time">
-                                                                    <div class="item-timer">
-                                                                        <div class="defaultCountdown-30"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!--end countdown box-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="slider slider-item slider-nav">
-                                        <div class="item-slick" data-slick-index="1">
-                                            <div class="item-img">
-                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/80/1.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                <div class="box-label">
-                                                    <span class="label-product label-sale">-20%</span>
-                                                </div>
-                                            </div>
-                                            <span class="title">Deserunt mollitia</span>
-                                        </div>
-                                        <div class="item-slick" data-slick-index="2">
-                                            <div class="item-img">
-                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/80/2.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                <div class="box-label">
-                                                    <span class="label-product label-sale">-18%</span>
-                                                </div>
-                                            </div>
-                                            <span class="title">Cuid densinteu</span>
-                                        </div>
-                                        <div class="item-slick" data-slick-index="3">
-                                            <div class="item-img">
-                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/80/3.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                <div class="box-label">
-                                                    <span class="label-product label-sale">-10%</span>
-                                                </div>
-                                            </div>
-                                            <span class="title">Dail mirentukan</span>
-                                        </div>
-                                        <div class="item-slick" data-slick-index="4">
-                                            <div class="item-img">
-                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/80/4.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                <div class="box-label">
-                                                    <span class="label-product label-sale">-15%</span>
-                                                </div>
-                                            </div>
-                                            <span class="title">Salmon Sokara</span>
-                                        </div>
-                                        <div class="item-slick" data-slick-index="5">
-                                            <div class="item-img">
-                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/80/5.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                <div class="box-label">
-                                                    <span class="label-product label-sale">-20%</span>
-                                                </div>
-                                            </div>
-                                            <span class="title">Molliti Deserunt</span>
-                                        </div>
-                                        <div class="item-slick" data-slick-index="6">
-                                            <div class="item-img">
-                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/80/6.jpg" class="img-1 img-responsive" alt="Pastrami bacon">
-                                                <div class="box-label">
-                                                    <span class="label-product label-sale">-5%</span>
-                                                </div>
-                                            </div>
-                                            <span class="title">Delivers Deserunt</span>
-                                        </div>
-                                        <div class="item-slick" data-slick-index="7">
-                                            <div class="item-img">
-                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/80/7.jpg" class="img-1 img-responsive" alt="Pastrami mollitia">
-                                                <div class="box-label">
-                                                    <span class="label-product label-sale">-12%</span>
-                                                </div>
-                                            </div>
-                                            <span class="title">Pastrami mollitia</span>
-                                        </div>
-                                        <div class="item-slick" data-slick-index="8">
-                                            <div class="item-img">
-                                                <img src="{{ asset('frontend/') }}/image/catalog/demo/product/80/8.jpg" class="img-1 img-responsive" alt="Fession molliti">
-                                                <div class="box-label">
-                                                    <span class="label-product label-sale">-16%</span>
-                                                </div>
-                                            </div>
-                                            <span class="title">Fession molliti</span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -478,8 +103,9 @@
                                     <div id="so_extra_slider_1" class="so-extraslider">
                                         <!-- Begin extraslider-inner -->
                                         <div class="yt-content-slider extraslider-inner" data-rtl="yes" data-pagination="no" data-autoplay="no" data-delay="4" data-speed="0.6" data-margin="0" data-items_column0="1" data-items_column1="1" data-items_column2="1" data-items_column3="1" data-items_column4="1" data-arrows="yes" data-lazyload="yes" data-loop="no" data-buttonpage="top">
-                                            @foreach ($bestsalers as $product)
+                                            @foreach ($bestsalers->chunk(3) as $chunk)
                                             <div class="item ">
+                                                @foreach ($chunk as $product)
                                                 <div class="item-wrap style1">
                                                     <div class="item-wrap-inner">
                                                         <div class="media-left">
@@ -511,6 +137,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endforeach
                                             </div>
                                             @endforeach
                                         </div>
@@ -531,7 +158,7 @@
                             <div id="so_listing_tabs_1" class="so-listing-tabs first-load">
                                 <div class="loadeding"></div>
                                 <div class="ltabs-wrap">
-                                    <div class="ltabs-tabs-container" data-delay="300" data-duration="600" data-effect="starwars" data-ajaxurl="" data-type_source="0" data-lg="5" data-md="4" data-sm="3" data-xxs="3" data-xs="1" data-margin="0">
+                                    <div class="ltabs-tabs-container" data-delay="0" data-duration="0" data-effect="starwars" data-ajaxurl="" data-type_source="0" data-lg="5" data-md="4" data-sm="3" data-xxs="3" data-xs="1" data-margin="0">
                                         <!--Begin Tabs-->
                                         <div class="ltabs-tabs-wrap">
                                             <span class="ltabs-tab-selected">Best sellers</span> <span class="ltabs-tab-arrow">▼</span>
@@ -553,14 +180,15 @@
                                             <!--Begin Items-->
                                             <div class="ltabs-items ltabs-items-selected items-category-11" data-total="16">
                                                 <div class="ltabs-items-inner ltabs-slider">
-                                                    @foreach ($latestproducts as $product)
+                                                    @foreach ($latestproducts->chunk(2) as $chunk)
                                                     <div class="ltabs-item">
+                                                        @foreach($chunk as $product)
                                                         <div class="item-inner product-thumb transition product-layout">
                                                             <div class="product-item-container">
                                                                 <div class="left-block left-b">
                                                                     <div class="product-image-container">
-                                                                        <a href="{{ url('product/view', $product->id) }}" target="_self" title="Ullamco occaeca">
-                                                                            <img src="{{ $product->main_image }}" class="img-1 img-responsive" alt="image">
+                                                                        <a href="{{ url('product/view', $product->id) }}" target="_self" title="{{ $product->product_name }}">
+                                                                            <img src="{{ $product->main_image }}" class="img-responsive" alt="image">
                                                                         </a>
                                                                     </div>
                                                                     <!--quickview-->
@@ -569,9 +197,14 @@
                                                                 </div>
                                                                 <div class="right-block right-b">
                                                                     <div class="caption">
-                                                                        <h4><a href="{{ url('product/view', $product->id) }}" title="Ullamco occaeca" target="_self">{{ $product->product_name }}</a></h4>
-                                                                        <div class="price"> <span class="price-new">${{ $product->sale_price }}</span>
-                                                                        <span class="price-old">${{ $product->regular_price }}</span>
+                                                                        <h4><a href="{{ url('product/view', $product->id) }}" title="{{ $product->product_name }}" target="_self">{{ $product->product_name }} </a></h4>
+                                                                        <div class="price">
+                                                                            @if($product->sale_price>NULL)
+                                                                            <span class="price-new">{{ "$". $product->sale_price }} </span>
+                                                                            <span class="price-old">{{ "$". $product->regular_price }} </span>
+                                                                            @else
+                                                                            <span class="price-new">{{ "$". $product->regular_price }} </span>
+                                                                            @endif
                                                                         </div>
                                                                         <div class="button-group so-quickview cartinfo--static">
                                                                             <button type="button" class="addToCart" title="Add to cart" onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
@@ -586,15 +219,10 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        @endforeach
                                                     </div>
                                                     @endforeach
                                                 </div>
-                                            </div>
-                                            <div class="ltabs-items items-category-12 grid" data-total="16">
-                                                <div class="ltabs-loading"></div>
-                                            </div>
-                                            <div class="ltabs-items  items-category-13 grid" data-total="16">
-                                                <div class="ltabs-loading"></div>
                                             </div>
                                             <!--End Items-->
                                         </div>
@@ -603,6 +231,7 @@
                             </div>
                         </div>
                     </div>
+                   <a href="#"><button class="cbutton"> View All Products</button></a>
                     <!-- end Listing tabs -->
                 </div>
                 <div class="block block_2">
@@ -639,9 +268,7 @@
                                                 <span class="ltabs-tab-selected">Bathroom</span> <span class="ltabs-tab-arrow">▼</span>
                                                 <div class="ltabs-tabs cf font-ct list-sub-cat">
                                                     <ul class="ltabs-tabs cf">
-                                                        <li class="ltabs-tab tab-sel" data-category-id="17" data-active-content=".items-category-17"> <span class="ltabs-tab-label">Best sellers</span> </li>
-                                                        <li class="ltabs-tab " data-category-id="18" data-active-content=".items-category-18"> <span class="ltabs-tab-label">New Arrivals</span> </li>
-                                                        <li class="ltabs-tab " data-category-id="19" data-active-content=".items-category-19"> <span class="ltabs-tab-label">Most Rating</span> </li>
+                                                        <li class="ltabs-tab tab-sel" data-category-id="17" data-active-content=".items-category-17"> <span class="ltabs-tab-label"></span> </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -660,8 +287,9 @@
                                                 <div class="ltabs-items ltabs-items-selected items-category-17" data-total="16">
                                                     <div class="ltabs-items-inner ltabs-slider">
                                                         <!-- end item listing tab -->
-                                                        @foreach ($featuredproducts as $product)
+                                                        @foreach ($featuredproducts->chunk(2) as $chunk)
                                                         <div class="ltabs-item">
+                                                            @foreach($chunk as $product)
                                                             <div class="item-inner product-thumb transition product-layout">
                                                                 <div class="product-item-container">
                                                                     <div class="left-block left-b">
@@ -677,8 +305,15 @@
                                                                     <div class="right-block right-b">
                                                                         <div class="caption">
                                                                             <h4><a href="{{ url('product/view', $product->id) }}" title="Dolore Jalapeno" target="_self">{{ $product->product_name }}</a></h4>
+                                                                            @if($product->sale_price > NULL)
                                                                             <div class="price"> <span class="price-new">${{ $product->sale_price }}</span>
                                                                             </div>
+                                                                            <div class="price"> <span class="price-old">${{ $product->regular_price }}</span>
+                                                                            </div>
+                                                                            @else
+                                                                            <div class="price"> <span class="price-new">${{ $product->regular_price }}</span>
+                                                                            </div>
+                                                                            @endif
                                                                             <div class="button-group so-quickview cartinfo--static">
                                                                                 <button type="button" class="addToCart" title="Add to cart" onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
                                                                                     <span>Add to cart </span>
@@ -692,11 +327,11 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            @endforeach
                                                         </div>
                                                         @endforeach
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>

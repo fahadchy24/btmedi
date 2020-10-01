@@ -52,6 +52,10 @@
                                     <p> {{ $row->created_at->format('d M Y') }} </p>
                                 </div>
                                 <div class="col-md-3 mb-3">
+                                    <label class="form-control-label" for="sku">Order Type</label>
+                                    <p> {{ $row->order_type }} </p>
+                                </div>
+                                <div class="col-md-3 mb-3">
                                     <div class="form-group">
                                         <label class="form-control-label" for="details">Payment</label>
                                         <p>{{ $row->payment }}</p>

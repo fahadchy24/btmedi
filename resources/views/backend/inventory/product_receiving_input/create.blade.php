@@ -13,8 +13,8 @@
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="{{route('receive.index')}}">Product Receiving Input</a></li>
-                            <li class="breadcrumb-item active"><a href="{{route('receive.create')}}">Add New</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('product-receive.index')}}">Product Receiving Input</a></li>
+                            <li class="breadcrumb-item active"><a href="{{route('product-receive.create')}}">Add New</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -37,8 +37,17 @@
                             <h3 class="mb-0">Add Received Product</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('receive.store') }}" method="POST">
+                            <form action="{{ route('product-receive.store') }}" method="POST">
                             @csrf
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="form-group">
                                     <label class="form-control-label" for="receive_date">Receiving Date</label>
                                     <input type="text" class="form-control datepicker" id="receive_date" name="receive_date" autocomplete="off" required>

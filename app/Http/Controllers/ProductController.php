@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Attribute;
 use App\Brand;
 use App\Category;
+use App\Http\Requests\StoreProductRequest;
 use App\Menu;
 use App\Product;
 use App\ProductAttributes;
@@ -43,13 +44,51 @@ class ProductController extends Controller
         return view('backend.product.add', compact('products', 'categories', 'subcategories', 'attributes', 'brands'));
     }
 
-    public function store(Request $request)
+    public function store(/* StoreProductRequest */ Request $request)
     {
+        $rules = [
+            'product_name' => 'required|unique:products|string',
+            'short_description' => 'required',
+            'full_description' => 'required',
+            'video_url' => 'url',
+            'docs' => 'mimes:pdf|max:50000',
+            'unit_per_cost' => 'required|integer',
+            'cost' => 'required|integer',
+            'regular_price' => 'required|numeric',
+            'sale_price' => 'nullable|numeric',
+            'backorders' => 'required',
+            'shipping_class' => 'required',
+            'main_image' => 'required|mimes:jpg,jpeg,png',
+
+        ];
+        $customMessages = [
+            'product_name.unique' => 'Product Name has been used already.',
+            'product_name.required' => 'Product Name is required.',
+            'product_name.string' => 'Product Name must have a word.',
+            'short_description.required' => 'Short Description is required.',
+            'full_description.required' => 'Full Description is required.',
+            'video_url.url' => 'Provide a Valid URL.',
+            'docs.mimes' => 'Only PDF is allowed.',
+            'docs.max' => 'PDF More than 5MB is not allowed.',
+            'unit_per_cost.required' => 'Unit Per Cost is required.',
+            'unit_per_cost.integer' => 'Unit Per Cost must have number.',
+            'cost.required' => 'Cost is required.',
+            'cost.integer' => 'Cost must have numbers.',
+            'regular_price.required' => 'Regular Price is required.',
+            'regular_price.integer' => 'Regular Price must have numbers.',
+            'sale_price.integer' => 'Sale Price must have numbers.',
+            'backorders.required' => 'Backorders is required.',
+            'shipping_class.required' => 'Shipping Class is required.',
+            'main_image.required' => 'Product Image is required.',
+            'main_image.mimes' => 'Only JPG/JPEG/PNG is allowed.',
+        ];
+        $this->validate($request, $rules, $customMessages);
+
         $data = $request->all();
 
         // dd($data);
         
-        $data['status'] = 0;
+        $data['status'] = 1;
 
         if ($request->hasFile('main_image')) {
             $main_image = $request->file('main_image');
@@ -120,14 +159,8 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::with('categories','brand', 'allImages')->where('id',$id)->first();
-
         $menus = Menu::all();
-
-        // $categories = Category::all();
         $categories = DB::table('product_categories')->where('product_id', $id)->get();
-
-        // echo "<pre>"; print_r($categories); die;
-
         $subcategories = SubCategory::all();
 
         return view('backend.product.view', compact('product','categories','subcategories'));
@@ -139,9 +172,14 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
-    {
-        //
+    public function edit($id)
+    {   
+        $product = Product::find($id);
+        $categories = Category::all();
+        $brands = Brand::all();
+        $subcategories = SubCategory::all();
+
+        return view('backend.product.edit', compact('product','categories', 'subcategories', 'brands'));
     }
 
     /**
@@ -151,9 +189,17 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $success = Product::find($id)->update($request->all());
+
+        if ($success) {
+            $notification=array(
+                'message' => 'Product Updated Successfully ',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('product.index')->with($notification);
+        }
     }
 
     /**
@@ -216,51 +262,75 @@ class ProductController extends Controller
 
             // echo "<pre>"; print_r($data); die;
 
-            foreach ($data['label'] as $key => $value) {
+            // foreach ($data['label'] as $key => $value) {
+            //     if (!empty($value)) {
+
+            //         // // Label of product already taken
+            //         // $attrCountLabel = ProductAttributes::where(['label'=>$value])->count();
+            //         // if($attrCountLabel>0) {
+            //         //     $notification=array(
+            //         //         'message' => 'This Label Already Exists',
+            //         //         'alert-type' => 'error'
+            //         //     );
+            //         //     return redirect()->back()->with($notification);
+            //         // }
+
+            //         // // Price of product already taken
+            //         // $attrCountPrice = ProductAttributes::where(['product_id'=>$id, 'price'=>$data['price'][$key]])->count();
+            //         // if($attrCountPrice>0) {
+            //         //     $notification=array(
+            //         //         'message' => 'This Price Already Exists',
+            //         //         'alert-type' => 'error'
+            //         //     );
+            //         //     return redirect()->back()->with($notification);
+            //         // }
+                    
+            //         // // Color of product already taken
+            //         // $attrCountColor = ProductAttributes::where(['product_id'=>$id, 'color'=>$data['color'][$key]])->count();
+            //         // if($attrCountColor>0) {
+            //         //     $notification=array(
+            //         //         'message' => 'This Color Already Exists',
+            //         //         'alert-type' => 'error'
+            //         //     );
+            //         //     return redirect()->back()->with($notification);
+            //         // }
+
+            //         // // Stock of product already taken
+            //         // $attrCountStock = ProductAttributes::where(['product_id'=>$id, 'stock'=>$data['stock'][$key]])->count();
+            //         // if($attrCountStock>0) {
+            //         //     $notification=array(
+            //         //         'message' => 'This Stock Already Exists',
+            //         //         'alert-type' => 'error'
+            //         //     );
+            //         //     return redirect()->back()->with($notification);
+            //         // }
+
+            //         $productAttribute = new ProductAttributes;
+            //         $productAttribute->product_id = $id;
+            //         $productAttribute->label = $value;
+            //         $productAttribute->color = $data['color'][$key];
+            //         $productAttribute->other = $data['other'][$key];
+            //         $productAttribute->stock = $data['stock'][$key];
+            //         $productAttribute->price = $data['price'][$key];
+
+            //         $success = $productAttribute->save();
+            //         if ($success) {
+            //             $notification=array(
+            //             'message' => 'Product Attribute Added Successfully ',
+            //             'alert-type' => 'success'
+            //             );
+            //         }
+            //     }
+            // }
+
+            foreach ($data['stock'] as $key => $value) {
                 if (!empty($value)) {
-
-                    // Label of product already taken
-                    $attrCountLabel = ProductAttributes::where(['label'=>$value])->count();
-                    if($attrCountLabel>0) {
-                        $notification=array(
-                            'message' => 'This Label Already Exists',
-                            'alert-type' => 'error'
-                        );
-                        return redirect()->back()->with($notification);
-                    }
-                    // Price of product already taken
-                    $attrCountPrice = ProductAttributes::where(['product_id'=>$id, 'price'=>$data['price'][$key]])->count();
-                    if($attrCountPrice>0) {
-                        $notification=array(
-                            'message' => 'This Price Already Exists',
-                            'alert-type' => 'error'
-                        );
-                        return redirect()->back()->with($notification);
-                    }
-                    // Color of product already taken
-                    $attrCountColor = ProductAttributes::where(['product_id'=>$id, 'color'=>$data['color'][$key]])->count();
-                    if($attrCountColor>0) {
-                        $notification=array(
-                            'message' => 'This Color Already Exists',
-                            'alert-type' => 'error'
-                        );
-                        return redirect()->back()->with($notification);
-                    }
-                    // Stock of product already taken
-                    $attrCountStock = ProductAttributes::where(['product_id'=>$id, 'stock'=>$data['stock'][$key]])->count();
-                    if($attrCountStock>0) {
-                        $notification=array(
-                            'message' => 'This Stock Already Exists',
-                            'alert-type' => 'error'
-                        );
-                        return redirect()->back()->with($notification);
-                    }
-
                     $productAttribute = new ProductAttributes;
                     $productAttribute->product_id = $id;
-                    $productAttribute->label = $value;
+                    $productAttribute->stock = $value;
+                    $productAttribute->label = $data['label'][$key];
                     $productAttribute->color = $data['color'][$key];
-                    $productAttribute->stock = $data['stock'][$key];
+                    $productAttribute->other = $data['other'][$key];
                     $productAttribute->price = $data['price'][$key];
 
                     $success = $productAttribute->save();
@@ -274,7 +344,6 @@ class ProductController extends Controller
             }
             return redirect()->back()->with($notification);
         }
-
         return view('backend.product.add_attribute', compact('productDetails'));
     }
 

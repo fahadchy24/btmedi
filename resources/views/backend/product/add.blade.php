@@ -41,20 +41,29 @@
                         </div>
                         <!-- Card body -->
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
-                                    <label class="form-control-label" for="product_name">Product Name</label>
+                                    <label class="form-control-label" for="product_name">Product Name*</label>
                                     <input title="Enter Product Name" type="text" class="form-control" id="product_name" name="product_name" placeholder="Product Name" autocomplete="on" required>
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="short_description">Short Description <small>(*Beside Image)</small></label>
+                                        <label class="form-control-label" for="short_description">Short Description* <small>(*Beside Image)</small></label>
                                         <textarea title="Enter Product Short Description" class="form-control" id="summary-ckeditor" name="short_description" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="full_description">Full Description</label>
+                                        <label class="form-control-label" for="full_description">Full Description*</label>
                                         <textarea title="Enter Product Full Description" class="form-control" id="summary-ckeditor2" name="full_description" required></textarea>
                                     </div>
                                 </div>
@@ -65,8 +74,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-3">
+                                    <label class="form-control-label" for="video_url">Video URL <small>(Ex: https://youtube.com)</small> </label>
+                                    <input title="Enter Product Name" type="url" class="form-control" id="video_url" name="video_url" placeholder="Video URL" autocomplete="on">
+                                </div>
+                                <div class="col-md-12 mb-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="docs">Docs</label>
+                                        <label class="form-control-label" for="docs">Docs <small>(*Max: 5MB)</small></label>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="customFileLang" name="docs" accept="application/pdf">
                                             <label class="custom-file-label" for="customFileLang">Select a docs</label>
@@ -85,23 +98,23 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <label class="form-control-label" for="manufactory">Manufactory</label>
-                                <input title="Enter Manufactory" type="number" class="form-control" id="manufactory" name="manufactory" placeholder="Manufactory" autocomplete="on" required>
+                                <input title="Enter Manufactory" type="number" class="form-control" min="0" id="manufactory" name="manufactory" placeholder="Manufactory" autocomplete="on">
                             </div>
-                            <div class="form-row">
-                                <label class="form-control-label" for="cost">Cost</label>
-                                <input title="Enter Cost" type="number" class="form-control" id="cost" name="cost" placeholder="Unit Per Cost" autocomplete="on" required>
+                            <div class="form-row mt-3">
+                                <label class="form-control-label" for="cost">Cost*</label>
+                                <input title="Enter Cost" type="text" class="form-control" id="cost" name="cost" placeholder="Cost" autocomplete="on" required>
                             </div>
-                            <div class="form-row">
-                                <label class="form-control-label" for="unit_per_cost">Unit Per Cost</label>
-                                <input title="Enter Unit Per Cost" type="number" class="form-control" id="unit_per_cost" name="unit_per_cost" placeholder="Unit Per Cost" autocomplete="on" required>
+                            <div class="form-row mt-3">
+                                <label class="form-control-label" for="unit_per_cost">Unit Per Cost*</label>
+                                <input title="Enter Unit Per Cost" type="text" class="form-control" id="unit_per_cost" name="unit_per_cost" placeholder="Unit Per Cost" autocomplete="on" required>
                             </div>
-                            <div class="form-row">
-                                <label class="form-control-label" for="regular_price">Regular Price</label>
-                                <input title="Enter Regular Price" type="number" class="form-control" id="regular_price" name="regular_price" placeholder="Regular Price" autocomplete="on" required>
+                            <div class="form-row mt-3">
+                                <label class="form-control-label" for="regular_price">Regular Price*</label>
+                                <input title="Enter Regular Price" type="text" class="form-control" id="regular_price" name="regular_price" placeholder="Regular Price" autocomplete="on" required>
                             </div>
                             <div class="form-row mt-3">
                                 <label class="form-control-label" for="sale_price">Sale Price</label>
-                                <input title="Enter Sale Price" type="number" class="form-control" id="sale_price" name="sale_price" placeholder="Sale Price" autocomplete="off">
+                                <input title="Enter Sale Price" type="text" class="form-control" id="sale_price" name="sale_price" placeholder="Sale Price" autocomplete="off">
                             </div>
                             <div class="form-row mt-3 mb-2">
                                 <div class="col-md-6 ">
@@ -115,7 +128,7 @@
                             </div>
                             <div class="form-row">
                                 <label class="form-control-label" for="internal_remark">Internal Remark</label>
-                                <input title="Enter Internal Remark" type="text" class="form-control" id="internal_remark" name="internal_remark" placeholder="Internal Remark" autocomplete="on" required>
+                                <input title="Enter Internal Remark" type="text" class="form-control" id="internal_remark" name="internal_remark" placeholder="Internal Remark" autocomplete="on">
                             </div>
                         </div>
                     </div>
@@ -126,21 +139,17 @@
                         </div>
                         <!-- Card body -->
                         <div class="card-body">
-                            {{-- <div class="form-row">
-                                <label class="form-control-label" for="sku">SKU</label>
-                                <input title="Enter SKU" type="number" class="form-control" id="sku" name="sku" placeholder="SKU" autocomplete="on" required>
-                            </div> --}}
                             <div class="form-row">
                                 <label class="form-control-label" for="mpn">MPN</label>
-                                <input title="Enter MPN" type="number" class="form-control" id="mpn" name="mpn" placeholder="MPN" autocomplete="on" required>
+                                <input title="Enter MPN" type="number" class="form-control" min="0" id="mpn" name="mpn" placeholder="MPN" autocomplete="on">
                             </div>
                             <div class="form-row mt-3">
-                                <label class="form-control-label" for="stock_quantity">Stock Quantity</label>
-                                <input title="Enter Stock Quantity" type="number" class="form-control" id="stock_quantity" name="stock_quantity" placeholder="Stock Quantity" autocomplete="on">
+                                <label class="form-control-label" for="stock_quantity">Stock Quantity* <small>(*If there is no attribute quantity available)</small></label>
+                                <input title="Enter Stock Quantity" type="number" class="form-control" min="0" id="stock_quantity" name="stock_quantity" placeholder="Stock Quantity" autocomplete="on">
                             </div>
                             <div class="form-row mt-3">
-                                <label class="form-control-label" for="backorders">Allow Backorders</label>
-                                <select class="form-control" name="backorders" id="">
+                                <label class="form-control-label" for="backorders">Allow Backorders*</label>
+                                <select class="form-control" name="backorders" id="backorders" required>
                                     <option selected disabled>Select a option</option>
                                     <option value="Allow">Allow</option>
                                     <option value="Disallow">Do Not Allow</option>
@@ -161,20 +170,20 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <label class="form-control-label" for="weight">Weight(lbs)</label>
-                                <input type="number" class="form-control" id="weight" name="weight" placeholder="Weight" autocomplete="on">
+                                <input type="number" class="form-control" min="0" id="weight" name="weight" placeholder="Weight" autocomplete="on">
                             </div>
                             <div class="form-row mt-4">
                                 <span class="col-md-12 mt-2">
                                     <label class="form-control-label" for="dimensions">Dimensions (in):</label>
                                 </span>
                                 <div class="col-md-4">
-                                    <input type="number" class="form-control" id="length" name="length" placeholder="Length" autocomplete="off">
+                                    <input type="number" class="form-control" id="length" min="0" name="length" placeholder="Length" autocomplete="off">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="number" class="form-control" id="width" name="width" placeholder="Width" autocomplete="off">
+                                    <input type="number" class="form-control" id="width" min="0" name="width" placeholder="Width" autocomplete="off">
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="number" class="form-control" id="height" name="height" placeholder="Height" autocomplete="off">
+                                    <input type="number" class="form-control" id="height" min="0" name="height" placeholder="Height" autocomplete="off">
                                 </div>
                             </div>
                             <div class="form-row mt-3">
@@ -188,14 +197,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    {{-- <div class="card">
                         <!-- Card header -->
                         <div class="card-header">
                             <h4>Attributes</h4>
                         </div>
                         <!-- Card body -->
                         <div class="card-body">
-                            {{-- <div class="col-md-12"> --}}
+                            <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-9 mt--2">
                                     <label for="status">Select a type </label>
@@ -210,7 +219,7 @@
                                     <button class="btn btn-primary">Go</button>
                                 </div>
                             </div>
-                            {{-- </div> --}}
+                            </div>
                         </div>
                     </div>
                     <div class="card">
@@ -230,7 +239,7 @@
                             </div>
                             <a href="javascript:void(0);" class="add_button btn btn-primary mt-2 ml--3" title="Add field">Add New Row</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="col-4">
@@ -239,7 +248,7 @@
                     <div class="card">
                         <!-- Card header -->
                         <div class="card-header">
-                            <h3 class="mb-0">Product Categories</h3>
+                            <h3 class="mb-0">Product Categories*</h3>
                         </div>
                         <!-- Card body -->
                         <div class="card-body">
@@ -275,7 +284,7 @@
                     <!-- Product Brand -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="mb-0">Product Brand</h3>
+                            <h3 class="mb-0">Product Brand*</h3>
                         </div>
                         <div class="card-body">
                             <div class="form-row">
@@ -491,7 +500,7 @@
                     <div class="card">
                         <!-- Card header -->
                         <div class="card-header">
-                            <h3 class="mb-0">Product Image</h3>
+                            <h3 class="mb-0">Product Image*</h3>
                         </div>
                         <!-- Card body -->
                         <div class="card-body">
@@ -579,12 +588,12 @@
                                         <label class="custom-control-label" for="customCheck1">Enable</label>
                                     </div>
                                     <div class="form-row mt-2 ml-1">
-                                        <label class="form-control-label" for="weight">Min Quantity</label>
-                                        <input type="number" class="form-control" id="weight" name="min_quantity" placeholder="Min Quantity" autocomplete="off">
+                                        <label class="form-control-label" for="min_quantity">Min Quantity</label>
+                                        <input type="number" class="form-control" id="min_quantity" min="0" name="min_quantity" placeholder="Min Quantity" autocomplete="off">
                                     </div>
                                     <div class="form-row mt-2 ml-1">
-                                        <label class="form-control-label" for="weight">Max Quantity</label>
-                                        <input type="number" class="form-control" id="weight" name="max_quantity" placeholder="Max Quantity" autocomplete="off">
+                                        <label class="form-control-label" for="max_quantity">Max Quantity</label>
+                                        <input type="number" class="form-control" id="max_quantity" min="0" name="max_quantity" placeholder="Max Quantity" autocomplete="off">
                                     </div>
                                 </div>
                             </div>

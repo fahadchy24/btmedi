@@ -103,6 +103,12 @@ class RegisterController extends Controller
 
             $data['password'] = Hash::make($data['password']);
 
+
+
+            if($data['userType'] == "Wholesale"){
+                $data['isActive']= 0;
+            }
+
             // echo "<pre>"; print_r($data); die;
 
             $success = User::create($data);

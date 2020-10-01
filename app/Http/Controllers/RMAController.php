@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Guestuser;
+use App\Order;
 use App\RMA;
+use App\User;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -87,7 +90,18 @@ class RMAController extends Controller
      */
     public function edit($id)
     {
-        $rma_edit = RMA::find($id);
+        $rma_edit = RMA::with('order')->find($id);
+
+        // $order = Order::with('user', 'guest')->get();
+        // // foreach($order->guest as $row){
+        // //     $user_email = $row->email;
+        // // }
+
+        // $user_email = $order->guest->email;
+
+        // dd($user_email);
+        // // dd($user_email);
+
         return view('backend.rma.edit', compact('rma_edit'));
     }
 
@@ -159,5 +173,24 @@ class RMAController extends Controller
     {
         $rma = RMA::where('status', 'Canceled')->get();
         return view('backend.rma.canceled_rma', compact('rma'));
+    }
+
+    public function completeRMA($id)
+    {
+        // return $id;
+        $rma = RMA::findOrFail($id);
+
+        if($rma->status == NULL){
+            $rma->status = "Completed";
+        }
+
+        $success = $rma->save();
+            if ($success) {
+                $notification=array(
+                'message' => 'RMA Status Updated Successfully ',
+                'alert-type' => 'success'
+                );
+                return redirect()->back()->with($notification);
+            }
     }
 }

@@ -33,6 +33,7 @@ class ProductReceiveController extends Controller
     public function create()
     {
         $vendors = Vendor::all();
+        
         return view('backend.inventory.product_receiving_input.create', compact('vendors'));
     }
 
@@ -48,7 +49,13 @@ class ProductReceiveController extends Controller
 
         $success = ProductReceive::create($data);
 
-        return redirect()->back();
+        if ($success) {
+            $notification=array(
+            'message' => 'Product Received Successfully ',
+            'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+        }
     }
 
     /**
@@ -70,7 +77,10 @@ class ProductReceiveController extends Controller
      */
     public function edit(ProductReceive $productReceive)
     {
-        //
+        $productReceiveEdit = ProductReceive::with('product', 'vendor')->findOrFail($productReceive->id);
+        $vendors = Vendor::all();
+
+        return view('backend.inventory.product_receiving_input.edit', compact('productReceiveEdit', 'vendors'));
     }
 
     /**
@@ -82,7 +92,15 @@ class ProductReceiveController extends Controller
      */
     public function update(Request $request, ProductReceive $productReceive)
     {
-        //
+        $success = ProductReceive::find($productReceive->id)->update($request->all());
+
+        if ($success) {
+            $notification=array(
+                'message' => 'Product Receive Updated Successfully ',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('product-receive.index')->with($notification);
+        }
     }
 
     /**
@@ -93,7 +111,15 @@ class ProductReceiveController extends Controller
      */
     public function destroy(ProductReceive $productReceive)
     {
-        //
+        $dltproductReceive = ProductReceive::findOrFail($productReceive->id)->delete();
+
+        if ($dltproductReceive) {
+            $notification=array(
+            'message' => 'Product Receive Deleted Successfully ',
+            'alert-type' => 'error'
+            );
+            return redirect()->route('product-receive.index')->with($notification);
+        }
     }
 
     // Inventory Receive by Excel sheet

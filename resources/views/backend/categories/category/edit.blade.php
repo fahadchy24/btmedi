@@ -49,18 +49,18 @@
                                 <input type="file" name="thumbnail_image" accept="image/*">
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/frontend/image/category/thumbnail/'.$editCategory->thumbnail_image) }}" style="width:200;height:150px;">
+                                <img src="{{ $editCategory->thumbnail_image }}" style="width:200;height:150px;">
                                 <input type="hidden" name="old_thumbnail" value="{{$editCategory->thumbnail_image}}">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label class="form-control-label" for="Category_Cover_Image">Category Cover Image &nbsp;<small>(Default size:210x270px)</small></label>
+                                <label class="form-control-label" for="Category_Cover_Image">Category Cover Image &nbsp;<small>(Default size:870x220px)</small></label>
                                 <input type="file" name="cover_image" accept="image/*">
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/frontend/image/category/cover/'.$editCategory->cover_image) }}" style="width:200px;height:150px;">
-                                <input type="hidden" name="old_cover" value="{{$editCategory->cover_image}}">
+                                <img src="{{ $editCategory->cover_image }}" style="width:200px;height:150px;">
+                                <input type="hidden" name="old_cover" value="{{ $editCategory->cover_image }}">
                             </div>
                         </div>
                         <div class="form-group">

@@ -8,7 +8,7 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0">Product</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0">Categories</h6>
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="{{ route('sub.category') }}">SubCategory</a></li>
@@ -39,8 +39,17 @@
                             <input type="text" class="form-control" name="subcategory_name" value="{{ $editSubCategory->subcategory_name }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">URL</label>
+                            <label for="exampleInputEmail1">Slug</label>
                             <input type="text" class="form-control" name="subcategory_url" value="{{ $editSubCategory->subcategory_url }}">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label" for="CategoryName">Category Name</label>
+                            <select class="form-control" name="category_id" id="CategoryName">
+                                <option disabled="" selected="">Select a category</option>
+                                @foreach($categories as $row)
+                                <option {{$row->id == $editSubCategory->category_id ? 'selected' : '' }} value="{{$row->id}}">{{$row->category_name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
@@ -48,8 +57,8 @@
                                 <input type="file" name="thumbnail_image" accept="image/*">
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/frontend/image/subcategory/thumbnail/'.$editSubCategory->thumbnail_image) }}" style="width:200;height:150px;">
-                                <input type="hidden" name="old_thumbnail" value="{{$editSubCategory->thumbnail_image}}">
+                                <img src="{{ $editSubCategory->thumbnail_image }}" style="width:200;height:150px;">
+                                <input type="hidden" name="old_thumbnail" value="{{ $editSubCategory->thumbnail_image }}">
                             </div>
                         </div>
                         <div class="col-6">
@@ -58,8 +67,8 @@
                                 <input type="file" name="cover_image" accept="image/*">
                             </div>
                             <div class="form-group">
-                                <img src="{{asset('uploads/frontend/image/subcategory/cover/'.$editSubCategory->cover_image) }}" style="width:200px;height:150px;">
-                                <input type="hidden" name="old_cover" value="{{$editSubCategory->cover_image}}">
+                                <img src="{{ $editSubCategory->cover_image }}" style="width:200px;height:150px;">
+                                <input type="hidden" name="old_cover" value="{{ $editSubCategory->cover_image }}">
                             </div>
                         </div>
                         <div class="custom-control custom-checkbox mb-3">

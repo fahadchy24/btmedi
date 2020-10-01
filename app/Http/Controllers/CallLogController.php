@@ -71,9 +71,11 @@ class CallLogController extends Controller
      * @param  \App\CallLog  $callLog
      * @return \Illuminate\Http\Response
      */
-    public function edit(CallLog $callLog)
+    public function edit(CallLog $callLog, $id)
     {
-        //
+        $editCallLog = CallLog::findOrFail($id);
+
+        return view('backend.call_log.edit', compact('editCallLog'));
     }
 
     /**
@@ -83,9 +85,17 @@ class CallLogController extends Controller
      * @param  \App\CallLog  $callLog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CallLog $callLog)
+    public function update(Request $request, $id)
     {
-        //
+        $success = CallLog::find($id)->update($request->all());
+
+        if ($success) {
+            $notification=array(
+                'message' => 'Call Log Updated Successfully ',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('call-log')->with($notification);
+        }
     }
 
     /**
@@ -94,9 +104,17 @@ class CallLogController extends Controller
      * @param  \App\CallLog  $callLog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CallLog $callLog)
+    public function destroy($id)
     {
-        //
+        $dltCallLog = CallLog::findOrFail($id)->delete();
+
+        if ($dltCallLog) {
+            $notification=array(
+            'message' => 'Call Log Deleted Successfully ',
+            'alert-type' => 'error'
+            );
+            return redirect()->back()->with($notification);
+        }
     }
 
     public function userAutocomplete()

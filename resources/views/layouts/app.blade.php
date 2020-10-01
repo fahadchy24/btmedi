@@ -208,7 +208,7 @@
                                                             <tr>
                                                                 <td class="text-center" style="width:70px">
                                                                     <a href="#">
-                                                                        <img src="{{asset('uploads/frontend/image/product/'.$row->options->main_image)}}" style="width:70px" alt="Yutculpa ullamcon" title="Yutculpa ullamco" class="preview">
+                                                                        <img src="{{ $row->options->main_image }}" style="width:70px" alt="Yutculpa ullamcon" title="Yutculpa ullamco" class="preview">
                                                                     </a>
                                                                 </td>
                                                                 <td class="text-left"> <a class="cart_product_name" href="{{ url('product/view', $row->id) }}">{{ $row->name }}</a>
@@ -216,10 +216,7 @@
                                                                 <td class="text-center">{{"x".$row->qty }}</td>
                                                                 <td class="text-center">{{"$".$row->price }}</td>
                                                                 <td class="text-right">
-                                                                    <a href="product.html" class="fa fa-edit"></a>
-                                                                </td>
-                                                                <td class="text-right">
-                                                                    <a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a>
+                                                                    <a href="{{ url('cart/delete', $row->rowId) }}" class="fa fa-times fa-delete"></a>
                                                                 </td>
                                                             </tr>
                                                         @endforeach
@@ -500,13 +497,13 @@
                     </div>
                 </div>
         </header>
-        <!-- //Header Container  -->
+        <!-- Header Container  -->
 
         @yield('content')
 
         <div id="cookieConsent">
             <div id="closeCookieConsent">x</div>
-            This website is using cookies. <a href="#">More info</a>. <a class="cookieConsentOK" href="#">That's Fine</a>
+            This website is using cookies. <a href="#">More info</a>. <a class="cookieConsentOK" href="#"> That is Fine</a>
         </div>
 
         <!-- Include Libs & Plugins
@@ -523,8 +520,6 @@
         <script src="{{ asset('frontend/') }}/js/datetimepicker/moment.js"></script>
         <script src="{{ asset('frontend/') }}/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
         <script src="{{ asset('frontend/') }}/js/jquery-ui/jquery-ui.min.js"></script>
-        <script src="{{ asset('frontend/') }}/js/modernizr/modernizr-2.6.2.min.js"></script>
-        <script src="{{ asset('frontend/') }}/js/minicolors/jquery.miniColors.min.js"></script>
         <!-- Theme files
 ============================================ -->
         <script src="{{ asset('frontend/') }}/js/themejs/application.js"></script>
@@ -532,6 +527,7 @@
         <script src="{{ asset('frontend/') }}/js/themejs/so_megamenu.js"></script>
         <script src="{{ asset('frontend/') }}/js/themejs/addtocart.js"></script>
         <script src="{{ asset('frontend/') }}/js/themejs/cpanel.js"></script>
+        <script src="{{ asset('frontend/') }}/js/themejs/application.js"></script>
         <script src="{{ asset('frontend/') }}/assets/js/custom.js"></script>
         <script src="{{ asset('backend/') }}/assets/js/custom.js"></script>
 
@@ -623,6 +619,10 @@
             });
         </script>
 
+        {{--  <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+        <script>paypal.Buttons().render('body');</script>  --}}
+
+        @stack('scripts')
 
 </body>
 

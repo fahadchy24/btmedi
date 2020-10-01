@@ -28,7 +28,7 @@ class SubCategoryController extends Controller
                 'subcategory_url' => 'unique:sub_categories|string',
                 'thumbnail_image' => 'image|mimes:jpeg,jpg,png,gif',
                 'cover_image' => 'image|mimes:jpeg,jpg,png,gif',
-                'status' => 'required',
+                // 'status' => 'required',
             ];
             $customMessages = [
                 'subcategory_name.unique' => 'This Category Name has been used already.',
@@ -39,7 +39,7 @@ class SubCategoryController extends Controller
                 'thumbnail_image.mimes' => 'Upload a valid Image',
                 'cover_image.image' => 'Upload a valid Image',
                 'cover_image.mimes' => 'Upload a valid Image',
-                'status.required' => 'Status is required',
+                // 'status.required' => 'Status is required',
             ];
             $this->validate($request, $rules, $customMessages);
 
@@ -48,13 +48,7 @@ class SubCategoryController extends Controller
             $subcategory->subcategory_url = Str::slug($request->subcategory_url);
             $subcategory->category_id = $request->category_id;
 
-            if (is_null($subcategory->status)) {
-                $status = 0;
-           }
-           else {
-                $status = 1;
-           }
-           $subcategory->status = $request->status;
+           $subcategory->status = 1;
 
             if ($request->hasFile('thumbnail_image')) {
                 $thumbnail_image = $request->file('thumbnail_image');
@@ -62,19 +56,19 @@ class SubCategoryController extends Controller
                     $thumb_image = time().$thumbnail_image->getClientOriginalName();
                     $thumb_path = 'uploads/frontend/image/subcategory/thumbnail/'. $thumb_image;
                     Image::make($thumbnail_image)->resize(210, 270)->save($thumb_path);
+                    $subcategory->thumbnail_image = url($thumb_path);
                 }
             }
-            $subcategory->thumbnail_image = $thumb_image;
 
             if ($request->hasFile('cover_image')) {
                 $cover_image = $request->file('cover_image');
                 if ($cover_image->isValid()){
                     $image = time().$cover_image->getClientOriginalName();
                     $path = 'uploads/frontend/image/subcategory/cover/'. $image;
-                    Image::make($cover_image)->resize(1350, 500)->save($path);
+                    Image::make($cover_image)->resize(870, 220)->save($path);
+                    $subcategory->cover_image = url($path);
                 }
             }
-            $subcategory->cover_image = $image;
 
             $success = $subcategory->save();
             if ($success) {
@@ -130,8 +124,9 @@ class SubCategoryController extends Controller
     public function edit($id)
     {
         $editSubCategory = SubCategory::find($id);
+        $categories = Category::all();
 
-        return view('backend.categories.subcategory.edit', compact('editSubCategory'));
+        return view('backend.categories.subcategory.edit', compact('editSubCategory', 'categories'));
     }
 
     /**
@@ -146,6 +141,7 @@ class SubCategoryController extends Controller
         $subcategoryUpdate = SubCategory::find($id);
         $subcategoryUpdate->subcategory_name = $request->subcategory_name;
         $subcategoryUpdate->subcategory_url = $request->subcategory_url;
+        $subcategoryUpdate->category_id = $request->category_id;
 
         if (is_null($subcategoryUpdate->status)) {
             $status = 0;
@@ -165,7 +161,7 @@ class SubCategoryController extends Controller
             $imageName = time().$thumbnail_image->getClientOriginalName();
             $imagePath = 'uploads/frontend/image/subcategory/thumbnail/'. $imageName;
             Image::make($thumbnail_image)->resize(210, 270)->save($imagePath);
-            $subcategoryUpdate->thumbnail_image = $imageName;
+            $subcategoryUpdate->thumbnail_image = url($imagePath);
         }
 
         if ($request->hasFile('cover_image')) {
@@ -178,7 +174,7 @@ class SubCategoryController extends Controller
             $image = time().$cover_image->getClientOriginalName();
             $path = 'uploads/frontend/image/subcategory/cover/'. $image;
             Image::make($cover_image)->resize(870, 220)->save($path);
-            $subcategoryUpdate->cover_image = $image;
+            $subcategoryUpdate->cover_image = url($path);
         }
 
         $success = $subcategoryUpdate->save();
@@ -213,8 +209,8 @@ class SubCategoryController extends Controller
         $dlt = $subcategoryDelete->delete();
             if ($dlt) {
                     $notification=array(
-                     'message' => 'Product Category Deleted Successfully',
-                     'alert-type' => 'success'
+                     'message' => 'Product Category Deleted.',
+                     'alert-type' => 'danger'
                     );
                     return redirect()->route('sub.category')->with($notification);
                 }
@@ -227,5 +223,12 @@ class SubCategoryController extends Controller
                     return redirect()->back()->with($notification);
                 }
         }
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $subcategory_url = Str::slug($request->subcategory_name);
+
+        return response()->json(['subcategory_url' => $subcategory_url]);
     }
 }

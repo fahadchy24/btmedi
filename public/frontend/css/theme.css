@@ -8910,7 +8910,8 @@ div.module.custom-listingtab {
   div.module.custom-listingtab .owl2-controls .owl2-nav {
     position: absolute;
     top: -17px;
-    right: 15px; }
+    right: 15px;
+    display: none; }
   div.module.custom-listingtab .owl2-controls .owl2-nav > div {
     border: none;
     width: 28px;
@@ -8942,6 +8943,23 @@ div.module.custom-listingtab {
     border-right: none;
     right: 0;
     left: auto; }
+
+    .user-profile .dropdown-menu.shoppingcart-box {
+      opacity: 0;
+      transform: rotateX(0deg);
+      visibility: hidden;
+    }
+    .user-profile .dropdown-menu.shoppingcart-box:hover {
+      opacity: 1;
+      transform: rotateX(0deg);
+      visibility: visible;
+    }
+    header .user-profile:hover .dropdown-menu {
+      opacity: 1;
+      transform: rotateX(0deg);
+      visibility: visible;
+    }
+    
   @media (min-width: 1200px) {
       div.module.custom-listingtab.img-float .ltabs-wrap .ltabs-items-container {
         margin-right: 196px;
@@ -9217,4 +9235,15 @@ width: 50%;
 .p-4 mb-4 checkout-table
 {
   background: #000;
+}
+
+.cbutton {
+  background-color: #1cb4c3;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 100%;
 }

@@ -58,12 +58,12 @@
                                 <td>{{$row->phone}}</td>
                                 <td>{{$row->renark}}</td>
                                 <td>
-                                    <a title="Edit Product" class="btn btn-sm btn-info" id="edit" href="{{ route('vendor.edit', $row->id) }}"><i class="fas fa-edit"></i></a>
+                                    <a title="Edit" class="btn btn-sm btn-info" id="edit" href="{{ route('vendor.edit', $row->id) }}"><i class="fas fa-edit"></i></a>
                                     {{-- <a title="Delete Product" class="btn btn-sm btn-danger" id="delete" href="{{ route('vendor.destroy', $row->id) }}"><i class="fa fa-trash" aria-hidden="true"></i></a> --}}
                                     <form action="{{ route('vendor.destroy', $row->id) }}" method="POST" style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')
-                                        <button title="Delete Product" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure want to delete this vendor?');" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        <button title="Delete" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure want to delete this vendor?');" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                     </form>
                                 </td>
                             </tr>

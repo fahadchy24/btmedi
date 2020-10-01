@@ -49,6 +49,7 @@
                                 <th>Fax Number</th>
                                 <th>Email Address</th>
                                 <th>Reseller Permit Number</th>
+                                <th>Status</th>
                                 <th>Note</th>
                                 <th>Actions</th>
                             </tr>
@@ -68,11 +69,12 @@
                                 <td>{{ $row->telephone }}</td>
                                 <td>{{ $row->fax }}</td>
                                 <td>{{ $row->email }}</td>
-                                <td>{{ $row->email }}</td>
+                                <td>{{ $row->reseller_permit_number }}</td>
+                                <td>{{ $row->isActive ==0 ? 'Inactive' : 'Active' }}</td>
                                 <td>{{ $row->note }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-primary" href="{{ url('admin/customer/view/'.$row->id)}}">Edit</a>
-                                    <a class="btn btn-sm btn-danger" id="delete" href="{{ url('admin/customer/delete/'.$row->id)}}">Delete</a>
+                                    <a title="Edit Customer" class="btn btn-sm btn-primary" href="{{ route('customer.edit' ,$row->id)}}"><i class="fas fa-edit"></i></a>
+                                    <a title="Delete Customer" class="btn btn-sm btn-danger" id="delete" href="{{ route('customer.delete' ,$row->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             @endforeach

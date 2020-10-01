@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item active"><a href="{{route('receive.index')}}">Product Receiving Input</a></li>
+                            <li class="breadcrumb-item active"><a href="{{route('product-receive.index')}}">Product Receiving Input</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -31,7 +31,7 @@
                 <!-- Card header -->
                 <div class="card-header">
                     <h3 class="mb-0 float-left">Product Received List</h3>
-                    <a class="btn btn-sm btn-primary mb-0 float-right" href="{{route('receive.create')}}">Add New</a>
+                    <a class="btn btn-sm btn-primary mb-0 float-right" href="{{route('product-receive.create')}}">Add New</a>
                 </div>
                 <!-- Excel product -->
                 <div class="card-header">
@@ -73,8 +73,12 @@
                                 <td>{{$row->quantity}}</td>
                                 <td>{{$row->cost}}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-info" id="edit" href="{{-- {{ url('admin/products/edit/'.$row->id)}} --}}#"><i class="fas fa-edit"></i></a>
-                                    <a title="Delete Product" class="btn btn-sm btn-danger" id="delete" href="{{-- {{ url('admin/products/delete/'.$row->id)}} --}}#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <a class="btn btn-sm btn-info" id="edit" href="{{ route('product-receive.edit', $row->id)}}"><i class="fas fa-edit"></i></a>
+                                    <form action="{{ route('product-receive.destroy', $row->id) }}" method="POST" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button title="Delete" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure want to delete this field?');" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
@@ -90,7 +94,7 @@
         <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6">
                 <div class="copyright text-center text-lg-left text-muted">
-                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Medi</a>
+                    © 2020 <a href="#" class="font-weight-bold ml-1">BTCare Supply</a>
                 </div>
             </div>
         </div>
@@ -101,25 +105,5 @@
 @endsection
 
 @push('scripts')
-<script>
-    $('body').on('change', '#status', function(){
-        var id = $(this).attr('data-id');
-        if(this.checked) {
-            var status = 1;
-        }
-        else {
-            var status = 0;
-        }
-
-        $.ajax({
-            url : 'product/status/'+id+'/'+status,
-            method : 'get',
-            success : function(data) {
-                toastr.success("{{ Session::get('message', 'Status has been updated') }}");
-            }
-        });
-
-    });
-</script>
 
 @endpush

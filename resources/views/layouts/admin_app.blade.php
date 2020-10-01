@@ -12,22 +12,37 @@
     <title> @yield('title') </title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('frontend/') }}/ico/favicon-16x16.png" />
+    
+    <link href="http://markcell.github.io/jquery-tabledit/assets/css/bootstrap-yeti.min.css">
+    <link rel="stylesheet" href="http://markcell.github.io/jquery-tabledit/assets/css/prettify.min.css">
+    <link rel="stylesheet" href="http://markcell.github.io/jquery-tabledit/assets/css/prettify-bootstrap.min.css">
+    <link rel="stylesheet" href="http://markcell.github.io/jquery-tabledit/assets/js/bootstrap.min.js">
+    
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
     <link rel="stylesheet" href="{{asset('backend/assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('backend/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
+    
+    
     <!-- Page plugins -->
-  <link rel="stylesheet" href="{{asset('backend/assets/vendor/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('backend/assets/vendor/select2/dist/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/vendor/quill/dist/quill.core.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css')}}">
+    
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{asset('backend/assets/css/argon.css?v=1.1.0')}}" type="text/css">
-
+    
     <!-- Ajax CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Table Edit Jquery -->
+    <script src="{{asset('backend/assets/vendor/jquery-tabledit/jquery.tabledit.min.js')}}"></script>
+
+    
+
 
     {{--  Jquery Ui for Datepicker  --}}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -109,6 +124,9 @@
                                     <li class="nav-item">
                                         <a href="{{ route('wholesale.orders') }}" class="nav-link">Wholesale Orders</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('shipping.index') }}" class="nav-link">Shipping Method</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -153,9 +171,6 @@
                                     <li class="nav-item">
                                         <a href="{{ route('sub.category') }}" class="nav-link ">SubCategory</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{-- {{ route('child.category') }} --}}" class="nav-link ">Child Category</a>
-                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -169,9 +184,9 @@
                                     <li class="nav-item">
                                         <a href="{{ route('customer.create') }}" class="nav-link">Create New Customer</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{-- {{ route('customer.index') }} --}}" class="nav-link">Add Customer by Uploading</a>
-                                    </li>
+                                    {{--  <li class="nav-item">
+                                        <a href="#" class="nav-link">Add Customer by Uploading</a>
+                                    </li>  --}}
                                     <li class="nav-item">
                                         <a href="{{ route('customer.index') }}" class="nav-link">Customer List</a>
                                     </li>
@@ -188,21 +203,15 @@
                                     <li class="nav-item">
                                         <a href="{{route('inventory.index')}}" class="nav-link">Inventory List</a>
                                     </li>
-                                    {{-- <li class="nav-item">
-                                        <a href="#" class="nav-link">Inventory by Bulk Upload</a>
-                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="{{route('vendor.index')}}" class="nav-link">Vendor</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('receive.index')}}" class="nav-link">Product Receiving Input</a>
+                                        <a href="{{route('product-receive.index')}}" class="nav-link">Product Receiving Input</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">RFID Label Printing</a>
                                     </li>
-                                    {{-- <li class="nav-item">
-                                        <a href="#" class="nav-link">Inventory Safety Level Set-up</a>
-                                    </li> --}}
                                 </ul>
                             </div>
                         </li>
@@ -240,9 +249,6 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('call-log-add') }}" class="nav-link">Create Call Log</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Add Call Log by Uploading</a>
                                     </li>
                                 </ul>
                             </div>
@@ -546,9 +552,6 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ni ni-ungroup"></i>
-                            </a>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right">
                                 <div class="row shortcuts px-4">
                                     <a href="#!" class="col-4 shortcut-item">
@@ -607,23 +610,11 @@
                                 <div class="dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Welcome!</h6>
                                 </div>
-                                <a href="../../pages/examples/profile.html" class="dropdown-item">
+                                <a href="#" class="dropdown-item">
                                     <i class="ni ni-single-02"></i>
                                     <span>My profile</span>
                                 </a>
-                                <a href="#!" class="dropdown-item">
-                                    <i class="ni ni-settings-gear-65"></i>
-                                    <span>Settings</span>
-                                </a>
-                                <a href="#!" class="dropdown-item">
-                                    <i class="ni ni-calendar-grid-58"></i>
-                                    <span>Activity</span>
-                                </a>
                                 <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="ni ni-key-25"></i>
-                                    <span>Lock</span>
-                                </a>
                                 <a href="{{ route('admin.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item">
                                     <i class="ni ni-user-run"></i>
                                     <span>Logout</span>
@@ -645,7 +636,7 @@
 
     <!-- Argon Scripts -->
     <!-- Core -->
-    <script src="{{asset('backend/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+     {{--  <script src="{{asset('backend/assets/vendor/jquery/dist/jquery.min.js')}}"></script>  --}}
     <script src="{{asset('backend/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('backend/assets/vendor/js-cookie/js.cookie.js')}}"></script>
     <script src="{{asset('backend/assets/vendor/quill/dist/quill.min.js')}}"></script>
@@ -653,7 +644,7 @@
     <script src="{{asset('backend/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
     <!-- Optional JS -->
     <script src="{{asset('backend/assets/vendor/select2/dist/js/select2.min.js')}}"></script>
-     <script src="{{asset('backend/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('backend/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{asset('backend/assets/vendor/chart.js/dist/Chart.min.js')}}"></script>
     <script src="{{asset('backend/assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
     <script src="{{asset('backend/assets/vendor/dropzone/dist/min/dropzone.min.js')}}"></script>
@@ -740,10 +731,6 @@
     </script>
 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-    <script>
-
-    </script>
 
     @stack('scripts')
 

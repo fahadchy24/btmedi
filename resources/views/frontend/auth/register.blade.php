@@ -149,6 +149,21 @@
                     </div>
                 </fieldset>
                 <fieldset>
+                    <legend>Reseller <small>(*If you are a reseller)</small></legend>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="reseller_permit_number">Reseller Permit Number</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="reseller_permit_number" value="" placeholder="Reseller Permit Number" id="reseller_permit_number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="expiration_date">Expiration Date</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" id="expiration_date" name="expiration_date" autocomplete="off">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
                     <legend>Newsletter</legend>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Subscribe</label>
@@ -179,5 +194,6 @@
 @endsection
 
 @push('scripts')
+
 
 @endpush

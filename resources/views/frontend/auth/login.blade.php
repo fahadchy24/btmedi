@@ -31,6 +31,15 @@
                         <form action="{{ route('login') }}" method="post">@csrf
                             <div class="col-sm-6 customer-login">
                                 <div class="well">
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     <h2><i class="fa fa-file-text-o" aria-hidden="true"></i> Returning Customer</h2>
                                     <p><strong>I am a returning customer</strong></p>
                                     <div class="form-group">

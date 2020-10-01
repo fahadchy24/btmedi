@@ -9,6 +9,8 @@ use App\Category;
 use App\Menu;
 use App\ProductCategory;
 use App\Product;
+use App\ProductAttributes;
+use App\ShippingMethod;
 use App\Subscriber;
 use App\SubCategory;
 use Illuminate\Http\Request;
@@ -22,7 +24,7 @@ class FrontendController extends Controller
         $productCategory = Category::orderBy('priority', 'asc')->where('status', 1)->paginate(4);
         $productSubCategory = SubCategory::orderBy('id', 'asc')->where('status', 1)->paginate(1);
         $sliders = Slider::orderBy('priority','asc')->where('status',1)->get();
-        $dealProduct = Product::where('status',1)->get();
+        $dealProduct = Product::orderBy('created_at', 'asc')->where('status',1)->paginate(1);
         $ad_banner = AdBanner::find(1);
         $popup_banner = GeneralSetting::find(1);
 
@@ -35,6 +37,7 @@ class FrontendController extends Controller
         return view('frontend.index', compact('products','productCategory', 'sliders', 'dealProduct', 'ad_banner', 'popup_banner',
         'latestproducts', 'featuredproducts', 'bestsalers', 'productSubCategory'));
     }
+    
     public function test() {
         return url('uploads/frontend/image/category/thumbnail/15999994304.jpg');
         return Menu::with('subcategory')->get();
@@ -43,8 +46,12 @@ class FrontendController extends Controller
 
     public function productDetailsByID($id)
     {
-        $productdetail = Product::where('id',$id)->first();
-        return view('frontend.pages.product_details', compact('productdetail'));
+        $productdetail = Product::with('allImages', 'attributes')->where('id',$id)->first();
+        $relatedProducts = Product::where('id', '!=', $id)->/* where(['category_id'=>$productdetail->category_id])-> */get();
+
+        // dd($productAttributes);
+
+        return view('frontend.pages.product_details', compact('productdetail', 'relatedProducts'));
     }
 
     // Quickview of Products
@@ -103,4 +110,12 @@ class FrontendController extends Controller
             return redirect()->back()->with($notification);
         }
     }
+
+    // Shipping Methods Implements
+    // public function FrontshippingMethod()
+    // {
+    //     $frontshippingMethod = ShippingMethod::all();
+
+    //     return view('frontend.pages.checkout', compact('frontshippingMethod'));
+    // }
 }

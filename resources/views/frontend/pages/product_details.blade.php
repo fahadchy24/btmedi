@@ -233,13 +233,39 @@
                 <div class="left-content-product">
                     <div class="row">
                         <div class="content-product-left col-md-6 col-sm-12 col-xs-12">
+                            <div id="thumb-slider-vertical" class="thumb-vertical-outer">
+                                <ul class="thumb-vertical">
+                                    @foreach ($productdetail->allImages as $row)                        
+                                    <li class="owl2-item">
+                                        <a data-index="0" class="img thumbnail" data-image="{{ $row->product_image }}" title="{{ $productdetail->product_name }}">
+                                            <img src="{{ $row->product_image }}" title="{{ $productdetail->product_name }}" alt="{{ $productdetail->product_name }}">
+                                        </a>
+                                    </li>
+                                    {{--  <li class="owl2-item">
+                                        <a data-index="1" class="img thumbnail " data-image="{{ $row->product_image }}" title="Chicken swinesha">
+                                            <img src="{{ $row->product_image }}" title="Chicken swinesha" alt="Chicken swinesha">
+                                        </a>
+                                    </li>
+                                    <li class="owl2-item">
+                                        <a data-index="2" class="img thumbnail" data-image="{{ $row->product_image }}" title="Chicken swinesha">
+                                            <img src="{{ $row->product_image }}" title="Chicken swinesha" alt="Chicken swinesha">
+                                        </a>
+                                    </li>
+                                    <li class="owl2-item">
+                                        <a data-index="3" class="img thumbnail" data-image="{{ $row->product_image }}" title="Chicken swinesha">
+                                            <img src="{{ $row->product_image }}" title="Chicken swinesha" alt="Chicken swinesha">
+                                        </a>
+                                    </li>  --}}
+                                    @endforeach
+                                </ul>
+                            </div>
                             <div class="large-image large-image2 vertical">
                                 <img itemprop="image" class="product-image-zoom"
-                                    src="{{ $productdetail->main_image }}"
-                                    data-zoom-image="{{asset('uploads/frontend/image/product/'.$productdetail->main_image)}}"
-                                    title="{{ $productdetail->product_name }}" alt="{{ $productdetail->product_name }}">
+                                src="{{ $productdetail->main_image }}"
+                                data-zoom-image="{{ $productdetail->main_image }}"
+                                title="{{ $productdetail->product_name }}" alt="{{ $productdetail->product_name }}">
                             </div>
-                            <a class="thumb-video pull-left" href="https://www.youtube.com/watch?v=I3Lo4ysUf80"><i
+                            <a class="thumb-video pull-left" href="{{ $productdetail->video_url }}"><i
                                     class="fa fa-youtube-play"></i></a>
                         </div>
                         <div class="content-product-right col-md-6 col-sm-12 col-xs-12">
@@ -279,7 +305,7 @@
                             </div>
                             <div class="product-box-desc">
                                 <div class="inner-box-desc">
-                                    <div class="brand"><span>Brand:</span><a href="#">{{ $productdetail->brand->title }}</a> </div>
+                                    <div class="brand"><span>Brand:</span><a href="#">{{ $productdetail->brand_id > NULL ? $productdetail->brand->title : "No Brand Selected" }}</a> </div>
                                     <div class="model"><span>Product Code:</span>{{ $productdetail->sku }}</div>
                                     <div class="stock"><span>Availability:</span> <i class="fa fa-check-square-o"></i>
                                         In Stock</div>
@@ -327,6 +353,42 @@
                                 <div class="form-group required">
                                     <label class="control-label">Size</label>
                                     <div id="input-option472" style="margin-left: 71px; margin-top: -28px;">
+                                        @foreach($productdetail->attributes as $row)
+                                        {{-- <p>{{ $row->label }}</p> --}}
+                                        {{-- <p>{{ $row->size }}</p> --}}
+                                        <div class="radio  radio-type-button">
+                                            <label>
+                                                <input type="radio" name="{{ $row->label }}" value="418">
+                                                <span class="option-content-box" {{-- data-title="Small +$30.00"
+                                                    data-toggle="tooltip" data-original-title="" title="" --}}>
+                                                    <span class="option-name">{{ $row->label }}</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        @endforeach
+                                        {{-- <div class="radio  radio-type-button">
+                                            <label>
+                                                <input type="radio" name="option[472]" value="417">
+                                                <span class="option-content-box" data-title="Medium +$20.00"
+                                                    data-toggle="tooltip" data-original-title="" title="">
+                                                    <span class="option-name">M</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="radio  radio-type-button">
+                                            <label>
+                                                <input type="radio" name="option[472]" value="416">
+                                                <span class="option-content-box" data-title="Large +$10.00"
+                                                    data-toggle="tooltip" data-original-title="" title="">
+                                                    <span class="option-name">L</span>
+                                                </span>
+                                            </label>
+                                        </div> --}}
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label class="control-label">Other</label>
+                                    <div id="input-option472" style="margin-left: 71px; margin-top: -28px;">
                                         <div class="radio  radio-type-button">
                                             <label>
                                                 <input type="radio" name="option[472]" value="418">
@@ -356,8 +418,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--                                 <div class="form-group required ">
-                                    <label class="control-label">Checkbox</label>
+                                {{-- <div class="form-group required ">
+                                    <label class="control-label">Other</label>
                                     <div id="input-option471">
                                         <div class="checkbox   radio-type-button">
                                             <label>
@@ -384,7 +446,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                </div>  -->
+                                </div> --}}
                                     <div class="form-group box-info-product">
                                     <form action="{{ url('cart/add')}}" method="POST">
                                     <input type="hidden" name="id" value="{{ $productdetail->id }}">@csrf
@@ -519,7 +581,7 @@
             </div>
             <!-- //Product Tabs -->
             <!-- Related Products -->
-            <div class="related titleLine products-list grid module ">
+            {{--  <div class="related titleLine products-list grid module ">
                 <h3 class="modtitle"><i class="fa fa-tags"></i>Related Products </h3>
                 <div class="releate-products yt-content-slider products-list" data-rtl="no" data-loop="yes"
                     data-autoplay="no" data-autoheight="no" data-autowidth="no" data-delay="4" data-speed="0.6"
@@ -527,26 +589,28 @@
                     data-items_column3="2" data-items_column4="1" data-arrows="yes" data-pagination="no"
                     data-lazyload="yes" data-hoverpause="yes">
                     <div class="item">
+                        @foreach($relatedProducts->chunk(4) as $chunk)
                         <div class="product-layout">
+                            @foreach($chunk as $row)
                             <div class="product-item-container">
                                 <div class="left-block left-b">
                                     <div class="product-card__gallery product-card__left">
                                         <div class="item-img thumb-active"
-                                            data-src="image/catalog/demo/product/electronic/600x600/9.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/9.jpg" alt="image">
+                                            data-src="{{ $row->main_image }}"><img
+                                                src="{{ $row->main_image }}" alt="image">
                                         </div>
                                         <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/10.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/10.jpg" alt="image">
+                                            data-src="{{ $row->main_image }}"><img
+                                                src="{{ $row->main_image }}" alt="image">
                                         </div>
                                         <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/11.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/11.jpg" alt="image">
+                                            data-src="{{ $row->main_image }}"><img
+                                                src="{{ $row->main_image }}" alt="image">
                                         </div>
                                     </div>
                                     <div class="product-image-container">
                                         <a href="product.html" target="_self" title="Cupim should">
-                                            <img src="image/catalog/demo/product/electronic/600x600/9.jpg"
+                                            <img src="{{ $row->main_image }}"
                                                 class="img-responsive" alt="image">
                                         </a>
                                     </div>
@@ -559,15 +623,15 @@
                                 <div class="right-block right-b">
                                     <ul class="colorswatch">
                                         <li class="item-img active"
-                                            data-src="image/catalog/demo/product/electronic/600x600/9.jpg"><a
+                                            data-src="{{ $row->main_image }}"><a
                                                 href="javascript:void(0);" title="gray"><img
                                                     src="image/demo/colors/gray.jpg" alt="image"></a></li>
                                         <li class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/10.jpg"><a
+                                            data-src="{{ $row->main_image }}"><a
                                                 href="javascript:void(0);" title="pink"><img
                                                     src="image/demo/colors/pink.jpg" alt="image"></a></li>
                                         <li class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/11.jpg"><a
+                                            data-src="{{ $row->main_image }}"><a
                                                 href="javascript:void(0);" title="black"><img
                                                     src="image/demo/colors/black.jpg" alt="image"></a></li>
                                     </ul>
@@ -611,9 +675,11 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
+                        @endforeach
                     </div>
-                    <div class="item">
+                    {{--  <div class="item">
                         <div class="product-layout">
                             <div class="product-item-container">
                                 <div class="left-block left-b">
@@ -999,7 +1065,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>  --}}
                 </div>
             </div>
             <!-- end Related  Products-->

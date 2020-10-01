@@ -204,6 +204,12 @@
                                     <p>{!! $product->specification !!}</p>
                                 </div>
                             </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="specification">Video URL</label>
+                                    <p>{{  $product->video_url  }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

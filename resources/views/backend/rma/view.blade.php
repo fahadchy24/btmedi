@@ -46,11 +46,11 @@
                             <div class="form-row">
                                 <div class="col-md-3 mb-3">
                                     <label class="form-control-label" for="name">Order Number</label>
-                                    <p>TCH#{{ $row->id }}</p>
+                                    <p>{{ $row->order_number }}</p>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label class="form-control-label" for="sku">Order Date</label>
-                                    <p> {{ $row->created_at }} </p>
+                                    <p> {{ $rma_edit->order->created_at->format('d M Y') }} </p>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <div class="form-group">

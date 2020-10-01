@@ -32,6 +32,9 @@ Route::match(['get', 'post'], '/page/{url}', 'PagesController@OtherPage');
 Route::get('product/view/{id}', 'FrontendController@productDetailsByID');
 Route::get('product/quickview/{id}', 'FrontendController@productQuickview');
 
+// Shipping Methods
+// Route::get('frontend/orders/shipping', 'FrontendController@FrontshippingMethod');
+
 // Order
 Route::get('todaysorder', 'ReportController@todaysOrder')->name('todaysorder');
 
@@ -60,6 +63,10 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	Route::get('orders/edit/{id}', 'OrderController@editOrder')->name('edit.order');
 	Route::post('orders/update/{id}', 'OrderController@updateOrder')->name('update.order');
 	Route::get('orders/delete/{id}', 'OrderController@deleteOrder')->name('delete.order');
+	Route::post('orders/paid-unpaid/{id}', 'OrderController@PaidUnpaidOrder')->name('paid_unpaid.order');
+
+	// Shipping Methods Setup
+	Route::resource('orders/shipping', 'ShippingMethodController');
 
 
 	// =============== Products Routes for Admin =============== \\
@@ -67,7 +74,7 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	Route::get('products/create', 'ProductController@create')->name('product.create');
 	Route::post('products/save', 'ProductController@store')->name('product.save');
 	Route::get('products/edit/{id}', 'ProductController@edit')->name('product.edit');
-	Route::post('products/update/{id}', 'ProductController@update');
+	Route::post('products/update/{id}', 'ProductController@update')->name('product.update');
 	Route::get('products/delete/{id}', 'ProductController@destroy');
 	Route::get('products/view/{id}', 'ProductController@show');
 	Route::get('product/status/{id}/{status}', 'ProductController@status')->name('product-status');
@@ -126,6 +133,17 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	Route::post('subcategory/update/{id}', 'SubCategoryController@update')->name('update-subcategory');
 	Route::get('subcategory/delete/{id}', 'SubCategoryController@destroy')->name('delete-subcategory');
 
+	Route::get('subcategory/check-slug', 'SubCategoryController@checkSlug')->name('check.subcategory.slug');
+
+	// =============== Customer Routes for Admin =============== \\
+	Route::get('customers', 'CustomerController@index')->name('customer.index');
+	Route::get('customers/create', 'CustomerController@create')->name('customer.create');
+	Route::post('customers/save', 'CustomerController@store')->name('customer.store');
+	Route::get('customer/view/{id}', 'CustomerController@show')->name('customer.show');
+	Route::get('customer/edit/{id}', 'CustomerController@edit')->name('customer.edit');
+	Route::post('customer/update/{id}', 'CustomerController@update')->name('customer.update');
+	Route::get('customer/delete/{id}', 'CustomerController@destroy')->name('customer.delete');
+	
 	// =============== Inventory Routes for Admin =============== \\
 	Route::get('inventory', 'InventoryController@index')->name('inventory.index');
 	// ================ Product Import By Excel sheet =========== \\
@@ -133,8 +151,10 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	/* Vendor Routes */
 	Route::resource('vendor', 'VendorController');
 	/* Product Receieving Input */
-	Route::resource('product/receive', 'ProductReceiveController');
-	Route::get('product/receive/autocomplete','ProductReceiveController@getAutocompleteData'); 
+	Route::resource('product-receive', 'ProductReceiveController');
+	Route::get('product/receive/autocomplete','ProductReceiveController@getAutocompleteData');
+	
+ 	Route::post('tabledit/action', 'InventoryController@action')->name('tabledit.action');
 
 
 	// =============== RMA Routes for Admin =============== \\
@@ -146,22 +166,17 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	Route::get('waiting-for-approval-rma', 'RMAController@waiting')->name('waiting.rma');
 	Route::get('completed-rma', 'RMAController@completed')->name('completed.rma');
 	Route::get('canceled-rma', 'RMAController@canceled')->name('canceled.rma');
+	Route::post('rma/complete/{id}', 'RMAController@completeRMA')->name('complete.rma');
 
 	// =============== Call Logs Routes for Admin =============== \\
 	Route::get('call-log', 'CallLogController@index')->name('call-log');
 	Route::get('call-log/create', 'CallLogController@create')->name('call-log-add');
 	Route::post('call-log/save', 'CallLogController@store')->name('call-log-store');
 	Route::get('call-log/edit/{id}', 'CallLogController@edit');
-	Route::POST('call-log/update/{id}', 'CallLogController@update');
+	Route::POST('call-log/update/{id}', 'CallLogController@update')->name('call-log-update');
 	Route::get('call-log/delete/{id}', 'CallLogController@destroy');
 
 
-	// =============== Customer Routes for Admin =============== \\
-	Route::get('customers', 'CustomerController@index')->name('customer.index');
-	Route::get('customers/create', 'CustomerController@create')->name('customer.create');
-	Route::post('customers/save', 'CustomerController@store')->name('customer.store');
-	Route::get('customer/view/{id}', 'CustomerController@show');
-	Route::get('customer/delete/{id}', 'CustomerController@destroy');
 
 
 	// =============== Coupon Routes for Admin =============== \\
@@ -248,7 +263,7 @@ Route::get('cart/show', 'CartController@show_cart')->name('show.cart');
 Route::get('cart/delete/{rowId}', 'CartController@delete_cart');
 Route::post('cart/update', 'CartController@update_cart');
 Route::get('checkout', 'CartController@checkout')->name('order.checkout');
-Route::post('/place-order', 'CartController@storeOrder')->name('store.order');
+Route::post('/place-order', 'OrderController@storeOrder')->name('store.order');
 
 // // Apply a coupon
 // Route::post('apply-coupon', 'CartController@apply_coupon')->name('apply-coupon');

@@ -7,6 +7,8 @@ use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Cart;
 
 class OrderController extends Controller
 {
@@ -60,8 +62,64 @@ class OrderController extends Controller
 
     public function wholesaleOrders()
     {
-        $wholesale_orders = Order::where('status', 'Wholesale')->get();
+        $wholesale_orders = Order::where('order_type', 'Wholesale')->get();
         return view('backend.order.wholesale_order', compact('wholesale_orders'));
+    }
+
+    // Plave Order from Frontend
+    public function storeOrder(Request $request)
+    {
+        $data = $request->all();
+
+        $data['order_number'] = IdGenerator::generate(['table' => 'orders', 'field' =>'order_number', 'length' => 7, 'prefix' =>'BT-100']);
+
+        // Insert Users 
+        if(Auth::user()) {
+            $data['user_id'] = Auth::user()->id;
+            $data['userType'] = 'Registered User';
+        }
+        else {
+            $guest = GuestUser::create($data);
+            $data['guest_id'] = $guest->id;
+            $data['userType'] = 'Guest';
+        }
+
+        // Set Order Type
+        if(!Auth::user()) {
+            $data['order_type'] = 'General';
+        }
+        elseif(Auth::user()->userType == 'Wholesale') {
+            $data['order_type'] = 'Wholesale';
+        }
+        
+
+        // Insert Cart 
+	   	$data['total'] = Cart::total();
+        $data['sub_total'] = Cart::total();
+
+        // Custom Invoice Number
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        $pin = mt_rand(10000, 99999).mt_rand(10000, 99999).$characters[rand(0, strlen($characters) - 1)];
+
+        $data['invoice_number'] = '#'.str_shuffle($pin);
+           
+        $order = Order::create($data);
+        if ($order) {
+        Cart::destroy();
+                $notification=array(
+                    'message' => 'Your Order has been placed',
+                    'alert-type' => 'success'
+                );
+            return redirect()->route('home')->with($notification);
+        }
+        else{
+            $notification=array(
+            'message' => 'Something Went wrong!',
+            'alert-type' => 'danger'
+            );
+            return redirect()->back()->with($notification);
+        }
     }
 
     // Create Custom Orders from Admin Panel
@@ -75,6 +133,8 @@ class OrderController extends Controller
     public function storeCustomOrder(Request $request)
     {
         $data = $request->all();
+
+        $data['order_number'] = IdGenerator::generate(['table' => 'orders', 'field' =>'order_number', 'length' => 7, 'prefix' =>'BT-100']);
 
         // Insert Users 
         if(Auth::user()){
@@ -179,5 +239,36 @@ class OrderController extends Controller
                     );
                     return redirect()->back()->with($notification);
                 }
+    }
+
+    public function PaidUnpaidOrder(Request $request, $id)
+    {
+        // return $id;
+        $order = Order::find($id);
+
+        if($order->payment == "Pending"){
+            $order->payment = "Paid";
+        }
+
+        else{
+            $order->payment = "Pending";
+        }
+
+        $success = $order->save();
+            if ($success) {
+                $notification=array(
+                'message' => 'Payment Status Updated Successfully ',
+                'alert-type' => 'success'
+                );
+                return redirect()->back()->with($notification);
+            }
+            else
+            {
+                $notification=array(
+                'message' => 'Something Went wrong!',
+                'alert-type' => 'danger'
+                );
+                return redirect()->back()->with($notification);
+            }
     }
 }

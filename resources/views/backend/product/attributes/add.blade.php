@@ -80,7 +80,7 @@
                                             <label class="form-control-label" for="label[]">Label:&nbsp;</label>
                                             <input class="form-control-input" id ="label[]" type="text" name="label[]" value="" name="label[]" placeholder="Enter a Label">&nbsp;&nbsp;
                                             <label class="form-control-label" for="color[]">Color: &nbsp;</label>
-                                            <input class="form-control-input" id ="color[]" type="color" name="color[]" value="#5e72e4" name="color[]" placeholder="">&nbsp;&nbsp;&nbsp;
+                                            <input class="form-control-input" id ="color[]" type="color" name="color[]" value="" name="color[]" placeholder="">&nbsp;&nbsp;&nbsp;
                                             <label class="form-control-label" for="stock[]">Stock:&nbsp;</label>
                                             <input class="form-control-input" id ="stock[]" type="text" name="stock[]" value="" name="stock[]" placeholder="Enter Stock">&nbsp;&nbsp;&nbsp;&nbsp;
                                             <label class="form-control-label" for="price[]">Price:&nbsp;</label>

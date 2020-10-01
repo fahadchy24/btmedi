@@ -107,7 +107,7 @@ class VendorController extends Controller
      */
     public function edit(Vendor $vendor)
     {
-        $editVendor = Vendor::find($vendor->id);
+        $editVendor = Vendor::findOrFail($vendor->id);
 
         return view('backend.inventory.vendor.edit', compact('editVendor'));
     }
@@ -140,17 +140,6 @@ class VendorController extends Controller
      */
     public function destroy($id)
     {
-        // $delete = Vendor::find($vendor->id);
-
-        // $dltVendor = Vendor::findOrFail($vendor->id)->delete();
-
-        // if ($dltVendor) {
-        //     $notification=array(
-        //     'message' => 'Vendor Deleted Successfully ',
-        //     'alert-type' => 'success'
-        //     );
-        //     return redirect()->route('vendor.index')->with($notification);
-        // }
         $dltVendor = Vendor::findOrFail($id)->delete();
 
         if ($dltVendor) {

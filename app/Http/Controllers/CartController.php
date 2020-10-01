@@ -8,18 +8,13 @@ use App\Product;
 use Illuminate\Http\Request;
 use Cart;
 use Illuminate\Support\Facades\Auth;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class CartController extends Controller
 {
     public function add_to_cart(Request $request)
     {
-        // $data = $request->all();
-
-        // echo "<pre>"; print_r($data); die;
-
         $id = $request->id;
-        // $qty = $request->qty;
-
         $product_info = Product::where('id', $id)->first();
 
         $data['qty'] = $request->qty;
@@ -98,47 +93,58 @@ class CartController extends Controller
     }
 
     // Plave Order
-    public function storeOrder(Request $request)
-    {
-        $data = $request->all();
+    // public function storeOrder(Request $request)
+    // {
+    //     $data = $request->all();
 
-        // Insert Users 
-        if(Auth::user()) {
-            $data['user_id'] = Auth::user()->id;
-            $data['userType'] = 'Registered User';
-        }
-        else {
-            $guest = GuestUser::create($data);
-            $data['guest_id'] = $guest->id;
-            $data['userType'] = 'Guest';
-        }
+    //     $data['order_number'] = IdGenerator::generate(['table' => 'orders', 'field' =>'order_number', 'length' => 7, 'prefix' =>'BT-100']);
 
-        // Insert Cart 
-	   	$data['total'] = Cart::total();
-        $data['sub_total'] = Cart::total();
+    //     // Insert Users 
+    //     if(Auth::user()) {
+    //         $data['user_id'] = Auth::user()->id;
+    //         $data['userType'] = 'Registered User';
+    //     }
+    //     else {
+    //         $guest = GuestUser::create($data);
+    //         $data['guest_id'] = $guest->id;
+    //         $data['userType'] = 'Guest';
+    //     }
 
-        // Custom Invoice Number
-        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    //     // Order Type
+    //     if(!Auth::user()) {
+    //         $data['order_type'] = 'General';
+    //     }
+    //     elseif(Auth::user()->userType == 'Wholesale') {
+    //         $data['order_type'] = 'Wholesale';
+    //     }
+        
 
-        $pin = mt_rand(10000, 99999).mt_rand(10000, 99999).$characters[rand(0, strlen($characters) - 1)];
+    //     // Insert Cart 
+	//    	$data['total'] = Cart::total();
+    //     $data['sub_total'] = Cart::total();
 
-        $data['invoice_number'] = '#'.str_shuffle($pin);
+    //     // Custom Invoice Number
+    //     $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    //     $pin = mt_rand(10000, 99999).mt_rand(10000, 99999).$characters[rand(0, strlen($characters) - 1)];
+
+    //     $data['invoice_number'] = '#'.str_shuffle($pin);
            
-        $order = Order::create($data);
-        if ($order) {
-        Cart::destroy();
-                $notification=array(
-                    'message' => 'Your Order has been placed',
-                    'alert-type' => 'success'
-                );
-            return redirect()->route('home')->with($notification);
-        }
-        else{
-            $notification=array(
-            'message' => 'Something Went wrong!',
-            'alert-type' => 'danger'
-            );
-            return redirect()->back()->with($notification);
-        }
-    }
+    //     $order = Order::create($data);
+    //     if ($order) {
+    //     Cart::destroy();
+    //             $notification=array(
+    //                 'message' => 'Your Order has been placed',
+    //                 'alert-type' => 'success'
+    //             );
+    //         return redirect()->route('home')->with($notification);
+    //     }
+    //     else{
+    //         $notification=array(
+    //         'message' => 'Something Went wrong!',
+    //         'alert-type' => 'danger'
+    //         );
+    //         return redirect()->back()->with($notification);
+    //     }
+    // }
 }

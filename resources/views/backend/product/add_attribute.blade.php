@@ -48,12 +48,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="product_name">Product Image:</label> &nbsp;
-                                    <img src="{{ asset('uploads/frontend/image/product/'.$productDetails->main_image)}}" alt="" width="200" height="200">
+                                    <img src="{{ $productDetails->main_image }}" alt="" width="200" height="200">
                                 </div>
                                 <div class="field_wrapper">
                                     <div>
                                         <input class="form-control-input" id ="label[]" type="text" name="label[]" placeholder="Label" style="width:100px;" autocomplete="on">
                                         <input class="form-control-input" id ="color[]" type="color" name="color[]" style="width:100px;" autocomplete="on">
+                                        <input class="form-control-input" id ="other[]" type="text" name="other[]" placeholder="Other" style="width:200px;" autocomplete="on">
                                         <input class="form-control-input" id ="stock[]" type="number" name="stock[]" placeholder="Stock" style="width:100px;"  min="0" autocomplete="on">
                                         <input class="form-control-input" id ="price[]" type="number" name="price[]" placeholder="Price" style="width:100px;" min="0" autocomplete="on">
                                         <a href="javascript:void(0);" class="add_button btn btn-sm btn-info" title="Add field">Add Row</a>
@@ -92,6 +93,7 @@
                                 <th>ID No.</th>
                                 <th>Label</th>
                                 <th>Color</th>
+                                <th class="text-center">Others</th>
                                 <th class="text-center">Stock</th>
                                 <th>Price</th>
                                 <th>Actions</th>
@@ -103,6 +105,7 @@
                                 <td>{{$row->id}}</td>
                                 <td> {{$row->label}} </td>
                                 <td style="background-color:{{$row->color}};width:1%;"></td>
+                                <td class="text-center"> {{$row->other}} </td>
                                 <td class="text-center"> {{$row->stock}} </td>
                                 <td> {{$row->price}} </td>
                                 <td>
@@ -122,12 +125,13 @@
 
 @push('scripts')
 
+
 <script type="text/javascript">
 $(document).ready(function(){
     var maxField = 20; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
-    var fieldHTML = '<div style="margin-top:10px;"><input class="form-control-input" id ="label[]" type="text" name="label[]" placeholder="Label" style="width:100px;">&nbsp;<input class="form-control-input" id ="color[]" type="color" name="color[]" style="width:100px;">&nbsp;<input class="form-control-input" id ="stock[]" type="number" min="0" name="stock[]"  placeholder="Stock" style="width:100px;">&nbsp;<input class="form-control-input" id ="price[]" type="number" min="0" name="price[]"  placeholder="Price" style="width:100px;">&nbsp;<a href="javascript:void(0);"class="remove_button btn-sm btn-danger">X</a></div>'; //New input field html 
+    var fieldHTML = '<div style="margin-top:10px;"><input class="form-control-input" id ="label[]" type="text" name="label[]" placeholder="Label" style="width:100px;">&nbsp;<input class="form-control-input" id ="color[]" type="color" name="color[]" style="width:100px;">&nbsp;<input class="form-control-input" id ="other[]" type="text" name="other[]"  placeholder="Other" style="width:200px;">&nbsp;<input class="form-control-input" id ="stock[]" type="number" min="0" name="stock[]"  placeholder="Stock" style="width:100px;">&nbsp;<input class="form-control-input" id ="price[]" type="number" min="0" name="price[]"  placeholder="Price" style="width:100px;">&nbsp;<a href="javascript:void(0);"class="remove_button btn-sm btn-danger">X</a></div>'; //New input field html 
     var x = 1; //Initial field counter is 1
     
     //Once add button is clicked

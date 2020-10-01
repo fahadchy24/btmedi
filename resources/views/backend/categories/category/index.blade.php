@@ -34,7 +34,16 @@
                 <!-- Card body -->
                 <div class="card-body">
                     <form action="{{ route('all-category') }}" role="form" method="POST" enctype="multipart/form-data">
-                        @csrf
+                    @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="form-group">
                             <label for="exampleInputEmail1">Category Name*</label>
                             <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Enter Display Name" required>
@@ -48,7 +57,7 @@
                             <input type="file" class="form-control" name="thumbnail_image" accept="image/*" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label" for="Category_Image2">Category Cover Image &nbsp;<small>(Default size:1350x500px)</small></label>
+                            <label class="form-control-label" for="Category_Image2">Category Cover Image &nbsp;<small>(Default size:870x220px)</small></label>
                             <input type="file" class="form-control" name="cover_image" accept="image/*" required>
                         </div>
                         <div class="form-group">

@@ -67,10 +67,12 @@
                                 <td>{{ $row->transaction_id }}</td>
                                 <td>{{ $row->payment }}</td>
                                 <td>
-                                    <a title="View" class="btn btn-sm btn-primary" href="{{-- {{ url('admin/products/view/'.$row->id)}} --}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    <a title="Edit" class="btn btn-sm btn-info" id="edit" href="{{-- {{ url('admin/products/delete/'.$row->id)}} --}}"><i class="fas fa-edit"></i></a>
-                                    <a title="Unpaid" class="btn btn-sm btn-warning" href="{{-- {{ url('admin/products/view/'.$row->id)}} --}}"><i class="fa fa-indent" aria-hidden="true"></i></a>
-                                    <a title="Delete" class="btn btn-sm btn-danger" href="{{-- {{ url('admin/products/view/'.$row->id)}} --}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <a title="View" class="btn btn-sm btn-primary" href="{{ route('view.order', $row->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a title="Edit" class="btn btn-sm btn-info" id="edit" href="{{ route('edit.order', $row->id)}}"><i class="fas fa-edit"></i></a>
+                                    <form action="{{ route('paid_unpaid.order', $row->id) }}" method="POST" style="display: inline; margin-right: .5rem;">@csrf
+                                        <button title="{{ $row->payment=="Paid" ? "Unpaid" : "Paid" }}" type="submit" class="btn btn-sm btn-warning"><i class="fa fa-indent" aria-hidden="true"></i></button>
+                                    </form>
+                                    <a title="Delete" class="btn btn-sm btn-danger" id="delete" href="{{ route('delete.order', $row->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             @endforeach

@@ -42,7 +42,7 @@
                                 <div class="form-row">
                                     <div class="col-md-3 mb-3">
                                         <label class="form-control-label" for="name">Order Number</label>
-                                        <p>BT#{{ $row->id }}</p>
+                                        <p>{{ $row->order_number }}</p>
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label class="form-control-label" for="sku">Order Date</label>
@@ -58,7 +58,11 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-control-label" for="sku">Order Type</label>
+                                        <p> {{ $row->order_type }} </p>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
                                         <label class="form-control-label" for="sku">Customer Name</label>
                                         @if($row->user_id>0)
                                         <p>{{ $row->user->first_name }} {{ $row->user->last_name }}</p>
@@ -68,11 +72,11 @@
                                         <p> {{ $row->guest->first_name }} {{ $row->guest->last_name }} </p>
                                         @endif
                                     </div>
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-3 mb-3">
                                         <label class="form-control-label" for="cost">Quantity</label>
                                         <p> {{ $row->quantity }} </p>
                                     </div>
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-3 mb-3">
                                         <label class="form-control-label" for="price">Sub Total</label>
                                         <p>{{ $row->sub_total }}</p>
                                     </div>

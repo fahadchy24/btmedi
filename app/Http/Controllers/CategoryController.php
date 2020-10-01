@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 use  Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use File;
+use DB;
 
 class CategoryController extends Controller
 {
@@ -43,7 +45,7 @@ class CategoryController extends Controller
                 'cover_image.image' => 'Upload a valid Image',
                 'thumbnail_image.mimes' => 'Upload a valid Image',
                 'cover_image.mimes' => 'Upload a valid Image',
-                'priority.unique' => 'Pririty has been set',
+                'priority.unique' => 'Pririty has been set already, try a different one.',
                 'priority.integer' => 'Pririty must be a number',
                 'status.required' => 'Status is required',
             ];
@@ -136,7 +138,7 @@ class CategoryController extends Controller
             $imageName = time().$thumbnail_image->getClientOriginalName();
             $imagePath = 'uploads/frontend/image/category/thumbnail/'. $imageName;
             Image::make($thumbnail_image)->resize(210, 270)->save($imagePath);
-            $categoryUpdate->thumbnail_image = $imageName;
+            $categoryUpdate->thumbnail_image = url($imagePath);
         }
 
         if ($request->hasFile('cover_image')) {
@@ -149,7 +151,7 @@ class CategoryController extends Controller
             $image = time().$cover_image->getClientOriginalName();
             $path = 'uploads/frontend/image/category/cover/'. $image;
             Image::make($cover_image)->resize(870, 220)->save($path);
-            $categoryUpdate->cover_image = $image;
+            $categoryUpdate->cover_image = url($path);
         }
 
         $success = $categoryUpdate->save();
@@ -165,6 +167,10 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
+        $productId = DB::table('product_categories')->where('category_id', $id)->pluck('product_id');
+
+        Product::whereIn('id', $productId)->delete();
+
         $categoryDelete = Category::find($id);
         if (!is_null($categoryDelete)) {
             if (File::exists('uploads/frontend/image/category/thumbnail/'.$categoryDelete->thumbnail_image)) {

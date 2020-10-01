@@ -54,12 +54,9 @@
                             <h3 class="mb-4">Create an RMA</h3>
                             <form action="{{ route('rma.save') }}" method="POST">
                             @csrf
-                                <div class="form-group order-form">
-                                    <label class="form-control-label" for="order_id">Input a order number</label>
-                                    <input type="text" class="form-control order-input" id="order_id" name="order_id" autocomplete="off" required>
-                                    <label for="order_id" class="static-value">
-                                        BT-# 
-                                    </label>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="order_number">Input a order number</label>
+                                    <input type="text" class="form-control" id="order_number" name="order_number" value="BT-" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label" for="note">Reason of RMA</label>
@@ -107,7 +104,7 @@
                                 <td>{{$loop->index+1}}</td>
                                 <td> {{ $row->rma_number }} </td>
                                 <td>{{$row->created_at}}</td>
-                                <td>{{ "BT-#". $row->order_id}}</td>
+                                <td>{{ $row->order_number}}</td>
                                 {{--  <td>{{$row->order->email}}</td>  --}}
                                 <td>{{$row->email}}</td>
                                 <td>{{ $row->issued_by == 7 ? 'Super Admin' : Auth::user()->id }}</td>
@@ -116,7 +113,9 @@
                                 <td>{{$row->status}}</td>
                                 <td>{{$row->note}}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-warning" id="edit" href="#">Complete</a>
+                                    <form action="{{ route('complete.rma', $row->id) }}" method="POST" style="display: inline; margin-right: .5rem;">@csrf
+                                    <button class="btn btn-sm btn-warning" type="submit">Complete</button>
+                                    </form>
                                     <a class="btn btn-sm btn-primary" id="edit" href="{{ url('admin/rma/edit/'.$row->id) }}">Edit</a>
                                     <a class="btn btn-sm btn-primary" id="delete" href="{{ url('admin/rma/delete/'.$row->id) }}">Delete</a>
                                 </td>

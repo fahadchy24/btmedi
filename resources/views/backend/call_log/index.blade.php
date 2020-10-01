@@ -66,9 +66,8 @@
                                 <td>{{ $row->note }}</td>
                                 <td>{{ $row->userType }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-primary" href="{{ url('admin/call-log/view/'.$row->id)}}">View</a>
-                                    <a class="btn btn-sm btn-info" href="{{ url('admin/call-log/edit/'.$row->id)}}">Edit</a>
-                                    <a class="btn btn-sm btn-danger" id="delete" href="{{ url('admin/call-log/delete/'.$row->id)}}">Delete</a>
+                                    <a class="btn btn-sm btn-info" href="{{ url('admin/call-log/edit/'.$row->id)}}"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-sm btn-danger" id="delete" href="{{ url('admin/call-log/delete/'.$row->id)}}"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -84,7 +83,7 @@
         <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6">
                 <div class="copyright text-center text-lg-left text-muted">
-                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Medi</a>
+                    © {{ date('Y') }} <a href="#" class="font-weight-bold ml-1">BTCare Supply</a>
                 </div>
             </div>
         </div>

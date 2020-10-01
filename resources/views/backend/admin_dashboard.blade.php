@@ -386,7 +386,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      {{--  <div class="row">
         <div class="col-xl-12 col-md-12">
           <div class="card">
             <div class="card-header border-0">
@@ -774,6 +774,54 @@
             </div>
           </div>
         </div>
+      </div>  --}}
+      <div class="row">
+        <div class="col-xl-12 col-md-12">
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                  <h3 class="mb-0">Call Logs</h3>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>SL</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>No of Cases</th>
+                        <th>Company</th>
+                        <th>Issue Date</th>
+                        <th>Created By</th>
+                        <th>Note</th>
+                        <th>Type</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach( $callLogs as $row)
+                      <tr>
+                          <td> {{ $loop->index+1 }} </td>
+                          <td>{{ $row->first_name ." ". $row->last_name }}</td>
+                          <td>{{ $row->phone }}</td>
+                          <td>{{ $row->email }}</td>
+                          <td>{{ $row->noc }}</td>
+                          <td>{{ $row->company }}</td>
+                          <td>{{ $row->issue_date }}</td>
+                          <td>{{ $row->created_by == 1 ? "Super Admin" : '' }}</td>
+                          <td>{{ $row->note }}</td>
+                          <td>{{ $row->userType }}</td>
+                      </tr>
+                      @endforeach
+                  </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-xl-6">
@@ -929,7 +977,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xl-12">
+        <div class="col-xl-12 col-md-12">
           <div class="row">
             <div class="col">
               <div class="card">
@@ -946,96 +994,32 @@
                         <th>Order Date</th>
                         <th>Order Amount</th>
                         <th>Status</th>
-                        <th>Actions</th>
+                        <th>Payment</th>
                       </tr>
                     </thead>
                     <tbody class="list">
-                      {{-- @foreach($recent_orders as $row) --}}
+                      @foreach($recent_orders as $row)
                       <tr>
-                        <td>{{-- {{$loop->index+1}} --}}</td>
+                        <td>{{$loop->index+1}}</td>
                         <td>
-                          {{-- {{'TCH#'.$row->id}} --}}
+                          {{'BT-#'.$row->id}}
                         </td>
                         <td>
-                          {{-- {{$row->created_at}} --}}
+                          {{$row->created_at}}
                         </td>
                         <td>
-                          {{-- {{$row->total_price}} --}}
+                          {{$row->total}}
                         </td>
                         <td>
-                          {{-- {{$row->status}} --}}
+                          {{$row->status}}
                         </td>
-                        <td class="text-right">
-                          <div class="dropdown">
-                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropdown-item" href="{{-- {{ url('admin/order/view/'.$row->id)}} --}}">View</a>
-                              <a class="dropdown-item" id="edit" href="{{-- {{ url('admin/order/edit/'.$row->id)}} --}}">Edit</a>
-                              <a class="dropdown-item" id="delete" href="{{-- {{ url('admin/order/delete/'.$row->id)}} --}}">Delete</a>
-                            </div>
-                          </div>
+                        <td>
+                          {{$row->payment}}
                         </td>
                       </tr>
-                      {{-- @endforeach --}}
+                      @endforeach
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-deck">
-            <div class="card bg-gradient-default">
-              <div class="card-body">
-                <div class="mb-2">
-                  <sup class="text-white">$</sup> <span class="h2 text-white">3,300</span>
-                  <div class="text-light mt-2 text-sm">Your current balance</div>
-                  <div>
-                    <span class="text-success font-weight-600">+ 15%</span> <span class="text-light">($250)</span>
-                  </div>
-                </div>
-                <button class="btn btn-sm btn-block btn-neutral">Add credit</button>
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col">
-                    <small class="text-light">Orders: 60%</small>
-                    <div class="progress progress-xs my-2">
-                      <div class="progress-bar bg-success" style="width: 60%"></div>
-                    </div>
-                  </div>
-                  <div class="col"><small class="text-light">Sales: 40%</small>
-                    <div class="progress progress-xs my-2">
-                      <div class="progress-bar bg-warning" style="width: 40%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Username card -->
-            <div class="card bg-gradient-danger">
-              <!-- Card body -->
-              <div class="card-body">
-                <div class="row justify-content-between align-items-center">
-                  <div class="col">
-                    <img src="{{url('backend/assets/img/icons/cards/bitcoin.png')}}" alt="Image placeholder" />
-                  </div>
-                  <div class="col-auto">
-                    <span class="badge badge-lg badge-success">Active</span>
-                  </div>
-                </div>
-                <div class="my-4">
-                  <span class="h6 surtitle text-light">
-                    Username
-                  </span>
-                  <div class="h1 text-white">@johnsnow</div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <span class="h6 surtitle text-light">Name</span>
-                    <span class="d-block h3 text-white">John Snow</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1065,25 +1049,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {{-- @foreach($recent_products as $row) --}}
+                  @foreach($recent_products as $row)
                   <tr>
                     <th scope="row">
-                      {{-- {{$loop->index+1}} --}}
+                      {{$loop->index+1}}
                     </th>
                     <th scope="row">
-                      {{-- {{'TCH#'.$row->id}} --}}
+                      {{'BT-#'.$row->id}}
                     </th>
                     <td>
-                      <img src="{{-- {{asset('frontend/images/product/'.$row->image) }} --}}" width="80" height="60" alt="">
+                      <img src="{{ $row->main_image }}" width="80" height="60" alt="">
                     </td>
                     <td>
-                     {{--  {{$row->sku}} --}}
+                     {{$row->sku}}
                     </td>
                     <td>
-                     {{--  {{$row->status == 1 ? 'Active' : ''}} --}}
+                     {{$row->status == 1 ? 'Active' : ''}}
                     </td>
                   </tr>
-                 {{--  @endforeach --}}
+                 @endforeach
                 </tbody>
               </table>
             </div>
@@ -1095,7 +1079,7 @@
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
             <div class="copyright text-center text-lg-left text-muted">
-              &copy; 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Medi</a>
+              &copy; 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BTCare Supply</a>
             </div>
           </div>
         </div>

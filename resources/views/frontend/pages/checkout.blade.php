@@ -395,17 +395,15 @@
                                             </div>
                                             <div class="panel-body ">
                                                 <p>Please select the preferred shipping method to use on this order.</p>
+                                                @php $frontshippingMethod = App\ShippingMethod::all(); @endphp
+                                                @foreach ($frontshippingMethod as $row)
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" checked="checked" name="Free Shipping">
-                                                        Free Shipping - $0.00</label>
-                                                </div>
-                                                <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="Flat Shipping Rate">
-                                                        Flat Shipping Rate - $7.50
+                                                    <input type="radio" name="shipping_fee">
+                                                        {{ $row->title }} - {{ "$". $row->price }}
                                                     </label>
                                                 </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -446,6 +444,10 @@
                                                             <td>Flat rate $300.00</td>
                                                         </tr>
                                                         <tr>
+                                                            <th>Tax</th>
+                                                            <td>$30.00</td>
+                                                        </tr>
+                                                        <tr>
                                                             <th>Total</th>
                                                             <td><strong>{{ "$".Cart::total() }}</strong></td>
                                                         </tr>
@@ -460,8 +462,8 @@
                                                         <div class="border-bottom border-color-1 border-dotted-bottom">
                                                             <div class="p-3" id="basicsHeadingTwo">
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" id="secondStylishRadio1" name="stylishRadio">
-                                                                    <label class="custom-control-label form-label" for="secondStylishRadio1" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo">
+                                                                    <input type="radio" class="custom-control-input" id="secondStylishRadio1" name="payment_method" value="Cash On Delivery">
+                                                                    <label class="custom-control-label form-label" for="secondStylishRadio1" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo" style="cursor: pointer;">
                                                                         Cash on Dalivary
                                                                     </label>
                                                                 </div>
@@ -475,32 +477,33 @@
                                                         <!-- End Card -->
 
                                                         <!-- Card -->
-                                                        <div class="border-bottom border-color-1 border-dotted-bottom">
+                                                        {{--  <div class="border-bottom border-color-1 border-dotted-bottom">
                                                             <div class="p-3" id="basicsHeadingThree">
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" id="thirdstylishRadio1" name="stylishRadio">
-                                                                    <label class="custom-control-label form-label" for="thirdstylishRadio1" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree">
+                                                                    <input type="radio" class="custom-control-input" id="thirdstylishRadio1" name="payment_method" value="Card Payment">
+                                                                    <label class="custom-control-label form-label" for="thirdstylishRadio1" data-toggle="collapse" data-target="#basicsCollapseThree" aria-expanded="false" aria-controls="basicsCollapseThree" style="cursor: pointer;">
                                                                         Card Payment
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div>  --}}
                                                         <!-- End Card -->
 
                                                         <!-- Card -->
                                                         <div class="border-bottom border-color-1 border-dotted-bottom">
                                                             <div class="p-3" id="basicsHeadingFour">
                                                                 <div class="custom-control custom-radio">
-                                                                    <input type="radio" class="custom-control-input" id="FourstylishRadio1" name="stylishRadio">
-                                                                    <label class="custom-control-label form-label" for="FourstylishRadio1" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour">
-                                                                        PayPal <a href="#" class="text-blue">What is PayPal?</a>
+                                                                    <input type="radio" class="custom-control-input" id="FourstylishRadio1" name="payment_method" value="Paypal or Card Payment">
+                                                                    <label class="custom-control-label form-label" for="FourstylishRadio1" data-toggle="collapse" data-target="#basicsCollapseFour" aria-expanded="false" aria-controls="basicsCollapseFour" style="cursor: pointer;">
+                                                                        PayPal or Card Payment
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                             <div id="basicsCollapseFour" class="collapse border-top border-color-1 border-dotted-top bg-dark-lighter" aria-labelledby="basicsHeadingFour" data-parent="#basicsAccordion1">
                                                                 <div class="p-4">
-                                                                    Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
+                                                                    You can pay with your credit card if you don’t have a PayPal account.
                                                                 </div>
+                                                                <div id="paypal-button-container"></div>
                                                             </div>
                                                         </div>
                                                         <!-- End Card -->
@@ -539,5 +542,12 @@
     @endsection
 
     @push('scripts')
+    
+    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+    <script>
+        paypal.Buttons().render('#paypal-button-container');
+        // This function displays Smart Payment Buttons on your web page.
+      </script>
+
 
     @endpush

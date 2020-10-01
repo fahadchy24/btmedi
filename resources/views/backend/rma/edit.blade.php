@@ -47,13 +47,13 @@
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label class="form-control-label" for="sku">Ordered Date</label>
-                                        <p> {{ $rma_edit->order_date }}</p>
+                                        <p>{{ $rma_edit->order->created_at->format('d M Y') }}</p>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
                                         <label class="form-control-label" for="cost">Order Number</label>
-                                        <p> {{ $rma_edit->order_id }}</p>
+                                        <p> {{ $rma_edit->order_number }}</p>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label class="form-control-label" for="price">Contact Email</label>
