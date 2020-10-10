@@ -90,6 +90,7 @@ class ShippingMethodController extends Controller
     {
         $editShipping = ShippingMethod::findOrFail($shippingMethod->id);
 
+
         return view('backend.order.shipping.edit', compact('editShipping'));
     }
 
@@ -109,7 +110,7 @@ class ShippingMethodController extends Controller
                 'message' => 'Shipping Method Updated Successfully ',
                 'alert-type' => 'success'
             );
-            return redirect()->route('shipping.index')->with($notification);
+            return redirect()->route('shipping-methods.index')->with($notification);
         }
     }
 
@@ -128,7 +129,7 @@ class ShippingMethodController extends Controller
             'message' => 'Shipping Method Deleted Successfully ',
             'alert-type' => 'success'
             );
-            return redirect()->route('shipping.index')->with($notification);
+            return redirect()->route('shipping-methods.index')->with($notification);
         }
     }
 }

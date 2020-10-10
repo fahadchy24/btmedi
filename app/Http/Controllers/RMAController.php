@@ -58,16 +58,25 @@ class RMAController extends Controller
         $data['rma_number'] = IdGenerator::generate(['table' => 'r_m_a_s', 'field' =>'rma_number', 'length' => 10, 'prefix' =>'RMA-']);
         //output: INV-000001
 
-        // dd($data);
 
-        $success = RMA::create($data);
-
-        if ($success) {
+        $order_info = Order::where('order_number', $request->order_number)->first();
+            if ($request->order_number = $order_info) {
+                $data['order_number'] = $order_info->order_number;
+                $ins = RMA::create($data);
+                if ($ins) {
+                    $notification=array(
+                     'message' => 'RMA has been placed',
+                     'alert-type' => 'success'
+                    );
+                    return redirect()->back()->with($notification);
+                }  
+            }
+            else{
                 $notification=array(
-                'message' => 'RMA Added Successfully ',
-                'alert-type' => 'success'
-                );
-                return redirect()->back()->with($notification);
+                    'message' => 'Sorry, no order found.',
+                    'alert-type' => 'error'
+                   );
+                   return redirect()->back()->with($notification);
             }
     }
 
@@ -90,7 +99,7 @@ class RMAController extends Controller
      */
     public function edit($id)
     {
-        $rma_edit = RMA::with('order')->find($id);
+        $rma_edit = RMA::with('order')->findOrFail($id);
 
         // $order = Order::with('user', 'guest')->get();
         // // foreach($order->guest as $row){

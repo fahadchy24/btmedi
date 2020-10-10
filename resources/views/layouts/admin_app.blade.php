@@ -53,7 +53,9 @@
     <link href="{{asset('frontend/css/toastr.css')}}" rel="stylesheet">
     <!-- Ck Editor Css -->
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
     @stack('css')
+
 </head>
 
 <body>
@@ -63,7 +65,7 @@
             <!-- Brand -->
             <div class="sidenav-header d-flex align-items-center">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('frontend/') }}/image/catalog/logo.png" class="navbar-brand-img" alt="...">
+                    <img src="{{ asset('uploads/frontend/image/'.$gs->logo) }}" class="navbar-brand-img" alt="...">
                 </a>
                 <div class="ml-auto">
                     <!-- Sidenav toggler -->
@@ -125,7 +127,7 @@
                                         <a href="{{ route('wholesale.orders') }}" class="nav-link">Wholesale Orders</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('shipping.index') }}" class="nav-link">Shipping Method</a>
+                                        <a href="{{ route('shipping-methods.index') }}" class="nav-link">Shipping Method</a>
                                     </li>
                                 </ul>
                             </div>

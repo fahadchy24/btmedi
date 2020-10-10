@@ -46,6 +46,8 @@
     <!-- Toastr Css -->
     <link href="{{asset('frontend/css/toastr.css')}}" rel="stylesheet">
 
+    @stack('css')
+
     <script type="text/javascript">
         if (screen.width <= 699) {
             document.location = "http://m.btcaresupply.com/";
@@ -146,7 +148,7 @@
     </style>
 </head>
 
-<body class="common-home res layout-1" {{-- oncontextmenu="return false; --}}">
+<body class="common-home res layout-1" oncontextmenu="return false;" >
     <div id="wrapper" class="wrapper-fluid banners-effect-7">
         <!-- Header Container  -->
         <header id="header" class=" typeheader-2">

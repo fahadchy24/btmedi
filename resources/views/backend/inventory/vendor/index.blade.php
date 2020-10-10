@@ -59,7 +59,6 @@
                                 <td>{{$row->renark}}</td>
                                 <td>
                                     <a title="Edit" class="btn btn-sm btn-info" id="edit" href="{{ route('vendor.edit', $row->id) }}"><i class="fas fa-edit"></i></a>
-                                    {{-- <a title="Delete Product" class="btn btn-sm btn-danger" id="delete" href="{{ route('vendor.destroy', $row->id) }}"><i class="fa fa-trash" aria-hidden="true"></i></a> --}}
                                     <form action="{{ route('vendor.destroy', $row->id) }}" method="POST" style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')

@@ -66,7 +66,7 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	Route::post('orders/paid-unpaid/{id}', 'OrderController@PaidUnpaidOrder')->name('paid_unpaid.order');
 
 	// Shipping Methods Setup
-	Route::resource('orders/shipping', 'ShippingMethodController');
+	Route::resource('orders/shipping-methods', 'ShippingMethodController');
 
 
 	// =============== Products Routes for Admin =============== \\
@@ -80,7 +80,9 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	Route::get('product/status/{id}/{status}', 'ProductController@status')->name('product-status');
 
     // ================ Product Import By Excel sheet =========== \\
-	Route::post('import', 'ProductController@import')->name('product.import');
+	Route::post('product/import', 'ProductController@import')->name('product.import');
+    // ================ Product Export By Excel sheet =========== \\
+	Route::get('products/export', 'ProductController@export')->name('product.export');
 
 	// Products Brand Routes------------------------
 	Route::get('product/brands', 'BrandController@index')->name('brand.index');

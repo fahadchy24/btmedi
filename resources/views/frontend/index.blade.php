@@ -207,13 +207,18 @@
                                                                             @endif
                                                                         </div>
                                                                         <div class="button-group so-quickview cartinfo--static">
-                                                                            <button type="button" class="addToCart" title="Add to cart" onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
-                                                                                <span>Add to cart </span>
-                                                                            </button>
-                                                                            <button type="button" class="wishlist btn-button" title="Add to Wish List" onclick="wishlist.add('60');"><i class="fa fa-heart"></i><span></span>
-                                                                            </button>
-                                                                            <button type="button" class="compare btn-button" title="Compare this Product " onclick="compare.add('60');"><i class="fa fa-refresh"></i><span></span>
-                                                                            </button>
+                                                                            <form action="{{ url('cart/add')}}" method="POST" style="display:inline-flex;">@csrf
+                                                                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                                <input type="hidden" name="qty" value="1">
+                                                                                <button type="submit" class="addToCart" title="Add to cart"><i class="fa fa-shopping-basket"></i>
+                                                                                    <span>Add to cart </span>
+                                                                                </button>
+                                                                            </form>
+                                                                            <form class="form" action="{{ route('add-to-wishlist') }}" method="POST" style="display:inline-flex;">@csrf
+                                                                                <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                                <button type="submit" class="wishlist btn-button" title="Add to Wish List"><i class="fa fa-heart"></i><span></span>
+                                                                                </button>
+                                                                            </form>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -305,23 +310,27 @@
                                                                     <div class="right-block right-b">
                                                                         <div class="caption">
                                                                             <h4><a href="{{ url('product/view', $product->id) }}" title="Dolore Jalapeno" target="_self">{{ $product->product_name }}</a></h4>
-                                                                            @if($product->sale_price > NULL)
-                                                                            <div class="price"> <span class="price-new">${{ $product->sale_price }}</span>
+                                                                            <div class="price">
+                                                                                @if($product->sale_price>NULL)
+                                                                                <span class="price-new">{{ "$". $product->sale_price }} </span>
+                                                                                <span class="price-old">{{ "$". $product->regular_price }} </span>
+                                                                                @else
+                                                                                <span class="price-new">{{ "$". $product->regular_price }} </span>
+                                                                                @endif
                                                                             </div>
-                                                                            <div class="price"> <span class="price-old">${{ $product->regular_price }}</span>
-                                                                            </div>
-                                                                            @else
-                                                                            <div class="price"> <span class="price-new">${{ $product->regular_price }}</span>
-                                                                            </div>
-                                                                            @endif
                                                                             <div class="button-group so-quickview cartinfo--static">
-                                                                                <button type="button" class="addToCart" title="Add to cart" onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
-                                                                                    <span>Add to cart </span>
-                                                                                </button>
-                                                                                <button type="button" class="wishlist btn-button" title="Add to Wish List" onclick="wishlist.add('60');"><i class="fa fa-heart"></i><span></span>
-                                                                                </button>
-                                                                                <button type="button" class="compare btn-button" title="Compare this Product " onclick="compare.add('60');"><i class="fa fa-refresh"></i><span></span>
-                                                                                </button>
+                                                                                <form action="{{ url('cart/add')}}" method="POST" style="display:inline-flex;">@csrf
+                                                                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                                    <input type="hidden" name="qty" value="1">
+                                                                                    <button type="submit" class="addToCart" title="Add to cart"><i class="fa fa-shopping-basket"></i>
+                                                                                        <span>Add to cart </span>
+                                                                                    </button>
+                                                                                </form>
+                                                                                <form class="form" action="{{ route('add-to-wishlist') }}" method="POST" style="display:inline-flex;">@csrf
+                                                                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                                    <button type="submit" class="wishlist btn-button" title="Add to Wish List"><i class="fa fa-heart"></i><span></span>
+                                                                                    </button>
+                                                                                </form>
                                                                             </div>
                                                                         </div>
                                                                     </div>

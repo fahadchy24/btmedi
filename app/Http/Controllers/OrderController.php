@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use App\Guestuser;
 use App\Order;
 use App\Product;
+use App\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -76,11 +78,13 @@ class OrderController extends Controller
         // Insert Users 
         if(Auth::user()) {
             $data['user_id'] = Auth::user()->id;
+            $data['contact_email'] = Auth::user()->email;
             $data['userType'] = 'Registered User';
         }
         else {
             $guest = GuestUser::create($data);
             $data['guest_id'] = $guest->id;
+            $data['contact_email'] = $guest->email;
             $data['userType'] = 'Guest';
         }
 
@@ -126,7 +130,11 @@ class OrderController extends Controller
     public function createNewOrder()
     {
         $productList = Product::where('status', 1)->get();
-        return view('backend.order.create_new_order', compact('productList'));
+
+        $states = State::all();
+        $cities = City::all();
+
+        return view('backend.order.create_new_order', compact('productList', 'states', 'cities'));
     }
 
     // Store Custom Order from Admin Panel
@@ -139,11 +147,13 @@ class OrderController extends Controller
         // Insert Users 
         if(Auth::user()){
             $data['user_id'] = Auth::user()->id;
+            $data['contact_email'] = Auth::user()->email;
             $data['userType'] = 'Registered User';
         }
         else{
             $guest = Guestuser::create($data);
             $data['guest_id'] = $guest->id;
+            $data['contact_email'] = $guest->email;
             $data['userType'] = 'Guest';
         }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Attribute;
 use App\Brand;
 use App\Category;
+use App\Exports\ProductsExport;
 use App\Http\Requests\StoreProductRequest;
 use App\Menu;
 use App\Product;
@@ -52,12 +53,10 @@ class ProductController extends Controller
             'full_description' => 'required',
             'video_url' => 'url',
             'docs' => 'mimes:pdf|max:50000',
-            'unit_per_cost' => 'required|integer',
-            'cost' => 'required|integer',
+            'unit_per_cost' => 'nullable|integer',
+            'cost' => 'nullable|integer',
             'regular_price' => 'required|numeric',
             'sale_price' => 'nullable|numeric',
-            'backorders' => 'required',
-            'shipping_class' => 'required',
             'main_image' => 'required|mimes:jpg,jpeg,png',
 
         ];
@@ -70,15 +69,11 @@ class ProductController extends Controller
             'video_url.url' => 'Provide a Valid URL.',
             'docs.mimes' => 'Only PDF is allowed.',
             'docs.max' => 'PDF More than 5MB is not allowed.',
-            'unit_per_cost.required' => 'Unit Per Cost is required.',
             'unit_per_cost.integer' => 'Unit Per Cost must have number.',
-            'cost.required' => 'Cost is required.',
             'cost.integer' => 'Cost must have numbers.',
             'regular_price.required' => 'Regular Price is required.',
             'regular_price.integer' => 'Regular Price must have numbers.',
             'sale_price.integer' => 'Sale Price must have numbers.',
-            'backorders.required' => 'Backorders is required.',
-            'shipping_class.required' => 'Shipping Class is required.',
             'main_image.required' => 'Product Image is required.',
             'main_image.mimes' => 'Only JPG/JPEG/PNG is allowed.',
         ];
@@ -365,6 +360,20 @@ class ProductController extends Controller
     {
         $file = $request->file('file');
         Excel::import(new ImportProduct, $file);
+        $notification=array(
+            'message' => 'Product Import Successfully ',
+            'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+    }
+
+    // Product Export By Excel Sheet ==========
+    public function export(Request $request)
+    {
+        // $file = $request->file('file');
+        // Excel::export(new Products, $file);
+        return Excel::download(new ProductsExport, 'products.xlsx');
+        
         $notification=array(
             'message' => 'Product Import Successfully ',
             'alert-type' => 'success'

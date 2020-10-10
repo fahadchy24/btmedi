@@ -59,19 +59,21 @@
                                     <textarea name="address_1" id="address_1" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="city">City</label>
-                                    <select name="city" id="city" class="form-control" data-toggle="select">
-                                        <option selected disabled>Select a product</option>
-                                            <option value="New York">New York</option>
-                                            <option value="New Jersey">New Jersey</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <label class="form-control-label" for="state">State</label>
                                     <select name="state" id="state" class="form-control" data-toggle="select">
                                         <option selected disabled>Select a state</option>
-                                            <option value="New York">New York</option>
-                                            <option value="New Jersey">New Jersey</option>
+                                            @foreach ($states as $state)
+                                            <option value="{{ $state->name }}">{{ $state->name }}</option>
+                                            @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="city">City</label>
+                                    <select name="city" id="city" class="form-control" data-toggle="select">
+                                        <option selected disabled>Select a city</option>
+                                        @foreach ($cities as $city)
+                                        <option value="{{ $city->name }}">{{ $city->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -89,47 +91,42 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label" for="quantity">Order Quantity</label>
-                                    <input type="number" class="form-control @error('quantity') is-invalid @enderror" id="quantity" name="quantity" autocomplete="off" required>
+                                    <input type="number" class="form-control @error('quantity') is-invalid @enderror" id="quantity" min="1" name="quantity" autocomplete="off" required>
                                     @error('quantity')
                                         <span class="">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="vendor_id">Payment Method</label>
-                                    <select name="vendor_id" id="vendor_id" class="form-control" data-toggle="select">
+                                    <label class="form-control-label" for="payment_method">Payment Method</label>
+                                    <select name="payment_method" id="payment_method" class="form-control" data-toggle="select">
                                             <option selected disabled>Select a payment method</option>
                                             <option value="Cash">Cash</option>
-                                        {{-- @foreach ($vendors as $row)
-                                            <option value="{{$row->id}}">{{$row->name}}</option>
-                                        @endforeach --}}
+                                            <option value="Paypal">Paypal</option>
+                                            <option value="Card Payment">Card Payment</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="vendor_id">Shipping Method</label>
-                                    <select name="vendor_id" id="vendor_id" class="form-control" data-toggle="select">
+                                    <label class="form-control-label" for="shipping_method">Shipping Method</label>
+                                    <select name="shipping_method" id="shipping_method" class="form-control" data-toggle="select">
                                             <option selected disabled>Select a shipping method</option>
                                             <option value="class-1">class-1</option>
-                                        {{-- @foreach ($vendors as $row)
-                                            <option value="{{$row->id}}">{{$row->name}}</option>
-                                        @endforeach --}}
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label" for="note">Special Request or Note</label>
-                                    {{-- <input type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" id="sku"> --}}
                                     <textarea name="note" id="note" class="form-control"></textarea>
-                                    @error('sku')
+                                    @error('note')
                                         <span class="">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <div class="mt-5 mb-5">
-                                        <label class="form-control-label mr-4" for="exampleCheck1">Taxable:</label>
-                                        <input type="radio" class="form-control-input" id="exampleCheck1" name="taxable" value="1">
+                                        <label class="form-control-label mr-4" for="taxable">Taxable:</label>
+                                        <input type="radio" class="form-control-input" id="taxable" name="taxable" value="1">
                                         Yes
                                         &nbsp;
                                         &nbsp;
-                                        <input type="radio" class="form-control-input" id="exampleCheck1" name="taxable" value="0">
+                                        <input type="radio" class="form-control-input" id="taxable" name="taxable" value="0">
                                         No    
                                     </div>
                                 </div>

@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label class="form-control-label" for="price">Contact Email</label>
-                                        <p> {{ $rma_edit->contact_email }}</p>
+                                        <p> {{ $rma_edit->order->contact_email }} </p>
                                     </div>
                                 </div>
                                 <div class="form-row">

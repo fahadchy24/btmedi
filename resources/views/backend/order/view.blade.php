@@ -45,7 +45,7 @@
                             <div class="form-row">
                                 <div class="col-md-3 mb-3">
                                     <label class="form-control-label" for="name">Order Number</label>
-                                    <p>TCH#{{ $row->id }}</p>
+                                    <p>{{ $row->order_number }}</p>
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label class="form-control-label" for="sku">Order Date</label>
@@ -215,7 +215,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><img src="{{ asset('uploads/frontend/image/product/'. $row->product->main_image) }}" width="200" height="200" alt=""></td>
+                                            <td><img src="{{ $row->product->main_image }}" width="200" height="200" alt=""></td>
                                             <td><span class="" style="font-size: 18px;font-weight: bold">{{ $row->product->product_name }}</span> <br> SKU: {{ $row->product->sku }} </td>
                                             <td>${{ $row->product->regular_price }}</td>
                                             <td>{{ $row->quantity }}</td>

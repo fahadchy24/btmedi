@@ -104,14 +104,15 @@
                             </select>
                         </div>
                     </div>
+                    @php  $states = App\State::all(); $cities = App\City::all(); @endphp
                     <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-state">State</label>
                         <div class="col-sm-8">
                             <select name="state" id="input-state" class="form-control">
                                 <option value=""> --- Please Select --- </option>
-                                <option value="California">California</option>
-                                <option value="New York">New York</option>
-
+                                @foreach ($states as $state)
+                                    <option value="{{ $state->name }}">{{ $state->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -120,9 +121,9 @@
                         <div class="col-sm-8">
                             <select name="city" id="input-city" class="form-control">
                                 <option value=""> --- Please Select --- </option>
-                                <option value="Los Angeles">Los Angeles</option>
-                                <option value="New York">New York</option>
-
+                                @foreach ($cities as $city)
+                                <option value="{{ $city->name }}">{{ $city->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

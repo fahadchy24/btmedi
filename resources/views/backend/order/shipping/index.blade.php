@@ -1,6 +1,6 @@
 @extends('layouts.admin_app')
 
-@section('title', 'Vendor')
+@section('title', 'Shipping Methods')
 
 @section('content')
 
@@ -31,7 +31,7 @@
                 <!-- Card header -->
                 <div class="card-header">
                     <h3 class="mb-0 float-left">Shipping Charges List</h3>
-                    <a class="btn btn-sm btn-primary float-right" href="{{route('shipping.create')}}">Add New</a>
+                    <a class="btn btn-sm btn-primary float-right" href="{{route('shipping-methods.create')}}">Add New</a>
                 </div>
                 <div class="table-responsive py-4">
                     <table class="table table-flush" style="width: 100%;" id="datatable-buttons">
@@ -52,9 +52,9 @@
                                 <td>{{$row->price}}</td>
                                 <td>{{$row->tax}}</td>
                                 <td>
-                                    <a title="Edit" class="btn btn-sm btn-info" id="edit" href="{{ route('shipping.edit', $row->id) }}"><i class="fas fa-edit"></i>
+                                    <a title="Edit" class="btn btn-sm btn-info" id="edit" href="{{ route('shipping-methods.edit', $row->id) }}"><i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="{{ route('shipping.destroy', $row->id) }}" method="POST" style="display:inline-block;">
+                                    <form action="{{ route('shipping-methods.destroy', $row->id) }}" method="POST" style="display:inline-block;">
                                         @csrf
                                         @method('DELETE')
                                         <button title="Delete" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure want to delete this field?');" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -74,7 +74,7 @@
         <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6">
                 <div class="copyright text-center text-lg-left text-muted">
-                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BTCare Supply</a>
+                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BTCare</a>
                 </div>
             </div>
         </div>

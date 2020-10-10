@@ -56,7 +56,7 @@
                             <tr>
                                 <td>{{$loop->index+1}}</td>
                                 <td>{{ $row->created_at->format('d M') }}</td>
-                                <td>{{ "BT-#".$row->id }} </td>
+                                <td>{{ $row->order_number }} </td>
                                 <td>{{ $row->invoice_number }}</td>
                                 <td>{{ $row->sub_total }}</td>
                                 <td>{{ $row->tax }}</td>
@@ -83,17 +83,7 @@
         </div>
     </div>
     <!-- End Page Content -->
-    <!-- Footer -->
-    <footer class="footer pt-0 pl-2">
-        <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6">
-                <div class="copyright text-center text-lg-left text-muted">
-                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Medi</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer -->
+    @include('backend.footer')
 </div>
 <!-- End Main Content -->
 @endsection

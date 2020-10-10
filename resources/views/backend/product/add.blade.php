@@ -98,15 +98,15 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <label class="form-control-label" for="manufactory">Manufactory</label>
-                                <input title="Enter Manufactory" type="number" class="form-control" min="0" id="manufactory" name="manufactory" placeholder="Manufactory" autocomplete="on">
+                                <input title="Enter Manufactory" type="text" class="form-control" id="manufactory" name="manufactory" placeholder="Manufactory" autocomplete="on">
                             </div>
                             <div class="form-row mt-3">
-                                <label class="form-control-label" for="cost">Cost*</label>
-                                <input title="Enter Cost" type="text" class="form-control" id="cost" name="cost" placeholder="Cost" autocomplete="on" required>
+                                <label class="form-control-label" for="cost">Cost</label>
+                                <input title="Enter Cost" type="text" class="form-control" id="cost" name="cost" placeholder="Cost" autocomplete="on">
                             </div>
                             <div class="form-row mt-3">
-                                <label class="form-control-label" for="unit_per_cost">Unit Per Cost*</label>
-                                <input title="Enter Unit Per Cost" type="text" class="form-control" id="unit_per_cost" name="unit_per_cost" placeholder="Unit Per Cost" autocomplete="on" required>
+                                <label class="form-control-label" for="unit_per_cost">Unit Per Cost</label>
+                                <input title="Enter Unit Per Cost" type="text" class="form-control" id="unit_per_cost" name="unit_per_cost" placeholder="Unit Per Cost" autocomplete="on">
                             </div>
                             <div class="form-row mt-3">
                                 <label class="form-control-label" for="regular_price">Regular Price*</label>
@@ -141,7 +141,7 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <label class="form-control-label" for="mpn">MPN</label>
-                                <input title="Enter MPN" type="number" class="form-control" min="0" id="mpn" name="mpn" placeholder="MPN" autocomplete="on">
+                                <input title="Enter MPN" type="text" class="form-control" id="mpn" name="mpn" placeholder="MPN" autocomplete="on">
                             </div>
                             <div class="form-row mt-3">
                                 <label class="form-control-label" for="stock_quantity">Stock Quantity* <small>(*If there is no attribute quantity available)</small></label>

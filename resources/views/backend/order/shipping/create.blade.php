@@ -1,6 +1,6 @@
 @extends('layouts.admin_app')
 
-@section('title', 'Add Vendor')
+@section('title', 'Add Shipping Methods')
 
 @section('content')
 
@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="{{route('shipping.index')}}">Shipping Methods</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('shipping-methods.index')}}">Shipping Methods</a></li>
                             <li class="breadcrumb-item active"><a href="#">Add New</a></li>
                         </ol>
                     </nav>
@@ -37,7 +37,7 @@
                             <h3 class="mb-0">Add Shipping Charges</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('shipping.store') }}" method="POST">
+                            <form action="{{ route('shipping-methods.store') }}" method="POST">
                             @csrf
                                 <div class="form-group">
                                     <label class="form-control-label" for="title">Title*</label>

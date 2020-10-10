@@ -35,17 +35,18 @@
                 </div>
                 <!-- Excel product -->
                 <div class="card-header">
-                    <h3 class="mb-0 float-left">Product Upload By Excel Sheet</h3>
+                    <h4 class="mb-0 float-left">Import Product</h4>
                     <form action="{{ route('product.import') }}" method="POST" name="importform"
-                        enctype="multipart/form-data">
+                        enctype="multipart/form-data" style="display: contents;">
                             @csrf
-                            <input type="file" name="file" class="form-control">
+                            <input type="file" name="file" class="form-control" required>
                             <br>
-                            <button type="submit" class="btn btn-success">Import Product</button>
+                            <button type="submit" class="btn btn-sm btn-success">Import</button>
                      </form>
+                     <a class="btn btn-sm btn-info" href="{{ route('product.export') }}">Export Excel</a>
                 </div>
                 <div class="table-responsive py-4">
-                    <table class="table table-flush" style="width: 100%;" id="datatable-buttons">
+                    <table class="table table-flush" style="width: 100%;" id="datatable-basic">
                         <thead class="thead-light">
                             <tr>
                                 <th>Sl No.</th>
@@ -69,23 +70,22 @@
                             <tr>
                                 <td> {{$loop->index+1}} </td>
                                 <td>
-                                    @foreach($row->categories as $category)
-                                      <span class="badge badge-primary">{{ $category->category_name }}</span>
+                                    @foreach($row->categories->chunk(3) as $chunk)
+                                    <br>
+                                        @foreach ($chunk as $category)
+                                        <span class="badge badge-primary">{{ $category->category_name }}</span>
+                                        @endforeach
                                     @endforeach
                                 </td>
                                 <td>{{$row->mpn}}</td>
-                                <td>{{$row->product_name}}</td>
+                                <td><span>{{ $row->product_name }}</span></td>
                                 <td>
-                                    <img src="{{ $row->main_image }}" width="80" height="60" alt="">
+                                    <img src="{{ $row->main_image }}" width="80" height="80" alt="">
                                 </td>
                                 <td>{{$row->sku}}</td>
                                 <td>{{$row->unit_per_cost}}</td>
                                 <td>{{$row->manufactory}}</td>
-                                @if ($row->brand_id == NULL)
-                                <td>-</td>
-                                @else
-                                <td>{{ $row->brand->title}}</td>
-                                @endif
+                                <td>{{ $row->brand_id == NULL ? '' : $row->brand->title }}</td>
                                 <td>{{$row->cost}}</td>
                                 <td>{{$row->regular_price}}</td>
                                 <td>{{$row->stock_quantity}}</td>
@@ -115,7 +115,7 @@
         <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6">
                 <div class="copyright text-center text-lg-left text-muted">
-                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Medi</a>
+                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Care</a>
                 </div>
             </div>
         </div>

@@ -63,7 +63,12 @@
                                 <td>{{ $row->company }}</td>
                                 <td>{{ $row->issue_date }}</td>
                                 <td>{{ $row->created_by == 1 ? "Super Admin" : '' }}</td>
-                                <td>{{ $row->note }}</td>
+                                <td>
+                                {{ \Illuminate\Support\Str::limit(strip_tags($row->note), 20) }}
+                                @if (strlen(strip_tags($row->note)) > 20)
+                                <a href="{{ url('admin/call-log/edit/'.$row->id)}}" class="btn btn-sm btn-primary-outline read-more">Read More</a>
+                                @endif
+                                </td>
                                 <td>{{ $row->userType }}</td>
                                 <td>
                                     <a class="btn btn-sm btn-info" href="{{ url('admin/call-log/edit/'.$row->id)}}"><i class="fas fa-edit"></i></a>

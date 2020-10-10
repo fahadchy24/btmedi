@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\City;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\State;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -108,8 +110,6 @@ class RegisterController extends Controller
             if($data['userType'] == "Wholesale"){
                 $data['isActive']= 0;
             }
-
-            // echo "<pre>"; print_r($data); die;
 
             $success = User::create($data);
 

@@ -55,7 +55,7 @@
                                 <td>{{$loop->index+1}}</td>
                                 <td>{{$row->rma_number}}</td>
                                 <td>{{$row->created_at}}</td>
-                                <td>{{ "BT-#". $row->order_id}}</td>
+                                <td>{{ $row->order_number}}</td>
                                 <td>{{$row->email}}</td>
                                 <td>{{ $row->issued_by == 7 ? 'Super Admin' : Auth::user()->id }}</td>
                                 <td>{{ $row->issued_by == 7 ? 'Super Admin' : Auth::user()->id }}</td>

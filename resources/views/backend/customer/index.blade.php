@@ -2,6 +2,27 @@
 
 @section('title', 'Customer List')
 
+@push('css')
+
+<style>
+    .hello
+    {
+        font-family: Open Sans, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+
+        margin: 0;
+
+        text-align: left;
+
+        color: #525f7f;
+        background-color: #f8f9fe;
+    }
+</style>
+
+@endpush
+
 @section('content')
 
 <div class="header bg-primary pb-6">
@@ -71,7 +92,12 @@
                                 <td>{{ $row->email }}</td>
                                 <td>{{ $row->reseller_permit_number }}</td>
                                 <td>{{ $row->isActive ==0 ? 'Inactive' : 'Active' }}</td>
-                                <td>{{ $row->note }}</td>
+                                {{-- <td>{{ $row->note }}</td> --}}
+                                <td>
+                                    {{ \Illuminate\Support\Str::limit(strip_tags($row->note), 20) }}
+                                    @if (strlen(strip_tags($row->note)) > 50)
+                                    ... <a href="#" class="btn btn-info btn-sm read-more">Read More</a>
+                                    @endif
                                 <td>
                                     <a title="Edit Customer" class="btn btn-sm btn-primary" href="{{ route('customer.edit' ,$row->id)}}"><i class="fas fa-edit"></i></a>
                                     <a title="Delete Customer" class="btn btn-sm btn-danger" id="delete" href="{{ route('customer.delete' ,$row->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>

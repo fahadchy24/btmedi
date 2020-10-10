@@ -105,8 +105,7 @@
                                 <td> {{ $row->rma_number }} </td>
                                 <td>{{$row->created_at}}</td>
                                 <td>{{ $row->order_number}}</td>
-                                {{--  <td>{{$row->order->email}}</td>  --}}
-                                <td>{{$row->email}}</td>
+                                <td>{{ $row->order->contact_email }}</td>
                                 <td>{{ $row->issued_by == 7 ? 'Super Admin' : Auth::user()->id }}</td>
                                 <td>{{$row->remark}}</td>
                                 <td>{{$row->restocking_fee}}</td>

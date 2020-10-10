@@ -811,7 +811,12 @@
                           <td>{{ $row->company }}</td>
                           <td>{{ $row->issue_date }}</td>
                           <td>{{ $row->created_by == 1 ? "Super Admin" : '' }}</td>
-                          <td>{{ $row->note }}</td>
+                          <td>
+                            {{ \Illuminate\Support\Str::limit(strip_tags($row->note), 20) }}
+                            @if (strlen(strip_tags($row->note)) > 20)
+                            <a href="{{ url('admin/call-log/edit/'.$row->id)}}" class="btn btn-sm btn-primary-outline read-more">Read More</a>
+                            @endif
+                          </td>
                           <td>{{ $row->userType }}</td>
                       </tr>
                       @endforeach
@@ -1002,7 +1007,7 @@
                       <tr>
                         <td>{{$loop->index+1}}</td>
                         <td>
-                          {{'BT-#'.$row->id}}
+                          {{ $row->order_number }}
                         </td>
                         <td>
                           {{$row->created_at}}
@@ -1042,7 +1047,7 @@
                 <thead class="thead-light">
                   <tr>
                     <th scope="col">SL</th>
-                    <th scope="col">Product name</th>
+                    <th scope="col">Product Number</th>
                     <th scope="col">Image</th>
                     <th scope="col">SKU</th>
                     <th scope="col">Status</th>
@@ -1055,10 +1060,10 @@
                       {{$loop->index+1}}
                     </th>
                     <th scope="row">
-                      {{'BT-#'.$row->id}}
+                      {{ $row->sku }}
                     </th>
                     <td>
-                      <img src="{{ $row->main_image }}" width="80" height="60" alt="">
+                      <img src="{{ $row->main_image }}" width="80" height="80" alt="">
                     </td>
                     <td>
                      {{$row->sku}}
@@ -1074,15 +1079,6 @@
           </div>
         </div>
       </div>
-      <!-- Footer -->
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6">
-            <div class="copyright text-center text-lg-left text-muted">
-              &copy; 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BTCare Supply</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      @include('backend.footer')
     </div>
 @endsection

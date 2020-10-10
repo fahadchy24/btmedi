@@ -23,7 +23,7 @@
    <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img class="bg-white" src="{{ asset('frontend/') }}/image/catalog/logo.png">
+        <img class="bg-white" src="{{ asset('uploads/frontend/image/'.$gs->logo) }}">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="#">
-                <img src="{{ asset('frontend/') }}/image/catalog/logo.png">
+                <img src="{{ asset('uploads/frontend/image/'.$gs->logo) }}">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -166,7 +166,7 @@
       <div class="row align-items-center justify-content-xl-between">
         <div class="col-xl-6">
           <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Medi</a>
+            &copy; 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Care</a>
           </div>
         </div>
         <div class="col-xl-6">

@@ -112,7 +112,12 @@
                             <td>1000.00</td>
                             <td>1000.00</td>
                             <td>1000.00</td>
-                            <td>{{$row->note}}</td>
+                            <td>
+                                {{ \Illuminate\Support\Str::limit(strip_tags($row->note), 20) }}
+                                @if (strlen(strip_tags($row->note)) > 50)
+                                <a href="#" class="btn btn-info btn-sm read-more">Read More</a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                       </tbody>
@@ -127,7 +132,7 @@
         <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6">
                 <div class="copyright text-center text-lg-left text-muted">
-                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Medi</a>
+                    © 2020 <a href="#" class="font-weight-bold ml-1" target="_blank">BT Care</a>
                 </div>
             </div>
         </div>

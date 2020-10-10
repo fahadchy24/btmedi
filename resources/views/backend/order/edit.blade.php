@@ -99,6 +99,77 @@
                                     <div class="col-md-6 mb-3">
                                         <label class="form-control-label" for="status">Order Status</label>
                                         <select class="form-control" name="status" id="status">
+                                            @if($row->status=="Pending")
+                                            <option value="{{ $row->status }}" selected>{{ $row->status }}</option>
+                                            <option value="Order Processing">Order Processing</option>
+                                            <option value="Ready to Pack and Ship">Ready to Pack and Ship</option>
+                                            <option value="Finished">Finished </option>
+                                            <option value="Back">Back</option>
+                                            <option value="Canceled">Canceled</option>
+                                            <option value="Hold">Hold</option>
+                                            <option value="Refund">Refund</option>
+                                            @endif
+                                            @if($row->status=="Order Processing")
+                                            <option value="{{ $row->status }}" selected>{{ $row->status }}</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Ready to Pack and Ship">Ready to Pack and Ship</option>
+                                            <option value="Finished">Finished </option>
+                                            <option value="Back">Back</option>
+                                            <option value="Canceled">Canceled</option>
+                                            <option value="Hold">Hold</option>
+                                            <option value="Refund">Refund</option>
+                                            @endif
+                                            @if($row->status=="Ready to Pack and Ship")
+                                            <option value="{{ $row->status }}" selected>{{ $row->status }}</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Order Processing">Order Processing</option>
+                                            <option value="Finished">Finished </option>
+                                            <option value="Back">Back</option>
+                                            <option value="Canceled">Canceled</option>
+                                            <option value="Hold">Hold</option>
+                                            <option value="Refund">Refund</option>
+                                            @endif
+                                            @if($row->status=="Finished")
+                                            <option value="{{ $row->status }}" selected>{{ $row->status }}</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Order Processing">Order Processing</option>
+                                            <option value="Ready to Pack and Ship">Ready to Pack and Ship</option>
+                                            <option value="Back">Back</option>
+                                            <option value="Canceled">Canceled</option>
+                                            <option value="Hold">Hold</option>
+                                            <option value="Refund">Refund</option>
+                                            @endif
+                                            @if($row->status=="Back")
+                                            <option value="{{ $row->status }}" selected>{{ $row->status }}</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Order Processing">Order Processing</option>
+                                            <option value="Ready to Pack and Ship">Ready to Pack and Ship</option>
+                                            <option value="Finished">Finished </option>
+                                            <option value="Canceled">Canceled</option>
+                                            <option value="Hold">Hold</option>
+                                            <option value="Refund">Refund</option>
+                                            @endif
+                                            @if($row->status=="Canceled")
+                                            <option value="{{ $row->status }}" selected>{{ $row->status }}</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Order Processing">Order Processing</option>
+                                            <option value="Ready to Pack and Ship">Ready to Pack and Ship</option>
+                                            <option value="Finished">Finished </option>
+                                            <option value="Back">Back</option>
+                                            <option value="Hold">Hold</option>
+                                            <option value="Refund">Refund</option>
+                                            @endif
+                                            @if($row->status=="Hold")
+                                            <option value="{{ $row->status }}" selected>{{ $row->status }}</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Order Processing">Order Processing</option>
+                                            <option value="Ready to Pack and Ship">Ready to Pack and Ship</option>
+                                            <option value="Finished">Finished </option>
+                                            <option value="Back">Back</option>
+                                            <option value="Canceled">Canceled</option>
+                                            <option value="Refund">Refund</option>
+                                            @endif
+                                            @if($row->status=="Refund")
                                             <option value="{{ $row->status }}" selected>{{ $row->status }}</option>
                                             <option value="Pending">Pending</option>
                                             <option value="Order Processing">Order Processing</option>
@@ -107,18 +178,20 @@
                                             <option value="Back">Back</option>
                                             <option value="Canceled">Canceled</option>
                                             <option value="Hold">Hold</option>
-                                            <option value="Refund">Refund</option>
+                                            @endif
                                         </select>
                                     </div>
                                     <div class="col-md-5 offset-md-1 mb-3">
                                         <div class="form-group">
-    					                    {{-- <label class="form-control-label" for="details">Payment</label>
-                                            <p>{{ $row->payment }}</p> --}}
                                             <label class="form-control-label" for="payment">Payment Status</label>
                                             <select class="form-control" name="payment" id="payment">
+                                                @if($row->payment=="Pending")
+                                                <option value="{{ $row->payment }}" selected>{{ $row->payment }}</option>
+                                                <option value="Paid">Paid</option>
+                                                @else
                                                 <option value="{{ $row->payment }}" selected>{{ $row->payment }}</option>
                                                 <option value="Pending">Pending</option>
-                                                <option value="Paid">Paid</option>
+                                                @endif
                                         </select>
     					                </div>
                                     </div>

@@ -399,7 +399,7 @@
                                                 @foreach ($frontshippingMethod as $row)
                                                 <div class="radio">
                                                     <label>
-                                                    <input type="radio" name="shipping_fee">
+                                                    <input type="radio" name="shipping_fee" value="{{ $row->price }}">
                                                         {{ $row->title }} - {{ "$". $row->price }}
                                                     </label>
                                                 </div>
@@ -464,7 +464,7 @@
                                                                 <div class="custom-control custom-radio">
                                                                     <input type="radio" class="custom-control-input" id="secondStylishRadio1" name="payment_method" value="Cash On Delivery">
                                                                     <label class="custom-control-label form-label" for="secondStylishRadio1" data-toggle="collapse" data-target="#basicsCollapseTwo" aria-expanded="false" aria-controls="basicsCollapseTwo" style="cursor: pointer;">
-                                                                        Cash on Dalivary
+                                                                        Cash on Delivery
                                                                     </label>
                                                                 </div>
                                                             </div>
