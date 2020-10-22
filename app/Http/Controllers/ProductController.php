@@ -51,7 +51,7 @@ class ProductController extends Controller
             'product_name' => 'required|unique:products|string',
             'short_description' => 'required',
             'full_description' => 'required',
-            'video_url' => 'url',
+            'video_url' => 'nullable|url',
             'docs' => 'mimes:pdf|max:50000',
             'unit_per_cost' => 'nullable|integer',
             'cost' => 'nullable|integer',

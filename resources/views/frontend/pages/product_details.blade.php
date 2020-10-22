@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '')
+@section('title', $productdetail->product_name )
 
 @section('content')
 <!-- Main Container  -->
@@ -272,25 +272,6 @@
                             <div class="title-product">
                                 <h1>{{ $productdetail->product_name }}</h1>
                             </div>
-                            <!-- Review ---->
-                            <div class="box-review">
-                                <div class="rating">
-                                    <div class="rating-box">
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                class="fa fa-star-o fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                class="fa fa-star-o fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                class="fa fa-star-o fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                class="fa fa-star-o fa-stack-1x"></i></span>
-                                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                                    </div>
-                                </div>
-                                <a class="reviews_button" href=""
-                                    onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">2 reviews</a>
-                                <span class="order-num">Orders (0)</span>
-                            </div>
                             <div class="product_page_price price" itemprop="offerDetails" itemscope=""
                                 itemtype="http://data-vocabulary.org/Offer">
                                 @if ($productdetail->sale_price>NULL)
@@ -316,7 +297,7 @@
                                 {!! $productdetail->short_description !!}
                             </div>
                             <div id="product">
-                                <h4>Available Options</h4>
+                                {{--  <h4>Available Options</h4>
                                 <div class="image_option_type form-group required">
                                     <label class="control-label">Colors</label>
                                     <ul class="product-options clearfix" id="input-option231">
@@ -353,37 +334,15 @@
                                 <div class="form-group required">
                                     <label class="control-label">Size</label>
                                     <div id="input-option472" style="margin-left: 71px; margin-top: -28px;">
-                                        @foreach($productdetail->attributes as $row)
-                                        {{-- <p>{{ $row->label }}</p> --}}
-                                        {{-- <p>{{ $row->size }}</p> --}}
                                         <div class="radio  radio-type-button">
                                             <label>
-                                                <input type="radio" name="{{ $row->label }}" value="418">
-                                                <span class="option-content-box" {{-- data-title="Small +$30.00"
-                                                    data-toggle="tooltip" data-original-title="" title="" --}}>
-                                                    <span class="option-name">{{ $row->label }}</span>
+                                                <input type="radio" name="" value="418">
+                                                <span class="option-content-box" data-title="Small +$30.00"
+                                                    data-toggle="tooltip" data-original-title="" title="">
+                                                    <span class="option-name"></span>
                                                 </span>
                                             </label>
                                         </div>
-                                        @endforeach
-                                        {{-- <div class="radio  radio-type-button">
-                                            <label>
-                                                <input type="radio" name="option[472]" value="417">
-                                                <span class="option-content-box" data-title="Medium +$20.00"
-                                                    data-toggle="tooltip" data-original-title="" title="">
-                                                    <span class="option-name">M</span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="radio  radio-type-button">
-                                            <label>
-                                                <input type="radio" name="option[472]" value="416">
-                                                <span class="option-content-box" data-title="Large +$10.00"
-                                                    data-toggle="tooltip" data-original-title="" title="">
-                                                    <span class="option-name">L</span>
-                                                </span>
-                                            </label>
-                                        </div> --}}
                                     </div>
                                 </div>
                                 <div class="form-group required">
@@ -417,36 +376,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                </div>
-                                {{-- <div class="form-group required ">
-                                    <label class="control-label">Other</label>
-                                    <div id="input-option471">
-                                        <div class="checkbox   radio-type-button">
-                                            <label>
-                                                <input type="checkbox" name="option[471][]" value="413">
-                                                <span class="option-content-box" data-title="Checkbox 1 +$15.00" data-toggle="tooltip" data-original-title="" title="">
-                                                    <span class="option-name">Checkbox 1 </span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox   radio-type-button">
-                                            <label>
-                                                <input type="checkbox" name="option[471][]" value="414">
-                                                <span class="option-content-box" data-title="Checkbox 2 +$25.00" data-toggle="tooltip" data-original-title="" title="">
-                                                    <span class="option-name">Checkbox 2 </span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="checkbox   radio-type-button">
-                                            <label>
-                                                <input type="checkbox" name="option[471][]" value="415">
-                                                <span class="option-content-box" data-title="Checkbox 3 +$35.00" data-toggle="tooltip" data-original-title="" title="">
-                                                    <span class="option-name">Checkbox 3 </span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div> --}}
+                                </div>  --}}
                                     <div class="form-group box-info-product">
                                     <form action="{{ url('cart/add')}}" method="POST">
                                     <input type="hidden" name="id" value="{{ $productdetail->id }}">@csrf
@@ -454,7 +384,7 @@
                                             <div class="input-group quantity-control" unselectable="on"
                                                 style="-webkit-user-select: none;">
                                                 <input class="form-control" type="text" name="qty" value="1">
-                                                <input type="hidden" name="product_id" value="50">
+                                                <input type="hidden" name="product_id" value="">
                                                 <span class="input-group-addon product_quantity_down">−</span>
                                                 <span class="input-group-addon product_quantity_up">+</span>
                                             </div>
@@ -500,7 +430,7 @@
                         <li class="active"><a data-toggle="tab" href="#tab-1">Description</a></li>
                         <li class="item_nonactive"><a data-toggle="tab" href="#tab-2">Specifications</a></li>
                         <li class="item_nonactive"><a data-toggle="tab" href="#tab-3">Docs</a></li>
-                        <li class="item_nonactive"><a data-toggle="tab" href="#tab-review">Reviews (1)</a></li>
+                        <li class="item_nonactive"><a data-toggle="tab" href="#tab-review">Reviews</a></li>
                         
                     </ul>
                     <div class="tab-content">
@@ -511,561 +441,173 @@
                             <a href="#">{!! $productdetail->specification !!}</a>
                         </div>
                         <div id="tab-3" class="tab-pane fade">
-                            {{--  <a href="#">{{  $productdetail->product_tags  }}</a>  --}}
                         </div>
                         <div id="tab-review" class="tab-pane fade">
-                            <form>
-                                <div id="review">
-                                    <table class="table table-striped table-bordered">
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 50%;"><strong>Super Administrator</strong></td>
-                                                <td class="text-right">29/07/2015</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <p>Best this product opencart</p>
-                                                    <div class="ratings">
-                                                        <div class="rating-box">
-                                                            <span class="fa fa-stack"><i
-                                                                    class="fa fa-star fa-stack-1x"></i><i
-                                                                    class="fa fa-star-o fa-stack-1x"></i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="fa fa-star fa-stack-1x"></i><i
-                                                                    class="fa fa-star-o fa-stack-1x"></i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="fa fa-star fa-stack-1x"></i><i
-                                                                    class="fa fa-star-o fa-stack-1x"></i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="fa fa-star fa-stack-1x"></i><i
-                                                                    class="fa fa-star-o fa-stack-1x"></i></span>
-                                                            <span class="fa fa-stack"><i
-                                                                    class="fa fa-star-o fa-stack-1x"></i></span>
-                                                        </div>
+                            <div id="review">
+                                <table class="table table-striped table-bordered">
+                                    <tbody>
+                                        @foreach($productComments as $comment)
+                                        <tr>
+                                            <td style="width: 50%;"><strong>{{ $comment->name }}</strong></td>
+                                            <td class="text-right">{{ $comment->created_at->format('d M Y') }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <p>{{ $comment->details }}</p>
+                                                @if(!empty($comment->rating))
+                                                <div class="ratings">
+                                                    <div class="rating-box">
+                                                        @if ($comment->rating==1)    
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        @elseif($comment->rating==2)
+                                                        <span class="fa fa-stack"><i
+                                                            class="fa fa-star fa-stack-1x"></i><i
+                                                            class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        @elseif($comment->rating==3)
+                                                        <span class="fa fa-stack"><i
+                                                            class="fa fa-star fa-stack-1x"></i><i
+                                                            class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        @elseif($comment->rating==4)
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        @elseif($comment->rating==5)
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        <span class="fa fa-stack"><i
+                                                                class="fa fa-star fa-stack-1x"></i><i
+                                                                class="fa fa-star-o fa-stack-1x"></i></span>
+                                                        @endif
                                                     </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="text-right"></div>
-                                </div>
-                                <h2 id="review-title">Write a review</h2>
-                                <div class="contacts-form">
+                                                </div>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                <div class="text-right"></div>
+                            </div>
+                            <h2 id="review-title">Write a review</h2>
+                            <div class="contacts-form">
+                                <form action="{{ route('save.product.review',$productdetail->id) }}" method="POST">
+                                    @csrf
                                     <div class="form-group"> <span class="icon icon-user"></span>
-                                        <input type="text" name="name" class="form-control" value="Your Name"
-                                            onblur="if (this.value == '') {this.value = 'Your Name';}"
-                                            onfocus="if(this.value == 'Your Name') {this.value = '';}">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="form-group"> <span class="icon icon-user"></span>
+                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                                     </div>
                                     <div class="form-group"> <span class="icon icon-bubbles-2"></span>
-                                        <textarea class="form-control" name="text"
-                                            onblur="if (this.value == '') {this.value = 'Your Review';}"
-                                            onfocus="if(this.value == 'Your Review') {this.value = '';}">Your Review</textarea>
+                                        <textarea class="form-control" name="details" placeholder="Your Review" required></textarea>
                                     </div>
-                                    <span style="font-size: 11px;"><span class="text-danger">Note:</span> HTML is not
-                                        translated!</span>
                                     <div class="form-group">
                                         <b>Rating</b> <span>Bad</span>&nbsp;
-                                        <input type="radio" name="rating" value="1"> &nbsp;
-                                        <input type="radio" name="rating" value="2"> &nbsp;
-                                        <input type="radio" name="rating" value="3"> &nbsp;
-                                        <input type="radio" name="rating" value="4"> &nbsp;
-                                        <input type="radio" name="rating" value="5"> &nbsp;<span>Good</span>
+                                       <input type="radio" name="rating" value="1"> &nbsp;
+                                       <input type="radio" name="rating"
+                                       value="2"> &nbsp;
+                                       <input type="radio" name="rating"
+                                       value="3"> &nbsp;
+                                       <input type="radio" name="rating"
+                                       value="4"> &nbsp;
+                                       <input type="radio" name="rating"
+                                       value="5"> &nbsp;<span>Good</span>
+                                    <div class="buttons clearfix">
+                                        <button type="submit" id="button-review" class="btn buttonGray">Submit</button>
                                     </div>
-                                    <div class="buttons clearfix"><a id="button-review"
-                                            class="btn buttonGray">Continue</a></div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- //Product Tabs -->
             <!-- Related Products -->
-            {{--  <div class="related titleLine products-list grid module ">
+            <div class="related titleLine products-list grid module ">
                 <h3 class="modtitle"><i class="fa fa-tags"></i>Related Products </h3>
                 <div class="releate-products yt-content-slider products-list" data-rtl="no" data-loop="yes"
                     data-autoplay="no" data-autoheight="no" data-autowidth="no" data-delay="4" data-speed="0.6"
                     data-margin="20" data-items_column0="5" data-items_column1="3" data-items_column2="3"
                     data-items_column3="2" data-items_column4="1" data-arrows="yes" data-pagination="no"
                     data-lazyload="yes" data-hoverpause="yes">
+                    @foreach($latestproducts->chunk(2) as $chunk)
                     <div class="item">
-                        @foreach($relatedProducts->chunk(4) as $chunk)
                         <div class="product-layout">
                             @foreach($chunk as $row)
                             <div class="product-item-container">
                                 <div class="left-block left-b">
-                                    <div class="product-card__gallery product-card__left">
-                                        <div class="item-img thumb-active"
-                                            data-src="{{ $row->main_image }}"><img
-                                                src="{{ $row->main_image }}" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="{{ $row->main_image }}"><img
-                                                src="{{ $row->main_image }}" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="{{ $row->main_image }}"><img
-                                                src="{{ $row->main_image }}" alt="image">
-                                        </div>
-                                    </div>
                                     <div class="product-image-container">
-                                        <a href="product.html" target="_self" title="Cupim should">
+                                        <a href="{{ url('product/view', $row->id) }}" target="_self" title="{{ $row->product_name }}">
                                             <img src="{{ $row->main_image }}"
                                                 class="img-responsive" alt="image">
                                         </a>
                                     </div>
-                                    <!--quickview-->
-                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg"
-                                        href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i
-                                            class="fa fa-eye"></i><span></span></a>
-                                    <!--end quickview-->
                                 </div>
                                 <div class="right-block right-b">
-                                    <ul class="colorswatch">
-                                        <li class="item-img active"
-                                            data-src="{{ $row->main_image }}"><a
-                                                href="javascript:void(0);" title="gray"><img
-                                                    src="image/demo/colors/gray.jpg" alt="image"></a></li>
-                                        <li class="item-img"
-                                            data-src="{{ $row->main_image }}"><a
-                                                href="javascript:void(0);" title="pink"><img
-                                                    src="image/demo/colors/pink.jpg" alt="image"></a></li>
-                                        <li class="item-img"
-                                            data-src="{{ $row->main_image }}"><a
-                                                href="javascript:void(0);" title="black"><img
-                                                    src="image/demo/colors/black.jpg" alt="image"></a></li>
-                                    </ul>
                                     <div class="caption">
-                                        <h4><a href="product.html" title="Cupim should " target="_self">Cupim should
-                                            </a></h4>
-                                        <div class="rate-history">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                </div>
-                                                <a class="rating-num" href="#" target="_blank">(1)</a>
-                                            </div>
-                                            <div class="order-num">Orders (0)</div>
-                                        </div>
+                                        <h4><a href="{{ url('product/view', $row->id) }}" title="{{ $row->product_name }}" target="_self">{{ \Illuminate\Support\Str::limit(strip_tags($row->product_name), 25)}}</a></h4>
                                         <div class="price">
-                                            <span class="price-new">$254.00 </span>
+                                            @if($row->sale_price>NULL)
+                                            <span class="price-new">{{"$".$row->sale_price }}</span>
+                                            <span class="price-old">{{"$".$row->regular_price }}</span>
+                                            @else
+                                            <span class="price-new">{{"$".$row->regular_price }}</span>
+                                            @endif
                                         </div>
                                         <div class="button-group so-quickview cartinfo--static">
-                                            <button type="button" class="addToCart" title="Add to cart"
-                                                onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
-                                                <span>Add to cart </span>
-                                            </button>
-                                            <button type="button" class="wishlist btn-button" title="Add to Wish List"
-                                                onclick="wishlist.add('60');"><i class="fa fa-heart"></i><span></span>
-                                            </button>
-                                            <button type="button" class="compare btn-button"
-                                                title="Compare this Product " onclick="compare.add('60');"><i
-                                                    class="fa fa-refresh"></i><span></span>
-                                            </button>
+                                            <form action="{{ url('cart/add')}}" method="POST" style="display:inline-flex;">@csrf
+                                                <input type="hidden" name="id" value="{{ $row->id }}">
+                                                <input type="hidden" name="qty" value="1">
+                                                <button type="submit" class="addToCart" title="Add to cart"><i class="fa fa-shopping-basket"></i>
+                                                    <span>Add to cart </span>
+                                                </button>
+                                            </form>
+                                            <form class="form" action="{{ route('add-to-wishlist') }}" method="POST" style="display:inline-flex;">@csrf
+                                                <input type="hidden" name="id" value="{{ $row->id }}">
+                                                <button type="submit" class="wishlist btn-button" title="Add to Wish List"><i class="fa fa-heart"></i><span></span>
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             @endforeach
                         </div>
-                        @endforeach
                     </div>
-                    {{--  <div class="item">
-                        <div class="product-layout">
-                            <div class="product-item-container">
-                                <div class="left-block left-b">
-                                    <div class="product-card__gallery product-card__left">
-                                        <div class="item-img thumb-active"
-                                            data-src="image/catalog/demo/product/electronic/600x600/21-1.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/21-1.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/21-2.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/21-2.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/21-3.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/21-3.jpg" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="product-image-container">
-                                        <a href="product.html" target="_self" title="Doenpuis consuat ">
-                                            <img src="image/catalog/demo/product/electronic/600x600/21.jpg"
-                                                class="img-1 img-responsive" alt="image">
-                                        </a>
-                                    </div>
-                                    <div class="box-label"> <span class="label-product label-sale"> -13% </span><span
-                                            class="label-product label-new"> New </span></div>
-                                    <!--quickview-->
-                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg"
-                                        href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i
-                                            class="fa fa-eye"></i><span></span></a>
-                                    <!--end quickview-->
-                                </div>
-                                <div class="right-block right-b">
-                                    <div class="caption">
-                                        <h4><a href="product.html" title="Doenpuis consuat " target="_self">Doenpuis
-                                                consuat </a></h4>
-                                        <div class="rate-history">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                </div>
-                                                <a class="rating-num" href="#" target="_blank">(3)</a>
-                                            </div>
-                                            <div class="order-num">Orders (3)</div>
-                                        </div>
-                                        <div class="price"> <span class="price-new">$66.00</span>
-                                            <span class="price-old">$76.00</span>
-                                        </div>
-                                        <div class="button-group so-quickview cartinfo--static">
-                                            <button type="button" class="addToCart" title="Add to cart"
-                                                onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
-                                                <span>Add to cart </span>
-                                            </button>
-                                            <button type="button" class="wishlist btn-button" title="Add to Wish List"
-                                                onclick="wishlist.add('60');"><i class="fa fa-heart"></i><span></span>
-                                            </button>
-                                            <button type="button" class="compare btn-button"
-                                                title="Compare this Product " onclick="compare.add('60');"><i
-                                                    class="fa fa-refresh"></i><span></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product-layout">
-                            <div class="product-item-container">
-                                <div class="left-block left-b">
-                                    <div class="product-card__gallery product-card__left">
-                                        <div class="item-img thumb-active"
-                                            data-src="image/catalog/demo/product/electronic/600x600/4.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/4.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/3.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/3.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/2.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/2.jpg" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="product-image-container">
-                                        <a href="product.html" target="_self" title="Drutick lanaeger">
-                                            <img src="image/catalog/demo/product/electronic/600x600/4.jpg"
-                                                class="img-1 img-responsive" alt="image">
-                                        </a>
-                                    </div>
-                                    <!--quickview-->
-                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg"
-                                        href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i
-                                            class="fa fa-eye"></i><span></span></a>
-                                    <!--end quickview-->
-                                </div>
-                                <div class="right-block right-b">
-                                    <div class="caption">
-                                        <h4><a href="product.html" title="Ercitation incididunt"
-                                                target="_self">Ercitation incididunt</a></h4>
-                                        <div class="rate-history">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                </div>
-                                                <a class="rating-num" href="#" target="_blank">(0)</a>
-                                            </div>
-                                            <div class="order-num">Orders (4)</div>
-                                        </div>
-                                        <div class="price"> <span class="price-new">$180.00</span>
-                                        </div>
-                                        <div class="button-group so-quickview cartinfo--static">
-                                            <button type="button" class="addToCart" title="Add to cart"
-                                                onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
-                                                <span>Add to cart </span>
-                                            </button>
-                                            <button type="button" class="wishlist btn-button" title="Add to Wish List"
-                                                onclick="wishlist.add('60');"><i class="fa fa-heart"></i><span></span>
-                                            </button>
-                                            <button type="button" class="compare btn-button"
-                                                title="Compare this Product " onclick="compare.add('60');"><i
-                                                    class="fa fa-refresh"></i><span></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product-layout">
-                            <div class="product-item-container">
-                                <div class="left-block left-b">
-                                    <div class="product-card__gallery product-card__left">
-                                        <div class="item-img thumb-active"
-                                            data-src="image/catalog/demo/product/electronic/600x600/5-1.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/5-1.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/5-2.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/5-2.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/5-3.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/5-3.jpg" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="product-image-container">
-                                        <a href="product.html" target="_self" title="Fatback picanha">
-                                            <img src="image/catalog/demo/product/electronic/600x600/5.jpg"
-                                                class="img-1 img-responsive" alt="image">
-                                        </a>
-                                    </div>
-                                    <div class="box-label"> <span class="label-product label-sale"> -13% </span></div>
-                                    <!--quickview-->
-                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg"
-                                        href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i
-                                            class="fa fa-eye"></i><span></span></a>
-                                    <!--end quickview-->
-                                </div>
-                                <div class="right-block right-b">
-                                    <ul class="colorswatch">
-                                        <li class="item-img active"
-                                            data-src="image/catalog/demo/product/electronic/600x600/5-3.jpg"><a
-                                                href="javascript:void(0);" title="red"><img
-                                                    src="image/demo/colors/red.jpg" alt="image"></a></li>
-                                        <li class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/5-1.jpg"><a
-                                                href="javascript:void(0);" title="blue"><img
-                                                    src="image/demo/colors/blue.jpg" alt="image"></a></li>
-                                    </ul>
-                                    <div class="caption">
-                                        <h4><a href="product.html" title="Fatback picanha" target="_self">Fatback
-                                                picanha</a></h4>
-                                        <div class="rate-history">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                </div>
-                                                <a class="rating-num" href="#" target="_blank">(0)</a>
-                                            </div>
-                                            <div class="order-num">Orders (0)</div>
-                                        </div>
-                                        <div class="price"> <span class="price-new">$210.00</span>
-                                        </div>
-                                        <div class="button-group so-quickview cartinfo--static">
-                                            <button type="button" class="addToCart" title="Add to cart"
-                                                onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
-                                                <span>Add to cart </span>
-                                            </button>
-                                            <button type="button" class="wishlist btn-button" title="Add to Wish List"
-                                                onclick="wishlist.add('60');"><i class="fa fa-heart"></i><span></span>
-                                            </button>
-                                            <button type="button" class="compare btn-button"
-                                                title="Compare this Product " onclick="compare.add('60');"><i
-                                                    class="fa fa-refresh"></i><span></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product-layout">
-                            <div class="product-item-container">
-                                <div class="left-block left-b">
-                                    <div class="product-card__gallery product-card__left">
-                                        <div class="item-img thumb-active"
-                                            data-src="image/catalog/demo/product/electronic/600x600/6-1.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/6-1.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/6-2.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/6-2.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/6-3.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/6-3.jpg" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="product-image-container">
-                                        <a href="product.html" target="_self" title="Jalapeno dolore">
-                                            <img src="image/catalog/demo/product/electronic/600x600/6.jpg"
-                                                class="img-1 img-responsive" alt="image">
-                                        </a>
-                                    </div>
-                                    <div class="box-label"><span class="label-product label-new"> New </span></div>
-                                    <!--quickview-->
-                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg"
-                                        href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i
-                                            class="fa fa-eye"></i><span></span></a>
-                                    <!--end quickview-->
-                                </div>
-                                <div class="right-block right-b">
-                                    <div class="caption">
-                                        <h4><a href="product.html" title="Jalapeno dolore" target="_self">Jalapeno
-                                                dolore</a></h4>
-                                        <div class="rate-history">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                </div>
-                                                <a class="rating-num" href="#" target="_blank">(0)</a>
-                                            </div>
-                                            <div class="order-num">Orders (2)</div>
-                                        </div>
-                                        <div class="price"> <span class="price-new">$60.00</span>
-                                        </div>
-                                        <div class="button-group so-quickview cartinfo--static">
-                                            <button type="button" class="addToCart" title="Add to cart"
-                                                onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
-                                                <span>Add to cart </span>
-                                            </button>
-                                            <button type="button" class="wishlist btn-button" title="Add to Wish List"
-                                                onclick="wishlist.add('60');"><i class="fa fa-heart"></i><span></span>
-                                            </button>
-                                            <button type="button" class="compare btn-button"
-                                                title="Compare this Product " onclick="compare.add('60');"><i
-                                                    class="fa fa-refresh"></i><span></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product-layout">
-                            <div class="product-item-container">
-                                <div class="left-block left-b">
-                                    <div class="product-card__gallery product-card__left">
-                                        <div class="item-img thumb-active"
-                                            data-src="image/catalog/demo/product/electronic/600x600/9.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/9.jpg" alt="image">
-                                        </div>
-                                        <div class="item-img"
-                                            data-src="image/catalog/demo/product/electronic/600x600/13.jpg"><img
-                                                src="image/catalog/demo/product/electronic/90x90/13.jpg" alt="image">
-                                        </div>
-                                    </div>
-                                    <div class="product-image-container">
-                                        <a href="product.html" target="_self" title="Pariatur porking">
-                                            <img src="image/catalog/demo/product/electronic/600x600/12.jpg"
-                                                class="img-1 img-responsive" alt="image">
-                                        </a>
-                                    </div>
-                                    <!--quickview-->
-                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg"
-                                        href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i
-                                            class="fa fa-eye"></i><span></span></a>
-                                    <!--end quickview-->
-                                </div>
-                                <div class="right-block right-b">
-                                    <div class="caption">
-                                        <h4><a href="product.html" title="Pariatur porking" target="_self">Pariatur
-                                                porking</a></h4>
-                                        <div class="rate-history">
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o  fa-stack-1x"></i><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                    <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o fa-stack-1x"></i></span>
-                                                </div>
-                                                <a class="rating-num" href="#" target="_blank">(0)</a>
-                                            </div>
-                                            <div class="order-num">Orders (0)</div>
-                                        </div>
-                                        <div class="price"> <span class="price-new">$78.00</span>
-                                        </div>
-                                        <div class="button-group so-quickview cartinfo--static">
-                                            <button type="button" class="addToCart" title="Add to cart"
-                                                onclick="cart.add('60 ');"> <i class="fa fa-shopping-basket"></i>
-                                                <span>Add to cart </span>
-                                            </button>
-                                            <button type="button" class="wishlist btn-button" title="Add to Wish List"
-                                                onclick="wishlist.add('60');"><i class="fa fa-heart"></i><span></span>
-                                            </button>
-                                            <button type="button" class="compare btn-button"
-                                                title="Compare this Product " onclick="compare.add('60');"><i
-                                                    class="fa fa-refresh"></i><span></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  --}}
+                    @endforeach
                 </div>
             </div>
             <!-- end Related  Products-->
@@ -1074,6 +616,7 @@
     </div>
 </div>
 <!-- End Main Container  -->
+</div>
 @include('layouts.front-inc.footer')
 
 @endsection

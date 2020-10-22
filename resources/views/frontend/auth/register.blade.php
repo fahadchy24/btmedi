@@ -178,8 +178,18 @@
                         </div>
                     </div>
                 </fieldset>
+                <fieldset>
+                    <legend></legend>
+                    <div class="form-group">
+                        {{--  <form action="?" method="POST">
+                            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                            <br/>
+                            <input type="submit" value="Submit">
+                          </form>  --}}
+                    </div>
+                </fieldset>
                 <div class="buttons">
-                    <div class="pull-right">I have read and agree to the <a href="#" class="agree"><b>Pricing Tables</b></a>
+                    <div class="pull-right">I have read and agree to the <a href="/page/term-of-service" class="agree"><b>Terms of Service</b></a>
                         <input class="box-checkbox" type="checkbox" name="agree" value="1" required> &nbsp;
                         <input type="submit" value="Continue" class="btn btn-primary">
                     </div>

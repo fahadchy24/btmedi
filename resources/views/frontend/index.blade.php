@@ -72,8 +72,8 @@
                                                                 {{ strip_tags( $dealProduct->short_description ) }}
                                                             </p>
                                                             <p class="price font-ct">
-                                                                <span class="price-new">{{ "$".$dealProduct->sale_price }}{{-- $98.00 --}}</span>
-                                                                <span class="price-old">{{ "$".$dealProduct->regular_price }}{{-- $122.00 --}}</span>
+                                                                <span class="price-new">{{ "$".$dealProduct->sale_price }}</span>
+                                                                <span class="price-old">{{ "$".$dealProduct->regular_price }}</span>
                                                             </p>
                                                             <!--countdown box-->
                                                             <div class="item-time-w">
@@ -103,7 +103,7 @@
                                     <div id="so_extra_slider_1" class="so-extraslider">
                                         <!-- Begin extraslider-inner -->
                                         <div class="yt-content-slider extraslider-inner" data-rtl="yes" data-pagination="no" data-autoplay="no" data-delay="4" data-speed="0.6" data-margin="0" data-items_column0="1" data-items_column1="1" data-items_column2="1" data-items_column3="1" data-items_column4="1" data-arrows="yes" data-lazyload="yes" data-loop="no" data-buttonpage="top">
-                                            @foreach ($bestsalers->chunk(3) as $chunk)
+                                            @foreach ($bestsalers->chunk(4) as $chunk)
                                             <div class="item ">
                                                 @foreach ($chunk as $product)
                                                 <div class="item-wrap style1">
@@ -120,18 +120,15 @@
                                                         <div class="media-body">
                                                             <div class="item-info">
                                                                 <div class="item-title">
-                                                                    <a href="{{ url('product/view', $product->id) }}" target="_self" title="Mandouille short">{{ $product->product_name }} </a>
-                                                                </div>
-                                                                <div class="rating">
-                                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
-                                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
-                                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
-                                                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
-                                                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                                    <a href="{{ url('product/view', $product->id) }}" target="_self" title="{{ $product->product_name }}">{{ \Illuminate\Support\Str::limit(strip_tags($product->product_name), 25)}}</a>
                                                                 </div>
                                                                 <div class="content_price price">
+                                                                    @if($product->sale_price > NULL)
                                                                     <span class="price-new product-price">${{ $product->sale_price }} </span>&nbsp;&nbsp;
                                                                     <span class="price-old">${{ $product->regular_price }} </span>&nbsp;
+                                                                    @else
+                                                                    <span class="price-new product-price">${{ $product->regular_price }}
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -191,13 +188,10 @@
                                                                             <img src="{{ $product->main_image }}" class="img-responsive" alt="image">
                                                                         </a>
                                                                     </div>
-                                                                    <!--quickview-->
-                                                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span></span></a>
-                                                                    <!--end quickview-->
                                                                 </div>
                                                                 <div class="right-block right-b">
                                                                     <div class="caption">
-                                                                        <h4><a href="{{ url('product/view', $product->id) }}" title="{{ $product->product_name }}" target="_self">{{ $product->product_name }} </a></h4>
+                                                                        <h4><a href="{{ url('product/view', $product->id) }}" title="{{ $product->product_name }}" target="_self">{{ \Illuminate\Support\Str::limit(strip_tags($product->product_name), 25)}}</a></h4>
                                                                         <div class="price">
                                                                             @if($product->sale_price>NULL)
                                                                             <span class="price-new">{{ "$". $product->sale_price }} </span>
@@ -236,7 +230,7 @@
                             </div>
                         </div>
                     </div>
-                   <a href="#"><button class="cbutton"> View All Products</button></a>
+                   <a href="{{ route('product') }}"><button class="cbutton"> View All Products</button></a>
                     <!-- end Listing tabs -->
                 </div>
                 <div class="block block_2">
@@ -303,13 +297,10 @@
                                                                                 <img src="{{ $product->main_image }}" class="img-1 img-responsive" alt="image">
                                                                             </a>
                                                                         </div>
-                                                                        <!--quickview-->
-                                                                        <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span></span></a>
-                                                                        <!--end quickview-->
                                                                     </div>
                                                                     <div class="right-block right-b">
                                                                         <div class="caption">
-                                                                            <h4><a href="{{ url('product/view', $product->id) }}" title="Dolore Jalapeno" target="_self">{{ $product->product_name }}</a></h4>
+                                                                            <h4><a href="{{ url('product/view', $product->id) }}" title="{{ $product->product_name }}" target="_self">{{ \Illuminate\Support\Str::limit(strip_tags($product->product_name), 25)}}</a></h4>
                                                                             <div class="price">
                                                                                 @if($product->sale_price>NULL)
                                                                                 <span class="price-new">{{ "$". $product->sale_price }} </span>
@@ -349,6 +340,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="{{ route('featuredproduct') }}"><button class="cbutton"> View All Featured Products</button></a>
             </div>
         </div>
     </div>

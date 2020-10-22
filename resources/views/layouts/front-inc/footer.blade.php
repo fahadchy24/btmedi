@@ -77,7 +77,7 @@
                                 <div class="modcontent">
                                     <ul class="menu">
                                         @foreach($footer_menus as $ft_menu)
-                                        <li><a href="#">{{ $ft_menu->name }}</a></li>
+                                        <li><a href="/category/{{$ft_menu->id}}">{{ $ft_menu->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -90,12 +90,20 @@
                                 <h3 class="footertitle">SUPPORT</h3>
                                 <div class="modcontent">
                                     <ul class="menu">
-                                        <li><a href="#">Wholesale Accounts</a></li>
-                                        <li><a href="#">My Account</a></li>
-                                        <li><a href="#">View Cart</a></li>
-                                        <li><a href="#">Wish List</a></li>
-                                        <li><a href="blog-page.html">Blog</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
+                                        @if (Route::has('login'))
+                                            @auth
+                                                <li><a href="{{ route('my.account', Auth::user()->id) }}">My Account</a></li>
+                                                <li><a href="{{ route('show.cart') }}">View Cart</a></li>
+                                                <li><a href="{{ route('wish.list', Auth::user()->id) }}">View Wishlist</a></li>
+                                            @else
+                                            <li><a href="{{ route('login') }}">Wholesale Accounts</a></li>
+                                            <li><a href="{{ route('login') }}">My Account</a></li>
+                                            <li><a href="{{ route('show.cart') }}">View Cart</a></li>
+                                            <li><a href="{{ route('show.cart') }}">View Wishlist</a></li>
+                                            @endauth
+                                        @endif
+                                        <li><a href="{{ route('blog') }}">Blog</a></li>
+                                        <li><a href="{{ route('faq') }}">FAQ</a></li>
                                     </ul>
                                 </div>
                             </div>

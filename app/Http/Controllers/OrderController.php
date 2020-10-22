@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\City;
 use App\Guestuser;
+use App\Mail\InvoiceMail;
 use App\Order;
 use App\Product;
 use App\State;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Cart;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -107,23 +109,50 @@ class OrderController extends Controller
         $pin = mt_rand(10000, 99999).mt_rand(10000, 99999).$characters[rand(0, strlen($characters) - 1)];
 
         $data['invoice_number'] = '#'.str_shuffle($pin);
-           
-        $order = Order::create($data);
-        if ($order) {
-        Cart::destroy();
+
+        // $order_quantity = Product::where('max_quantity', $request->quantity)->first();
+        $product_info = Product::where('id', $request->product_id)->get();
+        foreach($product_info as $row){
+            if ($request->quantity > $row->max_quantity) {
                 $notification=array(
-                    'message' => 'Your Order has been placed',
-                    'alert-type' => 'success'
+                    'message' => 'Order Limit crossed.',
+                    'alert-type' => 'error'
                 );
-            return redirect()->route('home')->with($notification);
+                return redirect()->back()->with($notification);
+            }
+            else{
+                $data['quantity'] = $request->quantity;
+                $order = Order::create($data);
+                Mail::to($data['email'])->send(new InvoiceMail($order));
+                if ($order) {
+                Cart::destroy();
+                        $notification=array(
+                            'message' => 'Your Order has been placed',
+                            'alert-type' => 'success'
+                        );
+                    return redirect()->route('home')->with($notification);
+                }
+            }
         }
-        else{
-            $notification=array(
-            'message' => 'Something Went wrong!',
-            'alert-type' => 'danger'
-            );
-            return redirect()->back()->with($notification);
-        }
+
+        // dd($data);
+           
+        // $order = Order::create($data);
+        // if ($order) {
+        // Cart::destroy();
+        //         $notification=array(
+        //             'message' => 'Your Order has been placed',
+        //             'alert-type' => 'success'
+        //         );
+        //     return redirect()->route('home')->with($notification);
+        // }
+        // else{
+        //     $notification=array(
+        //     'message' => 'Something Went wrong!',
+        //     'alert-type' => 'danger'
+        //     );
+        //     return redirect()->back()->with($notification);
+        // }
     }
 
     // Create Custom Orders from Admin Panel

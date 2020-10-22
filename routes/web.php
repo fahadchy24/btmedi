@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 /* Frontend Controller */
 Route::get('/', 'FrontendController@index')->name('home');
+Route::get('/blog', 'PagesController@blog')->name('blog');
+Route::get('/faq', 'PagesController@faq')->name('faq');
 
 Route::get('/test', 'FrontendController@test');
 
@@ -25,18 +27,31 @@ Route::post('/subscribe','FrontendController@subscribe')->name('subscribe.submit
 Route::get('/category/{id}', 'FrontendController@category')->name('category');
 Route::get('/subcategory/{id}', 'FrontendController@subcategory')->name('subcategory');
 
+// Display All Products
+Route::get('/products', 'FrontendController@getAllProducts')->name('product');
+// Display All Featured Products
+Route::get('/products/featured', 'FrontendController@getAllFeaturedProducts')->name('featuredproduct');
+
 /* Display Other page & CMS Page in Frontend */
 Route::match(['get', 'post'], '/page/{url}', 'PagesController@OtherPage');
 
 // Show Single Product Detail Pages in Frontend=======================================================
 Route::get('product/view/{id}', 'FrontendController@productDetailsByID');
-Route::get('product/quickview/{id}', 'FrontendController@productQuickview');
+
+// Product Reviews by User
+Route::post('product/review/save/{id}', 'CommentController@productReview')->name('save.product.review');
 
 // Shipping Methods
 // Route::get('frontend/orders/shipping', 'FrontendController@FrontshippingMethod');
 
-// Order
-Route::get('todaysorder', 'ReportController@todaysOrder')->name('todaysorder');
+// Send Invoice Email to Customer after orders
+// Route::get('/send-mail', function () {
+// 	$details = [
+// 		'title' => 'Mail From BTCare Supply',
+// 		'body' => 'This is from testing.'
+// 	];
+// 	\Mail::to($request->user())->send(new MailableClass);
+// });
 
 // =================== All the Admin Routes will be defined here =================== //
 Route::get('/admin', 'Admin\LoginController@showLoginForm')->name('admin.login');
@@ -177,6 +192,15 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 	Route::get('call-log/edit/{id}', 'CallLogController@edit');
 	Route::POST('call-log/update/{id}', 'CallLogController@update')->name('call-log-update');
 	Route::get('call-log/delete/{id}', 'CallLogController@destroy');
+
+	// =============== Report Routes for Admin =============== \\
+	Route::get('report/sales-report', 'ReportController@saleReport')->name('sale-report');
+
+	// =============== Comments Routes for Admin =============== \\
+	Route::get('comment/all-comment', 'CommentController@index')->name('comment.index');
+	Route::get('comment/view/{id}', 'CommentController@show')->name('comment.view');
+	Route::get('comment/delete/{id}', 'CommentController@destroy')->name('comment.delete');
+	Route::get('comment/status/{id}/{status}', 'CommentController@status')->name('comment.status');
 
 
 

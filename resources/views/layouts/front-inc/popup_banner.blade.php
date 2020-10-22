@@ -2,7 +2,7 @@
     <div id="container-module-newletter" class="hidden-md hidden-sm hidden-xs">
         <div class="so_newletter_custom_popup_bg popup_bg"></div>
         <div class="module main-newsleter-popup so_newletter_custom_popup so_newletter_oca_popup" id="so_newletter_custom_popup">
-            <div class="so-custom-popup so-custom-oca-popup" style="width: 850px; background: url({{-- 'uploads/frontend/image/popup-banner/newletter-bg1.jpg' --}}{{ url('uploads/frontend/image/popup-banner/'.$popup_banner->popup_banner) }}) no-repeat white;  ">
+            <div class="so-custom-popup so-custom-oca-popup" style="width: 850px; background: url({{ url('uploads/frontend/image/popup-banner/'.$popup_banner->popup_banner) }}) no-repeat white;">
                 <div class="modcontent">
                     <div class="oca_popup" id="test-popup">
                         <div class="popup-content">
@@ -21,7 +21,7 @@
                             {{-- <label class="hidden-popup"> <input type="checkbox" value="1" name="hidden-popup"> <span class="inline">&nbsp;&nbsp;Don't show this popup again</span> </label> --}}
                         </div>
                     </div>
-                </div> /.modcontent
+                </div>
                 <button title="Close" type="button" class="popup-close">×</button>
             </div>
         </div>

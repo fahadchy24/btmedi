@@ -263,7 +263,7 @@
                             <div class="collapse" id="report">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="{{ route('todaysorder') }}" class="nav-link">Receiving Report</a>
+                                        <a href="{{ route('sale-report') }}" class="nav-link">Receiving Report</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">Inventory Report</a>
@@ -300,7 +300,7 @@
                             <div class="collapse" id="comment">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">All Comment</a>
+                                        <a href="{{ route('comment.index') }}" class="nav-link">All Comment</a>
                                     </li>
                                 </ul>
                             </div>
@@ -318,9 +318,6 @@
                             </a>
                             <div class="collapse" id="staffs">
                                 <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Manage Staffs</a>
-                                    </li>
                                     <li class="nav-item">
                                         <a href="{{ route('manage.role') }}" class="nav-link">Manage Roles</a>
                                     </li>

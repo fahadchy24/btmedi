@@ -5279,7 +5279,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa {
     left: auto;
     background: #d9534f; }
   .label-stock.Pre-Order {
-    background: #337ab7; }
+    background: #1cb4c3; }
 
 .label-new, .label-sale {
   text-align: center;
@@ -5397,6 +5397,7 @@ span.fa-stack {
   font-size: 16px;
   font-weight: 600; }
   .price .price-old {
+    font-family: 'Open Sans';
     line-height: 20px;
     padding: 0 5px;
     display: inline-block;
@@ -5411,6 +5412,7 @@ span.fa-stack {
     /* [8] */
     font-weight: 400; }
   .price .price-new, .price span.price {
+    font-family: 'Open Sans';
     color: #1cb4c3;
     /* [4] */
     /* [6] */
@@ -6832,7 +6834,7 @@ span.fa-stack {
     line-height: 33px;
     margin: 0;
     padding: 0 10px;
-    width: 35px;
+    width: 40px;
     border: 1px solid #ddd;
     border-radius: 0;
     z-index: 0;
@@ -9182,7 +9184,7 @@ div.module.custom-listingtab {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #337ab7;
+  background-color: #1cb4c3;
   color: white;
 
 }
@@ -9211,7 +9213,7 @@ div.module.custom-listingtab {
 width: 50%;
 border-radius: 4px;
 box-sizing: border-box;
-color: #337ab7;
+color: #1cb4c3;
 }
 
 .coupontext
@@ -9228,7 +9230,11 @@ border-color: #ddd;
 width: 50%;
 }
 
-
+.btn-primary {
+  color: #fff;
+  background-color: #1cb4c3;
+  border-color: #1cb4c3;
+}
 
 
 /*Chackout*/
@@ -9246,4 +9252,12 @@ width: 50%;
   font-size: 16px;
   margin-top: 10px;
   width: 100%;
+}
+
+
+
+
+.with-sub-menu .row-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
 }

@@ -20,7 +20,6 @@
                         <tr>
                             <td class="text-center">Image</td>
                             <td class="text-left">Product Name</td>
-                            <td class="text-left">Model</td>
                             <td class="text-left">Quantity</td>
                             <td class="text-right">Unit Price</td>
                             <td class="text-right">Total</td>
@@ -29,10 +28,9 @@
                     <tbody>
                     @foreach($content as $row)
                         <tr>
-                            <td class="text-center"><a href="{{ url('product/view', $row->id) }}"><img width="70px" src="{{asset('uploads/frontend/image/product/'.$row->options->main_image)}}" alt="{{ $row->name }}" title="{{ $row->name }}" class="img-thumbnail" /></a></td>
+                            <td class="text-center"><a href="{{ url('product/view', $row->id) }}"><img width="70px" src="{{ $row->options->main_image }}" alt="{{ $row->name }}" title="{{ $row->name }}" class="img-thumbnail" /></a></td>
                             <td class="text-left"><a href="{{ url('product/view', $row->id) }}">{{ $row->name }}</a><br />
                             </td>
-                            <td class="text-left">Pt 001</td>
                             <td class="text-left" width="200px">
                             <form action="{{ url('cart/update') }}" method="POST">@csrf
                                 <div class="input-group btn-block quantity">
@@ -63,23 +61,17 @@
                             </td>
                             <td class="text-right">{{ "$".Cart::subtotal() }}</td>
                         </tr>
-                        <tr>
+                        {{--  <tr>
                             <td class="text-right">
-                                <strong>Flat Shipping Rate:</strong>
+                                <strong>Shipping Rate:</strong>
                             </td>
                             <td class="text-right">$4.69</td>
-                        </tr>
+                        </tr>  --}}
                         <tr>
                             <td class="text-right">
-                                <strong>Eco Tax (-2.00):</strong>
+                                <strong>Tax:</strong>
                             </td>
                             <td class="text-right">{{ "$".Cart::tax() }}</td>
-                        </tr>
-                        <tr>
-                            <td class="text-right">
-                                <strong>VAT (20%):</strong>
-                            </td>
-                            <td class="text-right">$34.68</td>
                         </tr>
                         <tr>
                             <td class="text-right">
@@ -91,7 +83,6 @@
                 </table>
             </div>
         </div>
-
         <div class="row">
             <div class="col-sm-4 col-sm-offset-8">
             </div>

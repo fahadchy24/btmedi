@@ -66,18 +66,9 @@
                                         <input type="text" class="form-control" id="input-payment-address-2" placeholder="Address 2" value="{{ Auth::user()->address_2 }}" name="address_2">
                                     </div>
                                     <div class="form-group required">
-                                        <label for="input-payment-city" class="control-label">City</label>
-                                        <input type="text" class="form-control" id="input-payment-city" placeholder="City" value="{{ Auth::user()->city }}" name="city">
-                                    </div>
-                                    <div class="form-group required">
-                                        <label for="input-payment-postcode" class="control-label">Post Code</label>
-                                        <input type="text" class="form-control" id="input-payment-postcode" placeholder="Post Code" value="{{ Auth::user()->postcode }}" name="postcode">
-                                    </div>
-                                    <div class="form-group required">
                                         <label for="input-payment-country" class="control-label">Country</label>
                                         <select class="form-control" id="input-payment-country" name="country">
                                             <option value="{{ Auth::user()->country }}" selected disabled>{{ Auth::user()->country }}</option>
-
                                         </select>
                                     </div>
                                     <div class="form-group required">
@@ -91,6 +82,14 @@
                                             <input type="checkbox" checked="checked" value="1" name="shipping_address">
                                             My delivery and billing addresses are the same.
                                         </label>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="input-payment-city" class="control-label">City</label>
+                                        <input type="text" class="form-control" id="input-payment-city" placeholder="City" value="{{ Auth::user()->city }}" name="city">
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="input-payment-postcode" class="control-label">Post Code</label>
+                                        <input type="text" class="form-control" id="input-payment-postcode" placeholder="Post Code" value="{{ Auth::user()->postcode }}" name="postcode">
                                     </div>
                                 </fieldset>
                             </div>
@@ -324,14 +323,6 @@
                                         <input type="text" class="form-control" id="input-payment-address-2" placeholder="Address 2" value="" name="address_2">
                                     </div>
                                     <div class="form-group required">
-                                        <label for="input-payment-city" class="control-label">City</label>
-                                        <input type="text" class="form-control" id="input-payment-city" placeholder="City" value="" name="city">
-                                    </div>
-                                    <div class="form-group required">
-                                        <label for="input-payment-postcode" class="control-label">Post Code</label>
-                                        <input type="text" class="form-control" id="input-payment-postcode" placeholder="Post Code" value="" name="postcode">
-                                    </div>
-                                    <div class="form-group required">
                                         <label for="input-payment-country" class="control-label">Country</label>
                                         <select class="form-control" id="input-payment-country" name="country">
                                             <option value=""> --- Please Select --- </option>
@@ -343,19 +334,23 @@
                                         <label for="input-payment-zone" class="control-label">Region / State</label>
                                         <select class="form-control" id="input-payment-zone" name="state">
                                             <option value=""> --- Please Select --- </option>
-                                            <option value="Aberdeen">Aberdeen</option>
-                                            <option value="Aberdeenshire">Aberdeenshire</option>
-                                            <option value="Anglesey">Anglesey</option>
-                                            <option value="Angus">Angus</option>
-                                            <option value="Argyll and Bute">Argyll and Bute</option>
-                                            <option value="Bedfordshire">Bedfordshire</option>
-                                            <option value="Berkshire">Berkshire</option>
-                                            <option value="Blaenau Gwent">Blaenau Gwent</option>
-                                            <option value="Bridgend">Bridgend</option>
-                                            <option value="Bristol">Bristol</option>
-                                            <option value="New York">New York</option>
-                                            <option value="New Jersey">New Jersey</option>
+                                            @foreach ($states as $state)
+                                            <option value="{{ $state->name }}"> {{ $state->name }} </option>
+                                            @endforeach
                                         </select>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="input-payment-zone" class="control-label">City</label>
+                                        <select class="form-control" id="input-payment-zone" name="city">
+                                            <option value=""> --- Please Select --- </option>
+                                            @foreach ($cities as $city)
+                                            <option value="{{ $city->name }}"> {{ $city->name }} </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="input-payment-postcode" class="control-label">Post Code</label>
+                                        <input type="text" class="form-control" id="input-payment-postcode" placeholder="Post Code" value="" name="postcode">
                                     </div>
                                     <div class="checkbox">
                                         <label>
@@ -399,7 +394,7 @@
                                                 @foreach ($frontshippingMethod as $row)
                                                 <div class="radio">
                                                     <label>
-                                                    <input type="radio" name="shipping_fee" value="{{ $row->price }}">
+                                                    <input type="radio" onchange="Delivery()" id="test" name="shipping_fee" value="{{ $row->price }}">
                                                         {{ $row->title }} - {{ "$". $row->price }}
                                                     </label>
                                                 </div>
@@ -407,6 +402,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <script>
+
+                                        function Delivery()
+                                        {
+                                            var delivery = $("#test:checked").val();
+                                    
+                                            $('#shipping').val(delivery);
+                                        }
+                                        
+                                        </script>
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="p-4 mb-4 checkout-table">
@@ -441,11 +446,13 @@
                                                         </tr>
                                                         <tr>
                                                             <th>Shipping</th>
-                                                            <td>Flat rate $300.00</td>
+                                                            <td><input style="border:0;text-align:right;" type="text"  id="shipping" readonly value="0"></td>
                                                         </tr>
                                                         <tr>
                                                             <th>Tax</th>
-                                                            <td>$30.00</td>
+                                                            {{--  <td>$30.00</td>  --}}
+                                                            {{--  <td>{{ "$".Cart::tax() }}</td>  --}}
+                                                            <td>{{ $tax == NULL ? '$0.00' : "$". $tax }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Total</th>
@@ -534,11 +541,8 @@
         </div>
     </div>
     <!-- //Main Container -->
-
-
-
+</div>
     @include('layouts.front-inc.footer')
-
     @endsection
 
     @push('scripts')

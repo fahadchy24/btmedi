@@ -30,7 +30,7 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header">
-                    <h3 class="mb-0">Todays Orders</h3>
+                    <h3 class="mb-0">Search Sales Report</h3>
                 </div>
                 <div class="table-responsive py-4">
                     <table class="table table-flush" style="width: 100%;" id="datatable-buttons">
@@ -54,7 +54,7 @@
                             @foreach ($orders as $row)
                             <tr>
                                 <td>{{$loop->index+1}}</td>
-                                <td>{{ "BT-#00".$row->id }} </td>
+                                <td>{{ $row->order_number }} </td>
                                 <td>{{ $row->invoice_number }}</td>
                                 <td>{{ $row->sub_total }}</td>
                                 <td>{{ $row->tax }}</td>

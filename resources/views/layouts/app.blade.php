@@ -46,6 +46,9 @@
     <!-- Toastr Css -->
     <link href="{{asset('frontend/css/toastr.css')}}" rel="stylesheet">
 
+    <!-- Google ReCaptcha -->
+    {{--  <script src="https://www.google.com/recaptcha/api.js" async defer></script>  --}}
+
     @stack('css')
 
     <script type="text/javascript">
@@ -148,7 +151,7 @@
     </style>
 </head>
 
-<body class="common-home res layout-1" oncontextmenu="return false;" >
+<body class="common-home res layout-1" {{--  oncontextmenu="return false;"  --}} >
     <div id="wrapper" class="wrapper-fluid banners-effect-7">
         <!-- Header Container  -->
         <header id="header" class=" typeheader-2">
@@ -196,8 +199,6 @@
                                                         </p>
                                                         <span class="total-shopping-cart cart-total-full">
                                                             <span class="items_cart">{{ Cart::count() }}</span>
-                                                            {{-- <span class="items_cart2 hidden"> item(s)</span>
-                                                            <span class="items_carts hidden"> - $152.00 </span> --}}
                                                         </span>
                                                     </div>
                                                 </div>
@@ -229,25 +230,20 @@
                                                     <div>
                                                         <table class="table table-bordered">
                                                             <tbody>
-                                                                <tr>
+                                                                {{--  <tr>
                                                                     <td class="text-left"><strong>Sub-Total</strong>
                                                                     </td>
                                                                     <td class="text-right">{{"$". Cart::subtotal() }}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="text-left"><strong>Eco Tax (-2.00)</strong>
+                                                                    <td class="text-left"><strong>Tax</strong>
                                                                     </td>
                                                                     <td class="text-right">{{"$". Cart::tax() }}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="text-left"><strong>VAT (20%)</strong>
-                                                                    </td>
-                                                                    <td class="text-right">$20.00</td>
-                                                                </tr>
+                                                                </tr>  --}}
                                                                 <tr>
                                                                     <td class="text-left"><strong>Total</strong>
                                                                     </td>
-                                                                    <td class="text-right">{{"$". Cart::total() }}</td>
+                                                                    <td class="text-right">{{"$". Cart::subtotal() }}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -339,7 +335,7 @@
                                 <!-- Search -->
                                 <div class="header_search">
                                     <div id="sosearchpro" class="sosearchpro-wrapper so-search">
-                                        <form method="GET" action="index.php">
+                                        <form method="GET" action="#">
                                             <div id="search0" class="search input-group form-group">
                                                 <input class="autosearch-input form-control" type="text" value="" size="50" autocomplete="off" placeholder="Search" name="search">
                                                 <ul class="dropdown-menu" style="display: none;"></ul> <span class="input-group-btn">
@@ -400,18 +396,20 @@
                                                                             </span>
                                                                             <b class="fa fa-angle-right"></b>
                                                                         </a>
-                                                                        <div class="sub-menu" data-subwidth="80">
+                                                                        <div class="sub-menu" style="width: 200px;">
                                                                             <div class="content">
                                                                                 <div class="row">
                                                                                     <div class="col-sm-12">
                                                                                         <div class="row">
-                                                                                            <div class="col-md-4 static-menu">
+                                                                                            <div class="col-md-12 static-menu">
                                                                                                 <div class="menu">
                                                                                                     <ul>
                                                                                                         @foreach($menu->subcategory as $subcategory)
-                                                                                                            <li>
-                                                                                                                <a href="{{ $subcategory->subcategory_url}}" class="main-menu">{{ $subcategory->subcategory_name}}</a>
-                                                                                                            </li>
+                                                                                                        <li>
+                                                                                                            <a href="/subcategory/{{$subcategory->id}}">
+                                                                                                                {{ $subcategory->subcategory_name}}
+                                                                                                            </a>
+                                                                                                        </li>
                                                                                                         @endforeach
                                                                                                         </li>
                                                                                                     </ul>
@@ -456,10 +454,10 @@
                                                                             <p class="close-menu"></p>
                                                                             <a href="/category/{{$menu->id}}" class="clearfix">
                                                                                 <strong>{{ $menu->name }}</strong>
-                                                                                {{-- <span class="label"></span> --}}
+                                                                                <span class="label"></span>
                                                                                 <b class="caret"></b>
                                                                             </a>
-                                                                            <div class="sub-menu" style="width: 30%; right: auto;">
+                                                                            <div class="sub-menu" style="width: 200px; right: auto;">
                                                                                 <div class="content">
                                                                                     <div class="row">
                                                                                         <div class="col-md-12">

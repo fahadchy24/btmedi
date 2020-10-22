@@ -106,7 +106,7 @@ class GeneralSettingController extends Controller
                 $name = time() . $file->getClientOriginalName();
                 // $file->move('uploads/frontend/image/popup-banner/', $name);
                 $path = 'uploads/frontend/image/popup-banner/'. $name;
-                Image::make($file)->resize(641, 393)->save($path);
+                Image::make($file)->resize(850, 356)->save($path);
 
                 if ($popup_banner->popup_banner != null) {
                     unlink(public_path() . '/uploads/frontend/image/popup-banner/' . $popup_banner->popup_banner);

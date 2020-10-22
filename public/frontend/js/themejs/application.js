@@ -494,8 +494,27 @@ function display(view) {
 	}
 }
 	
+// $(document).ready(function () {
+// 	"use strict";
+// 	// Click Button
+// 	$('.list-view .btn').each(function() {
+// 		var ua = navigator.userAgent,
+// 		event = (ua.match(/iPad/i)) ? 'touchstart' : 'click';
+// 		$(this).bind(event, function() {
+// 			$(this).addClass(function() {
+// 				if($(this).hasClass('active')) return ''; 
+// 				return 'active';
+// 			});
+// 			$(this).siblings('.btn').removeClass('active');
+// 			$catalog_mode = $(this).data('view');
+// 			display($catalog_mode);
+// 		});
+		
+// 	});
+// });
+
+
 $(document).ready(function () {
-	"use strict";
 	// Click Button
 	$('.list-view .btn').each(function() {
 		var ua = navigator.userAgent,

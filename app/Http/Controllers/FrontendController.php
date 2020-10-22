@@ -6,6 +6,7 @@ use App\AdBanner;
 use App\GeneralSetting;
 use App\Slider;
 use App\Category;
+use App\Comment;
 use App\Menu;
 use App\ProductCategory;
 use App\Product;
@@ -49,9 +50,12 @@ class FrontendController extends Controller
         $productdetail = Product::with('allImages', 'attributes')->where('id',$id)->first();
         $relatedProducts = Product::where('id', '!=', $id)->/* where(['category_id'=>$productdetail->category_id])-> */get();
 
-        // dd($productAttributes);
+        $latestproducts = Product::orderBy('created_at', 'DESC')->get();
 
-        return view('frontend.pages.product_details', compact('productdetail', 'relatedProducts'));
+        $productComments = Comment::where('product_id', $id)->where('status', 1)->get();
+
+
+        return view('frontend.pages.product_details', compact('productdetail', 'relatedProducts', 'latestproducts', 'productComments'));
     }
 
     // Quickview of Products
@@ -64,11 +68,15 @@ class FrontendController extends Controller
 
     public function category($id)
     {
-        $category = Category::where('id', $id)->first(); 
+        $category = Category::where('id', $id)->first();
+
+        $allCategory = Category::all();
+
+        $latestproducts = Product::orderBy('created_at', 'DESC')->paginate(5);
         
         if($category){
             $products = ProductCategory::where('category_id', $id)->with('products')->get(); 
-            return view('frontend.pages.product_category_page', compact(['category', 'products']));
+            return view('frontend.pages.product_category_page', compact(['category', 'products', 'allCategory', 'latestproducts']));
         }else{
             return redirect()->route('home');
         }
@@ -84,6 +92,22 @@ class FrontendController extends Controller
         }else{
             return redirect()->route('home');
         }
+    }
+
+    // Display All Products
+    public function getAllProducts()
+    {
+        $products = ProductCategory::/* where('category_id', $id)-> */with('products')->get();
+
+        return view('frontend.pages.allproduct', compact('products'));
+    }
+    
+    // Display All Featured Products
+    public function getAllFeaturedProducts()
+    {
+        $products = Product::/* where('category_id', $id)-> */where('is_featured', 1)->get();
+
+        return view('frontend.pages.featuredproduct', compact('products'));
     }
 
     // Get Subscriber Email from Frontend
@@ -118,4 +142,5 @@ class FrontendController extends Controller
 
     //     return view('frontend.pages.checkout', compact('frontshippingMethod'));
     // }
+
 }

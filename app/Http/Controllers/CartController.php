@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use App\Guestuser;
 use App\Order;
 use App\Product;
+use App\State;
 use Illuminate\Http\Request;
 use Cart;
 use Illuminate\Support\Facades\Auth;
@@ -89,7 +91,12 @@ class CartController extends Controller
     {
         $content = Cart::content();
 
-        return view('frontend.pages.checkout', compact('content'));
+        $tax = Cart::setGlobalTax(0);
+
+        $states = State::all();
+        $cities = City::all();
+
+        return view('frontend.pages.checkout', compact('content', 'tax', 'states', 'cities'));
     }
 
     // Plave Order
