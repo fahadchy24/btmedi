@@ -49,7 +49,7 @@ var PointsChart = (function() {
 
 		$this.data('chart', salesChart);
 
-	};
+	}
 
 
 	// Events

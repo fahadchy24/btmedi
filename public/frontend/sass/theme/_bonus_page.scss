@@ -5,7 +5,7 @@
 	[1]		Page Faq
 	[2]		Page About us
 	[3]		Page Contact
-	[4]		page 404 
+	[4]		page 404
 	
 */
 #map-canvas{height:600px;}
@@ -20,7 +20,7 @@ ul.yt-accordion li.accordion-group { margin-bottom: 1px;
      h3.accordion-heading{margin: 0; cursor: pointer;background-color: #f4f4f4; position: relative;z-index: 2;
           span{padding: 10px;font-size: 16px; display: block; margin-#{$left}: 40px; line-height: 24px;}
           .fa{
-                margin: 0px;
+                margin: 0;
                font-family: verdana;
                font-size: 17px;
                width: 40px;
@@ -89,7 +89,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
     text-align: center;
 
     h2 {
-      padding: 0 15px 6px 15px;
+      padding: 0 15px 6px;
       font-size: 22px;
       font-weight: 300;
       color: #333;
@@ -170,7 +170,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
       }
 
       .cl-job {
-        padding: 5px 0px;
+        padding: 5px 0;
         text-transform: uppercase;
       }
 
@@ -193,7 +193,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
       height: 12px;
       display: inline-block;
       position: absolute;
-      #{$left}: 0px;
+      #{$left}: 0;
       top: 10px;
       background-repeat: no-repeat;
       background-position: top $left;
@@ -275,7 +275,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
     overflow: hidden;
     text-indent: -9999px;
     background-color: transparent ;
-    top: 0px;
+    top: 0;
     margin: 0 3px;
     position: relative;
   }
@@ -283,7 +283,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
   .owl2-controls .owl2-prev {
     background-image: url("#{$base-url-theme}icon/btn-prev-hp.png");
     margin-right: 3px;
-    right: 0px ;
+    right: 0;
     left: inherit ;
   }
 
@@ -296,7 +296,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
 
   .owl2-controls .owl2-next {
    background-image: url("#{$base-url-theme}icon/btn-next-hp.png");
-    right: 0px ;
+    right: 0;
   }
 
   .item > div:before {
@@ -305,7 +305,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
     position: absolute;
     width: 16px;
     height: 12px;
-    left: 0px;
+    left: 0;
     top: 6px;
   }
 
@@ -316,7 +316,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
 
 /*====*/
 //---------------Page About us -------------------------
-.about-us{ 
+.about-us{
   
   .about-title{
     font-size:171%;
@@ -466,7 +466,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
         border_radius: 50%;
         position: absolute;
         top:29%;
-        overflow: visible; display: inline-block; width: 34px; height: 34px; text-indent: -9999px;; margin: 0 3px; background-color: #A6A6A8; border-radius: 50%; -webkit-border-radius: 50%;
+        overflow: visible; display: inline-block; width: 34px; height: 34px; text-indent: -9999px; margin: 0 3px; background-color: #A6A6A8; border-radius: 50%; -webkit-border-radius: 50%;
         &:hover{
           background-color: $background;
         }
@@ -522,7 +522,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
         border-radius: 0;
         -webkit-border-radius:0;
         background-color: transparent;
-        color: #c8c8c8; 
+        color: #c8c8c8;
       }
 
       &.owl2-next{
@@ -594,7 +594,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
             height:16px;
             display: inline-block;
             position: absolute;
-            #{$left}:0px;
+            #{$left}:0;
             top:50%;
             margin-top:-8px;
             border-radius: 2px;
@@ -623,11 +623,11 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
     }
   }
 	.owl2-theme .owl2-controls .owl2-nav{
-		> div:before{display: inline-block; text-indent: 0; width: 100%;height: 100%;position: absolute; left: 0px; top: 1px; color: #fff;font-size: 18px;line-height: 32px;text-align: center;border-radius: 50%; -webkit-border-radius: 50%;}
+		> div:before{display: inline-block; text-indent: 0; width: 100%;height: 100%;position: absolute; left: 0; top: 1px; color: #fff;font-size: 18px;line-height: 32px;text-align: center;border-radius: 50%; -webkit-border-radius: 50%;}
 		> div.owl2-prev:before{content: "\f104"; font-family: FontAwesome;}
 		> div.owl2-next:before{content: "\f105"; font-family: FontAwesome;}
 		
-	} 
+	}
 }
 
 .about-demo-1{
@@ -665,7 +665,7 @@ ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #6
 
 //---------------Page Contact us -------------------------
 .info-contact{
-    .name-store h3{ padding: 7px 0px; margin-top: 10px;}
+    .name-store h3{ padding: 7px 0; margin-top: 10px;}
     .icon{float: $left; padding-#{$right}: 15px;
         .fa{font-size: 20px;}
     }

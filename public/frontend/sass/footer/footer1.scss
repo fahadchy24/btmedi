@@ -30,36 +30,36 @@
 
 */
 
-.typefooter-1{ 
+.typefooter-1{
   @include rem(font-size, 13px); color: #7d7d7d; background: #f0f0f0;
   a{ color: #7d7d7d; }
-  .module{ margin: 0; 
+  .module{ margin: 0;
     .footer-block-title h3,
     h3.footertitle{
       @include rem(font-size, 16px); font-weight: bold; border: none; color: #222; letter-spacing: 1.2px;
-      text-transform: uppercase; margin: 0 0 12px 0; line-height: inherit; height: auto;
+      text-transform: uppercase; margin: 0 0 12px; line-height: inherit; height: auto;
     }
   }
   .footer-top {  background-color: $background;  padding: 18px 0 19px;
-    h2{margin-bottom: 0;} 
+    h2{margin-bottom: 0;}
     .block-infos{
       .info {
         // width: 20%;
         // float: $left;
         .inner{ float: $left; width: 100%; border-#{$left}: 1px solid rgba(255,255,255,0.3); padding-#{$left}: 35px;
           i { float: $left; font-size: 36px; padding-top: 1px; color: #fff; }
-          .info-cont { padding-#{$left}: 50px; 
+          .info-cont { padding-#{$left}: 50px;
             span { font-size: 13px; color: #fff; text-transform: uppercase; margin-bottom: 2px; font-weight: 600; }
-            p { text-transform: capitalize;  color: #fff; padding-top: 0; margin-bottom: 0px; line-height: normal;}
+            p { text-transform: capitalize;  color: #fff; padding-top: 0; margin-bottom: 0; line-height: normal;}
           }
         }
-        &.info1 .inner { border-#{$left}: 0; padding-#{$left}: 0px; }
+        &.info1 .inner { border-#{$left}: 0; padding-#{$left}: 0; }
       }
-    } 
+    }
   }
 
   .footer-center{padding-top: 25px;
-    @include breakpoint(lg){ padding-top: 44px; 
+    @include breakpoint(lg){ padding-top: 44px;
       .footer-extra{ padding: side-values( 0 0 0 40px);}
       .footer-contact{  padding-#{$left}: 50px; }
       .footer-newsletter{ width: 70%; }
@@ -74,7 +74,7 @@
         text-transform: capitalize;
         font-size: 13px;
         position: relative;
-        padding: 4px 0px 5px 0px;
+        padding: 4px 0 5px;
         @include transition(all .3s ease 0s);
         display: inline-block;
         vertical-align: top;
@@ -87,7 +87,7 @@
           font-size: 14px;
           margin-right: 8px;
         }
-        &:hover{  color: $linkColor; padding-left: 10px;} 
+        &:hover{  color: $linkColor; padding-left: 10px;}
        }
       }
     }
@@ -107,16 +107,16 @@
       span { display: block; overflow: hidden; line-height: 15px; color: #7d7d7d; font-size: 13px;}
       &.email { margin-bottom: 22px; line-height: 32px; font-size: 13px; }
     }
-    .custom_categories{ border-top: 1px solid #e0e0e0;  text-align: center; clear: both;  padding: 28px 0 30px 0; margin-top: 36px; 
+    .custom_categories{ border-top: 1px solid #e0e0e0;  text-align: center; clear: both;  padding: 28px 0 30px; margin-top: 36px;
       nav a { color: #222; font-weight: 700; text-transform: uppercase;  padding: 0 10px; @include transition(all .3s ease 0s);
         &:hover{ color: $linkColor; }
         @media (min-width: 1200px){
-      		padding: 0 15px; 
+      		padding: 0 15px;
       	}
       }
-      p { padding: 0 25px; line-height: 28px;  margin: side-values(10px 13px 0); 
+      p { padding: 0 25px; line-height: 28px;  margin: side-values(10px 13px 0);
       	@media (min-width: 1200px){
-      		padding: 0 25%; 
+      		padding: 0 25%;
       	}
       }
     }
@@ -145,7 +145,7 @@
           .name-social{ display: none; }
         }
       }
-    } 
+    }
   }
 
   /*NEWLETTER*/
@@ -155,30 +155,30 @@
     .so-custom-default {padding: 0;border: none;}
     .newsletter_promo, .pre-text {margin: 0;line-height: 12px; font-size: 12px; display: none;}
     .block_content{padding: side-values(0 30px 0 27px);  display: table-cell; margin-top: 0;  vertical-align: top;
-    form {margin: 0px;
-      .form-group {margin: 0px; overflow: hidden;}
+    form {margin: 0;
+      .form-group {margin: 0; overflow: hidden;}
     }
       .input-box{float: $left;
-        input { 
+        input {
           -webkit-border-radius:20px 0 0 20px; border-radius:20px 0 0 20px; height: 42px;
-          padding: 5px 15px;background: #fff; color: #999;font-size: 12px; float: $left; width: 515px; 
+          padding: 5px 15px;background: #fff; color: #999;font-size: 12px; float: $left; width: 515px;
           transition: 0.3s all ease 0s;border: none; border-#{$right}: none; margin-#{$right}: 20px;
           @include if-rtl{
-              -webkit-border-radius:0px 20px 20px 0px; border-radius:0px 20px 20px 0px; 
+              -webkit-border-radius:0 20px 20px 0; border-radius:0 20px 20px 0;
           }
         }
-      } 
-      .subcribe{ 
-        button{#{$right}: 0;z-index: 9; outline: none; position: absolute; -webkit-border-radius: 0 20px 20px 0; border-radius: 0 20px 20px 0; height: 42px; text-transform: uppercase; 
-          font-size: 14px;transition: 0.3s all ease 0s;font-weight: bold; background-color: $background; border-color: $linkColor; color: #fff; 
+      }
+      .subcribe{
+        button{#{$right}: 0;z-index: 9; outline: none; position: absolute; -webkit-border-radius: 0 20px 20px 0; border-radius: 0 20px 20px 0; height: 42px; text-transform: uppercase;
+          font-size: 14px;transition: 0.3s all ease 0s;font-weight: bold; background-color: $background; border-color: $linkColor; color: #fff;
           @include if-rtl{
-              -webkit-border-radius:20px 0px 0px 20px; border-radius:20px 0px 0px 20px; 
+              -webkit-border-radius:20px 0 0 20px; border-radius:20px 0 0 20px;
           }
           @include breakpoint(lg){ padding: 0 25px; }
-          &:hover{background-color: darken($background, 10%); border-color: darken($background, 10%);} 
+          &:hover{background-color: darken($background, 10%); border-color: darken($background, 10%);}
         }
          
-      } 
+      }
     }
   }
 }

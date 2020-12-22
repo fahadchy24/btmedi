@@ -5,7 +5,7 @@
 
     [SASS DIRECTORY ]
     
-    [1] MODULE HOME SLIDER 
+    [1] MODULE HOME SLIDER
     [2] SHORT CODE CONTENT SLIDER BRAND
     [3] BLOCK FEATURED CATE
     [4] MODULE DEALS
@@ -17,7 +17,7 @@
 
 
 /************************************************************************************************
-    MODULE HOME SLIDER  
+    MODULE HOME SLIDER
 *************************************************************************************************/
 .module.sohomepage-slider{ margin: 0;
     .owl2-controls .owl2-nav{
@@ -28,7 +28,7 @@
     }
     .owl2-dots{ position: absolute; bottom: 25px; width: 100%;  line-height: 100%; #{$left}: 25px; #{$right}: auto;
         .owl2-dot{ display: inline-block; float: $left;
-            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1; 
+            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1;
                 display: block;border-radius: 50%; -webkit-border-radius: 50%; @include transition(all .2s ease 0s);
             }
             &.active span{ background-color: $background; width: 25px; border-radius: 4px; }
@@ -37,7 +37,7 @@
     }
     .owl2-item{
         &.active{
-            .sohomeslider-description{ 
+            .sohomeslider-description{
                 .title-slider{
                     opacity: 1;
                     animation: myeffect-slideshow 2s ease-in-out ;
@@ -80,7 +80,7 @@
             width: auto;
             opacity: 0;
             top: 31%;
-            font-size: 20px; 
+            font-size: 20px;
             color: #3b3b3b;
             text-transform: uppercase;
             &.pos-right{
@@ -119,8 +119,8 @@
             }
             &.text-sl12{
                 h3.tilte{ font-size: 30px; color: #444; font-weight: 700; margin: 0; }
-                &.pos-left{ left: 150px;  top: 65%; 
-                    i{ margin-#{right}: 5px;; }
+                &.pos-left{ left: 150px;  top: 65%;
+                    i{ margin-#{right}: 5px; }
                     &:hover{ color: $background; }
                     a{ font-weight: 600; color: $linkColor; font-size: 14px; }
                 }
@@ -135,11 +135,11 @@
         }
         .des{
             &.des-sl11{ margin-top: 15px; color: #fff; font-size: 14px;
-                i{ margin-#{right}: 5px;; }
+                i{ margin-#{right}: 5px; }
                 &:hover{ color: $background; }
             }
         }
-    }    
+    }
 }
 
 
@@ -153,7 +153,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     @include breakpoint(lg){ padding: 14px 80px; }
-    img{ @include transition(all .2s ease 0s); 
+    img{ @include transition(all .2s ease 0s);
         webkit-transform: rotate(0);
     -webkit-backface-visibility: hidden;
         &:hover{
@@ -163,12 +163,12 @@
     &:hover{
         .owl2-nav{
             opacity: 1;
-            @include transition(all .2s ease 0s); 
+            @include transition(all .2s ease 0s);
         }
     }
     .owl2-nav{
          opacity: 0;
-        div{ 
+        div{
             width: 42px;
             height: 42px;
             text-align: center;
@@ -186,18 +186,18 @@
             top: 50%;
             color: #fff;
             border-radius: 2px;
-            &.owl2-prev{ left: 16px;  opacity: 1; 
+            &.owl2-prev{ left: 16px;  opacity: 1;
                 &:before {
                     content: "\f053";
                 }
             }
-            &.owl2-next{ right: 16px; opacity: 1; 
+            &.owl2-next{ right: 16px; opacity: 1;
                 &:before {
                     content: "\f054";
                 }
             }
         }
-    } 
+    }
 }
 
 /************************************************************************************************
@@ -218,9 +218,9 @@
     .cate-content{  margin: 30px 0 0;
         .cate {
             img{ @include transition(all .2s ease 0s); }
-            .inner{ -moz-box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);  -webkit-box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);   
-                box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);  text-align: center; }
-            a.title-cate { color:#222; font-weight: 700; font-size: 16px; text-transform: uppercase; line-height: 52px; @include transition(all .3s ease 0s); display: block; 
+            .inner{ -moz-box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);  -webkit-box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);
+                box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);  text-align: center; }
+            a.title-cate { color:#222; font-weight: 700; font-size: 16px; text-transform: uppercase; line-height: 52px; @include transition(all .3s ease 0s); display: block;
             }
             &:hover{
                 img{ opacity: 0.7; visibility: visible; }
@@ -242,19 +242,19 @@ div.so-deals-slick.slick-horizontal .deals-content{
     
      .ds-items .ds-image-thumb{
         padding: 5px;
-        margin: 0 10px 10px 10px;
+        margin: 0 10px 10px;
         position: relative;
     }
      .ds-items{
         width: 100%;
-     } 
+     }
     
 }
 .custom_deals_featured{
-    clear: both; position: 
-    relative; 
+    clear: both; position:
+    relative;
     margin: 0;
-    border: 1px solid #ddd; 
+    border: 1px solid #ddd;
     .slider-single{
         padding: 15px;
         @media (min-width: 1200px){
@@ -267,12 +267,12 @@ div.so-deals-slick.slick-horizontal .deals-content{
         top: 10px;
     }
     h2.modtitle{ position: absolute; margin: 0;
-      top: 5px; #{$left}: 13px; 
+      top: 5px; #{$left}: 13px;
         span{background: $background; color: #fff; font-size: 18px; text-transform: uppercase; padding: 11px; font-weight: bold; border-radius:0 0 8px 8px; position: relative;
             &:before {
                 content: "";
                 border-left: 5px solid transparent;
-                border-right: 0px solid transparent;
+                border-right: 0 solid transparent;
                 border-bottom: 5px solid darken($background,10%);
                 position: absolute;
                 left: -5px;
@@ -280,7 +280,7 @@ div.so-deals-slick.slick-horizontal .deals-content{
             }
             &:after{
                 content: "";
-                border-left: 0px solid transparent;
+                border-left: 0 solid transparent;
                 border-right: 5px solid transparent;
                 border-bottom: 5px solid darken($background,10%);
                 position: absolute;
@@ -289,7 +289,7 @@ div.so-deals-slick.slick-horizontal .deals-content{
             }
         }
     }
-    .product-item-container{ border: none;  
+    .product-item-container{ border: none;
         .product-image-container{ margin-top: 32px; }
         .left-block{position: relative;float: $left;width: 50%;.image{width: 100%;a{display: block;}}}
         .right-block{ width: 50%;padding: 0 0 0 15px;    display: inline-block; }
@@ -314,7 +314,7 @@ div.so-deals-slick.slick-horizontal .deals-content{
             .price-old{ font-size: 16px !important; }
         }
       
-        .caption .item-timer .time-item{ 
+        .caption .item-timer .time-item{
             position: relative;
             display: inline-block;
             width: auto;
@@ -364,10 +364,10 @@ div.so-deals-slick.slick-horizontal .deals-content{
             text-align: center;
             .item-img{
                 padding: 5px;
-                margin: 0 10px 10px 10px;
+                margin: 0 10px 10px;
                 position: relative;
                 border: 1px solid #E0E0E0;
-                border-radius: 5px; 
+                border-radius: 5px;
             }
             &:hover,
             &.slick-current{
@@ -379,7 +379,7 @@ div.so-deals-slick.slick-horizontal .deals-content{
                     color: $background;
                     @include transition(all .2s ease 0s);
                 }
-            }   
+            }
         }
         span.title{
             font-size: 13px;
@@ -393,25 +393,25 @@ div.so-deals-slick.slick-horizontal .deals-content{
             margin-bottom: 10px;
         }
         .slick-arrow{
-            height:28px !important; 
-            width: 28px !important; 
+            height:28px !important;
+            width: 28px !important;
             left:auto;
             text-indent: -99999px;
-            border: 0px;
+            border: 0;
             position: absolute;
             z-index: 11;
             outline: none;
         }
         .slick-prev {
-            background:  url(#{$base-url-theme}icon/icon_general.png) no-repeat -20px -1111px !important; 
+            background:  url(#{$base-url-theme}icon/icon_general.png) no-repeat -20px -1111px !important;
             &:hover {
-                background:  url(#{$base-url-theme}icon/icon_general.png) no-repeat -20px -1063px !important; 
+                background:  url(#{$base-url-theme}icon/icon_general.png) no-repeat -20px -1063px !important;
             }
         }
         .slick-next {
-            background:  url(#{$base-url-theme}icon/icon_general.png) no-repeat -20px -1015px !important; 
+            background:  url(#{$base-url-theme}icon/icon_general.png) no-repeat -20px -1015px !important;
             &:hover {
-                background:  url(#{$base-url-theme}icon/icon_general.png) no-repeat -20px -967px !important;  
+                background:  url(#{$base-url-theme}icon/icon_general.png) no-repeat -20px -967px !important;
             }
         }
         .slick-prev {
@@ -427,13 +427,13 @@ div.so-deals-slick.slick-horizontal .deals-content{
     }
 
     .owl2-controls.featureslider{
-        .owl2-nav div{position: absolute; top: 31%; height: 41px; z-index: 9; 
+        .owl2-nav div{position: absolute; top: 31%; height: 41px; z-index: 9;
             &.owl2-prev{ left: 15px; }
             &.owl2-next{ right: 15px; }
         }
     }
     .product-feature{  padding: 20px; overflow: visible;
-        @include breakpoint(lg){ padding: 20px 95px 0px 20px; 
+        @include breakpoint(lg){ padding: 20px 95px 0 20px;
             .product-thumb .image img{ padding-#{$left}: 40px;  }
         }
     }
@@ -455,7 +455,7 @@ div.so-deals-slick.slick-horizontal .deals-content{
         }
     }
     .extraslider-inner{ border-top:1px solid #e1e1e1; border-bottom: none; padding: 23px 10px 6px;
-        .caption{ 
+        .caption{
             text-align: center;
             p, .rating, .item-time{ display: none; }
             h4{ font-size: 13px; color: #7d7d7d; text-transform: capitalize;  margin-bottom: 4px;
@@ -490,12 +490,12 @@ div.so-deals-slick.slick-horizontal .deals-content{
             }
         }
         .owl2-controls{
-            .owl2-nav > div{ border: none; width: 28px; height: 28px; line-height: 28px; background-color: transparent; 
+            .owl2-nav > div{ border: none; width: 28px; height: 28px; line-height: 28px; background-color: transparent;
                 opacity: 1;visibility: visible; position: absolute; top: 50%; margin-top: -22px;
                 &.owl2-prev{ left: 5px; }
                 &.owl2-next{ right: 5px; }
                 &:hover{ border: none;  }
-            } 
+            }
         }
     }
 }
@@ -517,7 +517,7 @@ div.so-deals-slick.slick-horizontal .deals-content{
     .so-blog-external .blog-external .media .so-block{ float: none; }
     .blog-external{ border: none; margin-top: 15px;
         .content-img{ position: relative;
-            img{ @include transition(all .3s ease 0s); 
+            img{ @include transition(all .3s ease 0s);
                 webkit-transform: rotate(0);
             -webkit-backface-visibility: hidden;
                 &:hover{
@@ -535,7 +535,7 @@ div.so-deals-slick.slick-horizontal .deals-content{
                 border-#{$left}: 80px solid #fff;
                 #{$left}: 0;
             }
-            .entry-date { position: absolute; top: 0; z-index: 2; #{$left}: 0; 
+            .entry-date { position: absolute; top: 0; z-index: 2; #{$left}: 0;
                 .day-time { font-size: 24px; color: #909090; font-weight: bold;}
                 .month-time { font-size: 14px; color: #909090; }
             }
@@ -545,7 +545,7 @@ div.so-deals-slick.slick-horizontal .deals-content{
                 &:hover{ color: $linkColor; }
             }
             .media-heading{ margin: 15px 0 10px; }
-            .media-subcontent{ 
+            .media-subcontent{
                 > span{
                     padding-#{$right}: 10px;
                     &:last-child{ padding: 0; }
@@ -579,17 +579,17 @@ div.so-deals-slick.slick-horizontal .deals-content{
             .price{ margin-bottom: 0; }
         }
         .price .price-new, .price span.price{font-size: 16px;}
-    }   
+    }
 }
 
 /************************************************************************************************
     DEFFAULT LISTING TAB
 *************************************************************************************************/
 
-div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
-    .box-title { position: absolute; top: -8px; min-width: 204px; #{$left}: -8px; 
+div.module.custom-listingtab{ margin: 0; position: relative;
+    .box-title { position: absolute; top: -8px; min-width: 204px; #{$left}: -8px;
         h2{ line-height: 48px; background-color: $background; font-size: 18px; padding: 0 16px; color: #fff;  margin: 0; font-weight: bold;
-            border-radius: 0 7px 0 0; position: relative;  text-transform: uppercase; box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1);
+            border-radius: 0 7px 0 0; position: relative;  text-transform: uppercase; box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
             &:before {
                 content: '';
                 width: 0;
@@ -599,7 +599,7 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
                 position: absolute;
                 border-#{$right}: 8px solid darken($background,10%);
                 #{$left}: 1px;
-            } 
+            }
         }
     }
     .ltabs-tabs-container .ltabs-tabs li.ltabs-tab  > span{
@@ -629,14 +629,14 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
             border-radius: 0;
             &:hover{ color: $linkColor; }
         &.ltabs-tabs li.tab-sel.ltabs-tab > span{ color: $linkColor !important; }
-        &.ltabs-tabs li { border: 0; padding: 0; margin: 0; font-size: 13px; 
+        &.ltabs-tabs li { border: 0; padding: 0; margin: 0; font-size: 13px;
             &:hover{
                 background: transparent;
                 span{
                     color: $linkColor !important;
                 }
             }
-            span{ 
+            span{
                 font-size: 12px;
                 color: #333 !important;
                 text-transform: uppercase !important;
@@ -676,13 +676,13 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
                 top: 0;
                 @include transition(all .2s ease 0s);
                 visibility: hidden;
-                opacity: 0; 
+                opacity: 0;
                 #{$left}:  0;
             }
         }
     }
     .products-list.grid .product-layout .product-item-container{
-        margin: 0; border-width:side-values( 0 0px 0px 0); padding-bottom: 0;position: relative;
+        margin: 0; border-width:side-values( 0 0 0 0); padding-bottom: 0;position: relative;
         @include breakpoint(lg){
             max-height: 270px;
         }
@@ -707,25 +707,25 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
             content: "";
             position: absolute;
             bottom: 0;
-            #{$left}: 0px;
+            #{$left}: 0;
             width: 100%;
             height: 1px;
             background: #e8e8e8;
             z-index: 9;
         }
     }
-    .owl2-controls{ 
+    .owl2-controls{
         .owl2-nav{ position: absolute;top: -17px; right: 15px;
             @include if-rtl{ left: 70px; right: inherit; }
             > div{ border: none; width: 28px; height: 28px; background-color: transparent; border-radius:2px; color: #ccc;
                 &.owl2-prev{ right: 32px; left: auto; }
                 &:hover{ border: none;  background:$background; }
-            } 
+            }
         }
     }
 
     &.img-float{
-        .box-title { text-align: $right; min-width: 203px; #{$right}: -7px; #{$left}: auto; 
+        .box-title { text-align: $right; min-width: 203px; #{$right}: -7px; #{$left}: auto;
             h2{ border-radius:side-values( 7px 0 0 0);
                 &:before {
                     content: '';
@@ -737,8 +737,8 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
                     border-#{$left}: 8px solid #b94300;
                     border-#{$right}: none;
                     #{$right}: 0;
-                    #{$left}: auto; 
-                } 
+                    #{$left}: auto;
+                }
             }
         }
         .ltabs-wrap .ltabs-items-container{
@@ -747,13 +747,13 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
                 margin-#{$left}: 0;
             }
         }
-        .so-listing-tabs .ltabs-tabs-container .ltabs-tabs li{ float: $right; 
+        .so-listing-tabs .ltabs-tabs-container .ltabs-tabs li{ float: $right;
             
         }
        .list-sub-cat{ border: 0; background-color: #f2f2f2;  margin: side-values( 0 196px 0 0); }
         .ltabs-wrap .wap-listing-tabs .item-cat-image{ float: $right; }
-        .products-list.grid .product-layout .product-item-container{ 
-           border-width:side-values( 0 0px 0px 0px);
+        .products-list.grid .product-layout .product-item-container{
+           border-width:side-values( 0 0 0 0);
              position: relative;
              &:before{
                 content: "";
@@ -768,10 +768,10 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
              }
 
          }
-        .owl2-controls .owl2-nav{ left: 70px; right: auto; 
+        .owl2-controls .owl2-nav{ left: 70px; right: auto;
             @include if-rtl{ right: 15px; left: auto; }
         }
-    } 
+    }
 }
 
 
@@ -794,18 +794,18 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
         .left-block{ width: 90px; float: $left; margin-#{$right}: 20px;position: relative;}
         .item-wrap .item-image{ border: none; }
         .item-wrap.style1 .item-info{ background: transparent; position: relative; }
-        .item-wrap.style1 .item-info .item-title, 
+        .item-wrap.style1 .item-info .item-title,
         .item-wrap.style2 .item-info .item-title{
             padding: 0; font-weight: normal;
-            a{ font-size: 14px;  color: #222; text-transform: capitalize; 
+            a{ font-size: 14px;  color: #222; text-transform: capitalize;
                 &:hover{ color: $linkColor; }
             }
         }
         .item-wrap-inner{ margin: 0; padding: 0; }
-        .item-wrap .item-info .item-content{ margin: 0; 
+        .item-wrap .item-info .item-content{ margin: 0;
             .content_price span{ font-size: 16px; color: #ff5c00; font-weight: 700; }
         }
-        .item-wrap .item-image{ 
+        .item-wrap .item-image{
             img{ box-shadow: none; }
             .img-2{ position: absolute; top: 0; @include transition(all .7s ease 0s); opacity: 0; visibility: hidden;  }
             &:hover{ box-shadow: none;
@@ -817,7 +817,7 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
     }
 
     .owl2-controls{ margin-top: 4px;text-align: right;position: absolute; top: -36px; vertical-align: middle; #{$right}: 5px;
-        .owl2-nav > div{width: 28px; height: 28px;text-align: center;display: inline-block; line-height: 27px; 
+        .owl2-nav > div{width: 28px; height: 28px;text-align: center;display: inline-block; line-height: 27px;
             font-size: 0;cursor: pointer;color: #999999; background-color: transparent;margin-top: 0;position: static; float: left; border-radius:2px;
             @include if-rtl {
                 &.owl2-next{ right: 0; }
@@ -852,7 +852,7 @@ div.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
         width: 100%;
         display: block;
         z-index: 9;
-    }   
+    }
 }
 
 .common-home{

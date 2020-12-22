@@ -315,7 +315,7 @@
     background: #fff;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
     opacity: 0;
-    padding: 0px 10px;
+    padding: 0 10px;
     top: 33px;
     transition: top 0.3s ease 0s, opacity 0.3s ease 0s;
     width: 200px;
@@ -386,7 +386,7 @@
   .typeheader-4 .header-search {
     float: right;
     width: 135px;
-    padding: 9px 0px;
+    padding: 9px 0;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     margin-right: 12px;
     position: relative; }
@@ -497,7 +497,7 @@
     height: 24px;
     width: 26px; }
   .typeheader-4 .shopping_cart .btn-shopping-cart a.top_cart .shopcart .text-shopping-cart {
-    padding: 0px;
+    padding: 0;
     color: #fff;
     font-size: 12px;
     text-transform: uppercase;
@@ -539,7 +539,7 @@
   .typeheader-4 .container-megamenu.vertical #menuHeading .megamenuToogle-wrapper .container {
     font-size: 0;
     background: transparent;
-    padding: 0 0 0 0px !important; }
+    padding: 0 !important; }
   .typeheader-4 .container-megamenu.vertical #menuHeading .megamenuToogle-wrapper .container:before {
     display: none; }
   .typeheader-4 .container-megamenu.vertical #menuHeading .megamenuToogle-wrapper .container > div {
@@ -552,7 +552,7 @@
   .typeheader-4 .container-megamenu.vertical #menuHeading .megamenuToogle-wrapper .container > div span {
     height: 2px;
     width: 23px;
-    margin: 3px 0px 3px 0px;
+    margin: 3px 0;
     background: #fff;
     display: block;
     transition: all 0.2s ease 0s;

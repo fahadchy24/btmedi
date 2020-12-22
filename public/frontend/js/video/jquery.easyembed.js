@@ -1,4 +1,4 @@
-;
+
 (function ($, window, document) {
     "use strict";
     $.fn.easyEmbed = function (options) {

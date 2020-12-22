@@ -8,7 +8,7 @@
     [5] NO RESPONSIVE BOOTSTRAP
     [6] PRELOADING SCREEN
     [7] BANNER EFFECT
-    [8] POPUP ADDED TO CART 
+    [8] POPUP ADDED TO CART
     [9] PAGE COMINGSOON
 ==============================================*/
 
@@ -24,7 +24,7 @@
  
     &.hidden-top {bottom: -100px;opacity:0;  @include transform(scale(0) );}
     &:hover{background-color:$background;}
-    i{font-size: 36px;margin: 1px 0 0 0;color: #fff;display: inline-block;}
+    i{font-size: 36px;margin: 1px 0 0;color: #fff;display: inline-block;}
 }
 /*============Loading Site ==================*/
 .loaded #loadingSite{
@@ -65,7 +65,7 @@
   margin: 1px;
   border-radius: 50%;
   border: 5px solid #000;
-  border-color: #000 transparent #000 transparent;
+  border-color: #000 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -178,7 +178,7 @@
 }
 .social-widgets .title {
     margin: side-values(-10px -10px 10px);
-    padding: 0px 10px;
+    padding: 0 10px;
     background-color: #ccc;
     text-transform: uppercase;
     line-height: 45px;
@@ -257,14 +257,14 @@
         .sidebar-menu {display: none;}
         .header-bottom-right{margin: 0;padding: 0 15px;width:100%;}
     }
-} 
+}
 header .navbar-switcher{display: block;}
 }
 /* 4.LARY LOADER
 --------------------------------------- */
 .mfp-iframe-scaler iframe{background: white url(#{$base-url-theme}lazy-loader.gif) no-repeat center center;}
 .lazy {display: block;position: relative;  overflow: hidden; background: transparent url(#{$base-url-theme}lazy-loader.gif) no-repeat center center;}
-.loadeding{background: white url(#{$base-url-theme}lazy-loader.gif) no-repeat center center;;height: 100%; position: absolute;z-index: 2;top: 0;left: 0;right: 0;opacity: 1;}
+.loadeding{background: white url(#{$base-url-theme}lazy-loader.gif) no-repeat center center;height: 100%; position: absolute;z-index: 2;top: 0;left: 0;right: 0;opacity: 1;}
 .loaded .loadeding{background: none;height:auto;opacity: 0;display: none;}
 @media (min-width: 1200px) {
   .lazy.lazy-loaded {background: none;height:auto;}
@@ -273,7 +273,7 @@ header .navbar-switcher{display: block;}
 }
 
 
-/* Overlay pattern 
+/* Overlay pattern
 --------------------------------------- */
 body.no-bgbody{background-image:none;}
 
@@ -288,7 +288,7 @@ $columns: 45;
 .wrapper-boxed{
     header.navbar-compact {width: auto;}
 }
-header.navbar-compact { position: fixed;width:100%; z-index:999; box-shadow: 1px 1px 5px rgba(0,0,0,0.3); 
+header.navbar-compact { position: fixed;width:100%; z-index:999; box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
     .compact-hidden{display:none;}
 }
 
@@ -315,7 +315,7 @@ header.navbar-compact { position: fixed;width:100%; z-index:999; box-shadow: 1px
 --------------------------------------- */
 .mfp-iframe-scaler iframe{background: white url(#{$base-url-theme}theme/lazy-loader.gif) no-repeat center center;}
 .lazy {display: block;position: relative;  overflow: hidden; background: transparent url(#{$base-url-theme}theme/lazy-loader.gif) no-repeat center center;}
-.loadeding{background: white url(#{$base-url-theme}theme/lazy-loader.gif) no-repeat center center;;height: 100%; position: absolute;z-index: 2;top: 0;left: 0;right: 0;opacity: 1;}
+.loadeding{background: white url(#{$base-url-theme}theme/lazy-loader.gif) no-repeat center center;height: 100%; position: absolute;z-index: 2;top: 0;left: 0;right: 0;opacity: 1;}
 .loaded .loadeding{background: none;height:auto;opacity: 0;display: none;}
 @media (min-width: 1200px) {
 	.lazy.lazy-loaded {background: none;height:auto;}
@@ -324,7 +324,7 @@ header.navbar-compact { position: fixed;width:100%; z-index:999; box-shadow: 1px
 }
 
 
-/* Overlay pattern 
+/* Overlay pattern
 --------------------------------------- */
 body.no-bgbody{background-image:none;}
 
@@ -341,7 +341,7 @@ $columns: 45;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   z-index: 1000111;
   background-color: #ffffff;
@@ -408,7 +408,7 @@ body.loaded .loader-content {
 .banners-effect-2 .banners > div a{display: block;position: relative;overflow: hidden;
 	&:hover{
 		&:before,&:after{left: 0;opacity: 1;}
-	}	
+	}
 	&:before,&:after{
 		background-color: rgba(255, 255, 255, 0.4);
 		display: block;
@@ -429,7 +429,7 @@ body.loaded .loader-content {
 .banners-effect-3 .banners > div a {display: block;position: relative;overflow: hidden;
 	&:hover{
 		&:before,&:after{border: 0 solid rgba(0, 0, 0, 0.7);opacity: 0;filter: alpha(opacity=0);}
-	}	
+	}
 	&:before,&:after{
 		border: 50px solid transparent;
 		border-top-right-radius: 50px;
@@ -465,7 +465,7 @@ body.loaded .loader-content {
 			
 			@include transform(rotate3d(0, 0, 1, 45deg) scale3d(1, 4, 1));
 		}
-	}	
+	}
 	&:before,&:after{
 		 border-bottom: 50px solid rgba(0, 0, 0, 0.2);
 		border-top: 50px solid rgba(0, 0, 0, 0.2);
@@ -495,7 +495,7 @@ body.loaded .loader-content {
                border: 0 double rgba(255, 255, 255, 0.7);
                visibility: hidden;
 		}
-	}	
+	}
 	&:before,&:after{
 		 bottom: 0;
 		content: "";

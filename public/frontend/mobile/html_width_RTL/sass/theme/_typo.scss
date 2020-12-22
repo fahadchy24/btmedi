@@ -28,18 +28,18 @@
 	.fa {font-size: 20px;vertical-align: middle;margin-#{right}:10px;}
 }
 .tab-content {
-    padding: 15px 15px 10px;margin-bottom: 20px;z-index: 2;border: 1px solid #ddd;border-top: 0px;
+    padding: 15px 15px 10px;margin-bottom: 20px;z-index: 2;border: 1px solid #ddd;border-top: 0;
 }
 
-.simple-ul{margin: 0 0 15px 0; padding: 0; list-style: none;
+.simple-ul{margin: 0 0 15px; padding: 0; list-style: none;
 	li{position: relative;padding-left: 15px;margin-bottom: 5px;
 		&:before{    position: absolute;top: 0;left: 0;display: block;content:"\f105";font-family: $FontAwesome; font-size: 14px;}
-		ul {   margin: 10px 0 10px 0;padding: 0;list-style: none;
+		ul {   margin: 10px 0;padding: 0;list-style: none;
 			li:before{content: "\f111"; font-size: 7px;top:7px;}
-		} 
+		}
 	}
 }
-.decimal-list { margin: 0px 0 15px 20px;padding: 0;list-style: decimal outside;
+.decimal-list { margin: 0 0 15px 20px;padding: 0;list-style: decimal outside;
 	li{padding-left: 0;margin-bottom: 5px;text-indent: 0;}
 }
 
@@ -62,7 +62,7 @@ ul, ol {
 		    &.owl2-prev{ background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -1111px;
 		    	&:hover{background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -1063px transparent;}
 			}
-		    &.owl2-next{ background: url("#{$imgPath}icon/icon_general.png") no-repeat  -20px -1015px; 
+		    &.owl2-next{ background: url("#{$imgPath}icon/icon_general.png") no-repeat  -20px -1015px;
 		    	&:hover{ background: url("#{$imgPath}icon/icon_general.png") -20px -967px transparent; }
 			}
 		}
@@ -78,7 +78,7 @@ ul, ol {
 		    &.owl2-prev{ background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -647px;
 		    	&:hover{background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -586px transparent;}
 			}
-		    &.owl2-next{ background: url("#{$imgPath}icon/icon_general.png") no-repeat  -20px -403px; 
+		    &.owl2-next{ background: url("#{$imgPath}icon/icon_general.png") no-repeat  -20px -403px;
 		    	&:hover{ background: url("#{$imgPath}icon/icon_general.png") -20px -342px transparent; }
 			}
 		}
@@ -93,10 +93,10 @@ ul, ol {
 		    margin-top: -20px;
 		    cursor: pointer;
 		    transition: inherit;
-		    &.owl2-prev{ background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -525px; 
+		    &.owl2-prev{ background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -525px;
 		    	&:hover{ background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -464px;}
 			}
-		    &.owl2-next{ background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -281px; 
+		    &.owl2-next{ background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -281px;
 		    	&:hover{ background: url("#{$imgPath}icon/icon_general.png") no-repeat -20px -220px; }
 			}
 		    &:before{ display: none; }

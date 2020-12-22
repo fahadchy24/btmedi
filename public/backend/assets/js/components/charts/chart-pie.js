@@ -66,7 +66,7 @@ var PieChart = (function() {
 
 		$this.data('chart', pieChart);
 
-	};
+	}
 
 
 	// Events

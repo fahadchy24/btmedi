@@ -45,11 +45,11 @@
                     background: rgba(230, 230, 230, 0.3);
                     position: absolute;
                     top: 14px;
-                    #{$right}: 0px;
+                    #{$right}: 0;
                 }
 
                 &.account{
-                    padding-#{$right}: 20px;   
+                    padding-#{$right}: 20px;
                 }
                 &.currency{
                     padding-#{$right}: 0;
@@ -59,22 +59,22 @@
                     &:before{font-family: 'FontAwesome'; margin-#{$right}: 7px;}
                     span.fa-angle-down{position: relative; #{$left}: 5px;}
                 }
-                &.log{ border: none; } 
-                &.logout    > a:before{content: "\f09c";} 
-                &.login     > a:before{content: "\f023";} 
-                &.account   > a:before{content: "\f007";} 
+                &.log{ border: none; }
+                &.logout    > a:before{content: "\f09c";}
+                &.login     > a:before{content: "\f023";}
+                &.account   > a:before{content: "\f007";}
                 &.wishlist  > a:before{content: "\f004";}
                 &.checkout  > a:before{content: "\f045";}
                
-                .btn-group{ 
-                    display: block;     
+                .btn-group{
+                    display: block;
                     display: block;
                     font-size: 12px;
-                    .btn-link{ padding: 0; border: none; color:#dedede;    
-                        &:hover{ color: $linkColor; } 
+                    .btn-link{ padding: 0; border: none; color:#dedede;
+                        &:hover{ color: $linkColor; }
                     }
                 }
-                ul.dropdown-link{position: absolute; background: #fff; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);  opacity: 0; padding: 0px 10px; 
+                ul.dropdown-link{position: absolute; background: #fff; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);  opacity: 0; padding: 0 10px;
                     top: 33px;  transition:top 0.3s ease 0s, opacity 0.3s ease 0s; width: 200px; z-index: -1; text-align: $left; #{$left}: 0;
                     li{display: block; border-#{$left}: 0;
                     a{display: block; padding: 5px 0 4px; border-bottom: solid 1px #efefef; font-size: 11px; line-height: 18px; color: #dedede;border-#{$right}: 0;
@@ -102,7 +102,7 @@
                 width: 71%;
             }
         }
-        .header-center-right{ margin-top: 13px; 
+        .header-center-right{ margin-top: 13px;
             @media (min-width: 1200px) {
                 padding-#{$left}: 77px;
             }
@@ -118,7 +118,7 @@
         .header-center{
             .navbar-logo{ img{max-width: 110px;} }
             .megamenu-style-dev .horizontal ul.megamenu > li > a{
-                padding: 5px 15px 5px;
+                padding: 5px 15px;
             }
             .header-center-right{
                 margin: 0;
@@ -144,23 +144,23 @@
             }
            i {  color: #fff!important; font-size: 16px; }
            &:hover{  color: #fff;}
-        }       
+        }
     }
     /*BLOCK CART*/
     .block-cart{
         margin-#{$left}: 16px;
         display: inline-block;
     }
-    .shopping_cart{ position: absolute; top: 0px;
-        .handle {  
-            width: 44px; 
-            height: 44px; 
-            line-height: 44px; 
-            background: #df0024; 
-            color: #fff; 
+    .shopping_cart{ position: absolute; top: 0;
+        .handle {
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            background: #df0024;
+            color: #fff;
             text-align: center;
-            border-radius: 100%; 
-            display: inline-block; 
+            border-radius: 100%;
+            display: inline-block;
             font-size: 15px;
             margin-#{$right}: 15px;
             position: absolute;
@@ -200,18 +200,18 @@
                     width: 100%;
                     height: 2px;
                     position: absolute;
-                    bottom: -17px; 
-                    background: #fff;   
-                    #{$left}: 0;        
+                    bottom: -17px;
+                    background: #fff;
+                    #{$left}: 0;
                 }
             }
-            ul.megamenu > li > a > strong{ position: relative; 
+            ul.megamenu > li > a > strong{ position: relative;
                 img{ #{$right}: -35px; }
             }
             ul.megamenu > li:first-child{ > a{ padding-#{$left}: 0; } }
             ul.megamenu > li > a{
                 color: #fff; font-size: 13px !important; height: auto; padding: 13px 20px 12px;
-                text-transform: uppercase; text-shadow: none;  font-weight: bold; 
+                text-transform: uppercase; text-shadow: none;  font-weight: bold;
                 strong{ font-weight: bold; }
             }
         }

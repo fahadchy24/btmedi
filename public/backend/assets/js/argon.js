@@ -982,7 +982,7 @@ var BarStackedChart = (function() {
 
 		$this.data('chart', barStackedChart);
 
-	};
+	}
 
 
 	// Events
@@ -1061,7 +1061,7 @@ var DoughnutChart = (function() {
 
 		$this.data('chart', doughnutChart);
 
-	};
+	}
 
 
 	// Events
@@ -1140,7 +1140,7 @@ var PieChart = (function() {
 
 		$this.data('chart', pieChart);
 
-	};
+	}
 
 
 	// Events
@@ -1202,7 +1202,7 @@ var PointsChart = (function() {
 
 		$this.data('chart', salesChart);
 
-	};
+	}
 
 
 	// Events
@@ -1261,7 +1261,7 @@ var SalesChart = (function() {
 
 		$this.data('chart', salesChart);
 
-	};
+	}
 
 
 	// Events
@@ -1320,7 +1320,7 @@ var SalesChart = (function() {
 
 		$this.data('chart', salesChart);
 
-	};
+	}
 
 
 	// Events
@@ -1423,7 +1423,7 @@ var LineChart = (function() {
 
 		$this.data('chart', salesChart);
 
-	};
+	}
 
 
 	// Events

@@ -10,7 +10,7 @@
     [3] Minxin Triangle
     [4] Minxin LABEL PRODUCT
     [5] Minxin Scrollbars
-    [6] Minxin Dev Custom 
+    [6] Minxin Dev Custom
   
 ==============================================*/
 .no-margin {
@@ -554,10 +554,10 @@
   margin-bottom: 20px;
   z-index: 2;
   border: 1px solid #ddd;
-  border-top: 0px; }
+  border-top: 0; }
 
 .simple-ul {
-  margin: 0 0 15px 0;
+  margin: 0 0 15px;
   padding: 0;
   list-style: none; }
   .simple-ul li {
@@ -573,7 +573,7 @@
       font-family: "FontAwesome";
       font-size: 14px; }
     .simple-ul li ul {
-      margin: 10px 0 10px 0;
+      margin: 10px 0;
       padding: 0;
       list-style: none; }
       .simple-ul li ul li:before {
@@ -582,7 +582,7 @@
         top: 7px; }
 
 .decimal-list {
-  margin: 0px 0 15px 20px;
+  margin: 0 0 15px 20px;
   padding: 0;
   list-style: decimal outside; }
   .decimal-list li {
@@ -613,7 +613,7 @@ ul, ol {
 		    &.owl2-prev{ background: url("../../images/icon/icon_general.png") no-repeat -20px -1111px;
 		    	&:hover{background: url("../../images/icon/icon_general.png") no-repeat -20px -1063px transparent;}
 			}
-		    &.owl2-next{ background: url("../../images/icon/icon_general.png") no-repeat  -20px -1015px; 
+		    &.owl2-next{ background: url("../../images/icon/icon_general.png") no-repeat  -20px -1015px;
 		    	&:hover{ background: url("../../images/icon/icon_general.png") -20px -967px transparent; }
 			}
 		}
@@ -629,7 +629,7 @@ ul, ol {
 		    &.owl2-prev{ background: url("../../images/icon/icon_general.png") no-repeat -20px -647px;
 		    	&:hover{background: url("../../images/icon/icon_general.png") no-repeat -20px -586px transparent;}
 			}
-		    &.owl2-next{ background: url("../../images/icon/icon_general.png") no-repeat  -20px -403px; 
+		    &.owl2-next{ background: url("../../images/icon/icon_general.png") no-repeat  -20px -403px;
 		    	&:hover{ background: url("../../images/icon/icon_general.png") -20px -342px transparent; }
 			}
 		}
@@ -644,10 +644,10 @@ ul, ol {
 		    margin-top: -20px;
 		    cursor: pointer;
 		    transition: inherit;
-		    &.owl2-prev{ background: url("../../images/icon/icon_general.png") no-repeat -20px -525px; 
+		    &.owl2-prev{ background: url("../../images/icon/icon_general.png") no-repeat -20px -525px;
 		    	&:hover{ background: url("../../images/icon/icon_general.png") no-repeat -20px -464px;}
 			}
-		    &.owl2-next{ background: url("../../images/icon/icon_general.png") no-repeat -20px -281px; 
+		    &.owl2-next{ background: url("../../images/icon/icon_general.png") no-repeat -20px -281px;
 		    	&:hover{ background: url("../../images/icon/icon_general.png") no-repeat -20px -220px; }
 			}
 		    &:before{ display: none; }
@@ -660,7 +660,7 @@ ul, ol {
    [1] PAGE ACCOUNT
    [2] PAGE INFORMATION
    [3] PAGE CHECKOUT
-   [4] LANGUAGE CURENTY 
+   [4] LANGUAGE CURENTY
 	[5] CSS FEAFURE MENU DEMO
 ==============================================*/
 #content > h1 {
@@ -696,8 +696,8 @@ ul, ol {
 /* @group List Box */
 .list-box {
   list-style: none;
-  margin: 0px;
-  padding: 0px; }
+  margin: 0;
+  padding: 0; }
 
 .btn-link:focus, .btn-link:hover {
   text-decoration: none; }
@@ -850,7 +850,7 @@ ul, ol {
   margin-top: 30px;
   z-index: 2;
   border: none;
-  border-top: 0px; }
+  border-top: 0; }
 .tab-account .segmented-control .control-item.active {
   background: #ddd; }
 .tab-account .form-login .form-pw,
@@ -1110,9 +1110,9 @@ ul, ol {
     background: transparent;
     font-size: 22px; }
     .mobile_deals .extraslider-inner .owl2-controls .owl2-nav div.owl2-prev {
-      left: 0px; }
+      left: 0; }
     .mobile_deals .extraslider-inner .owl2-controls .owl2-nav div.owl2-next {
-      right: 0px; }
+      right: 0; }
   .mobile_deals .extraslider-inner .owl2-controls .owl2-dots {
     text-align: center; }
     .mobile_deals .extraslider-inner .owl2-controls .owl2-dots .owl2-dot {
@@ -1151,9 +1151,9 @@ ul, ol {
     background: transparent;
     font-size: 22px; }
     .contentslider .owl2-controls .owl2-nav div.owl2-prev {
-      left: 0px; }
+      left: 0; }
     .contentslider .owl2-controls .owl2-nav div.owl2-next {
-      right: 0px; }
+      right: 0; }
   .contentslider .owl2-controls .owl2-dots {
     text-align: center; }
     .contentslider .owl2-controls .owl2-dots .owl2-dot {
@@ -1181,7 +1181,7 @@ ul, ol {
     padding: 0 20px; }
     .module.so_filter_wrap .modcontent .so-filter-heading .so-filter-heading-text {
       float: right;
-      padding: 6px 0 0px;
+      padding: 6px 0 0;
       color: #444;
       font-weight: 700;
       text-transform: uppercase; }
@@ -1192,8 +1192,8 @@ ul, ol {
     height: 34px; }
   .module.so_filter_wrap .modcontent .so-filter-content-opts-container {
     padding-top: 5px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 15px; }
     .module.so_filter_wrap .modcontent .so-filter-content-opts-container .so-filter-option label {
       font-size: 12px; }
@@ -1400,7 +1400,7 @@ ul, ol {
         .best-seller-custom .so-extraslider .extraslider-inner .item .item-wrap.style1 .media-body .item-info a {
           color: #222; }
         .best-seller-custom .so-extraslider .extraslider-inner .item .item-wrap.style1 .media-body .item-info .item-title {
-          padding: 0 0 5px 0; }
+          padding: 0 0 5px; }
           .best-seller-custom .so-extraslider .extraslider-inner .item .item-wrap.style1 .media-body .item-info .item-title a {
             text-transform: capitalize;
             font-size: 14px;
@@ -1717,7 +1717,7 @@ h6 {
   font-size: 12px; }
 
 .h1, .h2, .h3, h1, h2, h3, .h4, .h5, .h6, h4, h5, h6 {
-  margin: 0 0 15px 0; }
+  margin: 0 0 15px; }
 
 select, textarea, input[type="text"],
 input[type="search"],
@@ -1929,13 +1929,13 @@ table.table-bordered thead > * {
     [1] CONTACT PAGE
     [2] PAEG ABOUT US
     [3] PAGE BLOG
-    [4] PAGE 404 
+    [4] PAGE 404
 ==============================================*/
 /*============ CONTACT PAGE ==============*/
 #map-canvas {
   height: 250px;
   width: 100%;
-  margin: 0px 0 10px; }
+  margin: 0 0 10px; }
 
 .contacts fieldset {
   border: none;
@@ -2203,7 +2203,7 @@ table.table-bordered thead > * {
           height: 16px;
           display: inline-block;
           position: absolute;
-          right: 0px;
+          right: 0;
           top: 50%;
           margin-top: -8px;
           border-radius: 2px;
@@ -2224,7 +2224,7 @@ table.table-bordered thead > * {
   width: 100%;
   height: 100%;
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 1px;
   color: #fff;
   font-size: 18px;
@@ -2400,7 +2400,7 @@ table.table-bordered thead > * {
     display: table-cell;
     vertical-align: middle;
     position: absolute;
-    top: 0px;
+    top: 0;
     line-height: 1.45em;
     background: #ff5561;
     width: 44px;
@@ -2414,7 +2414,7 @@ table.table-bordered thead > * {
 
 .decimal-list {
   padding: 0;
-  margin: 10px 0 0 0;
+  margin: 10px 0 0;
   list-style-type: none;
   counter-reset: myCounter; }
 
@@ -2555,7 +2555,7 @@ span.fa-stack {
   margin-left: 4px; }
 
 .price {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   line-height: normal;
   color: #ff5c00;
   font-size: 14px;
@@ -2760,7 +2760,7 @@ span.fa-stack {
     .products-list.list .product-layout .product-item-container .left-block {
       width: 45%;
       float: right;
-      margin-bottom: 0px;
+      margin-bottom: 0;
       margin-left: 5px;
       position: relative; }
     .products-list.list .product-layout .product-item-container .description p {
@@ -2788,7 +2788,7 @@ span.fa-stack {
         .products-list.list .product-layout .product-item-container .right-block .caption h4 a {
           color: #222; }
       .products-list.list .product-layout .product-item-container .right-block .button-group {
-        margin: 0px 0 20px 0; }
+        margin: 0 0 20px; }
     .products-list.list .product-layout .product-item-container .button-group button {
       background-color: #ff5561;
       color: #fff;
@@ -2827,7 +2827,7 @@ span.fa-stack {
 .products-category .short-by select {
   border-radius: 0;
   box-shadow: none;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   border-color: #e8e8e8;
   width: calc(100% - 17px);
   display: inline-block; }
@@ -2843,8 +2843,8 @@ span.fa-stack {
   opacity: 1;
   position: fixed;
   top: 0;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 9998; }
 
@@ -2852,8 +2852,8 @@ span.fa-stack {
   background: #fff;
   width: 300px;
   position: fixed;
-  top: 0px;
-  bottom: 0px;
+  top: 0;
+  bottom: 0;
   z-index: 9999;
   height: 100%;
   overflow-x: scroll;
@@ -2873,8 +2873,8 @@ span.fa-stack {
 	
     [1] CONTENT PRODUCT OTHER
     [2] PRODUCT INFO
-    [3] PRODUCT TABS 
-    [3] RELATED PRODUCT 
+    [3] PRODUCT TABS
+    [3] RELATED PRODUCT
 	
 ==============================================*/
 .product-view.product-info .slider-for {
@@ -2937,7 +2937,7 @@ span.fa-stack {
     font-size: 0;
     min-width: 32px;
     float: right;
-    margin: 0px 5px;
+    margin: 0 5px;
     text-align: center;
     font-size: 14px;
     border-radius: 100%; }
@@ -3059,9 +3059,9 @@ span.fa-stack {
       background: transparent;
       font-size: 22px; }
       .product-view .content-product-left .owl2-nav div.owl2-prev {
-        left: 0px; }
+        left: 0; }
       .product-view .content-product-left .owl2-nav div.owl2-next {
-        right: 0px; }
+        right: 0; }
     .product-view .content-product-left .owl2-dots {
       text-align: center; }
       .product-view .content-product-left .owl2-dots .owl2-dot {
@@ -3147,8 +3147,8 @@ span.fa-stack {
   display: inline-block;
   vertical-align: top;
   width: auto;
-  margin: 0 7px 5px 0px;
-  padding: 0px; }
+  margin: 0 7px 5px 0;
+  padding: 0; }
   #product .radio-type-button label {
     padding: 0;
     font-size: 14px; }
@@ -3218,7 +3218,7 @@ span.fa-stack {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  border-width: 1px 0 1px 0;
+  border-width: 1px 0;
   border-style: solid;
   border-color: #ededed; }
   .producttab .tabsslider .nav-tabs li {
@@ -3260,8 +3260,8 @@ span.fa-stack {
     list-style-type: disc;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
     -webkit-padding-start: 18px; }
 
 /*============RELATED PRODUCT==================*/
@@ -3283,9 +3283,9 @@ span.fa-stack {
     background: transparent;
     font-size: 22px; }
     .releate-products .owl2-controls .owl2-nav div.owl2-prev {
-      left: 0px; }
+      left: 0; }
     .releate-products .owl2-controls .owl2-nav div.owl2-next {
-      right: 0px; }
+      right: 0; }
   .releate-products .owl2-controls .owl2-dots {
     text-align: center; }
     .releate-products .owl2-controls .owl2-dots .owl2-dot {
@@ -3341,7 +3341,7 @@ span.fa-stack {
   .navbar-menu .toggle-panel .icon-bar {
     height: 2px;
     width: 16px;
-    margin: 3px 0px;
+    margin: 3px 0;
     background: #ff5561;
     display: block; }
     .navbar-menu .toggle-panel .icon-bar:first-child {
@@ -3469,9 +3469,9 @@ span.fa-stack {
   margin: 10px 0; }
   .footernav-social .list-inline {
     vertical-align: middle;
-    padding: 10px 0px 2px; }
+    padding: 10px 0 2px; }
   .footernav-social p {
-    padding: 10px 0px 2px;
+    padding: 10px 0 2px;
     margin: 0;
     vertical-align: top;
     display: inline-block;
@@ -3538,7 +3538,7 @@ span.fa-stack {
   box-shadow: none; }
 
 /************************************************************************************************
-    MODULE HOME SLIDER  
+    MODULE HOME SLIDER
 *************************************************************************************************/
 .sohomepage-slider {
   margin: 0 0 10px; }
@@ -3604,7 +3604,7 @@ span.fa-stack {
     vertical-align: top;
     width: 150px; }
     .module .block-categories .cate-content .cate .inner {
-      box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);
+      box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);
       text-align: center;
       margin-bottom: 5px; }
     .module .block-categories .cate-content .cate a.title-cate {
@@ -3643,7 +3643,7 @@ span.fa-stack {
     padding: 0 5px; }
 
 .mobile-bn3-h1 {
-  margin: 10px 0 10px; }
+  margin: 10px 0; }
 
 .mobile-bn2-h1 {
   margin: 0 0 5px; }
@@ -3776,7 +3776,7 @@ span.fa-stack {
   margin: 0 -5px 10px;
   padding: 0; }
 .mobile-home.mobilelayout-1 .module.sohomepage-slider {
-  margin: 10px 0 10px; }
+  margin: 10px 0; }
 .mobile-home.mobilelayout-1 .menu-link {
   margin-bottom: 5px; }
   .mobile-home.mobilelayout-1 .menu-link a {

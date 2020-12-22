@@ -66,7 +66,7 @@ var DoughnutChart = (function() {
 
 		$this.data('chart', doughnutChart);
 
-	};
+	}
 
 
 	// Events

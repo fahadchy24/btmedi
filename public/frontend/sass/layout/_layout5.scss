@@ -4,7 +4,7 @@
 
     [SASS DIRECTORY ]
     
-    [1] MODULE HOME SLIDER 
+    [1] MODULE HOME SLIDER
     [2] SHORT CODE CONTENT SLIDER BRAND
     [3] HTML SERVICES
     [4] MODULE LISTING TAB
@@ -15,7 +15,7 @@
 
 
 /************************************************************************************************
-    MODULE HOME SLIDER  
+    MODULE HOME SLIDER
 *************************************************************************************************/
 .module.sohomepage-slider{ margin: 0;
     .owl2-controls .owl2-nav{
@@ -25,7 +25,7 @@
     }
     .owl2-dots{ position: absolute; bottom: 50px; width: 100%;  line-height: 100%; left: 30px;
         .owl2-dot{ display: inline-block;
-            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1; 
+            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1;
                 display: block;border-radius: 50%; -webkit-border-radius: 50%; @include transition(all .2s ease 0s);
             }
             &.active span{ background-color: $background; width: 25px; border-radius: 4px; }
@@ -34,7 +34,7 @@
     }
     .owl2-item{
         &.active{
-            .sohomeslider-description{ 
+            .sohomeslider-description{
                 .title-slider{
                     opacity: 1;
                     animation: myeffect-slideshow 2s ease-in-out ;
@@ -77,7 +77,7 @@
             width: auto;
             opacity: 0;
             top: 31%;
-            font-size: 20px; 
+            font-size: 20px;
             color: #3b3b3b;
             text-transform: uppercase;
             &.pos-right{
@@ -116,8 +116,8 @@
             }
             &.text-sl12{
                 h3.tilte{ font-size: 30px; color: #444; font-weight: 700; margin: 0; }
-                &.pos-left{ left: 150px;  top: 65%; 
-                    i{ margin-#{right}: 5px;; }
+                &.pos-left{ left: 150px;  top: 65%;
+                    i{ margin-#{right}: 5px; }
                     &:hover{ color: #222; }
                     a{ font-weight: 600; color: $linkColor; font-size: 14px; }
                 }
@@ -132,11 +132,11 @@
         }
         .des{
             &.des-sl11{ margin-top: 15px; color: #fff; font-size: 14px;
-                i{ margin-#{right}: 5px;; }
+                i{ margin-#{right}: 5px; }
                 &:hover{ color: #222; }
             }
         }
-    }    
+    }
 }
 
 #Section-featute{ position: relative;    margin-top: 43px;
@@ -156,7 +156,7 @@
         .inner{
             cursor: pointer;
             a.title-cate{
-                box-shadow: 0px 2px 3px 0px rgba(100,100,100,0.3);
+                box-shadow: 0 2px 3px 0 rgba(100,100,100,0.3);
                 display: block;
                 height: 52px;
                 line-height: 52px;
@@ -188,7 +188,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     @include breakpoint(lg){ padding: 14px 80px; }
-    img{ @include transition(all .2s ease 0s); 
+    img{ @include transition(all .2s ease 0s);
         webkit-transform: rotate(0);
     -webkit-backface-visibility: hidden;
         &:hover{
@@ -198,12 +198,12 @@
     &:hover{
         .owl2-nav{
             opacity: 1;
-            @include transition(all .2s ease 0s); 
+            @include transition(all .2s ease 0s);
         }
     }
     .owl2-nav{
          opacity: 0;
-        div{ 
+        div{
             width: 42px;
             height: 42px;
             text-align: center;
@@ -221,31 +221,31 @@
             top: 50%;
             color: #fff;
             border-radius: 2px;
-            &.owl2-prev{ left: 16px;  opacity: 1; 
+            &.owl2-prev{ left: 16px;  opacity: 1;
                 &:before {
                     content: "\f053";
                 }
             }
-            &.owl2-next{ right: 16px; opacity: 1; 
+            &.owl2-next{ right: 16px; opacity: 1;
                 &:before {
                     content: "\f054";
                 }
             }
         }
-    } 
+    }
 }
 
 /************************************************************************************************
     HTML SERVICES
 *************************************************************************************************/
-.policy-w{ padding: 15px 0 14px 0;
+.policy-w{ padding: 15px 0 14px;
     .policy{
         font-size: 14px;
         line-height: 100%;
         i{ font-size: 16px; color: #222; margin-#{$right}: 10px; }
         span{ font-weight: 700; color: #222; }
     }
-} 
+}
 
 
 /************************************************************************************************
@@ -258,7 +258,7 @@
     .so-listing-tabs{ margin: 0; }
     .products-list.grid .product-item-container:hover .right-block.right-b .cartinfo--static, .products-list.grid .product-item-container:hover .right-block.right-b .button-group{ bottom: 5px; }
     .so-listing-tabs .ltabs-wrap .ltabs-items-container{
-         overflow: visible; border-width: side-values( 1px 0px 0 0); border-color: #ebebeb; border-style: solid;
+         overflow: visible; border-width: side-values( 1px 0 0 0); border-color: #ebebeb; border-style: solid;
          position: relative;
          &:before{
             content: "";
@@ -283,7 +283,7 @@
     .products-list.grid .product-layout .product-item-container { padding: 0; margin: 0; border-width:side-values( 0 0 1px 1px); border-color: #ebebeb;
         .right-block{ margin-top: 18px; display: inline-block; width: 100%; padding: 0 0 10px; }
         .button-group { background: #fff;
-            button{  border-color: #222; color: #222; 
+            button{  border-color: #222; color: #222;
                 &.addToCart{ background: #222; color: #fff; }
                 &:hover{ background: $background; color: #fff; border-color: $background; }
             }
@@ -294,14 +294,14 @@
         }
     }
     .wap-listing-tabs{ margin-top: 23px; }
-     .owl2-controls{ position: absolute;display: none; top: -45px; #{$right}: 15px;;
+     .owl2-controls{ position: absolute;display: none; top: -45px; #{$right}: 15px;
         .owl2-nav > div{ border: none; width: 28px; height: 28px; background-color: transparent; opacity: 1;visibility: visible; position: relative; top: 0;
             &.owl2-prev{ right: 5px; left: auto; }
             &:hover{ border: none;  }
-        } 
+        }
     }
     .ltabs-wrap {
-        .ltabs-tabs-container{ margin: 0; text-align: center; 
+        .ltabs-tabs-container{ margin: 0; text-align: center;
             .ltabs-tabs{
                 li{ float: none; padding: 0; border: none; margin: 0; position: relative; display: inline-block;
                     span{
@@ -323,7 +323,7 @@
                         span{  color: $background; }
                     }
                     &.tab-sel{ background: transparent;
-                        span{  color: $background; 
+                        span{  color: $background;
                             &:before {
                                 content: '';
                                 width: 100px;
@@ -384,7 +384,7 @@
                 border-#{$left}: 80px solid #fff;
                 #{$left}: 0;
             }
-            .entry-date { position: absolute; top: 0; z-index: 2; #{$left}: 0; 
+            .entry-date { position: absolute; top: 0; z-index: 2; #{$left}: 0;
                 .day-time { font-size: 24px; color: #909090; font-weight: bold;}
                 .month-time { font-size: 14px; color: #909090; }
             }
@@ -395,7 +395,7 @@
                 &:hover{ color: $linkColor; }
             }
             .media-heading{ margin: 15px 0 10px; }
-            .media-subcontent{ 
+            .media-subcontent{
                 .media-author{ border: none; color: #909090; }
                 i{ font-size: 14px; margin-#{$right}: 5px;}
             }
@@ -425,7 +425,7 @@
             .price{ margin-bottom: 0; }
         }
         .price .price-new, .price span.price{font-size: 16px;}
-    }   
+    }
 }
 
 /************************************************************************************************
@@ -439,7 +439,7 @@
     .products-list.grid .product-layout .product-item-container{ margin: 0; padding: 0; border-width:side-values( 0 0 1px 1px); border-color: #ebebeb; margin-bottom: 1px;}
     .so-extraslider{ margin: 0; margin-top: 24px;}
     .extraslider-inner{
-        padding: 0; border-width: side-values( 1px 0px 0 0); border-color: #ebebeb; border-style: solid;
+        padding: 0; border-width: side-values( 1px 0 0 0); border-color: #ebebeb; border-style: solid;
          position: relative;
          &:before{
             content: "";
@@ -457,18 +457,18 @@
         .left-block{float: none; }
         .item-wrap .item-image{ border: none; }
         .item-wrap.style1 .item-info{ background: transparent; position: relative; }
-        .item-wrap.style1 .item-info .item-title, 
+        .item-wrap.style1 .item-info .item-title,
         .item-wrap.style2 .item-info .item-title{
             padding: 0; font-weight: normal;
-            a{ font-size: 14px;  color: #222; text-transform: capitalize; 
+            a{ font-size: 14px;  color: #222; text-transform: capitalize;
                 &:hover{ color: $linkColor; }
             }
         }
         .item-wrap-inner{ margin: 0; padding: 0; }
-        .item-wrap .item-info .item-content{ margin: 0; 
+        .item-wrap .item-info .item-content{ margin: 0;
             .content_price span{ font-size: 16px; color: #ff5c00; font-weight: 700; }
         }
-        .item-wrap .item-image{ 
+        .item-wrap .item-image{
             img{ box-shadow: none; }
             .img-2{ position: absolute; top: 0; @include transition(all .7s ease 0s); opacity: 0; visibility: hidden;  }
             &:hover{ box-shadow: none;
@@ -477,18 +477,18 @@
             }
         }
 
-        .item-wrap{ margin-bottom: 0px; }
+        .item-wrap{ margin-bottom: 0; }
     }
 
     .owl2-controls{ position: absolute;top: 21px; #{$right}: 0;
         .owl2-nav > div{ border: none; width: 28px; height: 28px; background-color: transparent; opacity: 1;visibility: visible; position: relative; top: 13px;
-            &.owl2-prev{ right: 5px; left: auto; 
+            &.owl2-prev{ right: 5px; left: auto;
                 @include if-rtl{
                     float: left;
                 }
             }
             &:hover{ border: none;  }
-        } 
+        }
     }
 }
 
@@ -501,7 +501,7 @@
         width: 100%;
         display: block;
         z-index: 9;
-    }   
+    }
 }
 .f5-section-style1{
     background:  url(#{$base-url-theme}catalog/demo/banners/home5/bg-newsltter5.jpg)  no-repeat;

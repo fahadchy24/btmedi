@@ -256,7 +256,7 @@
  *   4.Extra small devices Phones ( Devices < 767px)
  */
 /************************************************************************************************
- BLOCK HEADER  
+ BLOCK HEADER
  ************************************************************************************************ */
 /*[] HEADER DEFFAULT []*/
 @media (max-width: 480px) {
@@ -277,17 +277,17 @@
   /*!== Layout 6 ==!*/
   /*!== Layout 9 ==!*/
   /************************************************************************************************
-   BLOCK FOOTER  
+   BLOCK FOOTER
    *************************************************************************************************/
   /*[] FOOTER DEFFAULT []*/
   /*!== Footer 3 ==!*/
   /*!== Footer 4 ==!*/
   /*!== Footer 5 ==!*/
   /************************************************************************************************
-   PAGE LISTING  
+   PAGE LISTING
    ************************************************************************************************ */
   /************************************************************************************************
-   PAGE BONUSS  
+   PAGE BONUSS
    ************************************************************************************************ */
     header .navbar-logo img {
       max-width: 125px; }
@@ -306,7 +306,7 @@
         width: 30%;
         float: right; }
       header.typeheader-3 .header-center {
-        padding: 70px 0 0px !important;
+        padding: 70px 0 0 !important;
         position: relative; }
         header.typeheader-3 .header-center .navbar-logo {
           position: absolute;
@@ -338,7 +338,7 @@
     .btn-shopping-cart .dropdown-menu {
       min-width: 292px; }
     .layout-1 div.module.custom-listingtab .modcontent {
-      margin-top: 0px !important; }
+      margin-top: 0 !important; }
       .layout-1 .block-nsn {
         margin-bottom: 30px; }
       .layout-1 div.module.custom-listingtab .owl2-controls .owl2-nav {
@@ -442,7 +442,7 @@
         padding: 5px; }
       .layout-2 .module.custom_cate_slider .show .item-deals {
         width: 100% !important;
-        border-width: 0 0 1px 0;
+        border-width: 0 0 1px;
         border-style: solid;
         border-color: #ebebeb; }
       .layout-2 .module.custom_cate_slider .show .item-simple {
@@ -494,7 +494,7 @@
         margin-bottom: 30px; }
       .layout-4 .html-categories .cate-content .cate.cate5 {
         display: block !important;
-        margin-bottom: 0px; }
+        margin-bottom: 0; }
       .layout-4 .module.custom_listingtab_h3 .ltabs-wrap .ltabs-tabs-container .ltabs-tabs li {
         float: none; }
       .layout-4 .so-listing-tabs .ltabs-tabs-container .ltabs-tabs-wrap.ltabs-selectbox span.ltabs-tab-selected {
@@ -740,7 +740,7 @@
       .media-box-link--arrow .icon {
         font-size: 22px; } }
 /************************************************************************************************
- BLOCK HEADER  
+ BLOCK HEADER
  ************************************************************************************************ */
 /*[] HEADER DEFAULT []*/
 @media (max-width: 767px) {
@@ -769,7 +769,7 @@
   /*!== Layout 9 ==!*/
   /*!== Layout 10 ==!*/
   /* ***********************************************************************************************
-   BLOCK FOOTER  
+   BLOCK FOOTER
    *************************************************************************************************/
   /************************************************************************************************
    SHOW MORE CONTENT
@@ -778,10 +778,10 @@
   /*[] FOOTER 7 []*/
   /*[] FOOTER 10 []*/
   /************************************************************************************************
-   PAGE LISTING  
+   PAGE LISTING
    ************************************************************************************************ */
   /************************************************************************************************
-   DEFTAULT MENU  
+   DEFTAULT MENU
    ************************************************************************************************ */
   /*MEGA MENU*/
   /*MENU STIKY*/
@@ -828,12 +828,12 @@
         border-radius: 0;
         min-width: 200px;
         border: none;
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important; }
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.15) !important; }
       header.typeheader-1 .horizontal .navbar-header {
         float: right;
         border-radius: 4px; }
       header.typeheader-1 .header-center {
-        padding: 25px 0 25px; }
+        padding: 25px 0; }
       header.typeheader-1 .header-top {
         text-align: center; }
       header.typeheader-1 .header-top .header-top-right {
@@ -853,7 +853,7 @@
         border: none; }
       header.typeheader-2 .megamenu-style-dev .navbar-default .horizontal .navbar-toggle {
         padding: 10px 6px;
-        margin: 1px 0 0 0; }
+        margin: 1px 0 0; }
       header.typeheader-2 .header-menu {
         position: absolute;
         z-index: 99;
@@ -1030,7 +1030,7 @@
         top: 34px;
         float: right;
         width: auto;
-        margin: 0px; }
+        margin: 0; }
       .typeheader-8 .navbar-logo {
         text-align: center; }
       .typeheader-8 .open .dropdown-menu-search {
@@ -1046,7 +1046,7 @@
         border-radius: 0;
         min-width: 200px;
         border: none;
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important; }
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.15) !important; }
       .typeheader-8 .header-top .header-top-right ul.top-link .socials {
         display: none; }
     header.typeheader-9 .navbar-logo {
@@ -1097,7 +1097,7 @@
         height: 33px;
         border-radius: 0;
         border: none;
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important; }
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.15) !important; }
     header.typeheader-10 .header-center .contain .header-menu {
       height: 46px; }
       header.typeheader-10 .navbar-header {
@@ -1220,7 +1220,7 @@
       .layout-2 .vertical .navbar-header {
         float: left; }
       .layout-2 .megamenu-style-dev .navbar-default .vertical .navbar-header .navbar-toggle {
-        margin: 5px 0 0 0; }
+        margin: 5px 0 0; }
       .layout-2 .module.custom_cate_slider .box-title {
         width: 100%; }
       .layout-2 #sosearchpro.so-search .autosearch-input {
@@ -1288,7 +1288,7 @@
       .layout-7 .module.extra_home7 .products-list.grid .product-layout .product-item-container .right-block .caption h4 a {
         font-size: 16px; }
       .layout-7 .more-info {
-        padding: 15px 15px 0px;
+        padding: 15px 15px 0;
         margin-bottom: 15px;
         text-align: center; }
       .layout-7 .more-info p.title {
@@ -1299,7 +1299,7 @@
         font-size: 24px;
         text-align: center; }
       .layout-7 .more-info .des {
-        margin: 10px 0px 15px; }
+        margin: 10px 0 15px; }
       .layout-7 .block-video .modcontent > div {
         min-height: 350px; }
       .layout-7 .more-info .shop-now {
@@ -1316,7 +1316,7 @@
         font-size: 18px; }
       .layout-7 .block-clientsay .item .des {
         font-size: 13px;
-        margin: 10px 0 10px; }
+        margin: 10px 0; }
       .layout-7 .block-clientsay .item {
         margin-bottom: 20px; }
       .layout-7 .module.home7-blog {
@@ -1677,7 +1677,7 @@
       footer.typefooter-9 .footer-top .col2 {
         padding-bottom: 30px; }
       footer.typefooter-9 .footer-top .col3 {
-        padding-top: 0px;
+        padding-top: 0;
         padding-bottom: 30px;
         margin-bottom: 20px; }
       footer.typefooter-9 .footer-block {
@@ -1699,7 +1699,7 @@
       footer.typefooter-10 .policy-shop .content-policy {
         border-left: none; }
       footer.typefooter-10 .news-letter.bg {
-        padding: 40px 0 40px; }
+        padding: 40px 0; }
       footer.typefooter-10 .footer-block {
         padding-top: 15px;
         padding-bottom: 15px; }
@@ -1818,7 +1818,7 @@
           height: 2px; }
       .megamenu-style-dev .navbar-default .horizontal .megamenu-wrapper {
         background: #fff;
-        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
         padding: 20px !important; }
         .megamenu-style-dev .navbar-default .horizontal .megamenu-wrapper ul.megamenu > li > a {
           color: #222 !important;
@@ -1885,7 +1885,7 @@
         .megamenu-style-dev .navbar-default .vertical .vertical-wrapper {
           position: fixed;
           background: #fff;
-          box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
           padding: 20px !important;
           width: 280px;
           max-height: 100%;
@@ -1898,7 +1898,7 @@
           border: 1px solid #ddd;
           padding: 20px; }
         .megamenu-style-dev .navbar-default .vertical .vertical-wrapper ul.megamenu > li.active .sub-menu .content {
-          padding: 0px;
+          padding: 0;
           border: none;
           box-shadow: none; }
           .megamenu-style-dev .navbar-default .vertical .vertical-wrapper ul.megamenu > li.active .sub-menu .content .row:first-child > div:first-child {
@@ -2009,7 +2009,7 @@
     .account-register .form-horizontal .pull-right {
       margin-bottom: 40px; }
     .filters-panel .form-group {
-      margin: 0 0 10px 0; }
+      margin: 0 0 10px; }
     .filter-row .table_cell {
       min-width: 200px; } }
 
@@ -2025,7 +2025,7 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   /************************************************************************************************
-   BLOCK HEADER  
+   BLOCK HEADER
    ************************************************************************************************ */
   /*!== Header 1 ==!*/
   /*!== Header 2 ==!*/
@@ -2046,7 +2046,7 @@
   /*!== Layout 7 ==!*/
   /*!== Layout 10 ==!*/
   /* ***********************************************************************************************
-   BLOCK FOOTER  
+   BLOCK FOOTER
    *************************************************************************************************/
   /************************************************************************************************
    SHOW MORE CONTENT
@@ -2055,18 +2055,18 @@
   /*[] FOOTER 7 []*/
   /*[] FOOTER 10 []*/
   /************************************************************************************************
-   PAGE LISTING  
+   PAGE LISTING
    ************************************************************************************************ */
   /************************************************************************************************
-   PAGE DETAIL 
+   PAGE DETAIL
    ************************************************************************************************ */
   /************************************************************************************************
-   DEFTAULT MENU  
+   DEFTAULT MENU
    ************************************************************************************************ */
   /*MEGA MENU*/
   /*MENU STIKY*/
   /************************************************************************************************
-   PAGE BONUS  
+   PAGE BONUS
    *************************************************************************************************/
     .common-home .container {
       overflow: visible;
@@ -2255,7 +2255,7 @@
         border-radius: 0;
         min-width: 200px;
         border: none;
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important; }
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.15) !important; }
     .typeheader-8 .header-center .contain .header-menu {
       height: 46px; }
       .typeheader-8 .navbar-header {
@@ -2339,7 +2339,7 @@
     .layout-7 .static-content .st-content {
       padding-top: 0; }
       .layout-7 .static-content .st-content a {
-        margin-top: 0px; }
+        margin-top: 0; }
       .layout-7 .static-content .st-content .st-title {
         padding-bottom: 6px;
         margin-bottom: 10px; }
@@ -2514,7 +2514,7 @@
         left: 0; }
       footer.typefooter-7 .footer-top .col2 {
         padding-top: 25px;
-        padding-bottom: 0px; }
+        padding-bottom: 0; }
       footer.typefooter-7 .footer-top .col1 {
         padding-top: 12px; }
       footer.typefooter-7 .footer-top .footer-block {
@@ -2647,7 +2647,7 @@
           height: 3px; }
       .megamenu-style-dev .navbar-default .horizontal .megamenu-wrapper {
         background: #fff;
-        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
         padding: 20px !important; }
         .megamenu-style-dev .navbar-default .horizontal .megamenu-wrapper ul.megamenu > li > a {
           color: #222 !important;
@@ -2714,7 +2714,7 @@
         .megamenu-style-dev .navbar-default .vertical .vertical-wrapper {
           position: fixed;
           background: #fff;
-          box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
           padding: 20px !important;
           width: 280px;
           max-height: 100%;
@@ -2727,7 +2727,7 @@
           border: 1px solid #ddd;
           padding: 20px; }
         .megamenu-style-dev .navbar-default .vertical .vertical-wrapper ul.megamenu > li.active .sub-menu .content {
-          padding: 0px;
+          padding: 0;
           border: none;
           box-shadow: none; }
           .megamenu-style-dev .navbar-default .vertical .vertical-wrapper ul.megamenu > li.active .sub-menu .content .row:first-child > div:first-child {
@@ -2898,7 +2898,7 @@
       .common-home .module .so-listing-tabs .ltabs-wrap .ltabs-tabs-container .ltabs-tabs li span:after {
         display: none; } }
 /* ***********************************************************************************************
- BLOCK HEADER  
+ BLOCK HEADER
  *************************************************************************************************/
 /*!== Header Default ==!*/
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -2909,7 +2909,7 @@
   /*!== Header 6 ==!*/
   /*!== Header 7 ==!*/
   /************************************************************************************************
-   BLOCK HOME PAGE  
+   BLOCK HOME PAGE
    *************************************************************************************************/
   /*[] LAYOUT 1 []*/
   /*!== Layout 2 ==!*/
@@ -2918,17 +2918,17 @@
   /*!== Layout 7 ==!*/
   /*!== Layout 10 ==!*/
   /* ***********************************************************************************************
-   BLOCK FOOTER  
+   BLOCK FOOTER
    ************************************************************************************************ */
   /*[] FOOTER 1 []*/
   /*[] FOOTER 3 []*/
   /*[] FOOTER 4 []*/
   /*[] FOOTER 6 []*/
   /************************************************************************************************
-   MEGAMENU 
+   MEGAMENU
    *************************************************************************************************/
   /************************************************************************************************
-   PAGE LISTING  
+   PAGE LISTING
    *************************************************************************************************/
     header .horizontal ul.megamenu > li.buy_color {
       display: none; }
@@ -2955,7 +2955,7 @@
       header.typeheader-2 .header_search {
         width: 63%; }
       header.typeheader-2 .megamenu-style-dev .horizontal ul.megamenu > li > a {
-        padding: 13px 10px 13px; }
+        padding: 13px 10px; }
     header.typeheader-3 .megamenu-style-dev .horizontal ul.megamenu > li > a {
       padding: 8px; }
       header.typeheader-3 #sosearchpro.so-search .autosearch-input {

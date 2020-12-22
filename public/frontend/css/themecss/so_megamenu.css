@@ -1,7 +1,7 @@
 /* MegaMenu
 ------------------*/
 .so-megamenu .container .container {width: auto !important;}
-.so-megamenu  .navbar-header{margin:0px;display:none;}
+.so-megamenu  .navbar-header{margin:0;display:none;}
 .so-megamenu .navbar-default{background: transparent;}
 #menu {
     position: relative;
@@ -23,8 +23,8 @@
 
 .container-megamenu,
 .container-megamenu .container {
-    padding-left: 0px ;
-    padding-right: 0px ;
+    padding-left: 0;
+    padding-right: 0;
 	width:auto;
 }
 
@@ -39,8 +39,8 @@
 }
 
 ul.megamenu {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style: none;
     position: relative;
 }
@@ -67,7 +67,7 @@ ul.megamenu > li.search {
 }
 
 #top ul.megamenu > li.search .search_form, ul.megamenu > li.search .search_form {
-    padding: 0px;
+    padding: 0;
     margin: 8px;
 }
 
@@ -157,9 +157,9 @@ ul.megamenu .sub-menu .content {
     border-radius:         2px;
     -moz-border-radius:    2px;
     -webkit-border-radius: 2px;
-    box-shadow:            0px 0px 25px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow:       0px 0px 25px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow:    0px 0px 25px rgba(0, 0, 0, 0.15);
+    box-shadow:            0 0 25px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow:       0 0 25px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow:    0 0 25px rgba(0, 0, 0, 0.15);
    
 }
 
@@ -172,7 +172,7 @@ ul.megamenu .sub-menu .content > .border {
     border-bottom: 1px solid #e6e6e6;
 }
 ul.megamenu .sub-menu .content > .row:first-child {
-    padding: 0px;
+    padding: 0;
 }
 ul.megamenu .sub-menu .content ul.row-list{margin:0; padding:0; list-style: none;}
 /* Product */
@@ -183,7 +183,7 @@ ul.megamenu li .product {
 }
 
 ul.megamenu li .product .image {
-    padding: 0px;
+    padding: 0;
 }
 
 ul.megamenu li .product .image img {
@@ -194,7 +194,7 @@ ul.megamenu li .product .image img {
 }
 
 ul.megamenu li .product .name {
-    padding: 7px 0px 0px 0px;
+    padding: 7px 0 0;
 }
 
 ul.megamenu li .product .price {
@@ -205,14 +205,14 @@ ul.megamenu li .product .price {
 
 ul.manufacturer {
     list-style: none;
-    margin: -10px 0px 0px 0px ;
-    padding: 0px;
+    margin: -10px 0 0;
+    padding: 0;
     position: relative;
 }
 
 ul.manufacturer li {
     display: inline-block;
-    margin: 10px 5px 0px 0px;
+    margin: 10px 5px 0 0;
 }
 
 ul.manufacturer li a {
@@ -229,7 +229,7 @@ ul.manufacturer li a {
 
 ul.megamenu li .sub-menu .content .static-menu .menu ul {
     list-style: none;
-    margin: 0px 0 15px;
+    margin: 0 0 15px;
     padding:0;
 }
 
@@ -238,7 +238,7 @@ ul.megamenu li .sub-menu .content .static-menu > .menu > ul > li {
 }
 
 ul.megamenu li .sub-menu .content .static-menu > .menu > ul > li:first-child {
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 
@@ -250,8 +250,8 @@ ul.megamenu li .sub-menu .content .hover-menu a.main-menu {
 
 ul.megamenu li .sub-menu .content .hover-menu .menu ul {
     list-style: none;
-    margin: 3px 0px;
-    padding: 0px;
+    margin: 3px 0;
+    padding: 0;
     position: relative;
 }
 
@@ -268,9 +268,9 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul {
     border-radius:         2px;
     -moz-border-radius:    2px;
     -webkit-border-radius: 2px;
-    box-shadow:            0px 0px 25px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow:       0px 0px 25px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow:    0px 0px 25px rgba(0, 0, 0, 0.15);
+    box-shadow:            0 0 25px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow:       0 0 25px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow:    0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 ul.megamenu li .sub-menu .content .hover-menu .menu ul ul:before {
@@ -327,7 +327,7 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
 .megamenuToogle-wrapper .container > div {
     float: left;
     width: 15px;
-    margin: 3px 10px 0px 0px;
+    margin: 3px 10px 0 0;
 }
 
 .megamenuToogle-wrapper .container > div span {
@@ -355,7 +355,7 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
 }
 
 .vertical #menuHeading {
-    margin: 0px;
+    margin: 0;
 }
 .vertical li.loadmore{
     border-top: 1px solid #ddd;
@@ -390,7 +390,7 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
     background: none;
     border-top: 1px solid #e6e6e6;
     position: relative;
-    margin: 0px -1px;
+    margin: 0 -1px;
 }
 
 .vertical ul.megamenu > li.home, .vertical ul.megamenu > li.search {
@@ -430,7 +430,7 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
 
 .vertical ul.megamenu > li > .sub-menu {
     left: 100%;
-    padding-top: 0px;
+    padding-top: 0;
     top: 0;
 }
 
@@ -469,9 +469,9 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
 		font-size:42px;color:#eee;vertical-align: middle;padding:0;
 		border:none;
 	}
-	.navbar-header .fa-list-alt:hover{background:none; ;}
+	.navbar-header .fa-list-alt:hover{background:none; }
     .responsive .vertical #menuHeading {
-        margin: 20px 0px 0px 0px;
+        margin: 20px 0 0;
     }
 
     .responsive .vertical ul.megamenu > li > .sub-menu {
@@ -481,7 +481,7 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
     }
 
     .responsive .vertical ul.megamenu > li > .sub-menu > .content {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     /* Submenu */
@@ -494,14 +494,14 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
         display: block ;
         margin: 5px 10px;
         width: auto;
-        padding: 0px;
+        padding: 0;
         position: static;
         left: 0;
         background: none;
         border: none;
-        border-radius:         0px;
-        -moz-border-radius:    0px;
-        -webkit-border-radius: 0px;
+        border-radius:         0;
+        -moz-border-radius:    0;
+        -webkit-border-radius: 0;
         box-shadow:            none;
         -moz-box-shadow:       none;
         -webkit-box-shadow:    none;
@@ -521,13 +521,13 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
     }
 
     .responsive .vertical .visible {
-        padding: 5px 0px 5px 0px ;
+        padding: 5px 0;
     }
 
     .responsive .vertical .visible > div {
-        margin: 0px !important;
+        margin: 0 !important;
         border: none !important;
-        padding: 0px !important;
+        padding: 0 !important;
         padding-left: 20px ;
     }
 
@@ -547,9 +547,9 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
     }
 
     .responsive ul.megamenu .sub-menu .content .row:first-child > div:first-child {
-        margin-top: 0px;
+        margin-top: 0;
         border-top: none;
-        padding-top: 0px;
+        padding-top: 0;
     }
 
 }
@@ -565,7 +565,7 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
         background: none;
         border-top: 1px solid #e6e6e6;
         position: relative;
-        margin: 0px -1px;
+        margin: 0 -1px;
     }
 
     ul.megamenu > li.search ,.fa-angle-right,.caret {
@@ -639,14 +639,14 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
         display: block !important;
         margin: 5px 10px;
         width: auto;
-        padding: 0px;
+        padding: 0;
         position: static;
         left: 0;
         background: none;
         border: none;
-        border-radius:         0px;
-        -moz-border-radius:    0px;
-        -webkit-border-radius: 0px;
+        border-radius:         0;
+        -moz-border-radius:    0;
+        -webkit-border-radius: 0;
         box-shadow:            none;
         -moz-box-shadow:       none;
         -webkit-box-shadow:    none;
@@ -665,13 +665,13 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
         display: none;
     }
     .responsive .horizontal .visible {
-        padding: 5px 0px 5px 0px !important;
+        padding: 5px 0 !important;
     }
 
     .responsive .horizontal .visible > div {
-        margin: 0px ;
+        margin: 0;
         border: none ;
-        padding: 0px 0px 0px 10px ;
+        padding: 0 0 0 10px;
     }
 
 }
@@ -692,7 +692,7 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
 	}
 	.megamenu-wrapper {
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 0;
     background-color: #fff;
    height:100%;
@@ -712,10 +712,10 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
 	
 	.vertical-wrapper {
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 0;
     background-color: #fff;
-    bottom: 0px;
+    bottom: 0;
     width: 280px;
     padding: 10px;
     z-index: 999999;
@@ -762,7 +762,7 @@ ul.megamenu li .sub-menu .content .hover-menu .menu ul ul li {
   }
   
    #remove-verticalmenu {
-    padding: 0 0 15px 0;
+    padding: 0 0 15px;
     z-index: 10;
     cursor: pointer;
     display: none;

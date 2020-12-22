@@ -9,7 +9,7 @@
  * @todo Test Zepto
  * @todo stagePadding calculate wrong active classes
  */
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
 
     var drag, state, e;
 
@@ -1813,7 +1813,7 @@
  * @author Bartosz Wojciechowski
  * @license The MIT License (MIT)
  */
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
 
     /**
      * Creates the lazy plugin.
@@ -1947,7 +1947,7 @@
  * @author Bartosz Wojciechowski
  * @license The MIT License (MIT)
  */
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
 
     /**
      * Creates the auto height plugin.
@@ -2032,7 +2032,7 @@
  * @author Bartosz Wojciechowski
  * @license The MIT License (MIT)
  */
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
 
     /**
      * Creates the video plugin.
@@ -2327,7 +2327,7 @@
  * @author Bartosz Wojciechowski
  * @license The MIT License (MIT)
  */
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
 
     /**
      * Creates the animate plugin.
@@ -2442,7 +2442,7 @@
  * @author Bartosz Wojciechowski
  * @license The MIT License (MIT)
  */
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
 
     /**
      * Creates the autoplay plugin.
@@ -2588,7 +2588,7 @@
  * @author Artus Kolanowski
  * @license The MIT License (MIT)
  */
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
     'use strict';
 
     /**
@@ -2987,7 +2987,7 @@
  * @author Artus Kolanowski
  * @license The MIT License (MIT)
  */
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
     'use strict';
 
     /**

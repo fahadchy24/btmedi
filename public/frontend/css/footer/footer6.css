@@ -283,7 +283,7 @@ footer.typefooter-6 {
     color: #fff;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    margin: 24px 0 12px 0;
+    margin: 24px 0 12px;
     line-height: inherit;
     height: auto; }
   footer.typefooter-6 .footer6_custom {
@@ -310,7 +310,7 @@ footer.typefooter-6 {
     color: #1c1c1c;
     font-size: 107.7%;
     font-weight: 600;
-    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.35); }
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.35); }
   footer.typefooter-6 .footer-top .bf-right a:hover {
     color: #1f83cf; }
   footer.typefooter-6 .footer-center {
@@ -330,7 +330,7 @@ footer.typefooter-6 {
     text-transform: capitalize;
     font-size: 13px;
     position: relative;
-    padding: 4px 0px 5px 0px;
+    padding: 4px 0 5px;
     transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -webkit-transition: all 0.3s ease 0s;
@@ -517,9 +517,9 @@ footer.typefooter-6 {
     margin-top: 0;
     vertical-align: top; }
   footer.typefooter-6 .news-letter .block_content form {
-    margin: 0px; }
+    margin: 0; }
   footer.typefooter-6 .news-letter .block_content form .form-group {
-    margin: 0px;
+    margin: 0;
     overflow: hidden; }
   footer.typefooter-6 .news-letter .block_content .input-box {
     float: left; }

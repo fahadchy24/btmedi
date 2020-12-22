@@ -29,25 +29,25 @@
 
 */
 
-footer.typefooter-6{ 
+footer.typefooter-6{
   @include rem(font-size, 13px); color: #e4e4e4; background: #f0f0f0;
  
   a.showmore{
     color: #333;
   }
-  .module{ margin: 0; 
+  .module{ margin: 0;
     .newsletter .page-heading,
     .footer-block-title h3,
     h3.footertitle{
       @include rem(font-size, 16px); font-weight: bold; border: none; color: #fff; letter-spacing: 1.2px;
-      text-transform: uppercase; margin: 24px 0 12px 0; line-height: inherit; height: auto;
+      text-transform: uppercase; margin: 24px 0 12px; line-height: inherit; height: auto;
     }
   }
   .footer6_custom{
     padding: 10px 0;
     h2{display: none;}
   }
-  .footer-top {  background-color: $background;  padding: 25px 0; 
+  .footer-top {  background-color: $background;  padding: 25px 0;
     .bf-left {
       float: $left;
       color: #fff;
@@ -66,7 +66,7 @@ footer.typefooter-6{
         color: #1c1c1c;
         font-size: 107.7%;
         font-weight: 600;
-        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.35);
         &:hover{
           color: $linkColor;
         }
@@ -75,8 +75,8 @@ footer.typefooter-6{
   }
 
   .footer-center{
-    padding-top: 25px; 
-    padding-bottom: 45px; 
+    padding-top: 25px;
+    padding-bottom: 45px;
    
     @include breakpoint(lg){ padding-top: 60px; padding-bottom: 95px;
       .footer-newsletter{ width: 70%; }
@@ -92,7 +92,7 @@ footer.typefooter-6{
         text-transform: capitalize;
         font-size: 13px;
         position: relative;
-        padding: 4px 0px 5px 0px;
+        padding: 4px 0 5px;
         @include transition(all .3s ease 0s);
         display: inline-block;
         vertical-align: top;
@@ -105,7 +105,7 @@ footer.typefooter-6{
           font-size: 14px;
           margin-right: 8px;
         }
-        &:hover{  color: $linkColor; padding-left: 10px;} 
+        &:hover{  color: $linkColor; padding-left: 10px;}
        }
       }
     }
@@ -143,23 +143,23 @@ footer.typefooter-6{
             display: inline-block;
             float: $left;
             li{ float: $left;
-              &.face{ 
+              &.face{
                   a{margin-#{$left}:0; }
               }
               &:hover{
-                &.face{ 
+                &.face{
                   a{ background: #3B5998;}
                 }
-                &.twitter{ 
+                &.twitter{
                   a{ background: #00B6F1 }
                 }
-                &.instagram{ 
+                &.instagram{
                   a{ background: #DA2E75 }
                 }
-                &.pinterest{ 
+                &.pinterest{
                   a{ background: #CB2027 }
                 }
-                &.google{ 
+                &.google{
                   a{ background: #D14130 }
                 }
               }
@@ -176,7 +176,7 @@ footer.typefooter-6{
               margin: 0 5px;
               font-size: 16px;
               @include transition(all .2s ease 0s);
-              &:hover{ background: $background; color: #fff; 
+              &:hover{ background: $background; color: #fff;
 
               }
           }
@@ -185,7 +185,7 @@ footer.typefooter-6{
     }
     .footer-newletter{
       .newsletter_promo{ margin-bottom: 15px; }
-      input.form-control{ 
+      input.form-control{
           display: block;
           width: 100%;
           vertical-align: middle;
@@ -240,7 +240,7 @@ footer.typefooter-6{
           .name-social{ display: none; }
         }
       }
-    } 
+    }
   }
 
   /*NEWLETTER*/
@@ -249,23 +249,23 @@ footer.typefooter-6{
     .page-heading { font-size: 16px; text-transform: uppercase; font-weight: bold; color: #222; }
     .newsletter_promo {margin: 0;line-height: 12px; font-size: 12px; display: none;}
     .block_content{padding: side-values(0 30px 0 27px);  display: table-cell; margin-top: 0;  vertical-align: top;
-    form {margin: 0px;
-      .form-group {margin: 0px; overflow: hidden;}
+    form {margin: 0;
+      .form-group {margin: 0; overflow: hidden;}
     }
       .input-box{float: $left;
         input { -webkit-border-radius:side-values(20px 0 0 20px); border-radius:side-values(20px 0 0 20px); height: 42px;
-          padding: 5px 15px;background: #fff; color: #999;font-size: 12px; float: $left; width: 515px; 
+          padding: 5px 15px;background: #fff; color: #999;font-size: 12px; float: $left; width: 515px;
           transition: 0.3s all ease 0s;border: solid 1px #fff; border-#{$right}: none; margin-#{$right}: 20px;
         }
-      } 
-      .subcribe{#{$right}: 0; position: absolute; 
+      }
+      .subcribe{#{$right}: 0; position: absolute;
         button{ z-index: 9;
-          -webkit-border-radius: side-values( 0 20px 20px 0); border-radius: side-values(0 20px 20px 0); height: 42px; text-transform: uppercase; 
-          font-size: 14px;transition: 0.3s all ease 0s;font-weight: bold; background-color: $background; border-color: $linkColor; color: #fff; 
+          -webkit-border-radius: side-values( 0 20px 20px 0); border-radius: side-values(0 20px 20px 0); height: 42px; text-transform: uppercase;
+          font-size: 14px;transition: 0.3s all ease 0s;font-weight: bold; background-color: $background; border-color: $linkColor; color: #fff;
           @include breakpoint(lg){ padding: 0 25px; }
         }
-        &:hover{background-color: darken($background, 10%); border-color: darken($background, 10%);}  
-      } 
+        &:hover{background-color: darken($background, 10%); border-color: darken($background, 10%);}
+      }
     }
   }
 }

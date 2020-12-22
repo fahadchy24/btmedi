@@ -78,8 +78,8 @@
     border-radius: 0;
 }
 .so-custom-popup .popup-content .signup .send-mail,.so-custom-default .send-mail{
-    margin: 10px 0 0 0;
-    padding: 0px;
+    margin: 10px 0 0;
+    padding: 0;
     border: none;    color: #fff;
     text-transform: uppercase;
 }

@@ -29,8 +29,8 @@
 
 */
 
-footer.typefooter-4{ 
-  .footer-top { padding: 61px 0 55px 0;
+footer.typefooter-4{
+  .footer-top { padding: 61px 0 55px;
     .block-title {
         margin-bottom: 15px;
           text-transform: uppercase;
@@ -54,7 +54,7 @@ footer.typefooter-4{
           padding-right: 80px;
       }
       .block-content {
-          p {margin: 0px 0 45px 0; color: #fff;}
+          p {margin: 0 0 45px; color: #fff;}
           a { font-weight: 700; text-transform: uppercase; color: #fff; margin-#{$right}: 22px; }
           a.active { background-color: #fff;  padding: 10px 20px;  color: #ff5e00; margin: 0;
             &:hover{
@@ -87,11 +87,11 @@ footer.typefooter-4{
                 background: #999; color: #fff;
               }
           }
-          p{ color: rgba(255, 255, 255, 0.7); margin: 0; } 
+          p{ color: rgba(255, 255, 255, 0.7); margin: 0; }
           .name-social { font-size: 14px; font-weight: 700; color: #fff; }
         }
       }
-      .app { text-align: center; margin-top: 11px; 
+      .app { text-align: center; margin-top: 11px;
         a { padding: 0 5px; }
       }
     }
@@ -128,7 +128,7 @@ footer.typefooter-4{
         }
       }
       
-    } 
+    }
   }
   .footer-center {
     @include breakpoint(lg){ padding-top: 64px; padding-bottom: 60px; }

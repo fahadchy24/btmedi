@@ -11,7 +11,7 @@
  [3] Minxin Triangle
  [4] Minxin LABEL PRODUCT
  [5] Minxin Scrollbars
- [6] Minxin Dev Custom 
+ [6] Minxin Dev Custom
  ==============================================*/
 .no-margin {
   margin: 0 !important;
@@ -424,10 +424,10 @@
   margin-bottom: 20px;
   z-index: 2;
   border: 1px solid #ddd;
-  border-top: 0px;
+  border-top: 0;
 }
 .simple-ul {
-  margin: 0 0 15px 0;
+  margin: 0 0 15px;
   padding: 0;
   list-style: none;
 }
@@ -446,7 +446,7 @@
   font-size: 14px;
 }
 .simple-ul li ul {
-  margin: 10px 0 10px 0;
+  margin: 10px 0;
   padding: 0;
   list-style: none;
 }
@@ -456,7 +456,7 @@
   top: 7px;
 }
 .decimal-list {
-  margin: 0px 0 15px 20px;
+  margin: 0 0 15px 20px;
   padding: 0;
   list-style: decimal outside;
 }
@@ -573,7 +573,7 @@ ul, ol {
  [1] PAGE ACCOUNT
  [2] PAGE INFORMATION
  [3] PAGE CHECKOUT
- [4] LANGUAGE CURENTY 
+ [4] LANGUAGE CURENTY
  [5] CSS FEAFURE MENU DEMO
  ==============================================*/
 #content > h1 {
@@ -607,8 +607,8 @@ ul, ol {
 /* @group List Box */
 .list-box {
   list-style: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 .btn-link:focus, .btn-link:hover {
   text-decoration: none;
@@ -774,7 +774,7 @@ ul, ol {
   margin-top: 30px;
   z-index: 2;
   border: none;
-  border-top: 0px;
+  border-top: 0;
 }
 .tab-account .segmented-control .control-item.active {
   background: #ddd;
@@ -999,10 +999,10 @@ ul, ol {
   font-size: 22px;
 }
 .mobile_deals .extraslider-inner .owl2-controls .owl2-nav div.owl2-prev {
-  left: 0px;
+  left: 0;
 }
 .mobile_deals .extraslider-inner .owl2-controls .owl2-nav div.owl2-next {
-  right: 0px;
+  right: 0;
 }
 .mobile_deals .extraslider-inner .owl2-controls .owl2-dots {
   text-align: center;
@@ -1050,10 +1050,10 @@ ul, ol {
   font-size: 22px;
 }
 .contentslider .owl2-controls .owl2-nav div.owl2-prev {
-  left: 0px;
+  left: 0;
 }
 .contentslider .owl2-controls .owl2-nav div.owl2-next {
-  right: 0px;
+  right: 0;
 }
 .contentslider .owl2-controls .owl2-dots {
   text-align: center;
@@ -1089,7 +1089,7 @@ ul, ol {
 }
 .module.so_filter_wrap .modcontent .so-filter-heading .so-filter-heading-text {
   float: right;
-  padding: 15px 0 0px;
+  padding: 15px 0 0;
   color: #444;
   font-weight: 700;
   text-transform: uppercase;
@@ -1102,8 +1102,8 @@ ul, ol {
 }
 .module.so_filter_wrap .modcontent .so-filter-content-opts-container {
   padding-top: 5px;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 15px;
 }
 .module.so_filter_wrap .modcontent .so-filter-content-opts-container .so-filter-option label {
@@ -1719,7 +1719,7 @@ h6 {
   font-size: 12px;
 }
 .h1, .h2, .h3, h1, h2, h3, .h4, .h5, .h6, h4, h5, h6 {
-  margin: 0 0 15px 0;
+  margin: 0 0 15px;
 }
 select, textarea, input[type="text"], input[type="search"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="tel"], input[type="color"] {
   box-shadow: none;
@@ -1805,7 +1805,7 @@ sup {
   display: inline-block;
 }
 .jGrowl-notification {
-  margin: 4px 3% 4px;
+  margin: 4px 3%;
   width: 94%;
 }
 .jGrowl-notification .jGrowl-header {
@@ -1961,13 +1961,13 @@ table.table-bordered thead > * {
  [1] CONTACT PAGE
  [2] PAEG ABOUT US
  [3] PAGE BLOG
- [4] PAGE 404 
+ [4] PAGE 404
  ==============================================*/
 /*============ CONTACT PAGE ==============*/
 #map-canvas {
   height: 250px;
   width: 100%;
-  margin: 0px 0 10px;
+  margin: 0 0 10px;
 }
 .contacts #content {
   padding: 0 10px;
@@ -2252,7 +2252,7 @@ table.table-bordered thead > * {
   display: table-cell;
   vertical-align: middle;
   position: absolute;
-  top: 0px;
+  top: 0;
   line-height: 1.45em;
   background: #ff5c00;
   width: 44px;
@@ -2266,7 +2266,7 @@ table.table-bordered thead > * {
 }
 .decimal-list {
   padding: 0;
-  margin: 10px 0 0 0;
+  margin: 10px 0 0;
   list-style-type: none;
   counter-reset: myCounter;
 }
@@ -2399,7 +2399,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   color: #ebdb2c;
 }
 .price {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   line-height: normal;
   color: #ff5c00;
   font-size: 14px;
@@ -2636,7 +2636,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
 .products-list.list .product-layout .product-item-container .left-block {
   width: 45%;
   float: right;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-left: 5px;
   position: relative;
 }
@@ -2672,7 +2672,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   color: #222;
 }
 .products-list.list .product-layout .product-item-container .right-block .button-group {
-  margin: 0px 0 20px 0;
+  margin: 0 0 20px;
 }
 .products-list.list .product-layout .product-item-container .button-group button {
   background-color: #ff5c00;
@@ -2718,7 +2718,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
 .products-category .short-by select {
   border-radius: 0;
   box-shadow: none;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   border-color: #e8e8e8;
   width: calc(100% - 17px);
   display: inline-block;
@@ -2727,8 +2727,8 @@ span.fa-stack .fa-star.fa-stack-2x:before {
  [SASS DIRECTORY ]
  [1] CONTENT PRODUCT OTHER
  [2] PRODUCT INFO
- [3] PRODUCT TABS 
- [3] RELATED PRODUCT 
+ [3] PRODUCT TABS
+ [3] RELATED PRODUCT
  ==============================================*/
 .product-view.product-info .slider-for {
   border: 1px solid #ededed;
@@ -2805,7 +2805,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   font-size: 0;
   min-width: 32px;
   float: right;
-  margin: 0px 5px;
+  margin: 0 5px;
   text-align: center;
   font-size: 14px;
   border-radius: 100%;
@@ -2946,10 +2946,10 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   font-size: 22px;
 }
 .product-view .content-product-left .owl2-nav div.owl2-prev {
-  left: 0px;
+  left: 0;
 }
 .product-view .content-product-left .owl2-nav div.owl2-next {
-  right: 0px;
+  right: 0;
 }
 .product-view .content-product-left .owl2-dots {
   text-align: center;
@@ -3056,8 +3056,8 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   display: inline-block;
   vertical-align: top;
   width: auto;
-  margin: 0 7px 5px 0px;
-  padding: 0px;
+  margin: 0 7px 5px 0;
+  padding: 0;
 }
 #product .radio-type-button label {
   padding: 0;
@@ -3144,7 +3144,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  border-width: 1px 0 1px 0;
+  border-width: 1px 0;
   border-style: solid;
   border-color: #ededed;
 }
@@ -3193,8 +3193,8 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   list-style-type: disc;
   -webkit-margin-before: 1em;
   -webkit-margin-after: 1em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
   -webkit-padding-start: 18px;
 }
 /*============RELATED PRODUCT==================*/
@@ -3218,10 +3218,10 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   font-size: 22px;
 }
 .releate-products .owl2-controls .owl2-nav div.owl2-prev {
-  left: 0px;
+  left: 0;
 }
 .releate-products .owl2-controls .owl2-nav div.owl2-next {
-  right: 0px;
+  right: 0;
 }
 .releate-products .owl2-controls .owl2-dots {
   text-align: center;
@@ -3280,7 +3280,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
 .navbar-menu .toggle-panel .icon-bar {
   height: 2px;
   width: 16px;
-  margin: 3px 0px;
+  margin: 3px 0;
   background: #ff5c00;
   display: block;
 }
@@ -3440,10 +3440,10 @@ span.fa-stack .fa-star.fa-stack-2x:before {
 }
 .footernav-social .list-inline {
   vertical-align: middle;
-  padding: 10px 0px 2px;
+  padding: 10px 0 2px;
 }
 .footernav-social p {
-  padding: 10px 0px 2px;
+  padding: 10px 0 2px;
   margin: 0;
   vertical-align: top;
   display: inline-block;
@@ -3521,7 +3521,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   box-shadow: none;
 }
 /************************************************************************************************
- MODULE HOME SLIDER  
+ MODULE HOME SLIDER
  *************************************************************************************************/
 .module.sohomepage-slider {
   margin: 0 0 10px;
@@ -3581,7 +3581,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   width: 150px;
 }
 .module .block-categories .cate-content .cate .inner {
-  box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);
+  box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);
   text-align: center;
   margin-bottom: 5px;
 }
@@ -3622,7 +3622,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   padding: 0 5px;
 }
 .mobile-bn3-h1 {
-  margin: 10px 0 10px;
+  margin: 10px 0;
 }
 .mobile-bn2-h1 {
   margin: 0 0 5px;
@@ -3768,7 +3768,7 @@ span.fa-stack .fa-star.fa-stack-2x:before {
   padding: 0;
 }
 .mobile-home.mobilelayout-1 .module.sohomepage-slider {
-  margin: 10px 0 10px;
+  margin: 10px 0;
 }
 .mobile-home.mobilelayout-1 .menu-link {
   margin-bottom: 5px;

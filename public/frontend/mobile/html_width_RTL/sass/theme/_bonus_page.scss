@@ -4,14 +4,14 @@
     [1] CONTACT PAGE
     [2] PAEG ABOUT US
     [3] PAGE BLOG
-    [4] PAGE 404 
+    [4] PAGE 404
 ==============================================*/
 
 /*============ CONTACT PAGE ==============*/
 #map-canvas{
   height: 250px;
   width: 100%;
-  margin: 0px 0 10px;
+  margin: 0 0 10px;
 }
 .contacts{
 	fieldset{ border: none; padding: 0; margin-bottom: 5px; }
@@ -121,13 +121,13 @@
       box-shadow: none;
       margin: 0;
       border-radius: 0;
-    } 
+    }
   }
 }
 
 
 /*============ PAEG ABOUT US ==============*/
-.about-us{ 
+.about-us{
   
   .about-title{
     font-size:171%;
@@ -244,7 +244,7 @@
         border_radius: 50%;
         position: absolute;
         top:29%;
-        overflow: visible; display: inline-block; width: 34px; height: 34px; text-indent: -9999px;; margin: 0 3px; background-color: #A6A6A8; border-radius: 50%; -webkit-border-radius: 50%;
+        overflow: visible; display: inline-block; width: 34px; height: 34px; text-indent: -9999px; margin: 0 3px; background-color: #A6A6A8; border-radius: 50%; -webkit-border-radius: 50%;
         &:hover{
           background-color: $background1;
         }
@@ -300,7 +300,7 @@
         border-radius: 0;
         -webkit-border-radius:0;
         background-color: transparent;
-        color: #c8c8c8; 
+        color: #c8c8c8;
       }
 
       &.owl2-next{
@@ -372,7 +372,7 @@
             height:16px;
             display: inline-block;
             position: absolute;
-            #{$left}:0px;
+            #{$left}:0;
             top:50%;
             margin-top:-8px;
             border-radius: 2px;
@@ -401,11 +401,11 @@
     }
   }
 	.owl2-theme .owl2-controls .owl2-nav{
-		> div:before{display: inline-block; text-indent: 0; width: 100%;height: 100%;position: absolute; left: 0px; top: 1px; color: #fff;font-size: 18px;line-height: 32px;text-align: center;border-radius: 50%; -webkit-border-radius: 50%;}
+		> div:before{display: inline-block; text-indent: 0; width: 100%;height: 100%;position: absolute; left: 0; top: 1px; color: #fff;font-size: 18px;line-height: 32px;text-align: center;border-radius: 50%; -webkit-border-radius: 50%;}
 		> div.owl2-prev:before{content: "\f104"; font-family: FontAwesome;}
 		> div.owl2-next:before{content: "\f105"; font-family: FontAwesome;}
 		
-	} 
+	}
 }
 
 .about-demo-1{
@@ -441,8 +441,8 @@
     .list-box{
         li{
             position: relative;
-            padding-#{$left}: 15px; 
-           &:before { position: absolute;display: block;top: 16px; background: #999; content: "";width: 6px; height: 6px; border-radius: 100%; #{$left}: 0;} 
+            padding-#{$left}: 15px;
+           &:before { position: absolute;display: block;top: 16px; background: #999; content: "";width: 6px; height: 6px; border-radius: 100%; #{$left}: 0;}
         }
     }
 }
@@ -538,7 +538,7 @@
         display: table-cell;
         vertical-align: middle;
         position: absolute;
-        top: 0px;
+        top: 0;
         line-height: 1.45em;
         background: $background;
         width: 44px;
@@ -553,7 +553,7 @@
 }
 .decimal-list {
     padding: 0;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
     list-style-type: none;
     counter-reset: myCounter;
 }

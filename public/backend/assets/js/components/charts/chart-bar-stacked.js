@@ -101,7 +101,7 @@ var BarStackedChart = (function() {
 
 		$this.data('chart', barStackedChart);
 
-	};
+	}
 
 
 	// Events

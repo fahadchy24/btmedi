@@ -382,12 +382,12 @@
   .typeheader-7 .header-bottom .shopping_cart .btn-shopping-cart:before {
     display: none; }
   .typeheader-7 .header-bottom .shopping_cart .btn-shopping-cart a.top_cart {
-    padding: 0px;
+    padding: 0;
     color: #fff;
     height: 30px;
     width: 20px; }
     .typeheader-7 .header-bottom .shopping_cart .btn-shopping-cart a.top_cart .shopcart .text-shopping-cart {
-      padding: 0px;
+      padding: 0;
       color: #fff;
       font-size: 12px;
       text-transform: uppercase;
@@ -421,7 +421,7 @@
   .typeheader-7 .header-bottom .shopping_cart .shoppingcart-box:before {
     right: 50px; }
   .typeheader-7 .header-center {
-    padding: 20px 0 18px 0; }
+    padding: 20px 0 18px; }
   .typeheader-7 .header-center .header_search {
     margin: 7px 0;
     width: 70%;

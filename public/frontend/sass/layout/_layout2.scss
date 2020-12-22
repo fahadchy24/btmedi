@@ -4,19 +4,19 @@
 
     [SASS DIRECTORY ]
     
-    [1] MODULE HOME SLIDER 
+    [1] MODULE HOME SLIDER
     [2] MODULE CATEGORIES SLIDER
     [3] MODULE SUPPER CATEGORIES
     [4] SHORT CODE SERVICER
     [5] SHORT CODE CONTENT SLIDER BRAND
     [6] BLOCK FEATURED CATE
     [7] MODULE DEALS MODULE
-    [8] LASTET BLOG 
+    [8] LASTET BLOG
 
 */
 
 /************************************************************************************************
-    MODULE HOME SLIDER  
+    MODULE HOME SLIDER
 *************************************************************************************************/
 .module.sohomepage-slider{ margin: 0;
     .owl2-controls .owl2-nav{
@@ -26,7 +26,7 @@
     }
     .owl2-dots{ position: absolute; bottom: 30px; width: 100%;  line-height: 100%; #{$left}: 20%; #{$right}: auto;
         .owl2-dot{ display: inline-block; float: $left;
-            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1; 
+            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1;
                 display: block;border-radius: 50%; -webkit-border-radius: 50%; @include transition(all .2s ease 0s);
             }
             &.active span{ background-color: $background; width: 25px; border-radius: 4px; }
@@ -35,7 +35,7 @@
     }
     .owl2-item{
         &.active{
-            .sohomeslider-description{ 
+            .sohomeslider-description{
                 .title-slider{
                     opacity: 1;
                     animation: myeffect-slideshow 2s ease-in-out ;
@@ -78,7 +78,7 @@
             width: auto;
             opacity: 0;
             top: 31%;
-            font-size: 20px; 
+            font-size: 20px;
             color: #3b3b3b;
             text-transform: uppercase;
             &.pos-right{
@@ -117,8 +117,8 @@
             }
             &.text-sl12{
                 h3.tilte{ font-size: 30px; color: #444; font-weight: 700; margin: 0; }
-                &.pos-left{ left: 150px;  top: 65%; 
-                    i{ margin-#{right}: 5px;; }
+                &.pos-left{ left: 150px;  top: 65%;
+                    i{ margin-#{right}: 5px; }
                     &:hover{ color: #222; }
                     a{ font-weight: 600; color: $linkColor; font-size: 14px; }
                 }
@@ -133,11 +133,11 @@
         }
         .des{
             &.des-sl11{ margin-top: 15px; color: #fff; font-size: 14px;
-                i{ margin-#{right}: 5px;; }
+                i{ margin-#{right}: 5px; }
                 &:hover{ color: #222; }
             }
         }
-    }    
+    }
 }
 
 /************************************************************************************************
@@ -193,8 +193,8 @@
             position: absolute;
         }
     }
-    .box-title{ 
-        position: relative; 
+    .box-title{
+        position: relative;
         float: $left;
         min-width: 193px;
         color: #fff;
@@ -234,20 +234,20 @@
             .right-block{ clear: inherit; text-align: $left; }
             .left-block{ width: 100px; float: $left; padding-#{$right}: 10px;}
             &:hover .caption{ opacity: 1; visibility: visible; }
-        } 
+        }
     }
     .so-category-slider{ border: none; }
     .owl2-controls{
         .owl2-nav > div{ border: none; width: 28px; height: 28px; background-color: transparent;
             &.owl2-prev{ #{$right}: 32px; #{$left}: auto; }
             &:hover{ border: none;  }
-        } 
+        }
     }
     .owl2-dots{ position: relative; bottom: 13px; width: 100%;  line-height: 100%;     text-align: center;
         .owl2-dot{ display: inline-block; background: transparent !important; width: auto;     margin: 0 5px;
             
             &.active{ background: transparent !important;width: 25px; }
-            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0; opacity: 1; 
+            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0; opacity: 1;
                 display: block;border-radius: 50%; -webkit-border-radius: 50%; @include transition(all .2s ease 0s);
             }
             &.active span{ background-color: $background; width: 25px; border-radius: 4px; }
@@ -266,21 +266,21 @@
     .product-layout .product-item-container .right-block {
         padding: 6px 0 5px;
     }
-    &.custom_supper_v2{ margin: 0; 
+    &.custom_supper_v2{ margin: 0;
         .so-sp-cat .spcat-wrap .category-wrap .sp-cat-title-parent{ background: #2bafa4; }
         .so-sp-cat .spcat-wrap .spc-wrap{ border-color: #2bafa4; }
         .so-sp-cat .spcat-wrap .category-wrap .sp-cat-title-parent:before{ border-top: 8px solid #0096a4;  }
     }
-    &.custom_supper_v3{ margin: 0; 
+    &.custom_supper_v3{ margin: 0;
         .so-sp-cat .spcat-wrap .category-wrap .sp-cat-title-parent{ background: #f24f5a; }
         .so-sp-cat .spcat-wrap .spc-wrap{ border-color: #f24f5a; }
         .so-sp-cat .spcat-wrap .category-wrap .sp-cat-title-parent:before{ border-top: 8px solid #ac365a;  }
     }
     .products-list.grid .product-layout .product-item-container{ padding: 0 0 7px; margin: 0; border-color: #e8e8e8; border-width: side-values(0 1px 1px 0);
-        &:hover{     
+        &:hover{
             -moz-box-shadow: 0 2px 7px 0 rgba(56,56,56,0.2);
            -webkit-box-shadow: 0 2px 7px 0 rgba(56,56,56,0.2);
-          box-shadow: 0 2px 7px 0 rgba(56,56,56,0.2); 
+          box-shadow: 0 2px 7px 0 rgba(56,56,56,0.2);
           z-index: 9;
           .right-block h4{
             opacity: 0;
@@ -292,10 +292,10 @@
     .spcat-wrap,
     .so-sp-cat{ overflow: visible; }
     .spcat-tabs-container{ display: none; }
-    .so-sp-cat .spcat-wrap{ padding: 0; 
+    .so-sp-cat .spcat-wrap{ padding: 0;
         .category-wrap{  padding: 0;
             .category-wrap-cat{ padding: 0; }
-            .sp-cat-title-parent{ background: $background; 
+            .sp-cat-title-parent{ background: $background;
                 font-size: 18px;
                 font-weight: 700;
                 color: #fff;
@@ -331,7 +331,7 @@
                             &:hover{ color: $linkColor; }
                         }
                     }
-                    .view-all{ 
+                    .view-all{
                         a{  font-weight: 600; color: $linkColor;
                             .fa{ padding-#{$right}: 5px; }
                         }
@@ -355,7 +355,7 @@
             .info-cont { padding-#{$left}: 50px; }
             span { text-transform: uppercase; line-height: 100%; color: #222; font-weight: 600; }
             p { text-transform: capitalize; line-height: 100%; padding-top: 2px; margin-bottom: 3px; }
-        } 
+        }
         &.info1 .inner { border-#{$left}: none; }
     }
 }
@@ -370,7 +370,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     @include breakpoint(lg){ padding: 14px 80px; }
-    img{ @include transition(all .2s ease 0s); 
+    img{ @include transition(all .2s ease 0s);
         webkit-transform: rotate(0);
     -webkit-backface-visibility: hidden;
         &:hover{
@@ -380,12 +380,12 @@
     &:hover{
         .owl2-nav{
             opacity: 1;
-            @include transition(all .2s ease 0s); 
+            @include transition(all .2s ease 0s);
         }
     }
     .owl2-nav{
          opacity: 0;
-        div{ 
+        div{
             width: 42px;
             height: 42px;
             text-align: center;
@@ -403,18 +403,18 @@
             top: 50%;
             color: #fff;
             border-radius: 2px;
-            &.owl2-prev{ left: 16px;  opacity: 1; 
+            &.owl2-prev{ left: 16px;  opacity: 1;
                 &:before {
                     content: "\f053";
                 }
             }
-            &.owl2-next{ right: 16px; opacity: 1; 
+            &.owl2-next{ right: 16px; opacity: 1;
                 &:before {
                     content: "\f054";
                 }
             }
         }
-    } 
+    }
 }
 
 /************************************************************************************************
@@ -431,9 +431,9 @@
     }
     .cate-content{  margin: 30px -15px 0;
         .cate { float: $left; width: 20%; padding: 0 15px;
-            .inner{ -moz-box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);  -webkit-box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);   
-                box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);  text-align: center; }
-            a { color:#222; font-weight: 700; font-size: 16px; text-transform: uppercase; line-height: 52px; @include transition(all .3s ease 0s); display: block; 
+            .inner{ -moz-box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);  -webkit-box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);
+                box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);  text-align: center; }
+            a { color:#222; font-weight: 700; font-size: 16px; text-transform: uppercase; line-height: 52px; @include transition(all .3s ease 0s); display: block;
                 &:hover{ background: #222; color: #fff; }
             }
         }
@@ -446,12 +446,12 @@
 
 .custom_deals_featured.so-deals{clear: both; position: relative; margin: 0;
     border: 1px solid $border-home;
-    h2.modtitle{ position: absolute; z-index: 9;  top: -2px; #{$left}: 13px; 
+    h2.modtitle{ position: absolute; z-index: 9;  top: -2px; #{$left}: 13px;
         span{background: $background; color: #fff; font-size: 18px; text-transform: uppercase; padding: 11px; font-weight: bold; border-radius:side-values(0 0 8px 8px);
             &:before {
                 content: "";
                 border-left: 5px solid transparent;
-                border-right: 0px solid transparent;
+                border-right: 0 solid transparent;
                 border-bottom: 5px solid darken($background,10%);
                 position: absolute;
                 left: -5px;
@@ -459,7 +459,7 @@
             }
             &:after{
                 content: "";
-                border-left: 0px solid transparent;
+                border-left: 0 solid transparent;
                 border-right: 5px solid transparent;
                 border-bottom: 5px solid darken($background,10%);
                 position: absolute;
@@ -468,7 +468,7 @@
             }
         }
     }
-    .so-deal .product-feature{ border: none; 
+    .so-deal .product-feature{ border: none;
         .product-thumb .caption{ width: 50%; }
         .product-thumb .image{ float: $left; width: 50%; }
         .caption h4{ margin-bottom: 8px;
@@ -489,7 +489,7 @@
             .price-old{ font-size: 16px; }
         }
 
-        .item-timer .time-item{ 
+        .item-timer .time-item{
             position: relative;
             display: inline-block;
             width: auto;
@@ -520,13 +520,13 @@
         }
     }
     .owl2-controls.featureslider{
-        .owl2-nav div{position: absolute; top: 18%; height: 41px; z-index: 9; 
+        .owl2-nav div{position: absolute; top: 18%; height: 41px; z-index: 9;
             &.owl2-prev{ left: 15px; }
             &.owl2-next{ right: 15px; }
         }
     }
     .product-feature{  padding: 20px; overflow: visible;
-        @include breakpoint(lg){ padding: 20px 95px 0px 20px; 
+        @include breakpoint(lg){ padding: 20px 95px 0 20px;
             .product-thumb .image img{ padding-#{$left}: 40px;  }
         }
     }
@@ -548,7 +548,7 @@
         }
     }
     .extraslider-inner{ border-top:1px solid #e1e1e1; border-bottom: none; padding: 23px 10px 6px;
-        .caption{ 
+        .caption{
             text-align: center;
             p, .rating, .item-time{ display: none; }
             h4{ font-size: 13px; color: #7d7d7d; text-transform: capitalize;  margin-bottom: 4px;}
@@ -585,7 +585,7 @@
                 &.owl2-prev{ left: 0; }
                 &.owl2-next{ right: 0; }
                 &:hover{ border: none;  }
-            } 
+            }
         }
     }
 }
@@ -618,7 +618,7 @@
                 border-#{$left}: 80px solid #fff;
                 #{$left}: 0;
             }
-            .entry-date { position: absolute; top: 0; z-index: 2; #{$left}: 0; 
+            .entry-date { position: absolute; top: 0; z-index: 2; #{$left}: 0;
                 .day-time { font-size: 24px; color: #909090; font-weight: bold;}
                 .month-time { font-size: 14px; color: #909090; }
             }
@@ -628,7 +628,7 @@
                 &:hover{ color: $linkColor; }
             }
             .media-heading{ margin: 15px 0 10px; }
-            .media-subcontent{ 
+            .media-subcontent{
                 >span{
                     padding-#{$right}: 5px;
                     &:last-child{ padding: 0; }
@@ -662,16 +662,16 @@
             .price{ margin-bottom: 0; }
         }
         .price .price-new, .price span.price{font-size: 16px;}
-    }   
+    }
 }
 
 /************************************************************************************************
     DEFFAULT LISTING TAB
 *************************************************************************************************/
-.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
-    .box-title { position: absolute; top: -8px; min-width: 204px; #{$left}: -8px; 
+.module.custom-listingtab{ margin: 0; position: relative;
+    .box-title { position: absolute; top: -8px; min-width: 204px; #{$left}: -8px;
         h2{ line-height: 48px; background-color: $background; font-size: 18px; padding: 0 16px; color: #fff;  margin: 0; font-weight: bold;
-            border-radius:side-values( 0 7px 0 0); position: relative;  text-transform: uppercase; box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1);
+            border-radius:side-values( 0 7px 0 0); position: relative;  text-transform: uppercase; box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
             &:before {
                 content: '';
                 width: 0;
@@ -681,7 +681,7 @@
                 position: absolute;
                 border-#{$right}: 8px solid #b94300;
                 #{$left}: 0;
-            } 
+            }
         }
     }
     .module,
@@ -697,8 +697,8 @@
             border-radius: 0;
             &:hover{ color: $linkColor; }
         &.ltabs-tabs li.tab-sel.ltabs-tab > span{ color: $linkColor; }
-        &.ltabs-tabs li { border: 0; padding: 0; margin: 0; font-size: 13px; 
-            span{ 
+        &.ltabs-tabs li { border: 0; padding: 0; margin: 0; font-size: 13px;
+            span{
                 font-size: 12px;
                 color: #333;
                 text-transform: uppercase;
@@ -709,7 +709,7 @@
             &.tab-sel{ background: transparent; }
         }
     }
-    .ltabs-wrap .wap-listing-tabs .item-cat-image{ float: $left; 
+    .ltabs-wrap .wap-listing-tabs .item-cat-image{ float: $left;
         img{
             &:hover{
                 &:before{ visibility: visible; opacity: 1; }
@@ -723,7 +723,7 @@
                 top: 0;
                 @include transition(all .2s ease 0s);
                 visibility: hidden;
-                opacity: 0; 
+                opacity: 0;
                 #{$left}:  0;
             }
         }
@@ -733,11 +733,11 @@
         .owl2-nav > div{ border: none; width: 28px; height: 28px; background-color: transparent;
             &.owl2-prev{ right: 32px; left: auto; }
             &:hover{ border: none;  }
-        } 
+        }
     }
 
     &.img-float{
-        .box-title { #{$right}: -7px; #{$left}: auto; 
+        .box-title { #{$right}: -7px; #{$left}: auto;
             h2{ border-radius:side-values( 7px 0 0 0);
                 &:before {
                     content: '';
@@ -750,7 +750,7 @@
                     border-#{$right}: none;
                     #{$right}: 0;
                     #{$left}: auto;
-                } 
+                }
             }
         }
         .so-listing-tabs .ltabs-tabs-container .ltabs-tabs li{ float: $right; }
@@ -758,7 +758,7 @@
         .ltabs-wrap .wap-listing-tabs .item-cat-image{ float: $right; }
         .products-list.grid .product-layout .product-item-container{ border-width:side-values( 0 0 1px 1px); }
         .owl2-controls{ #{$left}: 70px; #{$right}: auto; }
-    } 
+    }
 }
 
 .module.custom_bestseler{ border: 1px solid #e1e1e1; position: relative; margin: 0;
@@ -780,18 +780,18 @@
         .left-block{ width: 90px; float: $left; margin-#{$right}: 20px;}
         .item-wrap .item-image{ border: none; }
         .item-wrap.style1 .item-info{ background: transparent; position: relative; }
-        .item-wrap.style1 .item-info .item-title, 
+        .item-wrap.style1 .item-info .item-title,
         .item-wrap.style2 .item-info .item-title{
             padding: 0; font-weight: normal;
-            a{ font-size: 14px;  color: #222; text-transform: capitalize; 
+            a{ font-size: 14px;  color: #222; text-transform: capitalize;
                 &:hover{ color: $linkColor; }
             }
         }
         .item-wrap-inner{ margin: 0; padding: 0; }
-        .item-wrap .item-info .item-content{ margin: 0; 
+        .item-wrap .item-info .item-content{ margin: 0;
             .content_price span{ font-size: 16px; color: #ff5c00; font-weight: 700; }
         }
-        .item-wrap .item-image{ 
+        .item-wrap .item-image{
             img{ box-shadow: none; }
             .img-2{ position: absolute; top: 0; @include transition(all .7s ease 0s); opacity: 0; visibility: hidden;  }
             &:hover{ box-shadow: none;
@@ -806,7 +806,7 @@
         .owl2-nav > div{ border: none; width: 28px; height: 28px; background-color: transparent; opacity: 1;visibility: visible; position: relative; top: 0;
             &.owl2-prev{ right: 5px; left: auto; }
             &:hover{ border: none;  }
-        } 
+        }
     }
 }
 
@@ -827,7 +827,7 @@
         width: 100%;
         display: block;
         z-index: 9;
-    }   
+    }
 }
 body{ background: #fff; }
 .common-home{

@@ -4,7 +4,7 @@
 
     [SASS DIRECTORY ]
     
-    [1] MODULE HOME SLIDER 
+    [1] MODULE HOME SLIDER
     [2] HTML SERVICES
     [3] HTML CUSTOM VIDEO
     [4] MODULE INSTAGRAM
@@ -17,7 +17,7 @@
 
 
 /************************************************************************************************
-    MODULE HOME SLIDER  
+    MODULE HOME SLIDER
 *************************************************************************************************/
 .module.sohomepage-slider{ margin: 0;
     .owl2-controls .owl2-nav{
@@ -27,7 +27,7 @@
     }
     .owl2-dots{ position: absolute; bottom: 30px; width: 100%;  line-height: 100%; #{$left}: 48%; #{$right}: auto;
         .owl2-dot{ display: inline-block; float:$left;
-            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1; 
+            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1;
                 display: block;border-radius: 50%; -webkit-border-radius: 50%; @include transition(all .2s ease 0s);
             }
             &.active span{ background-color: $background; width: 25px; border-radius: 4px; }
@@ -36,7 +36,7 @@
     }
     .owl2-item{
         &.active{
-            .sohomeslider-description{ 
+            .sohomeslider-description{
                 .title-slider{
                     opacity: 1;
                     animation: myeffect-slideshow 2s ease-in-out ;
@@ -74,7 +74,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        padding: 50px 0 0 0;
+        padding: 50px 0 0;
         transform: translate(-50%,-50%);
         .item-desc-inner{
             color: #222;
@@ -110,7 +110,7 @@
                 &:hover{ background: $background; color: #fff;}
             }
         }
-    }    
+    }
 }
 
 
@@ -143,7 +143,7 @@
 
 
 .banner-home4{
-    .banner-w{ padding: 0; 
+    .banner-w{ padding: 0;
         .banner a {
             display: block;
             position: relative;
@@ -159,13 +159,13 @@
                 font-size: 18px;
                 font-weight: 700;
                 color: #222;
-                margin: 4px 0 0 0;
+                margin: 4px 0 0;
             }
         }
     }
 }
 
-.policy-w{ padding: 15px 0 16px 0;
+.policy-w{ padding: 15px 0 16px;
     .policy{
         font-size: 14px;
         line-height: 100%;
@@ -175,7 +175,7 @@
         &.policy2{ text-align: center; }
         &.policy3{ text-align: $right; }
     }
-} 
+}
 /************************************************************************************************
     HTML CUSTOM VIDEO
 *************************************************************************************************/
@@ -198,14 +198,14 @@
     .modcontent > div{
         background:  url(#{$base-url-theme}catalog/demo/banners/home4/bg-video-h4.jpg) 50% 50% / cover no-repeat black !important;
     }
-} 
+}
 
 /************************************************************************************************
    MOD INSTAGRAM
 *************************************************************************************************/
 .module.custom_instagram{
     margin: 0;
-    .so-instagram-gallery{ margin: 0; 
+    .so-instagram-gallery{ margin: 0;
         .instagram-items-inner.owl2-carousel{
             border: none;
             .img_users{ position: relative;
@@ -238,7 +238,7 @@
     .products-list.grid .product-layout .product-item-container { padding: 0; margin: 0; border: none;
         .right-block{ margin-top: 18px; display: inline-block; width: 100%; text-align: center;}
         .button-group{ background: #fff;
-            button{  border-color: #222; color: #222; 
+            button{  border-color: #222; color: #222;
                 &.addToCart{ background: #222; color: #fff; }
                 &:hover{ background: $background; color: #fff; border-color: $background; }
             }
@@ -256,10 +256,10 @@
             &.owl2-prev{ left: 5px; }
             &.owl2-next{ right: 5px; }
             &:hover{ border: none;  }
-        } 
+        }
     }
     .ltabs-wrap {
-        .ltabs-tabs-container{ margin: 0; text-align: center; 
+        .ltabs-tabs-container{ margin: 0; text-align: center;
             .ltabs-tabs{ display: inline-block;
                 li{ float: $left; padding: 0; border: none; margin: 0;
                     span{
@@ -284,7 +284,7 @@
             }
         }
         &:hover{
-            .owl2-controls{ opacity: 1; visibility: visible; 
+            .owl2-controls{ opacity: 1; visibility: visible;
                 .owl2-nav > div.owl2-prev{ left: 30px; }
                 .owl2-nav > div.owl2-next{ right: 30px; }
             }
@@ -352,20 +352,20 @@
             .right-block{ clear: inherit; text-align: $left; }
             .left-block{ width: 100px; float: $left; padding-#{$right}: 10px;}
             &:hover .caption{ opacity: 1; visibility: visible; }
-        } 
+        }
     }
     .so-category-slider{ border: none; }
     .owl2-controls{
         .owl2-nav > div{ border: none; width: 28px; height: 28px; background-color: transparent;
             &.owl2-prev{ right: 32px; left: auto; }
             &:hover{ border: none;  }
-        } 
+        }
     }
     .owl2-dots{ position: relative; bottom: 13px; width: 100%;  line-height: 100%; #{$left}: 36%;
         .owl2-dot{ display: inline-block; background: transparent; width: auto;
             &:hover,
             &.active{ background: transparent; }
-            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0; opacity: 1; 
+            span{ width: 8px; height:8px; background-color: #7d7d7d; border:none; margin:0; opacity: 1;
                 display: block;border-radius: 50%; -webkit-border-radius: 50%; @include transition(all .2s ease 0s);
             }
             &.active span{ background-color: $background; width: 25px; border-radius: 4px; }
@@ -386,7 +386,7 @@
             .info-cont { padding-#{$left}: 50px; }
             span { text-transform: uppercase; line-height: 100%; color: #222; font-weight: 600; }
             p { text-transform: capitalize; line-height: 100%; padding-top: 2px; margin-bottom: 3px; }
-        } 
+        }
         &.info1 .inner { border-#{$left}: none; }
     }
 }
@@ -408,7 +408,7 @@
             &.owl2-prev{ left: 0;  opacity: 1; }
             &.owl2-next{ right: 0; opacity: 1; }
         }
-    } 
+    }
 }
 
 /************************************************************************************************
@@ -429,9 +429,9 @@
     .cate-content{  margin: 30px 0 0;
         .cate {
             img{ @include transition(all .2s ease 0s); }
-            .inner{ -moz-box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);  -webkit-box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);   
-                box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);  text-align: center; }
-            a.title-cate { color:#222; font-weight: 700; font-size: 16px; text-transform: uppercase; line-height: 52px; @include transition(all .3s ease 0s); display: block; 
+            .inner{ -moz-box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);  -webkit-box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);
+                box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);  text-align: center; }
+            a.title-cate { color:#222; font-weight: 700; font-size: 16px; text-transform: uppercase; line-height: 52px; @include transition(all .3s ease 0s); display: block;
             }
             &:hover{
                 img{ opacity: 0.7; visibility: visible; }
@@ -475,7 +475,7 @@
                 border-#{$left}: 80px solid #fff;
                 #{$left}: 0;
             }
-            .entry-date { position: absolute; top: 0; z-index: 2; #{$left}: 0; 
+            .entry-date { position: absolute; top: 0; z-index: 2; #{$left}: 0;
                 .day-time { font-size: 24px; color: #909090; font-weight: bold;}
                 .month-time { font-size: 14px; color: #909090; }
             }
@@ -488,7 +488,7 @@
                 &:hover{ color: $linkColor; }
             }
             .media-heading{ margin: 15px 0 10px; }
-            .media-subcontent{ 
+            .media-subcontent{
                 .media-author{ border: none; color: #909090; }
                 i{ font-size: 14px; margin-#{$right}: 5px;}
             }
@@ -518,16 +518,16 @@
             .price{ margin-bottom: 0; }
         }
         .price .price-new, .price span.price{font-size: 16px;}
-    }   
+    }
 }
 
 /************************************************************************************************
     DEFFAULT LISTING TAB
 *************************************************************************************************/
-.module.custom-listingtab{ margin: 0 0 0 0; position: relative;
-    .box-title { position: absolute; top: -8px; min-width: 204px; #{$left}: -8px; 
+.module.custom-listingtab{ margin: 0; position: relative;
+    .box-title { position: absolute; top: -8px; min-width: 204px; #{$left}: -8px;
         h2{ line-height: 48px; background-color: $background; font-size: 18px; padding: 0 16px; color: #fff;  margin: 0; font-weight: bold;
-            border-radius:side-values( 0 7px 0 0); position: relative;  text-transform: uppercase; box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1);
+            border-radius:side-values( 0 7px 0 0); position: relative;  text-transform: uppercase; box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
             &:before {
                 content: '';
                 width: 0;
@@ -537,7 +537,7 @@
                 position: absolute;
                 border-#{$right}: 8px solid #b94300;
                 #{$left}: 0;
-            } 
+            }
         }
     }
     .module,
@@ -553,8 +553,8 @@
             border-radius: 0;
             &:hover{ color: $linkColor; }
         &.ltabs-tabs li.tab-sel.ltabs-tab > span{ color: $linkColor; }
-        &.ltabs-tabs li { border: 0; padding: 0; margin: 0; font-size: 13px; 
-            span{ 
+        &.ltabs-tabs li { border: 0; padding: 0; margin: 0; font-size: 13px;
+            span{
                 font-size: 12px;
                 color: #333;
                 text-transform: uppercase;
@@ -565,7 +565,7 @@
             &.tab-sel{ background: transparent; }
         }
     }
-    .ltabs-wrap .wap-listing-tabs .item-cat-image{ float: $left; 
+    .ltabs-wrap .wap-listing-tabs .item-cat-image{ float: $left;
         img{
             &:hover{
                 &:before{ visibility: visible; opacity: 1; }
@@ -579,7 +579,7 @@
                 top: 0;
                 @include transition(all .2s ease 0s);
                 visibility: hidden;
-                opacity: 0; 
+                opacity: 0;
                 #{$left}:  0;
             }
         }
@@ -589,11 +589,11 @@
         .owl2-nav > div{ border: none; width: 28px; height: 28px; background-color: transparent;
             &.owl2-prev{ right: 32px; left: auto; }
             &:hover{ border: none;  }
-        } 
+        }
     }
 
     &.img-float{
-        .box-title { #{$right}: -7px; #{$left}: auto; 
+        .box-title { #{$right}: -7px; #{$left}: auto;
             h2{ border-radius:side-values( 7px 0 0 0);
                 &:before {
                     content: '';
@@ -606,7 +606,7 @@
                     border-#{$right}: none;
                     #{$right}: 0;
                     #{$left}: auto;
-                } 
+                }
             }
         }
         .so-listing-tabs .ltabs-tabs-container .ltabs-tabs li{ float: $right; }
@@ -614,7 +614,7 @@
         .ltabs-wrap .wap-listing-tabs .item-cat-image{ float: $right; }
         .products-list.grid .product-layout .product-item-container{ border-width:side-values( 0 0 1px 1px); }
         .owl2-controls{ #{$left}: 70px; #{$right}: auto; }
-    } 
+    }
 }
 
 .module.custom_bestseler{ border: 1px solid #e1e1e1; position: relative; margin: 0;
@@ -636,18 +636,18 @@
         .left-block{ width: 90px; float: $left; margin-#{$right}: 20px;}
         .item-wrap .item-image{ border: none; }
         .item-wrap.style1 .item-info{ background: transparent; position: relative; }
-        .item-wrap.style1 .item-info .item-title, 
+        .item-wrap.style1 .item-info .item-title,
         .item-wrap.style2 .item-info .item-title{
             padding: 0; font-weight: normal;
-            a{ font-size: 14px;  color: #222; text-transform: capitalize; 
+            a{ font-size: 14px;  color: #222; text-transform: capitalize;
                 &:hover{ color: $linkColor; }
             }
         }
         .item-wrap-inner{ margin: 0; padding: 0; }
-        .item-wrap .item-info .item-content{ margin: 0; 
+        .item-wrap .item-info .item-content{ margin: 0;
             .content_price span{ font-size: 16px; color: #ff5c00; font-weight: 700; }
         }
-        .item-wrap .item-image{ 
+        .item-wrap .item-image{
             img{ box-shadow: none; }
             .img-2{ position: absolute; top: 0; @include transition(all .2s ease 0s); opacity: 0; visibility: hidden;  }
             &:hover{ box-shadow: none;
@@ -662,7 +662,7 @@
         .owl2-nav > div{ border: none; width: 28px; height: 28px; background-color: transparent; opacity: 1;visibility: visible; position: relative; top: 0;
             &.owl2-prev{ right: 5px; left: auto; }
             &:hover{ border: none;  }
-        } 
+        }
     }
 }
 
@@ -676,9 +676,9 @@
         width: 100%;
         display: block;
         z-index: 9;
-    }   
+    }
 }
-body{ background: #fff; } 
+body{ background: #fff; }
 .layout-4.common-home .block-title h3 {
     text-align: center;
     font-size: 24px;
@@ -740,7 +740,7 @@ body{ background: #fff; }
         line-height: 100%;
         padding: 0;
         border-bottom: none;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         text-align: center;
         color: #222;
         span{

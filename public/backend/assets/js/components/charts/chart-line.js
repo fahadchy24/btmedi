@@ -46,7 +46,7 @@ var LineChart = (function() {
 
 		$this.data('chart', salesChart);
 
-	};
+	}
 
 
 	// Events

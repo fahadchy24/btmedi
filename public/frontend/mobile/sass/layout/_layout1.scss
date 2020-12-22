@@ -14,14 +14,14 @@
 
 
 /************************************************************************************************
-    MODULE HOME SLIDER  
+    MODULE HOME SLIDER
 *************************************************************************************************/
 .sohomepage-slider{
 	margin: 0 0 10px;
 	.owl2-controls{
 		.owl2-dots{ position: absolute; bottom: 25px; width: 100%;  line-height: 100%; #{$left}: 10px; #{$right}: auto;
 		.owl2-dot{ display: inline-block; float: $left;width:auto;height: auto;border-radius: 0;margin: 0; background: none;
-		    span{ width: 5px; height:5px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1; 
+		    span{ width: 5px; height:5px; background-color: #7d7d7d; border:none; margin:0 2px; opacity: 1;
 			   display: block;border-radius: 50%; -webkit-border-radius: 50%; @include transition(all .2s ease 0s);
 			}
 			&.active span{ background-color: $background; width: 20px; border-radius: 4px; }
@@ -50,14 +50,14 @@
   right: 0;
   opacity: 1;
 }
-.module .block-categories{ 
-    .cate-content{      
+.module .block-categories{
+    .cate-content{
 	    padding-bottom: 5px;
-        .cate { 
+        .cate {
 			display: inline-block;
 		    vertical-align: top;
 		    width: 150px;
-            .inner{ box-shadow: 0px 2px 3px 0px rgba(100, 100, 100, 0.3);  text-align: center; margin-bottom: 5px; }
+            .inner{ box-shadow: 0 2px 3px 0 rgba(100, 100, 100, 0.3);  text-align: center; margin-bottom: 5px; }
             a.title-cate { color:#222; font-weight: 700; font-size: 16px; text-transform: uppercase; line-height: 52px; @include transition(all .3s ease 0s); display: block; }
             &:hover{
                 img{ opacity: 0.7; visibility: visible; }
@@ -80,7 +80,7 @@
 	    padding: 0 5px;
 	}
 }
-.mobile-bn3-h1{ margin: 10px 0 10px; }
+.mobile-bn3-h1{ margin: 10px 0; }
 .mobile-bn2-h1{ margin: 0 0 5px; }
 
 /*DEAL SLIDER*/

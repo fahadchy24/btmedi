@@ -11,7 +11,7 @@
 .mobile-home.mobilelayout-1{
 	.navbar-logo{padding: 0;
 		img{width:95px;}
-	}	
+	}
 	.menu_custom{ background: $background;}
 	
     #content{ margin: 0; }
@@ -21,7 +21,7 @@
         padding: 0;
     }
     .module.sohomepage-slider {
-        margin: 10px 0 10px;
+        margin: 10px 0;
     }
     .menu-link{ margin-bottom: 5px;
 	 a{ color: #fff; }
@@ -70,7 +70,7 @@
     }
     
     .mobile-bn3-h2{
-        margin: 15px -5px 0; 
+        margin: 15px -5px 0;
         .banners{
             float: $left;
             width: 50%;
@@ -87,7 +87,7 @@
 			.owl2-controls .owl2-nav .owl2-next{border: none;background: transparent;color:#666; font-weight: 700;}
 			.products-list.grid .product-layout .product-item-container{margin: 0;padding: 0;}
 		}
-		.so-listing-tabs .ltabs-tabs-container .ltabs-tabs-wrap span.ltabs-tab-arrow, 
+		.so-listing-tabs .ltabs-tabs-container .ltabs-tabs-wrap span.ltabs-tab-arrow,
 		.so-listing-tabs .ltabs-tabs-container .ltabs-tabs-wrap span.ltabs-tab-selected{
             display: none;
 		}
@@ -101,7 +101,7 @@
             width: 100%;
 		 }
 		.so-listing-tabs .ltabs-tabs-container .ltabs-tab span{  padding: 0; display: block; background: none; color: $gray-dark; line-height: 20px;}
-		.so-listing-tabs .ltabs-tabs-container .ltabs-tabs li.tab-sel{ background: transparent; 
+		.so-listing-tabs .ltabs-tabs-container .ltabs-tabs li.tab-sel{ background: transparent;
 			span{color: $linkColor; position: relative; background: transparent;
 				&:before {
 				    content: '';

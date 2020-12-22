@@ -21,21 +21,21 @@
 	.fa {font-size: 20px;vertical-align: middle;margin-#{$right}:10px;}
 }
 .tab-content {
-    padding: 15px 15px 10px;margin-bottom: 20px;z-index: 2;border: 1px solid #ddd;border-top: 0px;
+    padding: 15px 15px 10px;margin-bottom: 20px;z-index: 2;border: 1px solid #ddd;border-top: 0;
 }
 
-.simple-ul{margin: 0 0 15px 0; padding: 0; list-style: none;
+.simple-ul{margin: 0 0 15px; padding: 0; list-style: none;
 	li{position: relative;padding-#{$left}: 15px;margin-bottom: 5px;
 		&:before{    position: absolute;top: 0;#{$left}: 0;display: block;font-family: $FontAwesome; font-size: 14px;
 				@include if-ltr { content: "\f105";}
 				@include if-rtl { content: "\f103";}
 			}
-		ul {   margin: 10px 0 10px 0;padding: 0;list-style: none;
+		ul {   margin: 10px 0;padding: 0;list-style: none;
 			li:before{content: "\f111"; font-size: 7px;}
-		} 
+		}
 	}
 }
-.decimal-list { margin: 0px 0 15px 20px;padding: 0;list-style: decimal outside;
+.decimal-list { margin: 0 0 15px 20px;padding: 0;list-style: decimal outside;
 	li{padding-left: 0;margin-bottom: 5px;text-indent: 0;}
 }
 

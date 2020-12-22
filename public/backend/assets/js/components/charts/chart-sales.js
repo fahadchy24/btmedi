@@ -46,7 +46,7 @@ var SalesChart = (function() {
 
 		$this.data('chart', salesChart);
 
-	};
+	}
 
 
 	// Events

@@ -1,7 +1,7 @@
  @include breakpoint(md){
 
     /* ***********************************************************************************************
-        BLOCK HEADER  
+        BLOCK HEADER
     *************************************************************************************************/
     
     /*!== Header Default ==!*/
@@ -35,7 +35,7 @@
     header.typeheader-2{
         .phone-header{ display: block; }
         .header_search{ width: 63%; }
-        .megamenu-style-dev .horizontal ul.megamenu > li > a{ padding: 13px 10px 13px; }
+        .megamenu-style-dev .horizontal ul.megamenu > li > a{ padding: 13px 10px; }
     }
 
 
@@ -43,8 +43,8 @@
     header.typeheader-3{
         .megamenu-style-dev .horizontal ul.megamenu > li > a{ padding: 8px; }
         #sosearchpro.so-search .autosearch-input{ padding-#{$left}: 70px; }
-        .language .dropdown-menu{ #{$right}: 0; #{$left}:0; }   
-       .header-search {width: 240px;} 
+        .language .dropdown-menu{ #{$right}: 0; #{$left}:0; }
+       .header-search {width: 240px;}
     }
 
     /*!== Header 5 ==!*/
@@ -77,7 +77,7 @@
     }
 
     /************************************************************************************************
-        BLOCK HOME PAGE  
+        BLOCK HOME PAGE
     *************************************************************************************************/
     
     /*[] LAYOUT 1 []*/
@@ -101,7 +101,7 @@
         }
         &.common-home .container-megamenu.vertical .vertical-wrapper{ display: block; }
         .block-slide .block-left { padding: 0; width: 70.7%;  }
-        .block-slide .block-right { width: 29.3%; padding-#{$left}: 0;    
+        .block-slide .block-right { width: 29.3%; padding-#{$left}: 0;
             .module{ margin: 0; }
         }
         .block-slide{ padding-#{$left}: 0; }
@@ -118,7 +118,7 @@
         .module.custom_bestseler .extraslider-inner .right-block{ float: none; vertical-align: top; padding-top: 5px; margin-#{$left}: 90px; }
         .top-brand.arrow-default .owl2-nav{ display: none; }
         div.module.custom-listingtab .products-list.grid .product-layout .product-item-container .right-block { padding: 13px 0 14px;  }
-        .module.custom_bestseler .rating{ display: none;; }
+        .module.custom_bestseler .rating{ display: none; }
         .module.custom_bestseler .extraslider-inner{ padding-bottom: 0 }
     }
     .simple_blog-category .list-view{ display: none; }
@@ -144,7 +144,7 @@
     .layout-6{
         .service-home4 ul > li { font-size: 13px; }
         .module.home6_deals .head-title{ margin-bottom: 0; }
-        .top-brand.owl2-carousel .owl2-dots{ display: none!important; } 
+        .top-brand.owl2-carousel .owl2-dots{ display: none!important; }
     }
 
     
@@ -177,7 +177,7 @@
     }
   
     /* ***********************************************************************************************
-        BLOCK FOOTER  
+        BLOCK FOOTER
     ************************************************************************************************ */
     .footer-has-toggle{
         display: block !important;
@@ -193,7 +193,7 @@
         .news-letter{ margin-bottom: 10px!important; }
         .social_block{ margin-bottom: 10px!important;}
         .news-letter .block_content{ padding: 0 5px 0 10px }
-    } 
+    }
 
     /*[] FOOTER 3 []*/
     footer.typefooter-2{
@@ -211,7 +211,7 @@
         .footer-top .news-letter .block_content .input-box input{ width: 250px; }
     }
 
-    /*[] FOOTER 6 []*/ 
+    /*[] FOOTER 6 []*/
     footer.typefooter-6 {
         .footer-center .about-footer .socials-footer ul li > a{ margin: 0 3px; }
     }
@@ -221,7 +221,7 @@
         background-size: 100% 100%;
      }
     /************************************************************************************************
-        MEGAMENU 
+        MEGAMENU
     *************************************************************************************************/
    .horizontal ul.megamenu > li > .sub-menu{
         #{$right}: 0;
@@ -229,7 +229,7 @@
    }
    .blog-listitem .blog-item .itemBlogContent .blog-meta > span{ padding-#{$right}: 10px }
     /************************************************************************************************
-        PAGE LISTING  
+        PAGE LISTING
     *************************************************************************************************/
     #wrapper{ overflow-x: hidden; }
     .thumb-vertical-outer { padding: 20px 0;}

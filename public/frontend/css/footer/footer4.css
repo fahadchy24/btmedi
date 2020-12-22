@@ -254,7 +254,7 @@
  [1] BLOCK FOOTER 4
  */
 footer.typefooter-4 .footer-top {
-  padding: 61px 0 55px 0; }
+  padding: 61px 0 55px; }
   footer.typefooter-4 .footer-top .block-title {
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -278,7 +278,7 @@ footer.typefooter-4 .footer-top {
       footer.typefooter-4 .footer-top .find-store {
         padding-right: 80px; } }
   footer.typefooter-4 .footer-top .find-store .block-content p {
-    margin: 0px 0 45px 0;
+    margin: 0 0 45px;
     color: #fff; }
   footer.typefooter-4 .footer-top .find-store .block-content a {
     font-weight: 700;

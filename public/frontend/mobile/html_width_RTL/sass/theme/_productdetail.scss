@@ -3,8 +3,8 @@
 	
     [1] CONTENT PRODUCT OTHER
     [2] PRODUCT INFO
-    [3] PRODUCT TABS 
-    [3] RELATED PRODUCT 
+    [3] PRODUCT TABS
+    [3] RELATED PRODUCT
 	
 ==============================================*/
 .product-view.product-info{
@@ -22,7 +22,7 @@
     }
     .label-product{
         width: 50px;
-        height: 50px; 
+        height: 50px;
         line-height: 50px;
         &.label-new {  left: 30px; }
         &.label-sale{  right: 30px;}
@@ -48,7 +48,7 @@
     }
     .box-link{
         position: absolute; top: 0; #{$right}: 0;
-        li{ display: inline-block; 
+        li{ display: inline-block;
             &.compare a{ margin: 0; }
         }
         a{
@@ -66,7 +66,7 @@
             font-size: 0;
             min-width: 32px;
             float: $left;
-            margin: 0px 5px;
+            margin: 0 5px;
             text-align: center;
             font-size: 14px;
             border-radius: 100%;
@@ -93,7 +93,7 @@
             float: $left;
             font-size: 10px;
             font-weight: normal;
-            border-radius: 0; 
+            border-radius: 0;
             cursor: pointer;
             width: 45px;
             line-height: 38px;
@@ -107,10 +107,10 @@
     }
     .box-info-product{float: $left; width: 100%; margin: 5px 0 0; border-top: 1px solid #ededed; padding-top: 20px;
         .cart{ float: $left; overflow: hidden; width: 50%;
-            input{height: 38px; line-height: 38px; padding: 0 30px; font-weight: 600; font-size: 13px; 
+            input{height: 38px; line-height: 38px; padding: 0 30px; font-weight: 600; font-size: 13px;
                text-transform: uppercase; border-radius: 20px;  background-color: $background;
                 border: none; color : $white;
-            }   
+            }
         }
     }
 }
@@ -127,8 +127,8 @@
     .item-element{
        
         .caption{
-            h4{ font-size: 14px; 
-                a{ color: #333; 
+            h4{ font-size: 14px;
+                a{ color: #333;
                     &:hover{ color: $linkColor; }
                 }
             }
@@ -175,8 +175,8 @@
             span{ padding-#{$right}: 5px; }
             .inner-box-desc{ position: relative;z-index: 2;
                 &:before{content: ""; width: 3px; background: $background; height: 100%; position: absolute; #{$left}: -20px; top: 0;}
-            } 
-        }   
+            }
+        }
     }
 }
 
@@ -185,7 +185,7 @@
 .image_option_type .radio{padding-left:0;display:inline;}
 
 .product-attribute{
-    .table-responsive{ border: 1px solid #e1e1e1; 
+    .table-responsive{ border: 1px solid #e1e1e1;
         .title-attribute{
             font-size: 14px;
             text-transform: uppercase;
@@ -206,7 +206,7 @@
     }
 }
 
-#product{    
+#product{
     
     .image_option_type{
         .product-options{
@@ -214,7 +214,7 @@
         }
         
     }
-    .control-label {    
+    .control-label {
         margin-bottom: 5px;
         font-size: 11px;
         text-transform: uppercase;
@@ -227,8 +227,8 @@
         display: inline-block;
         vertical-align: top;
         width: auto;
-        margin: 0 7px 5px 0px;
-        padding: 0px;
+        margin: 0 7px 5px 0;
+        padding: 0;
         label{padding: 0; font-size: 14px;}
         input{visibility: hidden;}
         .option-content-box{
@@ -291,7 +291,7 @@
 		 overflow-x: scroll;overflow-y: hidden;white-space: nowrap;
 		-webkit-overflow-scrolling: touch;
 		-ms-overflow-style: -ms-autohiding-scrollbar;
-        border-width: 1px 0 1px 0;
+        border-width: 1px 0;
         border-style: solid;
         border-color: #ededed;
         li{
@@ -337,10 +337,10 @@
             list-style-type: disc;
             -webkit-margin-before: 1em;
             -webkit-margin-after: 1em;
-            -webkit-margin-start: 0px;
-            -webkit-margin-end: 0px;
+            -webkit-margin-start: 0;
+            -webkit-margin-end: 0;
             -webkit-padding-start: 18px;
-        } 
+        }
        
     }
 }

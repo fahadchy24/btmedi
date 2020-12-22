@@ -284,7 +284,7 @@
       background: rgba(230, 230, 230, 0.3);
       position: absolute;
       top: 14px;
-      right: 0px; }
+      right: 0; }
     .typeheader-6 .header-top .header-top-right ul.top-link > li.account {
       padding-right: 20px; }
     .typeheader-6 .header-top .header-top-right ul.top-link > li.currency {
@@ -331,7 +331,7 @@
       background: #fff;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
       opacity: 0;
-      padding: 0px 10px;
+      padding: 0 10px;
       top: 33px;
       transition: top 0.3s ease 0s, opacity 0.3s ease 0s;
       width: 200px;
@@ -400,7 +400,7 @@
   .typeheader-6.navbar-compact .header-center .navbar-logo img {
     max-width: 110px; }
   .typeheader-6.navbar-compact .header-center .megamenu-style-dev .horizontal ul.megamenu > li > a {
-    padding: 5px 15px 5px; }
+    padding: 5px 15px; }
   .typeheader-6.navbar-compact .header-center .header-center-right {
     margin: 0; }
   .typeheader-6 #main-content, .typeheader-6 #content {
@@ -456,7 +456,7 @@
     display: inline-block; }
   .typeheader-6 .shopping_cart {
     position: absolute;
-    top: 0px; }
+    top: 0; }
   .typeheader-6 .shopping_cart .handle {
     width: 44px;
     height: 44px;

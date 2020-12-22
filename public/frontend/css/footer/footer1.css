@@ -284,7 +284,7 @@
     color: #222;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    margin: 0 0 12px 0;
+    margin: 0 0 12px;
     line-height: inherit;
     height: auto; }
   .typefooter-1 .footer-top {
@@ -314,11 +314,11 @@
         text-transform: capitalize;
         color: #fff;
         padding-top: 0;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         line-height: normal; }
   .typefooter-1 .footer-top .block-infos .info.info1 .inner {
     border-left: 0;
-    padding-left: 0px; }
+    padding-left: 0; }
   .typefooter-1 .footer-center {
     padding-top: 25px; }
   @media (min-width: 1200px) {
@@ -338,7 +338,7 @@
     text-transform: capitalize;
     font-size: 13px;
     position: relative;
-    padding: 4px 0px 5px 0px;
+    padding: 4px 0 5px;
     transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -webkit-transition: all 0.3s ease 0s;
@@ -382,7 +382,7 @@
     border-top: 1px solid #e0e0e0;
     text-align: center;
     clear: both;
-    padding: 28px 0 30px 0;
+    padding: 28px 0 30px;
     margin-top: 36px; }
   .typefooter-1 .footer-center .custom_categories nav a {
     color: #222;
@@ -479,9 +479,9 @@
     margin-top: 0;
     vertical-align: top; }
   .typefooter-1 .news-letter .block_content form {
-    margin: 0px; }
+    margin: 0; }
   .typefooter-1 .news-letter .block_content form .form-group {
-    margin: 0px;
+    margin: 0;
     overflow: hidden; }
   .typefooter-1 .news-letter .block_content .input-box {
     float: left; }
